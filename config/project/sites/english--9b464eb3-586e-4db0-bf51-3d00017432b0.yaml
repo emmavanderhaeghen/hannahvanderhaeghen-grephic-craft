@@ -1,0 +1,9 @@
+baseUrl: '@web/en'
+enabled: '1'
+handle: english
+hasUrls: true
+language: en
+name: English
+primary: false
+siteGroup: 87a05afd-1262-47cb-acd2-f6aaed1b9640 # Websites
+sortOrder: 2
