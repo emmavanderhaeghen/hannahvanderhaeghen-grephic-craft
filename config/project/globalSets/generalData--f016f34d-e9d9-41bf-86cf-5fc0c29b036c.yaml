@@ -1,0 +1,65 @@
+fieldLayouts:
+  26d08f1d-9e00-4c06-9b6f-7cd66d3f050d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 072366a1-39d9-4c91-8e57-6eab946ae6fe # Voornaam
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff012220-04a2-4b23-ab77-352bad37ed7d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: c785f0e6-e64a-4275-979b-4b8f8b74ca7a # Achternaam
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ad5edad6-e389-4311-b6fa-1eb21691b169
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 922cad9a-c539-431b-81fc-c20243e6e02c
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7 # Telefoonnummer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0fd56650-bf32-428d-9abd-72a37057e8e7
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 0f24636c-4f10-4522-894b-45739e075b70 # Email adres
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c1baac82-4801-41fd-8e85-a086a91eb58b
+            userCondition: null
+            warning: null
+            width: 50
+        name: Inhoud
+        uid: 7f469885-1695-474c-a6b9-edb3f7e07e5c
+        userCondition: null
+handle: generalData
+name: 'Algemene gegevens'
+sortOrder: 1

@@ -1,0 +1,9 @@
+/* Tailwind */
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+
+h1 {
+  @apply text-5xl;
+  @apply text-red-500;
+}

@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-US
+name: 'Hannah Van der Haeghen'
+primary: true
+siteGroup: 87a05afd-1262-47cb-acd2-f6aaed1b9640 # Hannah Van der Haeghen
+sortOrder: 1
