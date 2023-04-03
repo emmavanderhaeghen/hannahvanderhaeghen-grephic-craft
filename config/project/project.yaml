@@ -1,0 +1,141 @@
+dateModified: 1680538610
+email:
+  fromEmail: emmavand24@student.arteveldehs.be
+  fromName: 'Hannah Van der Haeghen'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
+    2a1b88a7-04a1-4876-878f-2253644f6e34: Dummy # Dummy
+    3ebf8831-4a21-48bd-a049-493560af4308: Common # Common
+    87a05afd-1262-47cb-acd2-f6aaed1b9640: 'Hannah Van der Haeghen' # Hannah Van der Haeghen
+    072366a1-39d9-4c91-8e57-6eab946ae6fe: Voornaam # Voornaam
+    154426f1-715f-4777-9c7f-f599d7641e68: New # New
+    361382ab-c268-4ec2-a944-660822aea169: 'Hannah Van der Haeghen' # Hannah Van der Haeghen
+    ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
+    c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
+    f016f34d-e9d9-41bf-86cf-5fc0c29b036c: 'Algemene gegevens' # Algemene gegevens
+    fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7: Telefoonnummer # Telefoonnummer
+plugins:
+  blitz:
+    edition: standard
+    enabled: true
+    licenseKey: K0K7PE1ZFQX1CKMZ7M723N8A
+    schemaVersion: 4.4.0
+    settings:
+      apiKey: ''
+      cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
+      cacheDuration: null
+      cacheElementQueries: true
+      cacheElements: true
+      cacheGeneratorSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '3'
+      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
+      cacheNonHtmlResponses: false
+      cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
+      cacheStorageSettings:
+        __assoc__:
+          -
+            - folderPath
+            - '@webroot/cache/blitz'
+          -
+            - createGzipFiles
+            - ''
+          -
+            - createBrotliFiles
+            - ''
+      cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
+      cachingEnabled: false
+      debug: false
+      deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
+      driverJobPriority: 100
+      esiEnabled: false
+      excludedQueryStringParams:
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - gclid
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - fbclid
+      generatePagesWithQueryStringParams: true
+      hintsEnabled: true
+      includedQueryStringParams:
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - '.*'
+      injectScriptEvent: DOMContentLoaded
+      integrations:
+        - putyourlightson\blitz\drivers\integrations\CommerceIntegration
+        - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
+        - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
+      maxRetryAttempts: 10
+      mutexTimeout: 1
+      outputComments: true
+      purgeAssetImagesWhenChanged: true
+      queryStringCaching: 0
+      queueJobTtr: 300
+      refreshCacheAutomaticallyForGlobals: true
+      refreshCacheJobPriority: 10
+      refreshCacheWhenElementMovedInStructure: true
+      refreshCacheWhenElementSavedNotLive: false
+      refreshCacheWhenElementSavedUnchanged: false
+      refreshMode: 3
+      sendPoweredByHeader: true
+      ssiEnabled: false
+      trackElementQueries: true
+      trackElements: true
+  commerce:
+    edition: lite
+    enabled: true
+    licenseKey: HCD9OPKMESAZGLLF1DWD0943
+    schemaVersion: 4.2.3
+  mix:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      assetPath: dist
+      publicPath: web
+  quick-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: 7G0IC4AHSWVI4WSDX11PGUSO
+    schemaVersion: 3.0.11
+  sprig:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: $SYSTEM_NAME
+  retryDuration: null
+  schemaVersion: 4.4.0.4
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

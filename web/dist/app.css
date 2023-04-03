@@ -1,0 +1,15 @@
+/* Tailwind */
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+
+h1 {
+
+    font-size: 3rem;
+
+    line-height: 1;
+
+    --tw-text-opacity: 1;
+
+    color: rgb(239 68 68 / var(--tw-text-opacity))
+}

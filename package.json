@@ -1,0 +1,47 @@
+{
+  "name": "hannahvanderhaeghen-grephic-craft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "mix watch",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmavanderhaeghen/hannahvanderhaeghen-grephic-craft.git"
+  },
+  "keywords": [
+    "Vite",
+    "Craft",
+    "Commerce",
+    "DDEV",
+    "Vue",
+    "Tailwind"
+  ],
+  "author": "Emma Van der Haeghen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emmavanderhaeghen/hannahvanderhaeghen-grephic-craft/issues"
+  },
+  "homepage": "https://github.com/emmavanderhaeghen/hannahvanderhaeghen-grephic-craft#readme",
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^4.0.2",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "browser-sync": "^2.29.1",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "eslint": "^8.37.0",
+    "eslint-plugin-vue": "^9.10.0",
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+
+    "vite": "^4.2.1",
+    "vite-plugin-restart": "^0.3.1",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1"
+  }
+}
