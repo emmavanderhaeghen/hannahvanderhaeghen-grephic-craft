@@ -1,13 +1,20 @@
 {# Template: {{ _self }}.twig #}
 
-{#  #}
-<nav class="hidden z-40 fixed overflow-hidden w-screen h-screen bg-black top-0 left-0 flex  | js-nav">
+{% set navItems = craft.entries().section('pages').level(1).offset(1) %}
+
+<nav class="hidden z-40 fixed overflow-hidden w-screen h-screen bg-black top-0 left-0 flex items-center | js-nav">
     <img class="w-6/12 h-fit" src="../assets/www/images/bergen-4.jpg" alt="nav">
-    <ul class="w-4/12 mx-auto text-white">
-        <li class="block text-30 italic"><a class="p-5" href="/home">Home</a></li>
-        <li class="block text-30 italic"><a class="p-5" href="/work">Work</a></li>
-        <li class="block text-30 italic"><a class="p-5" href="/about">About</a></li>
-        <li class="block text-30 italic"><a class="p-5" href="/shop">Shop</a></li>
-        <li class="block text-30 italic"><a class="p-5" href="/contact">Contact</a></li>
-    </ul>
+
+    <div class="w-4/12 mx-auto text-white uppercase">
+        <ul class="mt-100 font-serif text-25">
+        {% for item in navItems %}
+            <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/{{item.title}}">{{item.title}}</a></li>
+        {% endfor %}
+        </ul>
+
+        <div class="mt-150 font-sans text-12 flex gap-40">
+            <a href="/">Instagram</a>
+            <a href="/">LinkedIn</a>
+        </div>
+    </div>
 </nav>
