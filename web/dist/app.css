@@ -445,17 +445,41 @@ video {
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
+}
+.-right-140 {
+  right: -14rem;
+}
+.-right-80 {
+  right: -8rem;
 }
 .-top-110 {
   top: -11rem;
 }
+.-top-25 {
+  top: -2.5rem;
+}
+.bottom-100 {
+  bottom: 10rem;
+}
+.bottom-15 {
+  bottom: 1.5rem;
+}
 .left-0 {
   left: 0px;
 }
+.right-25 {
+  right: 2.5rem;
+}
 .top-0 {
   top: 0px;
+}
+.bottom-200 {
+  bottom: 20rem;
 }
 .z-10 {
   z-index: 10;
@@ -474,6 +498,10 @@ video {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
+.my-40 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 .my-80 {
   margin-top: 8rem;
   margin-bottom: 8rem;
@@ -481,8 +509,14 @@ video {
 .mb-200 {
   margin-bottom: 20rem;
 }
+.mb-40 {
+  margin-bottom: 4rem;
+}
 .mb-\[\.4rem\] {
   margin-bottom: .4rem;
+}
+.ml-25 {
+  margin-left: 2.5rem;
 }
 .mt-100 {
   margin-top: 10rem;
@@ -490,14 +524,17 @@ video {
 .mt-150 {
   margin-top: 15rem;
 }
-.mt-\[\.4rem\] {
-  margin-top: .4rem;
+.mt-40 {
+  margin-top: 4rem;
 }
 .mt-50 {
   margin-top: 5rem;
 }
-.mt-40 {
-  margin-top: 4rem;
+.mt-\[\.4rem\] {
+  margin-top: .4rem;
+}
+.mb-50 {
+  margin-bottom: 5rem;
 }
 .block {
   display: block;
@@ -524,6 +561,12 @@ video {
 .w-2\/12 {
   width: 16.666667%;
 }
+.w-3\/12 {
+  width: 25%;
+}
+.w-300 {
+  width: 30rem;
+}
 .w-4\/12 {
   width: 33.333333%;
 }
@@ -536,14 +579,26 @@ video {
 .w-7\/12 {
   width: 58.333333%;
 }
+.w-9\/12 {
+  width: 75%;
+}
 .w-\[25px\] {
   width: 25px;
 }
 .w-screen {
   width: 100vw;
 }
+.w-400 {
+  width: 40rem;
+}
+.w-500 {
+  width: 50rem;
+}
 .flex-grow {
   flex-grow: 1;
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
 .items-center {
   align-items: center;
@@ -580,17 +635,25 @@ video {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.px-40 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
 .py-10 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.py-140 {
-  padding-top: 14rem;
-  padding-bottom: 14rem;
+.py-15 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .py-20 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.py-25 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .py-30 {
   padding-top: 3rem;
@@ -599,18 +662,6 @@ video {
 .py-5 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-.py-40 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-.py-25 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-.px-40 {
-  padding-left: 4rem;
-  padding-right: 4rem;
 }
 .pt-40 {
   padding-top: 4rem;
@@ -621,9 +672,13 @@ video {
 .font-serif {
   font-family: Bodoni Moda, serif;
 }
+.text-10 {
+  font-size: 1rem;
+  line-height: 2.4rem;
+}
 .text-12 {
   font-size: 1.2rem;
-  line-height: 2.4rem;
+  line-height: 2.6rem;
 }
 .text-25 {
   font-size: 2.5rem;
@@ -633,16 +688,19 @@ video {
   font-size: 3.125rem;
   line-height: 5rem;
 }
+.text-9 {
+  font-size: .9rem;
+  line-height: 2.4rem;
+}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-.text-10 {
-  font-size: 1rem;
-  line-height: 2rem;
-}
 .font-light {
   font-weight: 300;
+}
+.font-medium {
+  font-weight: 500;
 }
 .uppercase {
   text-transform: uppercase;
@@ -660,6 +718,9 @@ video {
 .subpixel-antialiased {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .hover\:not-italic:hover {
   font-style: normal;

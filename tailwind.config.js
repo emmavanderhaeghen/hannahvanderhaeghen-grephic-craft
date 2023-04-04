@@ -23,6 +23,9 @@ module.exports = {
     },
     extend: {
       spacing: {
+        '500': '50rem',
+        '400': '40rem',
+        '300': '30rem',
         '250': '25rem',
         '240': '24rem',
         '230': '23rem',
@@ -66,9 +69,11 @@ module.exports = {
         'sans': "Poppins, sans-serif",
       },
       fontSize: {
-        '10': ['1rem', { lineHeight: '2rem' }],
-        '12': ['1.2rem', { lineHeight: '2.4rem' }],
-        '16': ['1.6rem', { lineHeight: '2.6rem' }],
+        '8': ['.8rem', { lineHeight: '2.2rem' }],
+        '9': ['.9rem', { lineHeight: '2.4rem' }],
+        '10': ['1rem', { lineHeight: '2.4rem' }],
+        '12': ['1.2rem', { lineHeight: '2.6rem' }],
+        '16': ['1.6rem', { lineHeight: '2.8rem' }],
         '18': ['1.8rem', { lineHeight: '3rem' }],
         '20': ['2rem', { lineHeight: '3.5rem' }],
         '22': ['2.2rem', { lineHeight: '3.8rem' }],
