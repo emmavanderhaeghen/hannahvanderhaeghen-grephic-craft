@@ -1,0 +1,13 @@
+{# Layouts and macros #}
+{% extends "_layout/site" %}
+
+{% block content %}
+<section class="bg-beige pt-40">
+    <article class="container mx-auto px-40">
+        <div class="mx-auto w-12/12 lg:w-8/12">
+            <h2 class="text-35 my-80">{{entry.title}}</h2>
+            <p class="mt-40 md:mt-0 lg:w-4/7 text-14 self-center justify-end">{{entry.redactor|nl2br}}</p>
+        </div>
+    </article>
+</section>
+{% endblock %}
