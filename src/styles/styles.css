@@ -1,9 +1,24 @@
 /* Tailwind */
-/* @import 'tailwindcss/base';
+@import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
+@import 'tailwindcss/utilities';
 
-h1 {
-  @apply text-5xl;
-  @apply text-red-500;
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  margin: .4rem 0;
+}
+
+.line:first-child {
+  margin-top: 0;
+}
+
+.line:last-child {
+  margin-bottom: 0;
 }
