@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ craft.app.language }}" class="subpixel-antialiased relative">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{ mix('app.css') }}">
+        <link rel="stylesheet" href="https://use.typekit.net/ppq4kgu.css">
+    </head>
+    <body>
+    {# Start our app #}
+    <div class="app text-base font-sans font-light">
+        {% block app %}{% endblock %}
+    </div>
+    <script src="{{ mix('app.js') }}"></script>
+    </body>
+</html>
