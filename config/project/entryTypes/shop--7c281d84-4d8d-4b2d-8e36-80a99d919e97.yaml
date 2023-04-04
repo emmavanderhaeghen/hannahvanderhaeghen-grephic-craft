@@ -33,6 +33,36 @@ fieldLayouts:
         name: Content
         uid: 033c064c-dc40-4bd2-9ed0-dfdab37366dd
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3c88515a-8032-4a79-94ce-1a74c8074ddf # Toon in navigatie
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b85b19f1-eaa4-44ff-b299-4776b80ed451
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: dbd11bc6-ad86-4953-959b-f3fb418b6153 # Toon in footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dcb41e5d-09e8-4a60-a18d-ec294760ea68
+            userCondition: null
+            warning: null
+            width: 100
+        name: Navigatie
+        uid: 4726764e-ac14-4c53-aba1-7324a556fd75
+        userCondition: null
 handle: shop
 hasTitleField: true
 name: Shop

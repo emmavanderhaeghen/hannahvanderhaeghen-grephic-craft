@@ -33,6 +33,36 @@ fieldLayouts:
         name: Content
         uid: 0ea70667-2e04-4b0b-8104-efc2a6d6eccf
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3c88515a-8032-4a79-94ce-1a74c8074ddf # Toon in navigatie
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5defbf32-4311-4819-8d92-c6743781b480
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: dbd11bc6-ad86-4953-959b-f3fb418b6153 # Toon in footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f5663e54-a314-4fd1-b8b5-a482fdef6631
+            userCondition: null
+            warning: null
+            width: 100
+        name: Navigatie
+        uid: 19b44313-aa5e-4e67-a633-c67b38aa1735
+        userCondition: null
 handle: contact
 hasTitleField: true
 name: Contact

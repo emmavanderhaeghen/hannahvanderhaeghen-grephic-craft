@@ -33,6 +33,36 @@ fieldLayouts:
         name: Content
         uid: c9de52d3-491c-45fd-96ca-fa32c8105109
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3c88515a-8032-4a79-94ce-1a74c8074ddf # Toon in navigatie
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c60b6aa0-7dc6-442a-9c1b-f19a8052942a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: dbd11bc6-ad86-4953-959b-f3fb418b6153 # Toon in footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1f015654-63be-480a-9494-35a42c3bb3d0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Navigatie
+        uid: c238a109-8992-47e3-8c5f-df3d9b724596
+        userCondition: null
 handle: faq
 hasTitleField: true
 name: FAQ

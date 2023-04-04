@@ -33,6 +33,36 @@ fieldLayouts:
         name: Content
         uid: a9a6c680-3445-4140-9d53-d27a81b2f7cb
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3c88515a-8032-4a79-94ce-1a74c8074ddf # Toon in navigatie
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f5fe9886-62c4-47ab-beb3-a79a69b10255
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: dbd11bc6-ad86-4953-959b-f3fb418b6153 # Toon in footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d3964d05-da5b-4091-99bc-465e327c902a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Navigatie
+        uid: 2bd6669e-8b69-4b33-9d95-3983e4cec5de
+        userCondition: null
 handle: work
 hasTitleField: true
 name: Work

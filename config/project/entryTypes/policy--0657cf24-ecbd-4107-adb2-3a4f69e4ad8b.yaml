@@ -33,6 +33,36 @@ fieldLayouts:
         name: Content
         uid: 4b4babc0-23bb-4518-b042-280303d56249
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3c88515a-8032-4a79-94ce-1a74c8074ddf # Toon in navigatie
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 668932bd-69b0-42e6-b142-596b080b8e3c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: dbd11bc6-ad86-4953-959b-f3fb418b6153 # Toon in footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 75daffdb-626c-4b7b-9138-6eb05a56a5e5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Navigatie
+        uid: ecb50a26-7f28-4bd4-ac3f-01c7764f09fd
+        userCondition: null
 handle: policy
 hasTitleField: true
 name: Policy

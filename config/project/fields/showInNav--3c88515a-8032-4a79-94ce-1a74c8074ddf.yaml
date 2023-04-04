@@ -1,0 +1,14 @@
+columnSuffix: avommprd
+contentColumnType: boolean
+fieldGroup: 0d651d0e-b1d7-45ec-a026-bb77e4ababe3 # Navigation
+handle: showInNav
+instructions: null
+name: 'Toon in navigatie'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Onzichtbaar in navigatie'
+  onLabel: 'Zichtbaar in navigatie'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

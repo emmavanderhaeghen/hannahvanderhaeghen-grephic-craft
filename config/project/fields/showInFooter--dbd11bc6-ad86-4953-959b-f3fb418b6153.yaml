@@ -1,0 +1,14 @@
+columnSuffix: nrzruolm
+contentColumnType: boolean
+fieldGroup: 0d651d0e-b1d7-45ec-a026-bb77e4ababe3 # Navigation
+handle: showInFooter
+instructions: null
+name: 'Toon in footer'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Onzichtbaar in footer'
+  onLabel: 'Zichtbaar in footer'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

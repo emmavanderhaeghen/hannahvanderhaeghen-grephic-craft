@@ -1,4 +1,4 @@
-dateModified: 1680612468
+dateModified: 1680614083
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -13,9 +13,11 @@ fs:
     url: $UPLOAD_URL
 meta:
   __names__:
+    0d651d0e-b1d7-45ec-a026-bb77e4ababe3: Navigation # Navigation
     0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
     2a1b88a7-04a1-4876-878f-2253644f6e34: Dummy # Dummy
     2c1c4276-6b14-4857-8873-c475c0a68f0a: 'Pagina''s' # Pagina's
+    3c88515a-8032-4a79-94ce-1a74c8074ddf: 'Toon in navigatie' # Toon in navigatie
     3ebf8831-4a21-48bd-a049-493560af4308: Common # Common
     4f3af52d-dc34-45b8-96e8-0355358d1890: About # About
     7c281d84-4d8d-4b2d-8e36-80a99d919e97: Shop # Shop
@@ -32,6 +34,7 @@ meta:
     361382ab-c268-4ec2-a944-660822aea169: Nederlands # Nederlands
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
+    dbd11bc6-ad86-4953-959b-f3fb418b6153: 'Toon in footer' # Toon in footer
     e6be9b55-51b9-40aa-b515-15630879d7c2: 'Hero Image' # Hero Image
     f016f34d-e9d9-41bf-86cf-5fc0c29b036c: 'Algemene gegevens' # Algemene gegevens
     fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7: Telefoonnummer # Telefoonnummer
