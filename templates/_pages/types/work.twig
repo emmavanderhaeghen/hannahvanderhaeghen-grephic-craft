@@ -3,8 +3,29 @@
 
 {% block content %}
     <section class="container">
-        <article class="flex">
-            <h1 class="w-5/12 text-50 font-serif uppercase">{{ entry.title }}</h1>
+        <article class="flex mt-50 mb-50">
+            <div class="w-3/12">
+                <ul class="fixed bottom-200">
+                    <li class="py-15 font-medium">Fashion</li>
+                    <li class="py-15">Portraits</li>
+                    <li class="py-15">Personal Projects</li>
+                    <li class="py-15">Experimental</li>
+                </ul>            
+            </div>
+            <div class="w-9/12 mx-auto text-9">
+                <div class="relative mb-40 -right-140">
+                    <img src="../assets/www/images/Fashion-1.jpg" alt="fashion">
+                </div>
+                <div class="relative my-40 w-400">
+                    <img src="../assets/www/images/Fashion-2.jpg" alt="fashion">
+                </div>
+                <div class="relative my-40 -right-80">
+                    <img src="../assets/www/images/Fashion-3.jpg" alt="fashion">
+                </div>
+                <div class="relative my-40 w-400">
+                    <img src="../assets/www/images/Fashion-4.jpg" alt="fashion">
+                </div>
+            </div>
         </article>
     </section>
 {% endblock %}
