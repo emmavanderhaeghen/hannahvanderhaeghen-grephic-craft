@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+handle: pages
+name: 'Pagina''s'
+propagationMethod: all
+siteSettings:
+  9b464eb3-586e-4db0-bf51-3d00017432b0: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/entry.twig
+    uriFormat: '{parent.uri}/{slug}'
+  361382ab-c268-4ec2-a944-660822aea169: # Nederlands
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/entry.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: 2
+  uid: 2e3c17b4-235b-4299-83c1-6b24d3356142
+type: structure

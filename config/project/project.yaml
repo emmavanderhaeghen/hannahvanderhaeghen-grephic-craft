@@ -1,4 +1,4 @@
-dateModified: 1680539867
+dateModified: 1680596462
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -7,9 +7,14 @@ meta:
   __names__:
     0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
     2a1b88a7-04a1-4876-878f-2253644f6e34: Dummy # Dummy
+    2c1c4276-6b14-4857-8873-c475c0a68f0a: 'Pagina''s' # Pagina's
     3ebf8831-4a21-48bd-a049-493560af4308: Common # Common
+    4f3af52d-dc34-45b8-96e8-0355358d1890: About # About
+    7c281d84-4d8d-4b2d-8e36-80a99d919e97: Shop # Shop
     9b464eb3-586e-4db0-bf51-3d00017432b0: English # English
     87a05afd-1262-47cb-acd2-f6aaed1b9640: Websites # Websites
+    619a8e46-e785-4b25-90f9-85ba6dcdf9c6: Home # Home
+    7521d7d4-bfee-4451-beed-90ad1d724c5b: Work # Work
     072366a1-39d9-4c91-8e57-6eab946ae6fe: Voornaam # Voornaam
     154426f1-715f-4777-9c7f-f599d7641e68: New # New
     361382ab-c268-4ec2-a944-660822aea169: Nederlands # Nederlands
