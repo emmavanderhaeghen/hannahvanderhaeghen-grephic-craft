@@ -9,6 +9,7 @@
     "putyourlightson/craft-blitz": "4.4.4",
     "putyourlightson/craft-sprig": "2.5.1",
     "spicyweb/craft-quick-field": "2.0.3",
+    "verbb/wishlist": "2.0.4",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

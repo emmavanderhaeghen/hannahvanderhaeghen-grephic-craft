@@ -1,4 +1,4 @@
-dateModified: 1680621464
+dateModified: 1680622458
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -20,6 +20,7 @@ meta:
     3c88515a-8032-4a79-94ce-1a74c8074ddf: 'Toon in navigatie' # Toon in navigatie
     3ebf8831-4a21-48bd-a049-493560af4308: Common # Common
     4f3af52d-dc34-45b8-96e8-0355358d1890: About # About
+    4fd1bc8c-b3eb-457e-9696-d2ac0b407f4b: Wishlist # Wishlist
     5f5630f3-da19-4241-a164-79bdca4f52f7: 'LinkedIn link' # LinkedIn link
     7c281d84-4d8d-4b2d-8e36-80a99d919e97: Shop # Shop
     9b464eb3-586e-4db0-bf51-3d00017432b0: English # English
@@ -34,6 +35,7 @@ meta:
     072366a1-39d9-4c91-8e57-6eab946ae6fe: Voornaam # Voornaam
     154426f1-715f-4777-9c7f-f599d7641e68: New # New
     361382ab-c268-4ec2-a944-660822aea169: Nederlands # Nederlands
+    01680712-796d-48bb-80fc-3e79cb98d2d3: Prints # Prints
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
     b94dc6c9-aae8-45c7-b754-5f6a3c81039a: 'Facebook link' # Facebook link
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
@@ -151,6 +153,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  wishlist:
+    edition: standard
+    enabled: true
+    licenseKey: KT80JF8CC81ESVD2MG5V6LZA
+    schemaVersion: 1.0.4
 system:
   edition: solo
   live: true
