@@ -1,0 +1,19 @@
+columnSuffix: enehkbzl
+contentColumnType: text
+fieldGroup: ae7f6c08-c9a7-4447-9c37-00e0f870e776 # General Data
+handle: instagramLink
+instructions: null
+name: 'Instagram link'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

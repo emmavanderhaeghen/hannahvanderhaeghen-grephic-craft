@@ -1,4 +1,4 @@
-dateModified: 1680614083
+dateModified: 1680621464
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -20,6 +20,7 @@ meta:
     3c88515a-8032-4a79-94ce-1a74c8074ddf: 'Toon in navigatie' # Toon in navigatie
     3ebf8831-4a21-48bd-a049-493560af4308: Common # Common
     4f3af52d-dc34-45b8-96e8-0355358d1890: About # About
+    5f5630f3-da19-4241-a164-79bdca4f52f7: 'LinkedIn link' # LinkedIn link
     7c281d84-4d8d-4b2d-8e36-80a99d919e97: Shop # Shop
     9b464eb3-586e-4db0-bf51-3d00017432b0: English # English
     9db1f9e4-5692-4c0f-ad4a-c18f1475b2a5: Contact # Contact
@@ -28,11 +29,13 @@ meta:
     87a05afd-1262-47cb-acd2-f6aaed1b9640: Websites # Websites
     619a8e46-e785-4b25-90f9-85ba6dcdf9c6: Home # Home
     0657cf24-ecbd-4107-adb2-3a4f69e4ad8b: Policy # Policy
+    958e2e03-63a3-4194-b1cf-ebd5fa9fc895: 'Instagram link' # Instagram link
     7521d7d4-bfee-4451-beed-90ad1d724c5b: Work # Work
     072366a1-39d9-4c91-8e57-6eab946ae6fe: Voornaam # Voornaam
     154426f1-715f-4777-9c7f-f599d7641e68: New # New
     361382ab-c268-4ec2-a944-660822aea169: Nederlands # Nederlands
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
+    b94dc6c9-aae8-45c7-b754-5f6a3c81039a: 'Facebook link' # Facebook link
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
     dbd11bc6-ad86-4953-959b-f3fb418b6153: 'Toon in footer' # Toon in footer
     e6be9b55-51b9-40aa-b515-15630879d7c2: 'Hero Image' # Hero Image

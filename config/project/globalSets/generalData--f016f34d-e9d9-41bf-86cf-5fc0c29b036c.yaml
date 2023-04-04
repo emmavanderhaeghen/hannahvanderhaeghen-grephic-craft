@@ -57,6 +57,48 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
+          -
+            elementCondition: null
+            heading: 'Social media links'
+            type: craft\fieldlayoutelements\Heading
+            uid: 904f03db-b82d-425a-a82f-c5a9a69fc3a4
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: b94dc6c9-aae8-45c7-b754-5f6a3c81039a # Facebook link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 22dff426-976a-4867-aedb-5547e92801fb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 958e2e03-63a3-4194-b1cf-ebd5fa9fc895 # Instagram link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a9be2a8-351c-4e5d-84ea-812576ffcfdf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5f5630f3-da19-4241-a164-79bdca4f52f7 # LinkedIn link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 06213468-b251-4a9e-b870-db14bc0ff4dc
+            userCondition: null
+            warning: null
+            width: 100
         name: Inhoud
         uid: 7f469885-1695-474c-a6b9-edb3f7e07e5c
         userCondition: null
