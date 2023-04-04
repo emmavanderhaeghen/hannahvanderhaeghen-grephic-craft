@@ -457,21 +457,6 @@ video {
 .top-0 {
   top: 0px;
 }
-.left-20 {
-  left: 2rem;
-}
-.right-20 {
-  right: 2rem;
-}
-.right-80 {
-  right: 8rem;
-}
-.right-100 {
-  right: 10rem;
-}
-.right-180 {
-  right: 18rem;
-}
 .z-10 {
   z-index: 10;
 }
@@ -489,6 +474,9 @@ video {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
+.mb-200 {
+  margin-bottom: 20rem;
+}
 .mb-\[\.4rem\] {
   margin-bottom: .4rem;
 }
@@ -501,11 +489,8 @@ video {
 .mt-\[\.4rem\] {
   margin-top: .4rem;
 }
-.mb-100 {
-  margin-bottom: 10rem;
-}
-.mb-200 {
-  margin-bottom: 20rem;
+.mt-50 {
+  margin-top: 5rem;
 }
 .block {
   display: block;
@@ -550,9 +535,6 @@ video {
 .w-screen {
   width: 100vw;
 }
-.w-8\/12 {
-  width: 66.666667%;
-}
 .flex-grow {
   flex-grow: 1;
 }
@@ -561,6 +543,9 @@ video {
 }
 .justify-between {
   justify-content: space-between;
+}
+.gap-30 {
+  gap: 3rem;
 }
 .gap-40 {
   gap: 4rem;
@@ -578,9 +563,21 @@ video {
 .p-5 {
   padding: 0.5rem;
 }
+.px-20 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-10 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .py-140 {
   padding-top: 14rem;
   padding-bottom: 14rem;
+}
+.py-20 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .py-30 {
   padding-top: 3rem;
@@ -590,17 +587,13 @@ video {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.py-20 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.py-40 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
-.px-20 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-.py-10 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.py-25 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .font-sans {
   font-family: Poppins, sans-serif;
@@ -624,6 +617,10 @@ video {
   font-size: 1rem;
   line-height: 1.5rem;
 }
+.text-10 {
+  font-size: 1rem;
+  line-height: 2rem;
+}
 .font-light {
   font-weight: 300;
 }
@@ -636,6 +633,9 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(252 252 252 / var(--tw-text-opacity));
+}
+.underline {
+  text-decoration-line: underline;
 }
 .subpixel-antialiased {
   -webkit-font-smoothing: auto;

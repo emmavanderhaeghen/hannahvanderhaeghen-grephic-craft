@@ -66,6 +66,7 @@ module.exports = {
         'sans': "Poppins, sans-serif",
       },
       fontSize: {
+        '10': ['1rem', { lineHeight: '2rem' }],
         '12': ['1.2rem', { lineHeight: '2.4rem' }],
         '16': ['1.6rem', { lineHeight: '2.6rem' }],
         '18': ['1.8rem', { lineHeight: '3rem' }],
