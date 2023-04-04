@@ -44,23 +44,27 @@ var App = /*#__PURE__*/function () {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(_this.lines[0], {
             duration: 0.2,
             rotate: '45deg',
-            top: '8px'
+            top: '8px',
+            backgroundColor: 'white'
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(_this.lines[1], {
             duration: 0.2,
             rotate: '-45deg',
-            bottom: '2px'
+            bottom: '2px',
+            backgroundColor: 'white'
           });
         } else {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(_this.lines[0], {
             duration: 0.2,
             rotate: '0deg',
-            top: '0'
+            top: '0',
+            backgroundColor: 'black'
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(_this.lines[1], {
             duration: 0.2,
             rotate: '0deg',
-            top: '0'
+            top: '0',
+            backgroundColor: 'black'
           });
         }
       });

@@ -1,19 +1,13 @@
 <header class="container w-12/12 py-30 relative">
     <div class="flex items-center justify-between">
         <img class="" src="../assets/www/svg/logo.svg" alt="Logo">
-        <button class="inline-block p-10 | js-nav-button">
+        <button class="inline-block z-50 p-10 | js-nav-button">
             <div class="w-[25px] h-[2px] bg-black mb-[.4rem] relative | js-lines"></div>
             <div class="w-[25px] h-[2px] bg-black mt-[.4rem] relative | js-lines"></div>
         </button>
     </div>
 
-    <nav class="hidden | js-nav">
-        <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/work">Work</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+    {% include "_layout/partials/nav.twig" %}
+
 </header>
 

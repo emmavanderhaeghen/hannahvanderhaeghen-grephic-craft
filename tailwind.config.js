@@ -71,7 +71,6 @@ module.exports = {
         '18': ['1.8rem', { lineHeight: '3rem' }],
         '20': ['2rem', { lineHeight: '3.5rem' }],
         '30': ['3rem', { lineHeight: '4.8rem' }],
-        '50': ['5.5rem', { lineHeight: '6rem' }],
       },
       colors: {
         'white': '#fff',
