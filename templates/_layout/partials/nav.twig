@@ -1,6 +1,6 @@
 {# Template: {{ _self }}.twig #}
 
-{% set navItems = craft.entries().section('pages').level(1).offset(1) %}
+{% set navItems = craft.entries().section('pages').level(1).offset(1).limit(4) %}
 
 <nav class="hidden z-40 fixed overflow-hidden w-screen h-screen bg-black top-0 left-0 flex items-center | js-nav">
     <img class="w-6/12 h-fit" src="../assets/www/images/bergen-4.jpg" alt="nav">
@@ -10,6 +10,9 @@
         {% for item in navItems %}
             <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/{{item.title}}">{{item.title}}</a></li>
         {% endfor %}
+        {# {% for item in mainNav %}
+            <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/{{item.title}}">{{item.title}}</a></li>
+        {% endfor %} #}
         </ul>
 
         <div class="mt-150 font-sans text-12 flex gap-40">
