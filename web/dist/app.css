@@ -30,7 +30,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-family: Poppins, sans-serif; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
 }
@@ -448,11 +448,32 @@ video {
 .relative {
   position: relative;
 }
+.-top-110 {
+  top: -11rem;
+}
 .left-0 {
   left: 0px;
 }
 .top-0 {
   top: 0px;
+}
+.left-20 {
+  left: 2rem;
+}
+.right-20 {
+  right: 2rem;
+}
+.right-80 {
+  right: 8rem;
+}
+.right-100 {
+  right: 10rem;
+}
+.right-180 {
+  right: 18rem;
+}
+.z-10 {
+  z-index: 10;
 }
 .z-40 {
   z-index: 40;
@@ -464,11 +485,27 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.my-25 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
 .mb-\[\.4rem\] {
   margin-bottom: .4rem;
 }
+.mt-100 {
+  margin-top: 10rem;
+}
+.mt-150 {
+  margin-top: 15rem;
+}
 .mt-\[\.4rem\] {
   margin-top: .4rem;
+}
+.mb-100 {
+  margin-bottom: 10rem;
+}
+.mb-200 {
+  margin-bottom: 20rem;
 }
 .block {
   display: block;
@@ -492,17 +529,29 @@ video {
 .h-screen {
   height: 100vh;
 }
+.w-2\/12 {
+  width: 16.666667%;
+}
 .w-4\/12 {
   width: 33.333333%;
 }
+.w-5\/12 {
+  width: 41.666667%;
+}
 .w-6\/12 {
   width: 50%;
+}
+.w-7\/12 {
+  width: 58.333333%;
 }
 .w-\[25px\] {
   width: 25px;
 }
 .w-screen {
   width: 100vw;
+}
+.w-8\/12 {
+  width: 66.666667%;
 }
 .flex-grow {
   flex-grow: 1;
@@ -513,15 +562,18 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.gap-40 {
+  gap: 4rem;
+}
 .overflow-hidden {
   overflow: hidden;
 }
 .bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(20 20 20 / var(--tw-bg-opacity));
+  background-color: rgb(30 30 30 / var(--tw-bg-opacity));
 }
-.p-10 {
-  padding: 1rem;
+.p-1 {
+  padding: 0.1rem;
 }
 .p-5 {
   padding: 0.5rem;
@@ -534,28 +586,61 @@ video {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+.py-5 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-20 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.px-20 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-10 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .font-sans {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Poppins, sans-serif;
+}
+.font-serif {
+  font-family: Bodoni Moda, serif;
+}
+.text-12 {
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+}
+.text-25 {
+  font-size: 2.5rem;
+  line-height: 4.5rem;
+}
+.text-50 {
+  font-size: 3.125rem;
+  line-height: 5rem;
 }
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-.text-30 {
-  font-size: 3rem;
-  line-height: 4.8rem;
-}
 .font-light {
   font-weight: 300;
+}
+.uppercase {
+  text-transform: uppercase;
 }
 .italic {
   font-style: italic;
 }
 .text-white {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(252 252 252 / var(--tw-text-opacity));
 }
 .subpixel-antialiased {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
+}
+.hover\:not-italic:hover {
+  font-style: normal;
 }

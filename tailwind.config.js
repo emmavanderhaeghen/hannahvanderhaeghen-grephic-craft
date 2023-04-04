@@ -62,20 +62,24 @@ module.exports = {
         'normal': '4.65rem'
       },
       fontFamily: {
-        'serif': "serif",
-        'sans-serif': "sans-serif",
+        'serif': "Bodoni Moda, serif",
+        'sans': "Poppins, sans-serif",
       },
       fontSize: {
         '12': ['1.2rem', { lineHeight: '2.4rem' }],
         '16': ['1.6rem', { lineHeight: '2.6rem' }],
         '18': ['1.8rem', { lineHeight: '3rem' }],
         '20': ['2rem', { lineHeight: '3.5rem' }],
+        '22': ['2.2rem', { lineHeight: '3.8rem' }],
+        '25': ['2.5rem', { lineHeight: '4.5rem' }],
         '30': ['3rem', { lineHeight: '4.8rem' }],
+        '50': ['3.125rem', { lineHeight: '5rem' }],
       },
       colors: {
-        'white': '#fff',
-        'black': '#141414',
+        'white': '#FCFCFC',
+        'black': '#1E1E1E',
         'grey': '#EBE9E7',
+        'pink': '#FBF6F6',
       },
     },
   },
