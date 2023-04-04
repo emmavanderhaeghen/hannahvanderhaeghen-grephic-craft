@@ -1,8 +1,16 @@
-dateModified: 1680596462
+dateModified: 1680598694
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  uploads:
+    hasUrls: true
+    name: Uploads
+    settings:
+      path: uploads
+    type: craft\fs\Local
+    url: $UPLOAD_URL
 meta:
   __names__:
     0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
@@ -12,6 +20,7 @@ meta:
     4f3af52d-dc34-45b8-96e8-0355358d1890: About # About
     7c281d84-4d8d-4b2d-8e36-80a99d919e97: Shop # Shop
     9b464eb3-586e-4db0-bf51-3d00017432b0: English # English
+    19dc3b2d-a870-4e81-91ff-ebdc5f452c29: Images # Images
     87a05afd-1262-47cb-acd2-f6aaed1b9640: Websites # Websites
     619a8e46-e785-4b25-90f9-85ba6dcdf9c6: Home # Home
     7521d7d4-bfee-4451-beed-90ad1d724c5b: Work # Work
@@ -20,6 +29,7 @@ meta:
     361382ab-c268-4ec2-a944-660822aea169: Nederlands # Nederlands
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
+    e6be9b55-51b9-40aa-b515-15630879d7c2: 'Hero Image' # Hero Image
     f016f34d-e9d9-41bf-86cf-5fc0c29b036c: 'Algemene gegevens' # Algemene gegevens
     fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7: Telefoonnummer # Telefoonnummer
 plugins:
