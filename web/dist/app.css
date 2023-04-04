@@ -445,11 +445,30 @@ video {
 .relative {
   position: relative;
 }
+.my-\[\.4rem\] {
+  margin-top: .4rem;
+  margin-bottom: .4rem;
+}
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mt-0 {
+  margin-top: 0px;
+}
 .block {
   display: block;
 }
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
+}
+.h-\[2px\] {
+  height: 2px;
+}
+.w-\[25px\] {
+  width: 25px;
 }
 .flex-grow {
   flex-grow: 1;
@@ -463,20 +482,16 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
-.p-20 {
-  padding: 2rem;
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 20 20 / var(--tw-bg-opacity));
+}
+.p-10 {
+  padding: 1rem;
 }
 .py-140 {
   padding-top: 14rem;
   padding-bottom: 14rem;
-}
-.py-40 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-.py-20 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 .py-30 {
   padding-top: 3rem;
@@ -496,24 +511,3 @@ video {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
 }
-
-.hamburger {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.line {
-  width: 25px;
-  height: 2px;
-  background-color: #000;
-  margin: .4rem 0;
-}
-
-.line:first-child {
-  margin-top: 0;
-}
-
-.line:last-child {
-  margin-bottom: 0;
-}
-
