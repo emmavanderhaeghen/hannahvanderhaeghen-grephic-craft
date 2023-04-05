@@ -1,4 +1,4 @@
-dateModified: 1680622458
+dateModified: 1680684251
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -13,35 +13,57 @@ fs:
     url: $UPLOAD_URL
 meta:
   __names__:
+    00c5f631-3ba6-4457-8520-81aaf01dbc68: 'Beschrijving 1' # Beschrijving 1
     0d651d0e-b1d7-45ec-a026-bb77e4ababe3: Navigation # Navigation
     0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
+    1f995a21-6491-4d2d-b126-6b03f6c43a58: 'Filter Groepen' # Filter Groepen
     2a1b88a7-04a1-4876-878f-2253644f6e34: Dummy # Dummy
     2c1c4276-6b14-4857-8873-c475c0a68f0a: 'Pagina''s' # Pagina's
+    2d03ce61-2ba5-467f-ab56-c487d039e6ec: 'Titel 2' # Titel 2
+    02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d: 'Link 1' # Link 1
     3c88515a-8032-4a79-94ce-1a74c8074ddf: 'Toon in navigatie' # Toon in navigatie
     3ebf8831-4a21-48bd-a049-493560af4308: Common # Common
     4f3af52d-dc34-45b8-96e8-0355358d1890: About # About
     4fd1bc8c-b3eb-457e-9696-d2ac0b407f4b: Wishlist # Wishlist
     5f5630f3-da19-4241-a164-79bdca4f52f7: 'LinkedIn link' # LinkedIn link
     7c281d84-4d8d-4b2d-8e36-80a99d919e97: Shop # Shop
+    7e733e55-fb42-404f-89bf-858308150e51: Product(en) # Product(en)
+    8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5: 'Afbeelding 1' # Afbeelding 1
     9b464eb3-586e-4db0-bf51-3d00017432b0: English # English
     9db1f9e4-5692-4c0f-ad4a-c18f1475b2a5: Contact # Contact
     19dc3b2d-a870-4e81-91ff-ebdc5f452c29: Images # Images
+    31bb0e04-2a70-4557-8090-a52c1a2254f2: 'Titel 1' # Titel 1
+    38e6a148-3a70-43f5-8128-54ff53c63eb2: 'Titel 3' # Titel 3
+    47a122e4-5ba5-4021-a156-b23767eb0248: 'Third Party' # Third Party
+    55a3c65b-7ffe-4e16-b5c0-7e67177ffcf0: Links # Links
     56c3e973-0f59-429a-91ed-318814922bbb: FAQ # FAQ
+    76b672a2-e508-4067-b109-46ef42c9fb3f: Accessoires # Accessoires
     87a05afd-1262-47cb-acd2-f6aaed1b9640: Websites # Websites
+    94c51b0c-961c-4fd5-904f-5b7871f98cf7: Text # Text
+    239bf23c-88b2-4832-a53e-a335cfc5d124: 'Elements (entries, categories, products)' # Elements (entries, categories, products)
     619a8e46-e785-4b25-90f9-85ba6dcdf9c6: Home # Home
     0657cf24-ecbd-4107-adb2-3a4f69e4ad8b: Policy # Policy
     958e2e03-63a3-4194-b1cf-ebd5fa9fc895: 'Instagram link' # Instagram link
     7521d7d4-bfee-4451-beed-90ad1d724c5b: Work # Work
+    15471e0e-b73a-4c98-94a3-0bb5185f90f2: Shop # Shop
+    67748b21-4a3e-47c2-83be-b7ecd539d71c: 'Shop Categorie' # Shop Categorie
     072366a1-39d9-4c91-8e57-6eab946ae6fe: Voornaam # Voornaam
     154426f1-715f-4777-9c7f-f599d7641e68: New # New
     361382ab-c268-4ec2-a944-660822aea169: Nederlands # Nederlands
     01680712-796d-48bb-80fc-3e79cb98d2d3: Prints # Prints
+    a3b7618e-f5d1-4b5f-bd32-db20dd35c26b: SEO # SEO
+    a3934515-f94c-4ab0-891d-f8519a8b1561: Assets # Assets
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
     b94dc6c9-aae8-45c7-b754-5f6a3c81039a: 'Facebook link' # Facebook link
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
+    cddc48cb-cf17-49ea-96d9-773668a2239f: 'Beschrijving 2' # Beschrijving 2
+    d1f9737c-c74a-4ffd-8fde-fed08a33c48c: 'Afbeelding 2' # Afbeelding 2
     dbd11bc6-ad86-4953-959b-f3fb418b6153: 'Toon in footer' # Toon in footer
-    e6be9b55-51b9-40aa-b515-15630879d7c2: 'Hero Image' # Hero Image
+    dc074707-454e-4929-98f8-c32bb100b48d: Collaborations # Collaborations
+    e6d64dd2-c9e9-410c-81b6-82ffa3358eeb: 'Link 2' # Link 2
+    eb00a5af-e653-4ed5-92c2-19de0e9e7ff5: Cards # Cards
     f016f34d-e9d9-41bf-86cf-5fc0c29b036c: 'Algemene gegevens' # Algemene gegevens
+    f2fda0de-15eb-4ada-a4c1-c88f8dc38392: 'Afbeelding 3' # Afbeelding 3
     fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7: Telefoonnummer # Telefoonnummer
 plugins:
   blitz:
@@ -125,6 +147,10 @@ plugins:
     enabled: true
     licenseKey: HCD9OPKMESAZGLLF1DWD0943
     schemaVersion: 4.2.3
+  guest-entries:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.1.0
   mix:
     edition: standard
     enabled: true
@@ -133,6 +159,10 @@ plugins:
       assetPath: dist
       publicPath: web
   quick-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  read-only:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -145,10 +175,19 @@ plugins:
     enabled: true
     licenseKey: 7G0IC4AHSWVI4WSDX11PGUSO
     schemaVersion: 3.0.11
+  snaptcha:
+    edition: standard
+    enabled: true
+    licenseKey: Q51UCOX1XSKKXA2GGLDMHDKG
+    schemaVersion: 3.0.6
   sprig:
     edition: standard
     enabled: true
     schemaVersion: 1.0.1
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
   vite:
     edition: standard
     enabled: true
@@ -169,5 +208,5 @@ users:
   allowPublicRegistration: false
   defaultGroup: null
   photoSubpath: null
-  photoVolumeUid: null
+  photoVolumeUid: 19dc3b2d-a870-4e81-91ff-ebdc5f452c29 # Images
   requireEmailVerification: true
