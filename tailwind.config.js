@@ -82,7 +82,7 @@ module.exports = {
         '50': ['3.125rem', { lineHeight: '5rem' }],
       },
       colors: {
-        'white': '#FCFCFC',
+        'white': '#FFF',
         'black': '#1E1E1E',
         'grey': '#EBE9E7',
         'pink': '#FBF6F6',
