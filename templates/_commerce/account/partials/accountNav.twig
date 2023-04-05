@@ -1,39 +1,39 @@
 {% set pages = [] %}
 
 {% if currentUser %}
-  {% set pages = pages|merge([
+{% set pages = pages|merge([
     {
-      title: 'E-mailadres wijzigen'|t,
-      url: url('account/emailadres-wijzigen')
+        title: 'E-mailadres wijzigen'|t,
+        url: url('account/emailadres-wijzigen')
     },
     {
-      title: 'Wachtwoord wijzigen'|t,
-      url: url('account/wachtwoord-wijzigen')
+        title: 'Wachtwoord wijzigen'|t,
+        url: url('account/wachtwoord-wijzigen')
     },
     {
-      title: 'Adresboek'|t,
-      url: url('account/adresboek')
+        title: 'Adresboek'|t,
+        url: url('account/adresboek')
     },
     {
-      title: 'Uitloggen'|t,
-      url: logoutUrl
+        title: 'Uitloggen'|t,
+        url: logoutUrl
     },
-  ]) %}
+]) %}
 {% else %}
-  {% set pages = pages|merge([
+{% set pages = pages|merge([
     {
-      title: 'Inloggen'|t,
-      url: url('account/login')
+        title: 'Inloggen'|t,
+        url: url('account/login')
     },
     {
-      title: 'Registreren'|t,
-      url: url('account/register')
+        title: 'Registreren'|t,
+        url: url('account/register')
     }
-  ]) %}
+]) %}
 {% endif %}
 
 <ul class="w-6/12">
-  {% for item in pages %}
-  <li class="my-2"><a href="{{ item.url }}" class="text-10 {{ item.url == craft.app.request.absoluteUrl ? 'font-medium' }}">{{ item.title }}</a></li>
-  {% endfor %}
+    {% for item in pages %}
+    <li class="my-2"><a href="{{ item.url }}" class="text-10 {{ item.url == craft.app.request.absoluteUrl ? 'font-medium' }}">{{ item.title }}</a></li>
+    {% endfor %}
 </ul>
