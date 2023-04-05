@@ -1,0 +1,31 @@
+{# Layouts and macros #}
+{% extends "_layout/site" %}
+
+{# Set variables #}
+{% if currentUser %}
+    {% redirect '/account' %}
+{% endif %}
+
+{% block content %}
+<section class="bg-pink py-20 lg:py-40 xl:py-70">
+    <div class="container w-10/12 bg-white relative p-40 lg:p-80">
+        <h1 class="text-30 font-serif uppercase mb-20">Register</h1>
+        <div class="flex">
+            {% include '_commerce/account/partials/accountNav' %}
+            <form method="post" accept-charset="UTF-8" class="w-5/10 | js-validate">
+                {{ csrfInput() }}
+                {{ redirectInput('account') }}
+                <input type="hidden" name="action" value="users/login">
+
+                <input type="text" class="border-b border-black py-2 my-20 w-[45%]" id="firstName" name="firstName" placeholder="firstname">
+                <input type="text" class="border-b border-black py-2 my-20 w-[45%]" id="lastName" name="lastName" placeholder="lastname">
+
+                <div class="w-full flex items-start justify-between">
+                    <a href="{{ url('/wachtwoord-vergeten') }}" class="underline">{{ 'Wachtwoord vergeten?'|t }}</a>
+                    <button type="submit" class="button">{{ 'Inloggen'|t }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
