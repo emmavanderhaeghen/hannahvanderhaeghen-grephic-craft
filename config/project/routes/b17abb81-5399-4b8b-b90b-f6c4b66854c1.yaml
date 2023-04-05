@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 3
+template: _commerce/account/register
+uriParts:
+  - account/register
+uriPattern: account/register
