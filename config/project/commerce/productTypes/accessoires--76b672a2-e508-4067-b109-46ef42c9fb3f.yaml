@@ -1,12 +1,12 @@
 descriptionFormat: '{product.title} - {title}'
-handle: prints
+handle: accessoires
 hasDimensions: false
 hasProductTitleField: true
 hasVariantTitleField: false
 hasVariants: true
-name: Prints
+name: Accessoires
 productFieldLayouts:
-  6b4b035f-c275-4c04-8e87-2504c03b2c1a:
+  a61c6870-f516-44f2-bba6-05911b994b87:
     tabs:
       -
         elementCondition: null
@@ -33,7 +33,7 @@ productFieldLayouts:
             tip: null
             title: null
             type: craft\commerce\fieldlayoutelements\ProductTitleField
-            uid: 911ac7f9-861e-449d-8b37-298820a30396
+            uid: de655ae6-487c-4ff7-90f6-594f5a9a3007
             userCondition: null
             warning: null
             width: 100
@@ -44,25 +44,25 @@ productFieldLayouts:
             required: false
             tip: null
             type: craft\commerce\fieldlayoutelements\VariantsField
-            uid: 2a6578d6-f90d-44bf-8194-bcfc578c3764
+            uid: 0fefa22c-485f-4796-88f8-6248c8872169
             userCondition: null
             warning: null
         name: Content
-        uid: 52882e48-291e-42ed-b57c-a6f7120d4bf6
+        uid: f94bb65d-340e-44bb-abbf-0460d9f97e27
         userCondition: null
 productTitleFormat: ''
 siteSettings:
   9b464eb3-586e-4db0-bf51-3d00017432b0: # English
     hasUrls: true
     template: _commerce/shop/product.twig
-    uriFormat: 'prints/{slug}'
+    uriFormat: 'accessoires/{slug}'
   361382ab-c268-4ec2-a944-660822aea169: # Nederlands
     hasUrls: true
     template: _commerce/shop/product.twig
-    uriFormat: 'prints/{slug}'
+    uriFormat: 'accessoires/{slug}'
 skuFormat: ''
 variantFieldLayouts:
-  47fe391e-a6bd-4e2f-bab2-f11e52f0ba65:
+  f1d5d64f-ebe4-404e-8727-a36f2f88f33f:
     tabs:
       -
         elementCondition: null
@@ -89,11 +89,11 @@ variantFieldLayouts:
             tip: null
             title: null
             type: craft\commerce\fieldlayoutelements\VariantTitleField
-            uid: 2663bf17-ee95-4d8e-961b-c031742f7765
+            uid: 650c944e-b704-49a9-88d7-a0c18e150817
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: f70d67c8-c5de-468d-b4b3-c239e5a10391
+        uid: 17468e2f-e32b-45f3-8804-06ea98ea8e58
         userCondition: null
 variantTitleFormat: '{product.title}'

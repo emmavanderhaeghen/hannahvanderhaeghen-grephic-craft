@@ -1,12 +1,12 @@
 descriptionFormat: '{product.title} - {title}'
-handle: prints
-hasDimensions: false
+handle: cards
+hasDimensions: true
 hasProductTitleField: true
 hasVariantTitleField: false
 hasVariants: true
-name: Prints
+name: Cards
 productFieldLayouts:
-  6b4b035f-c275-4c04-8e87-2504c03b2c1a:
+  055e50ca-8054-4f49-9ece-fdf0d0641ef8:
     tabs:
       -
         elementCondition: null
@@ -33,7 +33,7 @@ productFieldLayouts:
             tip: null
             title: null
             type: craft\commerce\fieldlayoutelements\ProductTitleField
-            uid: 911ac7f9-861e-449d-8b37-298820a30396
+            uid: bde5c3d8-f28c-4838-805d-3b430864c857
             userCondition: null
             warning: null
             width: 100
@@ -44,25 +44,25 @@ productFieldLayouts:
             required: false
             tip: null
             type: craft\commerce\fieldlayoutelements\VariantsField
-            uid: 2a6578d6-f90d-44bf-8194-bcfc578c3764
+            uid: 8b15bf57-b097-444d-98a4-c396703bf92a
             userCondition: null
             warning: null
         name: Content
-        uid: 52882e48-291e-42ed-b57c-a6f7120d4bf6
+        uid: bde9f038-5093-4e0d-8cbf-b82ee6549b46
         userCondition: null
 productTitleFormat: ''
 siteSettings:
   9b464eb3-586e-4db0-bf51-3d00017432b0: # English
     hasUrls: true
     template: _commerce/shop/product.twig
-    uriFormat: 'prints/{slug}'
+    uriFormat: 'cards/{slug}'
   361382ab-c268-4ec2-a944-660822aea169: # Nederlands
     hasUrls: true
     template: _commerce/shop/product.twig
-    uriFormat: 'prints/{slug}'
+    uriFormat: 'cards/{slug}'
 skuFormat: ''
 variantFieldLayouts:
-  47fe391e-a6bd-4e2f-bab2-f11e52f0ba65:
+  a3799906-6650-438e-8232-6fbd646e0018:
     tabs:
       -
         elementCondition: null
@@ -89,11 +89,11 @@ variantFieldLayouts:
             tip: null
             title: null
             type: craft\commerce\fieldlayoutelements\VariantTitleField
-            uid: 2663bf17-ee95-4d8e-961b-c031742f7765
+            uid: 384968f5-85a6-488b-b890-3082b16393f0
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: f70d67c8-c5de-468d-b4b3-c239e5a10391
+        uid: 85f5a4ad-2577-4ccb-883a-9d0c9430b434
         userCondition: null
 variantTitleFormat: '{product.title}'
