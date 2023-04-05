@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 7
+template: _commerce/account/changePassword
+uriParts:
+  - account/wachtwoord-wijzigen
+uriPattern: account/wachtwoord-wijzigen
