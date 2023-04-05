@@ -30,6 +30,78 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            heading: Intro
+            type: craft\fieldlayoutelements\Heading
+            uid: 537cc337-9c35-42e6-a4e4-843811f8cb15
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b9a5d68f-191e-4614-a919-1bc00f772ed4
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aa46f8a1-9431-4288-b77c-add9768df6b4
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d # Link 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b254c30f-ab34-49b3-8dc1-64ea940bcdf6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'About the artist'
+            type: craft\fieldlayoutelements\Heading
+            uid: aac7ffe0-b3b5-4dc0-bd20-94227e394dec
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: d1f9737c-c74a-4ffd-8fde-fed08a33c48c # Afbeelding 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 01d11a1a-0b90-4dd8-ab1e-6fa220df2552
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: cddc48cb-cf17-49ea-96d9-773668a2239f # Beschrijving 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a43268a6-6395-44dd-b777-0b72a689f360
+            userCondition: null
+            warning: null
+            width: 50
         name: Content
         uid: 60677aed-7d79-4d52-ae45-b2b7e22d5f6d
         userCondition: null

@@ -1,5 +1,5 @@
 fieldLayouts:
-  7cb8d7d6-8619-421b-83ea-2e1937b60db6:
+  2ef3a8b0-35ad-4693-97e0-1eddef760b66:
     tabs:
       -
         elementCondition: null
@@ -26,60 +26,66 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 8e15f44a-4850-47dd-841c-abb12d15c1c3
+            uid: e42ff672-c235-4bf1-b105-4033769f1adb
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
+            fieldUid: 072366a1-39d9-4c91-8e57-6eab946ae6fe # Voornaam
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 75024e1d-a96c-40b7-96cc-5dc0b91e2c92
+            uid: ba161eae-eba3-4298-9222-34bcdba4ae1c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c785f0e6-e64a-4275-979b-4b8f8b74ca7a # Achternaam
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 32d8c9b8-f4c9-4d3a-8246-a1de26792c2e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f24636c-4f10-4522-894b-45739e075b70 # Email adres
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e37856f0-f483-4e5a-8249-03ed1cb511cc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7 # Telefoonnummer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6f0c6a64-6f90-4060-a4f1-53fde75f12a9
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: a9a6c680-3445-4140-9d53-d27a81b2f7cb
+        uid: de221c2a-170f-4e3c-a6de-e3bd484087f0
         userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            elementCondition: null
-            fieldUid: 3c88515a-8032-4a79-94ce-1a74c8074ddf # Toon in navigatie
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f5fe9886-62c4-47ab-beb3-a79a69b10255
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: dbd11bc6-ad86-4953-959b-f3fb418b6153 # Toon in footer
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d3964d05-da5b-4091-99bc-465e327c902a
-            userCondition: null
-            warning: null
-            width: 100
-        name: Navigatie
-        uid: 2bd6669e-8b69-4b33-9d95-3983e4cec5de
-        userCondition: null
-handle: work
+handle: contactMessage
 hasTitleField: true
-name: Work
-section: 2c1c4276-6b14-4857-8873-c475c0a68f0a # Pagina's
-sortOrder: 3
+name: Contactbericht
+section: 7bfd2eb5-6578-4433-9c41-d19176243b02 # Contact berichten
+sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
