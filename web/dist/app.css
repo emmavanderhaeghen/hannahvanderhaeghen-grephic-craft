@@ -463,11 +463,11 @@ video {
 .-top-25 {
   top: -2.5rem;
 }
-.bottom-100 {
-  bottom: 10rem;
-}
 .bottom-15 {
   bottom: 1.5rem;
+}
+.bottom-200 {
+  bottom: 20rem;
 }
 .left-0 {
   left: 0px;
@@ -478,8 +478,11 @@ video {
 .top-0 {
   top: 0px;
 }
-.bottom-200 {
-  bottom: 20rem;
+.right-0 {
+  right: 0px;
+}
+.-left-60 {
+  left: -6rem;
 }
 .z-10 {
   z-index: 10;
@@ -506,11 +509,18 @@ video {
   margin-top: 8rem;
   margin-bottom: 8rem;
 }
+.my-100 {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
 .mb-200 {
   margin-bottom: 20rem;
 }
 .mb-40 {
   margin-bottom: 4rem;
+}
+.mb-50 {
+  margin-bottom: 5rem;
 }
 .mb-\[\.4rem\] {
   margin-bottom: .4rem;
@@ -533,8 +543,8 @@ video {
 .mt-\[\.4rem\] {
   margin-top: .4rem;
 }
-.mb-50 {
-  margin-bottom: 5rem;
+.mb-100 {
+  margin-bottom: 10rem;
 }
 .block {
   display: block;
@@ -564,11 +574,11 @@ video {
 .w-3\/12 {
   width: 25%;
 }
-.w-300 {
-  width: 30rem;
-}
 .w-4\/12 {
   width: 33.333333%;
+}
+.w-400 {
+  width: 40rem;
 }
 .w-5\/12 {
   width: 41.666667%;
@@ -588,11 +598,18 @@ video {
 .w-screen {
   width: 100vw;
 }
-.w-400 {
-  width: 40rem;
+.w-max {
+  width: -moz-max-content;
+  width: max-content;
 }
-.w-500 {
-  width: 50rem;
+.w-3\/4 {
+  width: 75%;
+}
+.w-200 {
+  width: 20rem;
+}
+.w-8\/12 {
+  width: 66.666667%;
 }
 .flex-grow {
   flex-grow: 1;
@@ -621,15 +638,25 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
+.rounded-full {
+  border-radius: 9999px;
+}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 30 / var(--tw-bg-opacity));
+}
+.bg-pink {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 246 246 / var(--tw-bg-opacity));
 }
 .p-1 {
   padding: 0.1rem;
 }
 .p-5 {
   padding: 0.5rem;
+}
+.p-40 {
+  padding: 4rem;
 }
 .px-20 {
   padding-left: 2rem;
@@ -662,6 +689,14 @@ video {
 .py-5 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.py-4 {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 .pt-40 {
   padding-top: 4rem;
@@ -701,6 +736,9 @@ video {
 }
 .font-medium {
   font-weight: 500;
+}
+.font-bold {
+  font-weight: 700;
 }
 .uppercase {
   text-transform: uppercase;
