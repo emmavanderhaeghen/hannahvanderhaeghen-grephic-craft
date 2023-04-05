@@ -1,15 +1,16 @@
 {# Layouts and macros #}
 {% extends "_layout/site" %}
 
+{% set categoryItems = craft.entries().section('pages').level(2) %}
+
 {% block content %}
     <section class="container">
         <article class="flex mt-50 mb-50">
             <div class="w-3/12">
                 <ul class="fixed bottom-200">
-                    <li class="py-15 font-medium">Fashion</li>
-                    <li class="py-15">Portraits</li>
-                    <li class="py-15">Personal Projects</li>
-                    <li class="py-15">Experimental</li>
+                {% for item in categoryItems %}
+                    <li class="py-15 hover:font-medium"><a href="{{item.url}}">{{item.title}}</a></li>
+                {% endfor %}
                 </ul>            
             </div>
             <div class="w-9/12 mx-auto text-9">
