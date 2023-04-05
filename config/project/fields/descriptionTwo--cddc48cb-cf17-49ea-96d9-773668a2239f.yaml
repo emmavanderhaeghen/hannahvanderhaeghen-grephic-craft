@@ -1,0 +1,19 @@
+columnSuffix: muvsthlj
+contentColumnType: text
+fieldGroup: 94c51b0c-961c-4fd5-904f-5b7871f98cf7 # Text
+handle: descriptionTwo
+instructions: null
+name: 'Beschrijving 2'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\PlainText

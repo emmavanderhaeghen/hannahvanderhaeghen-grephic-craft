@@ -1,9 +1,9 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: 3ebf8831-4a21-48bd-a049-493560af4308 # Common
-handle: heroImage
+fieldGroup: a3934515-f94c-4ab0-891d-f8519a8b1561 # Assets
+handle: imageOne
 instructions: null
-name: 'Hero Image'
+name: 'Afbeelding 1'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -16,7 +16,7 @@ settings:
   defaultUploadLocationSubpath: null
   localizeRelations: false
   maintainHierarchy: false
-  maxRelations: 1
+  maxRelations: null
   minRelations: null
   previewMode: full
   restrictFiles: true

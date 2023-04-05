@@ -1,0 +1,23 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 239bf23c-88b2-4832-a53e-a335cfc5d124 # Elements (entries, categories, products)
+handle: shopCategory
+instructions: null
+name: 'Shop Categorie'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: 1
+  localizeRelations: false
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: false
+  source: 'group:15471e0e-b73a-4c98-94a3-0bb5185f90f2' # Shop
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

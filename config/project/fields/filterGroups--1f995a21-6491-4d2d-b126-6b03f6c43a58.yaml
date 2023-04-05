@@ -1,0 +1,14 @@
+columnSuffix: fndyaqkt
+contentColumnType: string
+fieldGroup: 47a122e4-5ba5-4021-a156-b23767eb0248 # Third Party
+handle: filterGroups
+instructions: null
+name: 'Filter Groepen'
+searchable: false
+settings:
+  adminEdits: false
+  hidden: false
+  visibleToAdmins: false
+translationKeyFormat: null
+translationMethod: none
+type: codewithkyle\readonly\fields\ReadOnlyField
