@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 5
+template: _commerce/account/adresses/edit
+uriParts:
+  - account/adresboek/edit
+uriPattern: account/adresboek/edit
