@@ -7,30 +7,36 @@
     </div>
 
     <section class="container">
-        <article class="flex mt-100 mb-200">
-            <h2 class="w-5/12 text-50 font-serif uppercase">Capture <br> the essence <br> of <span class="italic">life</span></h2>
-            <div class="w-7/12">
+        <article class="flex mb-100 items-center">
+            <h2 class="w-5/12 text-50 font-serif uppercase">{{entry.titleOne|nl2br}}</h2>
+            <div class="w-7/12 flex">
+                <div class="w-400">
+                    <img src="../assets/www/images/Mockup-3.jpg" alt="Mockup-1">
+                </div>
+                <div class="w-400">
+                    <img class="w-400" src="../assets/www/images/Mockup-2.jpg" alt="Mockup-2">
+                </div>
             </div>
         </article>
 
-        <article class="flex mt-100 mb-200">
+        <article class="flex mt-100 mb-200 items-center">
             <div class="w-6/12">
-                <img src="../assets/www/images/work.jpg" alt="hero">
+                <img class="relative -left-60" src="../assets/www/images/work.jpg" alt="hero">
             </div>
             <div class="w-4/12 mx-auto">
-                <h2 class="text-50 font-serif uppercase">Discover beauty</h2>
-                <p class="py-20">Step into the world of creative expression and explore the stunning photography portfolio of Hannah Van der Haeghen. From fashion editorials to captivating fine art images, her work resemblances the beauty and essence of both worlds.</p>
-                <button class="bg-black text-white py-10 px-20">work</button>
+                <h2 class="text-50 font-serif uppercase">{{entry.titleTwo|nl2br}}</h2>
+                <p class="w-3/4 py-20">{{entry.descriptionOne}}</p>
+                {{ include ("_layout/partials/button", {button: entry.linkOne}) }}
             </div>
         </article>
 
-        <article class="flex">
+        <article class="flex items-center">
             <div class="w-4/12 mx-auto">
-                <h2 class="text-50 font-serif uppercase">Meet the Artist</h2>
-                <p class="py-20">Get to know the mastermind behind the lens and discover the inspiration behind her stunning work. Learn more about her journey, creative process, and vision for the future.</p>
-                <button class="bg-black text-white py-10 px-20">about</button>
+                <h2 class="text-50 font-serif uppercase">{{entry.titleThree|nl2br}}</h2>
+                <p class="w-3/4 py-20">{{entry.descriptionTwo|nl2br}}</p>
+                {{ include ("_layout/partials/button", {button: entry.linkTwo}) }}
             </div>
-            <div class="w-6/12">
+            <div class="w-5/12 mx-auto">
                 <img src="../assets/www/images/about.jpg" alt="hero">
             </div>
         </article>
