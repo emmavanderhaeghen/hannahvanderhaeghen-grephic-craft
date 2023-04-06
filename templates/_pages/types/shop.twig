@@ -2,9 +2,18 @@
 {% extends "_layout/site" %}
 
 {% set products = craft.products().limit(32) %}
+{% set categories = craft.categories.group('shop') %}
 
 {% block content %}
     <section class="container">
+        {% if categories|length %}
+        <ul  class="">
+            {% for category in categories %}
+            <li class="py-10 hover:font-medium"><a href="{{ category.url }}">{{ category.title }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}     
+
         <ul class="flex flex-wrap items-center mt-20 mb-200">
             {% if products|length == 0 %}
                 <h2 class="uppercase font-sans-wide text-h3 mx-auto">{{ 'Kom terug als we meer hebben...'|t }}</h2>

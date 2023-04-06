@@ -1,29 +1,31 @@
 {# Layouts and macros #}
 {% extends "_layout/site" %}
 
-{% set categoryItems = craft.entries().section('pages').level(2) %}
+{% set categories = craft.categories.group('galleryFilters') %}
 
 {% block content %}
     <section class="container">
         <article class="flex mt-50 mb-50">
             <div class="w-3/12">
-                <ul class="fixed bottom-200">
-                {% for item in categoryItems %}
-                    <li class="py-15 hover:font-medium"><a href="{{item.url}}">{{item.title}}</a></li>
-                {% endfor %}
-                </ul>            
+                {% if categories|length %}
+                <ul  class="fixed left-100 bottom-100">
+                    {% for category in categories %}
+                    <li class="py-15 hover:font-medium"><a href="{{ category.url }}">{{ category.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}       
             </div>
             <div class="w-9/12 mx-auto text-9">
                 <div class="relative mb-40 -right-140">
                     <img src="../assets/www/images/Fashion-1.jpg" alt="fashion">
                 </div>
-                <div class="relative my-40 w-400">
+                <div class="relative my-100 w-400">
                     <img src="../assets/www/images/Fashion-2.jpg" alt="fashion">
                 </div>
-                <div class="relative my-40 -right-80">
+                <div class="relative my-100 -right-80">
                     <img src="../assets/www/images/Fashion-3.jpg" alt="fashion">
                 </div>
-                <div class="relative my-40 w-400">
+                <div class="relative my-100 w-400">
                     <img src="../assets/www/images/Fashion-4.jpg" alt="fashion">
                 </div>
             </div>
