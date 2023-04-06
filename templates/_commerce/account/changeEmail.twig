@@ -2,7 +2,7 @@
 {% extends "_layout/site" %}
 
 {# Set variables #}
-{% if currentUser %}
+{% if not currentUser %}
     {% redirect '/account/login' %}
 {% endif %}
 
