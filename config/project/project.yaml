@@ -1,4 +1,4 @@
-dateModified: 1680785986
+dateModified: 1680796164
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -45,6 +45,7 @@ meta:
     94c51b0c-961c-4fd5-904f-5b7871f98cf7: Text # Text
     239bf23c-88b2-4832-a53e-a335cfc5d124: 'Elements (entries, categories, products)' # Elements (entries, categories, products)
     619a8e46-e785-4b25-90f9-85ba6dcdf9c6: Home # Home
+    643cb138-4a82-4f14-a789-948b643043bc: 'Gallery filters' # Gallery filters
     0657cf24-ecbd-4107-adb2-3a4f69e4ad8b: Policy # Policy
     958e2e03-63a3-4194-b1cf-ebd5fa9fc895: 'Instagram link' # Instagram link
     7521d7d4-bfee-4451-beed-90ad1d724c5b: Work # Work
