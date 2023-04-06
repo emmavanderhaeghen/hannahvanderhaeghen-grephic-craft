@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 9
+template: _commerce/account/forgotPassword
+uriParts:
+  - account/wachtwoord-vergeten
+uriPattern: account/wachtwoord-vergeten

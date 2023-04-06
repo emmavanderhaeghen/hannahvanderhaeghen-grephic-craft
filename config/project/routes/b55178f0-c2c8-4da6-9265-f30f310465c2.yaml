@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 12
+template: _commerce/checkout/personalInfo
+uriParts:
+  - afrekenen/persoonlijke-gegevens
+uriPattern: afrekenen/persoonlijke-gegevens

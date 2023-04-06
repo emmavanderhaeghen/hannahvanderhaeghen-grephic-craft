@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 10
+template: _commerce/cart
+uriParts:
+  - winkelmandje
+uriPattern: winkelmandje

@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 13
+template: _commerce/checkout/order
+uriParts:
+  - afrekenen/bestelling
+uriPattern: afrekenen/bestelling

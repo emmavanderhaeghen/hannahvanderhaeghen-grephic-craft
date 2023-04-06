@@ -1,5 +1,5 @@
 siteUid: null
-sortOrder: 7
+sortOrder: 8
 template: _commerce/account/changePassword
 uriParts:
   - account/wachtwoord-wijzigen

@@ -682,12 +682,6 @@ video {
 .p-5 {
   padding: 0.5rem;
 }
-.p-0 {
-  padding: 0px;
-}
-.p-20 {
-  padding: 2rem;
-}
 .px-20 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -761,9 +755,6 @@ video {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-.font-bold {
-  font-weight: 700;
-}
 .font-light {
   font-weight: 300;
 }
@@ -807,9 +798,6 @@ video {
   }
   .lg\:p-80 {
     padding: 8rem;
-  }
-  .lg\:p-40 {
-    padding: 4rem;
   }
   .lg\:py-40 {
     padding-top: 4rem;

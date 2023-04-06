@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 7
+template: _commerce/account/deleteAccount
+uriParts:
+  - account/account-verwijderen
+uriPattern: account/account-verwijderen
