@@ -3,7 +3,9 @@
 
 {% block content %}
     <div class="relative -top-110 left-0 h-fit">
-        <img src="../assets/www/images/hero.jpg" alt="hero">
+    {% for image in entry.imageOne %}
+        <img src="{{image.url()}}" alt="hero">
+    {% endfor %}
     </div>
 
     <section class="container">
@@ -19,9 +21,11 @@
             </div>
         </article>
 
-        <article class="flex mt-100 mb-200 items-center">
+        <article class="flex mt-100 my-200 items-center">
             <div class="w-6/12">
-                <img class="relative -left-60" src="../assets/www/images/work.jpg" alt="hero">
+                {% for image in entry.imageTwo %}
+                    <img src="{{image.url()}}" alt="hero">
+                {% endfor %}
             </div>
             <div class="w-4/12 mx-auto">
                 <h2 class="text-50 font-serif uppercase">{{entry.titleTwo|nl2br}}</h2>
@@ -30,14 +34,16 @@
             </div>
         </article>
 
-        <article class="flex items-center">
+        <article class="flex items-center mb-200">
             <div class="w-4/12 mx-auto">
                 <h2 class="text-50 font-serif uppercase">{{entry.titleThree|nl2br}}</h2>
                 <p class="w-3/4 py-20 text-9">{{entry.descriptionTwo|nl2br}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkTwo}) }}
             </div>
             <div class="w-5/12 mx-auto">
-                <img src="../assets/www/images/about.jpg" alt="hero">
+                {% for image in entry.imageThree %}
+                    <img src="{{image.url()}}" alt="hero">
+                {% endfor %}            
             </div>
         </article>
     </section>
