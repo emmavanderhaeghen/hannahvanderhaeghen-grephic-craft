@@ -74,18 +74,6 @@ fieldLayouts:
             userCondition: null
           -
             elementCondition: null
-            fieldUid: d1f9737c-c74a-4ffd-8fde-fed08a33c48c # Afbeelding 2
-            instructions: null
-            label: Afbeelding
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: db433cc0-d285-48dd-85f0-97cdf5976c6f
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: 2d03ce61-2ba5-467f-ab56-c487d039e6ec # Titel 2
             instructions: null
             label: Titel
@@ -98,6 +86,18 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: d1f9737c-c74a-4ffd-8fde-fed08a33c48c # Afbeelding 2
+            instructions: null
+            label: Afbeelding
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: db433cc0-d285-48dd-85f0-97cdf5976c6f
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
             fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
             instructions: null
             label: Beschrijving
@@ -107,7 +107,7 @@ fieldLayouts:
             uid: cb532826-2f21-4c1d-ad38-4b9a0adcc86b
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: 02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d # Link 1
@@ -128,18 +128,6 @@ fieldLayouts:
             userCondition: null
           -
             elementCondition: null
-            fieldUid: f2fda0de-15eb-4ada-a4c1-c88f8dc38392 # Afbeelding 3
-            instructions: null
-            label: Afbeelding
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: abc720d1-bd5e-4b81-93cf-cf65e361d597
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: 38e6a148-3a70-43f5-8128-54ff53c63eb2 # Titel 3
             instructions: null
             label: Titel
@@ -152,6 +140,18 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: f2fda0de-15eb-4ada-a4c1-c88f8dc38392 # Afbeelding 3
+            instructions: null
+            label: Afbeelding
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: abc720d1-bd5e-4b81-93cf-cf65e361d597
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
             fieldUid: cddc48cb-cf17-49ea-96d9-773668a2239f # Beschrijving 2
             instructions: null
             label: Beschrijving
@@ -161,7 +161,7 @@ fieldLayouts:
             uid: 236791d9-3105-4d5e-bcfa-8a59879ce7ec
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: e6d64dd2-c9e9-410c-81b6-82ffa3358eeb # Link 2
