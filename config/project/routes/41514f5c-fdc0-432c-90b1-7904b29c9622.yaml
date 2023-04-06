@@ -2,5 +2,5 @@ siteUid: null
 sortOrder: 11
 template: _commerce/checkout
 uriParts:
-  - afrekenen
-uriPattern: afrekenen
+  - checkout
+uriPattern: checkout
