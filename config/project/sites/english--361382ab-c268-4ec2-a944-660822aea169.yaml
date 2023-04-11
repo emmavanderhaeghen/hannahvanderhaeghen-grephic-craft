@@ -1,9 +1,9 @@
 baseUrl: $PRIMARY_SITE_URL
 enabled: true
-handle: dutch
+handle: english
 hasUrls: true
-language: nl
-name: Nederlands
+language: en
+name: English
 primary: true
 siteGroup: 87a05afd-1262-47cb-acd2-f6aaed1b9640 # Websites
 sortOrder: 1
