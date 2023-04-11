@@ -1,5 +1,5 @@
 fieldLayouts:
-  306dbed5-0638-42cd-8b74-55f2c25395af:
+  e31ec490-7d85-48eb-8035-26052baac2c6:
     tabs:
       -
         elementCondition: null
@@ -26,66 +26,48 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: f180cf5b-9061-49c7-84ab-8ac220b729d1
+            uid: c88c8b81-079d-44d1-9d93-50389018e48a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9757016b-74fa-4bc1-a608-750c73587d3e
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 033c064c-dc40-4bd2-9ed0-dfdab37366dd
+        uid: 899c793d-0ff3-4611-8076-a9ae2dacf8c5
         userCondition: null
       -
         elementCondition: null
         elements:
           -
             elementCondition: null
-            fieldUid: ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd # Filter: shop
+            fieldUid: c871bcad-3990-4bf3-954f-b29d2e335773 # Filter: gallery
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 97360c69-9ce4-46b2-b356-433e80f6cbc3
+            uid: 0a7a9da9-8acd-4f10-9189-3b64c2e34f01
             userCondition: null
             warning: null
             width: 100
         name: Filters
-        uid: 8a7186d4-5181-43fd-9db8-14c1183217ca
+        uid: bc26c552-6423-45b4-b9ca-fd4cd71703fe
         userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            elementCondition: null
-            fieldUid: 3c88515a-8032-4a79-94ce-1a74c8074ddf # Toon in navigatie
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b85b19f1-eaa4-44ff-b299-4776b80ed451
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: dbd11bc6-ad86-4953-959b-f3fb418b6153 # Toon in footer
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: dcb41e5d-09e8-4a60-a18d-ec294760ea68
-            userCondition: null
-            warning: null
-            width: 100
-        name: Navigatie
-        uid: 4726764e-ac14-4c53-aba1-7324a556fd75
-        userCondition: null
-handle: shop
+handle: detail
 hasTitleField: true
-name: Shop
-section: 2c1c4276-6b14-4857-8873-c475c0a68f0a # Pagina's
-sortOrder: 4
+name: Detail
+section: 5e45130b-d008-42a5-9107-35670a0d35c3 # Gallery pagina's
+sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

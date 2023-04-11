@@ -50,13 +50,31 @@ productFieldLayouts:
         name: Content
         uid: bde9f038-5093-4e0d-8cbf-b82ee6549b46
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd # Filter: shop
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0bfd2876-6d8d-4015-920a-9f0cc7a4a311
+            userCondition: null
+            warning: null
+            width: 100
+        name: Filters
+        uid: 6a532970-a24f-440d-a191-cf3348d0e2b4
+        userCondition: null
 productTitleFormat: ''
 siteSettings:
-  9b464eb3-586e-4db0-bf51-3d00017432b0: # English
+  9b464eb3-586e-4db0-bf51-3d00017432b0: # Nederlands
     hasUrls: true
     template: _commerce/shop/product.twig
     uriFormat: 'cards/{slug}'
-  361382ab-c268-4ec2-a944-660822aea169: # Nederlands
+  361382ab-c268-4ec2-a944-660822aea169: # English
     hasUrls: true
     template: _commerce/shop/product.twig
     uriFormat: 'cards/{slug}'

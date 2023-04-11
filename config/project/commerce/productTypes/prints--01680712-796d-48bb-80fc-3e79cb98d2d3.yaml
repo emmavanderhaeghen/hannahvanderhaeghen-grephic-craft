@@ -69,6 +69,24 @@ productFieldLayouts:
         elements:
           -
             elementCondition: null
+            fieldUid: ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd # Filter: shop
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 298d5cb6-a4fc-4be8-9360-31087c0bbe73
+            userCondition: null
+            warning: null
+            width: 100
+        name: Filters
+        uid: 63a283f0-7e73-4c71-8e19-a434b8d9b58b
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
             instructions: null
             label: null
             required: false
@@ -82,11 +100,11 @@ productFieldLayouts:
         userCondition: null
 productTitleFormat: ''
 siteSettings:
-  9b464eb3-586e-4db0-bf51-3d00017432b0: # English
+  9b464eb3-586e-4db0-bf51-3d00017432b0: # Nederlands
     hasUrls: true
     template: _commerce/shop/product.twig
     uriFormat: 'prints/{slug}'
-  361382ab-c268-4ec2-a944-660822aea169: # Nederlands
+  361382ab-c268-4ec2-a944-660822aea169: # English
     hasUrls: true
     template: _commerce/shop/product.twig
     uriFormat: 'prints/{slug}'
