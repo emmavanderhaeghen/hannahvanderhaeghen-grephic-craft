@@ -1,4 +1,4 @@
-dateModified: 1680796164
+dateModified: 1681203437
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -15,6 +15,7 @@ meta:
   __names__:
     00c5f631-3ba6-4457-8520-81aaf01dbc68: 'Beschrijving 1' # Beschrijving 1
     0d651d0e-b1d7-45ec-a026-bb77e4ababe3: Navigation # Navigation
+    0d682bd0-f685-492b-864b-4ce7497f65fb: Detail # Detail
     0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
     1f995a21-6491-4d2d-b126-6b03f6c43a58: 'Filter Groepen' # Filter Groepen
     2a1b88a7-04a1-4876-878f-2253644f6e34: Dummy # Dummy
@@ -25,13 +26,15 @@ meta:
     3ebf8831-4a21-48bd-a049-493560af4308: Common # Common
     4f3af52d-dc34-45b8-96e8-0355358d1890: About # About
     4fd1bc8c-b3eb-457e-9696-d2ac0b407f4b: Wishlist # Wishlist
+    5abaf161-4cf4-4485-8e4a-2e257439dda4: Filters # Filters
+    5e45130b-d008-42a5-9107-35670a0d35c3: 'Gallery pagina''s' # Gallery pagina's
     5f5630f3-da19-4241-a164-79bdca4f52f7: 'LinkedIn link' # LinkedIn link
     7bfd2eb5-6578-4433-9c41-d19176243b02: 'Contact berichten' # Contact berichten
     7c281d84-4d8d-4b2d-8e36-80a99d919e97: Shop # Shop
     7e733e55-fb42-404f-89bf-858308150e51: Product(en) # Product(en)
     8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5: 'Afbeelding 1' # Afbeelding 1
     9a34009d-98d3-4ae0-8dad-b1e0191796ba: Contactbericht # Contactbericht
-    9b464eb3-586e-4db0-bf51-3d00017432b0: English # English
+    9b464eb3-586e-4db0-bf51-3d00017432b0: Nederlands # Nederlands
     9db1f9e4-5692-4c0f-ad4a-c18f1475b2a5: Contact # Contact
     19dc3b2d-a870-4e81-91ff-ebdc5f452c29: Images # Images
     31bb0e04-2a70-4557-8090-a52c1a2254f2: 'Titel 1' # Titel 1
@@ -53,18 +56,21 @@ meta:
     67748b21-4a3e-47c2-83be-b7ecd539d71c: 'Shop Categorie' # Shop Categorie
     072366a1-39d9-4c91-8e57-6eab946ae6fe: Voornaam # Voornaam
     154426f1-715f-4777-9c7f-f599d7641e68: New # New
-    361382ab-c268-4ec2-a944-660822aea169: Nederlands # Nederlands
+    361382ab-c268-4ec2-a944-660822aea169: English # English
     01680712-796d-48bb-80fc-3e79cb98d2d3: Prints # Prints
     a3b7618e-f5d1-4b5f-bd32-db20dd35c26b: SEO # SEO
     a3934515-f94c-4ab0-891d-f8519a8b1561: Assets # Assets
+    ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd: 'Filter: shop' # Filter: shop
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
     b94dc6c9-aae8-45c7-b754-5f6a3c81039a: 'Facebook link' # Facebook link
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
+    c871bcad-3990-4bf3-954f-b29d2e335773: 'Filter: gallery' # Filter: gallery
     cddc48cb-cf17-49ea-96d9-773668a2239f: 'Beschrijving 2' # Beschrijving 2
     d1f9737c-c74a-4ffd-8fde-fed08a33c48c: 'Afbeelding 2' # Afbeelding 2
     dbd11bc6-ad86-4953-959b-f3fb418b6153: 'Toon in footer' # Toon in footer
     dc074707-454e-4929-98f8-c32bb100b48d: Collaborations # Collaborations
     e6d64dd2-c9e9-410c-81b6-82ffa3358eeb: 'Link 2' # Link 2
+    e68f4e12-33a8-4163-adbb-26bfa484de3a: Redactor # Redactor
     eb00a5af-e653-4ed5-92c2-19de0e9e7ff5: Cards # Cards
     f016f34d-e9d9-41bf-86cf-5fc0c29b036c: 'Algemene gegevens' # Algemene gegevens
     f2fda0de-15eb-4ada-a4c1-c88f8dc38392: 'Afbeelding 3' # Afbeelding 3
