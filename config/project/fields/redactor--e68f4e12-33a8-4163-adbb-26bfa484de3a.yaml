@@ -1,0 +1,27 @@
+columnSuffix: ihgkusbz
+contentColumnType: text
+fieldGroup: 94c51b0c-961c-4fd5-904f-5b7871f98cf7 # Text
+handle: redactor
+instructions: null
+name: Redactor
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: '*'
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: null
+  purifyHtml: true
+  redactorConfig: null
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showHtmlButtonForNonAdmins: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: language
+type: craft\redactor\Field
