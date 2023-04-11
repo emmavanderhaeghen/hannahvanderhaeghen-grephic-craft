@@ -1,0 +1,19 @@
+{% extends "_layout/site" %}
+
+{% block content %}
+    <section class="container">
+        <button onclick="window.history.go(-1);" class="text-gray-300">Go back</button>
+        <article class="flex mt-50 mb-50">
+            <div class="w-3/12">
+                <h1>{{entry.title}}</h1>
+            </div>
+            <div class="w-9/12 mx-auto text-9">
+                <div class="relative mb-40 -right-140">
+                {% for image in entry.imageOne %}
+                    <img src="{{image.url()}}" alt="hero">
+                {% endfor %}                
+                </div>
+            </div>
+        </article>
+    </section>
+{% endblock %}
