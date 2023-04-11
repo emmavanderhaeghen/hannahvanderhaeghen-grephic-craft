@@ -1,7 +1,7 @@
-{# Layouts and macros #}
 {% extends "_layout/site" %}
 
 {% set categories = craft.categories.group('galleryFilters') %}
+{% set galleryPages = craft.entries.section('galleryPages') %}
 
 {% block content %}
     <section class="container">
@@ -17,16 +17,14 @@
             </div>
             <div class="w-9/12 mx-auto text-9">
                 <div class="relative mb-40 -right-140">
-                    <img src="../assets/www/images/Fashion-1.jpg" alt="fashion">
-                </div>
-                <div class="relative my-100 w-400">
-                    <img src="../assets/www/images/Fashion-2.jpg" alt="fashion">
-                </div>
-                <div class="relative my-100 -right-80">
-                    <img src="../assets/www/images/Fashion-3.jpg" alt="fashion">
-                </div>
-                <div class="relative my-100 w-400">
-                    <img src="../assets/www/images/Fashion-4.jpg" alt="fashion">
+                    {% for galleryPage in galleryPages %}
+                        <a href="{{ galleryPage.url }}">
+                        {% for image in galleryPage.imageOne %}
+                            <img src="{{image.url()}}" alt="hero">
+                        {% endfor %}                          
+                        {{ galleryPage.title }}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </article>
