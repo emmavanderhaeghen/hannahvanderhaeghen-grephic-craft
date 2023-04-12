@@ -26,17 +26,24 @@
             </div>
 
             {# right column #}
-            <div class="lg:w-1/3 mb-60 lg:mb-0">
-                <h1 class="">{{ product.title }}</h1>
+            <div class="lg:w-1/3 my-80 lg:mb-0">
+                <h1 class="text-20 font-sans uppercase">{{ product.title }}</h1>
 
                 {# price #}
-                {% include "_commerce/shop/partials/price" %}
+                <div class="mt-15">
+                    {% include "_commerce/shop/partials/price" %}
+                </div>
 
                 {% if product.descriptionOne %}
                     <div class="mt-30">
-                        <p>{{ product.descriptionOne|nl2br }}</p>
+                        <p class="text-9">{{ product.descriptionOne|nl2br }}</p>
                     </div>
                 {% endif %}
+
+                <div class="flex items-center justify-between mt-20">
+                    <button class="bg-black text-white py-10 px-20 block w-max">add to my bag</button>
+                    <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-fill.svg" alt="heart"> add to my wishlist</span> 
+                </div>
             </div>
         </div>
     </div>
