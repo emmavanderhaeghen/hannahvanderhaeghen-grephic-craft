@@ -18,7 +18,7 @@
             {% if products|length == 0 %}
                 <h2 class="uppercase font-sans-wide text-h3 mx-auto">{{ 'Kom terug als we meer hebben...'|t }}</h2>
             {% endif %}
-            {% for item in products %}
+            {% for product in products %}
                 <li class="w-4/12">
                     {% include '_commerce/shop/partials/thumbnail' %}
                 </li>
