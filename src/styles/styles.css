@@ -2,3 +2,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* 
+.button {
+  background: url("../assets/www/svg/btn-top.svg") top left no-repeat;
+} */

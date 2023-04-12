@@ -1,5 +1,3 @@
-// import './components/grephic-log';
-// import './components/nav';
 import { gsap } from "gsap";
 class App {
   constructor() {
