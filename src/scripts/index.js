@@ -1,4 +1,9 @@
 import { gsap } from "gsap";
+ // import Swiper bundle with all modules installed
+ import Swiper from 'swiper/bundle';
+
+ // import styles bundle
+ import 'swiper/css/bundle';
 class App {
   constructor() {
     this.button = document.querySelector('.js-nav-button');
@@ -11,6 +16,53 @@ class App {
   init() {
     this.log();
     this.addEventListeners();
+
+    const swiper = new Swiper('.js-slider', {
+      // Optional parameters
+      slidesPerView: 1.2,
+      loop: true,
+      allowTouchMove: true,
+      shortSwipes: false,
+      spaceBetween: 15,
+      centeredSlides: true,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false
+      },
+      breakpoints: {
+        768: {
+          centeredSlides: false,
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
+      },
+    
+    });
+    const swiperProject = new Swiper('.js-slider-project', {
+      // Optional parameters
+      slidesPerView: 1,
+      loop: true,
+      allowTouchMove: true,
+      shortSwipes: false,
+      spaceBetween: 30,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
+      },
+    
+    });
   }
 
   addEventListeners() {

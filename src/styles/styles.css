@@ -7,3 +7,9 @@
 .button {
   background: url("../assets/www/svg/btn-top.svg") top left no-repeat;
 } */
+
+input::placeholder, textarea::placeholder, select::placeholder {
+  @apply text-9;
+  opacity: 0.5;
+  color: rgb(189, 189, 189);
+}

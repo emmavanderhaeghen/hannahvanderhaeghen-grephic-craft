@@ -87,6 +87,9 @@ module.exports = {
         'grey': '#EBE9E7',
         'pink': '#FBF6F6',
       },
+      backgroundImage: {
+        'footer': "url('../assets/www/images/footer.jpg')",
+      }
     },
   },
   variants: {
