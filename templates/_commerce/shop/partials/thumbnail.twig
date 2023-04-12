@@ -8,6 +8,7 @@
     <div class="relative -top-25 ml-25">
         <h3 class="uppercase">{{product.title}}</h3>
         {% include "_commerce/shop/partials/price" %}
-        <img class="absolute right-25 bottom-15" src="../assets/www/svg/heart-fill.svg" alt="hero">
+        <img class="absolute right-25 bottom-15" sprig s-method="post" s-action="wishlist/items/add" src="../assets/www/svg/heart-fill.svg" alt="hero">
+        {{ sprig.script }}
     </div>
 </a>
