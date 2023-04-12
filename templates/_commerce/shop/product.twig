@@ -21,7 +21,15 @@
                 </div>
 
                 {# usp #}
-                <div class="hidden lg:flex justify-center items-center mt-100">
+                <div class="bg-pink py-40 pr-70 pl-60 ml-30 mb-80">
+                    <ul class="z-[1]">
+                        {% for item in commonlyUsed.usp %}
+                        <li class="flex {{ not loop.last ? 'mb-10' }}">
+                            <img class="" src="../assets/www/svg/check.svg" alt="heart">
+                            <p class="ml-20 text-10">{{ item.usp }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
 
@@ -44,6 +52,7 @@
                     <button class="bg-black text-white py-10 px-20 block w-max">add to my bag</button>
                     <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-fill.svg" alt="heart"> add to my wishlist</span> 
                 </div>
+
             </div>
         </div>
     </div>
