@@ -3,26 +3,54 @@
 
 {% set products = craft.products().limit(32) %}
 {% set categories = craft.categories.group('shop') %}
+{% set firstCategory = craft.categories.group('shop').one() %}
 
 {% block content %}
-    <section class="container">
-        {% if categories|length %}
-        <ul  class="">
-            {% for category in categories %}
-            <li class="py-10 hover:font-medium"><a href="{{ category.url }}">{{ category.title }}</a></li>
-            {% endfor %}
-        </ul>
-        {% endif %}     
+    <section class="container" x-data="{ filter: '' }">
+        <div class="w-fit mx-auto mb-30">
+            {% if categories|length %}
+            <div class="relative" x-data="{ open: false }">
+                <button class="flex font-medium items-center py-3 px-6 border-b-2 border-black" x-on:click="open = !open" type="button" x-model="filter">
+                    {{ firstCategory.title }}
+                    <img :class="{ 'rotate-180': open }" class="ml-10" src="../assets/www/svg/arrow.svg" alt="hero">
+                </button>
+                <div class="absolute z-10 p-2 bg-pink min-w-full capitalize w-max text-black text-14 rounded-[10px] mt-10 shadow-md" x-show="open" x-cloak>
+                    <ul class="p-15 rounded-sm bg-pink">
+                        {% for category in categories %}
+                        <li class="pb-10 last:pb-0">
+                            <a href="{{ category.url }}" class="hover:underline">{{ category.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+        </div>
 
         <ul class="flex flex-wrap items-center mt-20 mb-200">
             {% if products|length == 0 %}
                 <h2 class="uppercase font-sans-wide text-h3 mx-auto">{{ 'Kom terug als we meer hebben...'|t }}</h2>
             {% endif %}
             {% for product in products %}
-                <li class="w-4/12">
+                <li class="w-4/12" x-show="!filter || product.title.toLowerCase().includes(filter.toLowerCase())">
                     {% include '_commerce/shop/partials/thumbnail' %}
                 </li>
             {% endfor %}
         </ul>
     </section>
 {% endblock %}
+
+{# 
+<div>
+  <div>
+    <label for="filter-input">Filter:</label>
+    <input id="filter-input" type="text" >
+  </div>
+  <ul>
+    {% for product in products %}
+      <li class="w-4/12" ">
+        {% include '_commerce/shop/partials/thumbnail' %}
+      </li>
+    {% endfor %}
+  </ul>
+</div> #}
