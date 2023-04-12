@@ -1,0 +1,39 @@
+columnSuffix: exghnqwi
+contentColumnType: text
+fieldGroup: 94c51b0c-961c-4fd5-904f-5b7871f98cf7 # Text
+handle: usp
+instructions: null
+name: USP
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - USP
+            -
+              - handle
+              - usp
+            -
+              - width
+              - ''
+            -
+              - type
+              - multiline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+  maxRows: null
+  minRows: null
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\Table
