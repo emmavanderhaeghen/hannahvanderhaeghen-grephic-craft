@@ -1,0 +1,6 @@
+{# Set default variables #}
+{% if cart is not defined %}
+{% set cart = craft.commerce.carts.cart %}
+{% endif %}
+
+<span>{{ product.defaultVariant.price|currency(cart.currency) }}</span>
