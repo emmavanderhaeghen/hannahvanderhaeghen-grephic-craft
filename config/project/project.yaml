@@ -1,4 +1,4 @@
-dateModified: 1681203437
+dateModified: 1681300547
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -59,6 +59,7 @@ meta:
     361382ab-c268-4ec2-a944-660822aea169: English # English
     01680712-796d-48bb-80fc-3e79cb98d2d3: Prints # Prints
     a3b7618e-f5d1-4b5f-bd32-db20dd35c26b: SEO # SEO
+    a48ddbb3-33df-449b-a3c0-53e95f5b4f88: Wishlist # Wishlist
     a3934515-f94c-4ab0-891d-f8519a8b1561: Assets # Assets
     ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd: 'Filter: shop' # Filter: shop
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
@@ -66,12 +67,14 @@ meta:
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
     c871bcad-3990-4bf3-954f-b29d2e335773: 'Filter: gallery' # Filter: gallery
     cddc48cb-cf17-49ea-96d9-773668a2239f: 'Beschrijving 2' # Beschrijving 2
+    d0b4a5be-3377-4fa3-b9aa-3196c601d339: 'Veel gebruikte elementen' # Veel gebruikte elementen
     d1f9737c-c74a-4ffd-8fde-fed08a33c48c: 'Afbeelding 2' # Afbeelding 2
     dbd11bc6-ad86-4953-959b-f3fb418b6153: 'Toon in footer' # Toon in footer
     dc074707-454e-4929-98f8-c32bb100b48d: Collaborations # Collaborations
     e6d64dd2-c9e9-410c-81b6-82ffa3358eeb: 'Link 2' # Link 2
     e68f4e12-33a8-4163-adbb-26bfa484de3a: Redactor # Redactor
     eb00a5af-e653-4ed5-92c2-19de0e9e7ff5: Cards # Cards
+    ed335616-6cd9-410b-9d9f-5992c89f02c7: USP # USP
     f016f34d-e9d9-41bf-86cf-5fc0c29b036c: 'Algemene gegevens' # Algemene gegevens
     f2fda0de-15eb-4ada-a4c1-c88f8dc38392: 'Afbeelding 3' # Afbeelding 3
     fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7: Telefoonnummer # Telefoonnummer
