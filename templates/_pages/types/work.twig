@@ -15,17 +15,14 @@
                 </ul>
                 {% endif %}       
             </div>
-            <div class="w-9/12 mx-auto text-9">
-                <div class="relative mb-40 -right-140">
-                    {% for galleryPage in galleryPages %}
-                        <a href="{{ galleryPage.url }}">
-                        {% for image in galleryPage.imageOne %}
-                            <img src="{{image.url()}}" alt="hero">
-                        {% endfor %}                          
-                        {{ galleryPage.title }}
-                        </a>
-                    {% endfor %}
-                </div>
+            <div class="w-8/12 mx-auto text-9">
+            {% for galleryPage in galleryPages %}
+                <a href="{{ galleryPage.url }}">
+                {% for image in galleryPage.imageOne %}
+                    <img class="w-500 pb-40" src="{{image.url()}}" alt="work" loading="lazy">
+                {% endfor %}                          
+                </a>
+            {% endfor %}
             </div>
         </article>
     </section>
