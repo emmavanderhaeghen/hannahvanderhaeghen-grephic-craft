@@ -1,0 +1,46 @@
+{# Layouts and macros #}
+{% extends "_layout/site" %}
+
+{# Set variables  #}
+{% set cart = craft.commerce.carts.cart %}
+
+{% block content %}
+
+<section class="">
+    <div class="container">
+        <div class=" flex lg:justify-between flex-col lg:flex-row">
+            {# left column #}
+            <div class="lg:w-1/2 flex flex-col items-start">
+                {# product images #}
+                <div class="w-full flex flex-col md:flex-row justify-between relative">
+                    <div class="relative w-full aspect-square">
+                        {% for image in product.imageOne %}
+                            <img src="{{image.url()}}" alt="hero">
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {# usp #}
+                <div class="hidden lg:flex justify-center items-center mt-100">
+                </div>
+            </div>
+
+            {# right column #}
+            <div class="lg:w-1/3 mb-60 lg:mb-0">
+                <h1 class="">{{ product.title }}</h1>
+
+                {# price #}
+                {% include "_commerce/shop/partials/price" %}
+
+                {% if product.descriptionOne %}
+                    <div class="mt-30">
+                        <p>{{ product.descriptionOne|nl2br }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "_commerce/shop/partials/relatedProducts" %}
+{% endblock %}
