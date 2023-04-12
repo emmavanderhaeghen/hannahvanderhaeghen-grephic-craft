@@ -1,0 +1,23 @@
+{% set relatedProducts = craft.products.relatedTo(product.shopCategory).orderBy('RAND()').limit(3) %}
+
+<div class="container w-12/12 mx-auto">
+    <h3 class="uppercase text-22 text-center font-serif mx-auto">{{ "Related products"|t }}</h3>
+    <ul class="flex flex-wrap mb-80">
+        {% for product in relatedProducts %}
+        <li class="w-6/12 md:w-4/12">
+            <a href="{{ product.url }}">
+                <div class="overflow-hidden">   
+                {% for image in product.imageOne %}
+                    <img src="{{image.url()}}" alt="hero">
+                {% endfor %}    
+                </div>
+                <div class="relative -top-25 ml-25">
+                    <h3 class="uppercase">{{product.title}}</h3>
+                    {% include "_commerce/shop/partials/price" %}
+                    <img class="absolute right-25 bottom-15" src="../assets/www/svg/heart-fill.svg" alt="hero">
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
