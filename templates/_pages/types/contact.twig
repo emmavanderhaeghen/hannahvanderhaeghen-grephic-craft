@@ -2,29 +2,34 @@
 {% extends "_layout/site" %}
 
 {% block content %}
+<div class="bg-black py-80">
     <section class="container">
-        <article class="flex">
+        <article class="flex items-center">
         <div class="w-6/12">
+            {% for image in entry.imageOne %}
+                <img class="w-300" src="{{image.url()}}" alt="contact">
+            {% endfor %}        
         </div>
-        <div class="w-6/12">
+        <div class="w-6/12 text-white">
             <h1 class="w-5/12 text-25 font-serif uppercase">{{ entry.title }}</h1>
             <p class="mb-20">Do you have a question? Feel free to contact me any time!</p>
             <form action="/action_page.php">
                 <div class="flex justify-between">
-                    <input type="text" class="border-b border-black py-2 my-20 w-[45%]" id="firstName" name="firstName" placeholder="firstname">
-                    <input type="text" class="border-b border-black py-2 my-20 w-[45%]" id="lastName" name="lastName" placeholder="lastname">
+                    <input type="text" class="border-b border-white bg-black py-2 my-20 w-[45%]" id="firstName" name="firstName" placeholder="firstname">
+                    <input type="text" class="border-b border-white bg-black py-2 my-20 w-[45%]" id="lastName" name="lastName" placeholder="lastname">
                 </div>
                 <div class="flex justify-between">
-                    <input type="text" class="border-b border-black py-2 mb-20 w-[45%]" id="email" name="email" placeholder="email">
-                    <input type="text" class="border-b border-black py-2 mb-20 w-[45%]" id="phone" name="phone" placeholder="phone">
+                    <input type="text" class="border-b border-white bg-black py-2 mb-20 w-[45%]" id="email" name="email" placeholder="email">
+                    <input type="text" class="border-b border-white bg-black py-2 mb-20 w-[45%]" id="phone" name="phone" placeholder="phone">
                 </div>
                 <div class="w-6/6">
-                    <textarea rows="4" cols="91" class="border-b border-black py-2 mb-20" id="message" name="message" placeholder="message"></textarea>
+                    <textarea rows="4" cols="91" class="border-b border-white bg-black py-2 mb-20" id="message" name="message" placeholder="message"></textarea>
                 </div>
 
-                <input type="submit" class="bg-black text-white py-10 px-20 block w-max uppercase" value="Send">
+                <button type="submit" class="border border-white text-white py-10 px-20 block w-max uppercase hover:bg-white hover:text-black transition duration-300">Send</button>
             </form> 
         </div>
         </article>
     </section>
+</div>
 {% endblock %}
