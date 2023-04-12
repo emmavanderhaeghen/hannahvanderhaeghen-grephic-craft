@@ -1,14 +1,13 @@
-<a href="{{ item.url }}" class="mb-30">
+<a href="{{ product.url }}" class="mb-30">
     <div class="overflow-hidden">   
-    {% for image in item.imageOne %}
+    {% for image in product.imageOne %}
         <img src="{{image.url()}}" alt="hero">
-    {% endfor %}    </div>
+    {% endfor %}    
+    </div>
 
     <div class="relative -top-25 ml-25">
-        <h3 class="uppercase">{{item.title}}</h3>
-        <p class="font-medium">€ 52</p>
-        {# {% for image in item.imageOne %}
-            <img class="absolute right-25 bottom-15" src="{{image.url()}}" alt="hero">
-        {% endfor %} #}
+        <h3 class="uppercase">{{product.title}}</h3>
+        {% include "_commerce/shop/partials/price" %}
+        <img class="absolute right-25 bottom-15" src="../assets/www/svg/heart-fill.svg" alt="hero">
     </div>
 </a>
