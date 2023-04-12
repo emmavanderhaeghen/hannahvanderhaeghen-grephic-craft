@@ -2,9 +2,9 @@
 {% extends "_layout/site" %}
 
 {% block content %}
-    <div class="relative -top-110 left-0 h-fit">
+    <div class="relative -top-110 left-0">
     {% for image in entry.imageOne %}
-        <img src="{{image.url()}}" alt="hero">
+        <img class="h-screen w-full object-cover relative top-0 left-40" src="{{image.url()}}" alt="hero">
     {% endfor %}
     </div>
 
