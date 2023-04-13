@@ -549,6 +549,10 @@ video {
   margin-top: 8rem;
   margin-bottom: 8rem;
 }
+.my-40 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 .mb-10 {
   margin-bottom: 1rem;
 }
@@ -632,6 +636,9 @@ video {
 }
 .mt-\[\.4rem\] {
   margin-top: .4rem;
+}
+.mb-60 {
+  margin-bottom: 6rem;
 }
 .block {
   display: block;
@@ -940,6 +947,10 @@ video {
 .py-80 {
   padding-top: 8rem;
   padding-bottom: 8rem;
+}
+.px-80 {
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 .pb-10 {
   padding-bottom: 1rem;
