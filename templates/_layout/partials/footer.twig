@@ -1,19 +1,24 @@
 <footer class="w-12/12 py-25 relative bg-black text-white">
-    <div class="container text-white bg-black py-25 mb-40 flex flex-col items-center">
-        <h2 class="text-50 font-serif uppercase pb-10">Let's meet</h2>
-        <a class="border border-white bg-transparent py-10 px-20 block w-max hover:bg-white hover:text-black transition duration-300" href="/contact" target="_blank">Contact</a>
-    </div>
+    {% if craft.app.request.url == siteUrl %}
+        <div class="container text-white bg-black py-25 mb-40 flex flex-col items-center">
+            <h2 class="text-50 font-serif uppercase pb-10">Let's meet</h2>
+            <a class="border border-white bg-transparent py-10 px-20 block w-max hover:bg-white hover:text-black transition duration-300" href="/contact" target="_blank">Contact</a>
+        </div>
+    {% endif %}
+
     <div class="container flex items-center justify-between text-10">
         <div class="w-6/12 flex items-center gap-30">
             <a class="p-5" href="/home"><img class="" src="../assets/www/svg/icon.svg" alt="Logo-icon"></a>
             <ul class="flex items-center gap-30">
-                <li><a href="">privacy policy</a></li>
-                <li><a href="">cookie policy</a></li>
-                <li><a href="">copyright</a></li>
-                <li><a href="">faq</a></li>
+                <li><a href="{{url('privacy-policy')}}">privacy policy</a></li>
+                <li><a href="{{url('cookie-policy')}}">cookie policy</a></li>
+                <li><a href="{{url('copyright')}}">copyright</a></li>
+                <li><a href="{{url('faq')}}">faq</a></li>
 
                 {# {% for item in legalNav %}
-                    <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/{{item.title}}">{{item.title}}</a></li>
+                    <li class="block my-25 italic hover:not-italic">
+                        <a class="py-5" href="/{{item.title}}">{{item.title}}</a>
+                    </li>
                 {% endfor %} #}
             </ul>
         </div>
