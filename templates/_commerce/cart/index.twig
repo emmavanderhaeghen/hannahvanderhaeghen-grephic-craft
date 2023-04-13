@@ -2,13 +2,24 @@
 {% extends "_layout/site" %}
 {% import '_macros/form' as form %}
 
+{% if cart is not defined %}
+    {% set cart = craft.commerce.carts.cart %}
+{% endif %}
+
 {% block content %}
 <section class="bg-pink py-20 lg:py-40 xl:py-70">
     <div class="container w-10/12 bg-white relative p-40 lg:p-80">
-        <h1 class="text-30 font-serif uppercase mb-20">Cart</h1>
+        <h1 class="text-30 font-serif uppercase">Cart</h1>
+        {% if not cart.lineItems|length %}
+        <div class="body">
+            <p class="my-30">{{'Your shopping bag is still empty'|t}}</p>
+            <a class="border border-black bg-white text-black py-10 px-20 block w-max" href="{{ url('shop') }}">{{ 'Add products'|t }}</a>
+        </div>
+        {% else %}
         <div class="flex">
             <a href="{{ url('/checkout') }}" class="underline">{{ 'go to checkout'|t }}</a>
         </div>
+        {% endif %}
     </div>
 </section>
 {% endblock %}
