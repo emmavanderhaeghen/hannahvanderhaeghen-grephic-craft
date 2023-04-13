@@ -8,6 +8,12 @@
 {% set mainNav = pages|filter(item => item.showInNav) %}
 {% set legalNav = pages|filter(item => item.showInFooter) %}
 
+{# 1 Query to rule them all #}
+{% set pages = craft.entries.section('pages').search('showInNav:1 OR showInFooter:1').all() %}
+{# Split up in main, sub & legal nav #}
+{% set mainNav = pages|filter(item => item.showInNav) %}
+{% set legalNav = pages|filter(item => item.showInFooter) %}
+
 {% block app %}
   {% include '_layout/partials/header' %}
   <main class="flex-grow">
