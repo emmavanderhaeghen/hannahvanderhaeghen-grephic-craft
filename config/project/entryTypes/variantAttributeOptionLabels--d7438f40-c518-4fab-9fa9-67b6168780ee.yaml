@@ -1,0 +1,55 @@
+fieldLayouts:
+  52d70d51-c198-45b5-9aae-4f2c4a9b6ccd:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: bcd55512-29e6-42b8-8d05-0300af22cd42
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e55f4e6c-f5c8-4f9f-85af-3daf6684a8da # Display Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1d0282fe-a40f-45b5-9ea8-65c9240ccf6b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 18f37041-a989-41f0-8ce7-243ecd31e1e3
+        userCondition: null
+handle: variantAttributeOptionLabels
+hasTitleField: true
+name: 'Variant Attribute Option Labels'
+section: 356e5ebc-90ce-415b-9b0b-e258c13752c6 # Variant Attribute Option Labels
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
