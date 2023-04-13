@@ -25,39 +25,37 @@
 
             {% for item in cart.lineItems %}
             <div class="flex justify-between items-center {{ not loop.last ? 'mb-20' }}">
-            <a href="{{ item.purchasable.product.url }}" class="hidden md:flex flex-grow-0 mr-6 w-1/6">
-                {{ transform.image(item.purchasable.product.image1.one|default('/fallback/fallback.jpg'), { width: 120, height: 120 }) }}
-            </a>
-            <div class="w-[40%] lg:w-3/6 pr-4">
-                <div class="">
-                <h3 class="font-serif mb-3">{{ item.purchasable.product.filterMerken[0].title }}</h3>
-                <span class="block">{{ item.description }}</span>
-                <span class="block">{{ item.purchasable.descriptionOne }}</span>
+                <a href="{{ item.purchasable.product.url }}" class="hidden md:flex flex-grow-0 mr-6 w-1/6">
+                    {{ transform.image(item.purchasable.product.image1.one|default('/fallback/fallback.jpg'), { width: 120, height: 120 }) }}
+                </a>
+                <div class="w-[40%] lg:w-3/6 pr-4">
+                    <div class="">
+                        <h3 class="font-serif mb-3">{{ item.purchasable.product.filterMerken[0].title }}</h3>
+                        <span class="block">{{ item.description }}</span>
+                        <span class="block">{{ item.purchasable.descriptionOne }}</span>
+                    </div>
+                        {% set pickupRules = craft.entries.section('pickupRules').relatedTo([
+                        'or',
+                        { targetElement: item.purchasable.product },
+                        { targetElement: item.purchasable.product.shopCategory.one()|default([]) }
+                        ]).all() %}
+                    {% if pickupRules %}
+                    <div class="">
+                        {% for item in pickupRules %}
+                        {{ item.pickupRuleMessage }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <button type="submit" name="lineItems[{{ item.id }}][remove]" value="1" class="underline" title="Verwijder {{ item.description }}">verwijderen</button>
                 </div>
-                {% set pickupRules = craft.entries.section('pickupRules').relatedTo([
-                'or',
-                { targetElement: item.purchasable.product },
-                { targetElement: item.purchasable.product.shopCategory.one()|default([]) }
-                ]).all() %}
-                {% if pickupRules %}
                 <div class="">
-                {% for item in pickupRules %}
-                {{ item.pickupRuleMessage }}
-                {% endfor %}
+                    {% include '_commerce/shop/partials/spinner' with { name: "lineItems[#{item.id}][qty]", qty: item.qty, variant: item.purchasable, cart: cart } only %}
                 </div>
-                {% endif %}
-                <button type="submit" name="lineItems[{{ item.id }}][remove]" value="1" class="underline" title="Verwijder {{ item.description }}">
-                verwijderen
-                </button>
+                <div class="w-1/6 text-right flex-shrink-0 font-bold">
+                    {% include '_commerce/checkout/partials/price' with { variant: item, cart: cart } only %}
+                </div>
             </div>
-            <div class="">
-                {% include '_commerce/shop/partials/spinner' with { name: "lineItems[#{item.id}][qty]", qty: item.qty, variant: item.purchasable, cart: cart } only %}
-            </div>
-            <div class="w-1/6 text-right flex-shrink-0 font-bold">
-                {% include '_commerce/checkout/partials/price' with { variant: item, cart: cart } only %}
-            </div>
-            </div>
-            {% endfor %}
+        {% endfor %}
         </form>
         <div class="flex">
             <a href="{{ url('/checkout') }}" class="underline">{{ 'go to checkout'|t }}</a>
