@@ -1,5 +1,6 @@
 {# Layouts and macros #}
 {% extends "_layout/site" %}
+{% import '_macros/form' as form %}
 
 {# Set variables #}
 {% if currentUser %}
@@ -16,13 +17,14 @@
                 {{ csrfInput() }}
                 {{ redirectInput('account') }}
                 <input type="hidden" name="action" value="users/login">
-
-                <input type="text" class="border-b border-black py-2 my-20 w-[45%]" id="firstName" name="firstName" placeholder="firstname">
-                <input type="text" class="border-b border-black py-2 my-20 w-[45%]" id="lastName" name="lastName" placeholder="lastname">
-
-                <div class="w-full flex items-start justify-between">
-                    <a href="{{ url('/wachtwoord-vergeten') }}" class="underline">{{ 'Wachtwoord vergeten?'|t }}</a>
-                    <button type="submit" class="button">{{ 'Inloggen'|t }}</button>
+                <div class="flex justify-between gap-10">
+                    {{ form.input('', { placeholder: 'firstname'|t, id: 'loginName', name: 'loginName', type: 'loginName', class: 'mr-10' }) }}
+                    {{ form.input('', { placeholder: 'lastname'|t, id: 'lastName', name: 'lastName', type: 'lastName' }) }}
+                </div>
+                    {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'email', type: 'email', value: craft.app.user.rememberedUsername }) }}
+                    {{ form.input('', { placeholder: 'Password'|t, id: 'password', name: 'password', type: 'password'  }) }}
+                <div class="flex justify-end">
+                    <button type="submit" class="border border-black text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300">{{ 'Register'|t }}</button>
                 </div>
             </form>
         </div>
