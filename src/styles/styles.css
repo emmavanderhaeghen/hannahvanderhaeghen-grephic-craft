@@ -10,6 +10,13 @@
 
 input::placeholder, textarea::placeholder, select::placeholder {
   @apply text-9;
-  opacity: 0.5;
+  opacity: 0.8;
   color: rgb(189, 189, 189);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
