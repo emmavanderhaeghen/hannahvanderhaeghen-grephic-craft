@@ -141,6 +141,18 @@ variantFieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 7a2f79e4-83dc-4af4-8d09-fc747d840496 # Unique Combination of Variant Attributes
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 36aff79c-cd5d-46cd-96ee-d390fc33f402
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: f70d67c8-c5de-468d-b4b3-c239e5a10391
         userCondition: null

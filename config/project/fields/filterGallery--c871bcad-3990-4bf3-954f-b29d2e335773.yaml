@@ -1,6 +1,6 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: 5abaf161-4cf4-4485-8e4a-2e257439dda4 # Filters
+fieldGroup: 5abaf161-4cf4-4485-8e4a-2e257439dda4 # Form elements (filters, checkboxes, dropdowns)
 handle: filterGallery
 instructions: null
 name: 'Filter: gallery'
