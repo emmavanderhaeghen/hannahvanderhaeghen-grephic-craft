@@ -3,30 +3,30 @@
 {% if currentUser %}
 {% set pages = pages|merge([
     {
-        title: 'E-mailadres wijzigen'|t,
+        title: 'Change E-mail'|t,
         url: url('account/emailadres-wijzigen')
     },
     {
-        title: 'Wachtwoord wijzigen'|t,
+        title: 'Change Password'|t,
         url: url('account/wachtwoord-wijzigen')
     },
     {
-        title: 'Adresboek'|t,
+        title: 'Adresses'|t,
         url: url('account/adresboek')
     },
     {
-        title: 'Uitloggen'|t,
+        title: 'Log out'|t,
         url: logoutUrl
     },
 ]) %}
 {% else %}
 {% set pages = pages|merge([
     {
-        title: 'Inloggen'|t,
+        title: 'Login'|t,
         url: url('account/login')
     },
     {
-        title: 'Registreren'|t,
+        title: 'Register'|t,
         url: url('account/register')
     }
 ]) %}
