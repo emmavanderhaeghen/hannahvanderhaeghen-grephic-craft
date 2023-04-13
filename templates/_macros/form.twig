@@ -4,10 +4,10 @@
     {% set defaults = {
     type: 'text',
     required: true,
-    class: "block w-full bg-transparent border border-black text-black placeholder-opacity-50 text-base px-4 h-10 focus:outline-none"
+    class: "block w-full border-b border-black bg-transparent text-10 px-4 focus:outline-none"
     } %}
     {% set attributes = defaults|merge(attributes|merge({ class: "#{defaults.class} #{attributes.class|default}" })) %}
-    <div>
+    <div class="mb-15">
     {{- label is not empty ? tag('label', {
         text: label,
         for: attributes.id,
@@ -17,13 +17,15 @@
     </div>
 {% endmacro %}
 
+{#  bg-transparent border border-black text-black placeholder-opacity-50 text-base px-4 h-10 focus:outline-none #}
+
 {# Textarea Macro #}
 {% macro textarea(label, attributes) %}
     {% set defaults = {
     type: 'text',
     required: true,
     rows: 5,
-    class: 'block w-full bg-transparent border border-black text-base text-black placeholder-opacity-50 px-4 py-2 focus:outline-none'
+    class: 'block w-full border-b border-black bg-transparent text-10 px-4 my-10 focus:outline-none'
     } %}
     {% set attributes = defaults|merge(attributes|merge({ class: "#{defaults.class} #{attributes.class|default}" })) %}
     <div>
