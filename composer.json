@@ -22,7 +22,8 @@
   },
   "autoload": {
     "psr-4": {
-      "modules\\": "modules/"
+        "modules\\businesslogicmodule\\": "modules/businesslogicmodule/src/",
+        "modules\\shopadjustersmodule\\": "modules/shopadjustersmodule/src/"
     }
   },
   "config": {

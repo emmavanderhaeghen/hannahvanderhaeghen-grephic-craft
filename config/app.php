@@ -24,4 +24,13 @@ use craft\helpers\App;
 
 return [
     'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
+
+    'modules' => [
+        'business-logic-module' => \modules\businesslogicmodule\BusinessLogicModule::class,
+        'shop-adjusters-module' => \modules\shopadjustersmodule\ShopAdjustersModule::class,
+    ],
+    'bootstrap' => [
+        'business-logic-module',
+        'shop-adjusters-module',
+    ],
 ];
