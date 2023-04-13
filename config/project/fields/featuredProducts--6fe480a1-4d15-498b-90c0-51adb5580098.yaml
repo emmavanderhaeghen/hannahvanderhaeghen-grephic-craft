@@ -1,0 +1,23 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 239bf23c-88b2-4832-a53e-a335cfc5d124 # Elements (entries, categories, products)
+handle: featuredProducts
+instructions: null
+name: 'Uitgelichte producten'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 2
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\commerce\fields\Products
