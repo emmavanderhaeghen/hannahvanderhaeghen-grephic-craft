@@ -13,24 +13,27 @@
         <h1 class="text-30 font-serif uppercase mb-20">Login</h1>
         <div class="flex">
             {% include '_commerce/account/partials/accountNav' %}
-            <form method="post" accept-charset="UTF-8" class="w-5/10 | js-validate">
+            <form method="post" accept-charset="UTF-8" class="w-6/12 | js-validate">
                 {{ csrfInput() }}
                 {{ redirectInput('account') }}
-                <input type="hidden" name="action" value="users/login">
+                {{ actionInput('users/save-user') }}
+                {{ hiddenInput('userRegisteredNotice', 'Je account werd aangemaakt. Je kan inloggen van zodra je jouw e-mailadres hebt geverifieerd in de mail die we je zonet hebben gestuurd.') }}
 
-                <div class="mb-6">
-                    {{ form.input('', { placeholder: 'E-mailadres'|t, id: 'email', name: 'email', type: 'email', value: craft.app.user.rememberedUsername }) }}
-                </div>
-                <div class="mb-6">
-                    {{ form.input('', { placeholder: 'Wachtwoord'|t, id: 'password', name: 'password', type: 'password'  }) }}
-                </div>
-                <div class="mb-6">
-                    {{ form.checkbox('Onthoud me?', { name: 'rememberMe', id: 'rememberMe', value: '1', checked: false, required: false  }) }}
-                </div>
+                {% if errors is defined %}
+                <ul class="text-red-500 mb-6">
+                    {% for error in errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
 
-                <div class="w-full flex items-start justify-between">
-                    <a href="{{ url('/account/wachtwoord-vergeten') }}" class="underline">{{ 'Wachtwoord vergeten?'|t }}</a>
-                    <button type="submit" class="button">{{ 'Inloggen'|t }}</button>
+                {# <input type="hidden" name="action" value="users/login"> #}
+                    {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'email', type: 'email', value: craft.app.user.rememberedUsername }) }}
+                    {{ form.input('', { placeholder: 'Password'|t, id: 'password', name: 'password', type: 'password'  }) }}
+                    {# {{ form.checkbox('Remember me?', { name: 'rememberMe', id: 'rememberMe', value: '1', checked: false, required: false  }) }} #}
+                <div class="w-full flex items-center justify-between mt-30">
+                    <a href="{{ url('/account/wachtwoord-vergeten') }}" class="underline text-gray-400">{{ 'Wachtwoord vergeten?'|t }}</a>
+                    <button type="submit" class="border border-black text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300">{{ 'Log in'|t }}</button>
                 </div>
             </form>
         </div>
