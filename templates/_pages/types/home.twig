@@ -1,23 +1,28 @@
 {# Layouts and macros #}
 {% extends "_layout/site" %}
 
+{% if cart is not defined %}
+    {% set cart = craft.commerce.carts.cart %}
+{% endif %}
+
 {% block content %}
-    <div class="relative -top-110 left-0">
+    <div class="relative -top-[10.75rem] left-0">
     {% for image in entry.imageOne %}
-        <img class="h-screen w-full object-cover relative top-0 left-40" src="{{image.url()}}" alt="hero">
+        <img class="h-screen w-full object-cover relative top-0 left-0" src="{{image.url()}}" alt="hero">
     {% endfor %}
     </div>
 
     <section class="container">
         <article class="flex mb-100 items-center">
-            <h2 class="w-5/12 text-50 font-serif uppercase">{{entry.titleOne|nl2br}}</h2>
-            <div class="w-7/12 flex">
-                <div class="w-400">
-                    <img src="../assets/www/images/Mockup-3.jpg" alt="Mockup-1">
-                </div>
-                <div class="w-400">
-                    <img class="w-400" src="../assets/www/images/Mockup-2.jpg" alt="Mockup-2">
-                </div>
+            <h2 class="w-6/12 text-50 font-serif uppercase">{{entry.titleOne|nl2br}}</h2>
+            <div class="w-6/12 flex">
+                <ul class="flex flex-wrap items-center">
+                    {% for product in entry.featuredProducts.all()  %}
+                        <li class="w-3/6" x-show="!filter || product.title.toLowerCase().includes(filter.toLowerCase())">
+                            {% include '_commerce/shop/partials/thumbnail' %}
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </article>
 
