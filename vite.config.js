@@ -9,10 +9,10 @@ export default ({ command }) => {
     base: command === 'serve' ? '' : '/dist/',
     build: {
       manifest: true,
-      outDir: './www/dist',
+      outDir: './web/dist',
       rollupOptions: {
         input: {
-          app: './src/js/app.js'
+          app: './src/scripts/app.js'
         }
       }
     },
@@ -23,7 +23,7 @@ export default ({ command }) => {
       ViteRestart({
         reload: [
             './templates/**/*',
-            './src/www/**/*'
+            './src/web/**/*'
         ],
       }),
       {
@@ -38,7 +38,7 @@ export default ({ command }) => {
         },
       }
     ],
-    publicDir: './src/www',
+    publicDir: './src/web',
     assetsDir: 'bundle',
     server: {
       host: '0.0.0.0',

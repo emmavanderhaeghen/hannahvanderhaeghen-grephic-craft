@@ -1,7 +1,7 @@
 const mix = require("laravel-mix");
 
 mix
-  .js("./src/scripts/index.js", "app.js")
+  .js("./src/scripts/app.js", "app.js")
   .css("./src/styles/styles.css", "app.css")
   .setPublicPath("./web/dist")
   .version();

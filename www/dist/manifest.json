@@ -1,0 +1,40 @@
+{
+  "src/scripts/app-legacy.js": {
+    "dynamicImports": [
+      "src/scripts/components/nav/index-legacy.js"
+    ],
+    "file": "assets/app-legacy-8be9850c.js",
+    "isEntry": true,
+    "src": "src/scripts/app-legacy.js"
+  },
+  "src/scripts/app.css": {
+    "file": "assets/app-0269d6fa.css",
+    "src": "src/scripts/app.css"
+  },
+  "src/scripts/app.js": {
+    "css": [
+      "assets/app-0269d6fa.css"
+    ],
+    "dynamicImports": [
+      "src/scripts/components/nav/index.js"
+    ],
+    "file": "assets/app-65e66351.js",
+    "isEntry": true,
+    "src": "src/scripts/app.js"
+  },
+  "src/scripts/components/nav/index-legacy.js": {
+    "file": "assets/index-legacy-9d965a79.js",
+    "isDynamicEntry": true,
+    "src": "src/scripts/components/nav/index-legacy.js"
+  },
+  "src/scripts/components/nav/index.js": {
+    "file": "assets/index-50035947.js",
+    "isDynamicEntry": true,
+    "src": "src/scripts/components/nav/index.js"
+  },
+  "vite/legacy-polyfills-legacy": {
+    "file": "assets/polyfills-legacy-4d459ee8.js",
+    "isEntry": true,
+    "src": "vite/legacy-polyfills-legacy"
+  }
+}
