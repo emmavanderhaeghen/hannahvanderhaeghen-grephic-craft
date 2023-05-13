@@ -14,13 +14,19 @@
         <div class="w-6/12 text-white">
             <h1 class="text-25 font-serif uppercase">{{ entry.title }}</h1>
             <p class="mb-20">Do you have a question? Feel free to contact me any time!</p>
-            <form action="/action_page.php" class="w-4/6 | js-validate">
+            <form class="w-4/6 | js-validate" method="post" action="{{ url(craft.app.request.pathInfo) }}" accept-charset="UTF-8" enctype="multipart/form-data">
+                {{ actionInput('guest-entries/save') }}
+                {{ hiddenInput('sectionUid', '7bfd2eb5-6578-4433-9c41-d19176243b02') }}
+                {{ hiddenInput('fields[siteId]', currentSite.id) }}
+                {{ redirectInput(craft.app.request.absoluteUrl) }}
+                {{ csrfInput() }}
+                {{ craft.snaptcha.field }}
                 <div class="flex justify-between gap-10">
-                    {{ form.input('', { placeholder: 'Firstname'|t, id: 'firstName', name: 'firstName', type: 'firstName', class: 'mr-10 border-white' }) }}
-                    {{ form.input('', { placeholder: 'Lastname'|t, id: 'lastName', name: 'lastName', type: 'lastName', class: 'border-white' }) }}
+                    {{ form.input('', { placeholder: 'Firstname'|t, id: 'firstName', name: 'fields[firstName]', type: 'firstName', class: 'mr-10 border-white' }) }}
+                    {{ form.input('', { placeholder: 'Lastname'|t, id: 'lastName', name: 'fields[lastName]', type: 'lastName', class: 'border-white' }) }}
                 </div>
-                    {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'email', type: 'email', class: 'border-white' }) }}
-                    {{ form.textarea('', { placeholder: 'message'|t, id: 'message', name: 'message', type: 'message', class: 'border-white mb-30'  }) }}
+                    {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'fields[email]', type: 'email', class: 'border-white' }) }}
+                    {{ form.textarea('', { placeholder: 'message'|t, id: 'message', name: 'fields[message]', type: 'message', class: 'border-white mb-30'  }) }}
                 <button type="submit" class="border border-white text-white py-10 px-20 block w-max uppercase hover:bg-white hover:text-black transition duration-300">Send</button>
             </form> 
         </div>

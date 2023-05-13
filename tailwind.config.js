@@ -62,7 +62,7 @@ module.exports = {
         '3': '0.3rem',
         '2': '0.2rem',
         '1': '0.1rem',
-        'normal': '4.65rem'
+        '0': '0rem'
       },
       fontFamily: {
         'serif': "Bodoni Moda, serif",
@@ -86,9 +86,6 @@ module.exports = {
         'black': '#1E1E1E',
         'grey': '#EBE9E7',
         'pink': '#FBF6F6',
-      },
-      backgroundImage: {
-        'footer': "url('../assets/www/images/footer.jpg')",
       }
     },
   },
