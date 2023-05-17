@@ -32,7 +32,7 @@
                     <img src="{{image.url()}}" alt="hero">
                 {% endfor %}
             </div>
-            <div class="w-12/12 lg:w-4/12 mx-auto">
+            <div class="w-12/12 lg:w-4/12 mx-auto fade-in">
                 <h2 class="text-50 font-serif uppercase">{{entry.titleTwo|nl2br}}</h2>
                 <p class="w-3/4 py-20 text-9">{{entry.descriptionOne}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkOne}) }}
