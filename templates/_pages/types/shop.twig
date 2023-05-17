@@ -32,7 +32,7 @@
                 <h2 class="uppercase font-sans-wide text-h3 mx-auto">{{ 'Kom terug als we meer hebben...'|t }}</h2>
             {% endif %}
             {% for product in products %}
-                <li class="w-4/12" x-show="!filter || product.title.toLowerCase().includes(filter.toLowerCase())">
+                <li class="w-12/12 sm:w-6/12 lg:w-4/12" x-show="!filter || product.title.toLowerCase().includes(filter.toLowerCase())">
                     {% include '_commerce/shop/partials/thumbnail' %}
                 </li>
             {% endfor %}
