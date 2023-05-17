@@ -3,8 +3,6 @@
 
 {# Set variables  #}
 {% set cart = craft.commerce.carts.cart %}
-{% set product = craft.products().one() %}
-{% set variant = product.defaultVariant %}
 
 {# Get all options (and their labels) for this product #}
 {# {% set variantAttributesValues = craft.entries.section('variantAttributeOptionValues').relatedTo(product.variants|filter(el => el.enabled)).all() %}
@@ -68,7 +66,10 @@
                     {{ csrfInput() }}
                     {{ redirectInput('cart') }}
                     {{ actionInput('commerce/cart/update-cart') }}
-                    {{ hiddenInput('purchasableId', variant.id) }}
+                    {% for variant in product.variants %}
+                        <input type="hidden" name="purchasables[{{ variant.id }}][id]" value="{{ variant.id }}">
+                        <input type="hidden" name="purchasables[{{ variant.id }}][qty]" value="1">
+                    {% endfor %}
                     {{ hiddenInput('qty', 1) }}
                     {{ successMessageInput('{product} added to cart.'|t({
                         product: product.title
@@ -82,7 +83,7 @@
 
                     <select name="purchasableId">
                         {% for variant in product.variants %}
-                        <option value="{{ variant.id }}">{{ variant.sku }}</option>
+                            <option value="{{ variant.id }}">{{ variant.sku }}</option>
                         {% endfor %}
                     </select>
 
@@ -93,7 +94,26 @@
                         </div>
                     {% endif %}
 
-                        {# {% for attributeLabel in variantAttributesLabels %}
+                    {# if the product is not in stock #}
+                    {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == ''%}
+                        <div class="flex flex-row flex-wrap items-center justify-start gap-20 mt-20">
+                            <button type="submit" class="bg-black text-white py-10 px-20 block w-max | js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
+                            <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-fill.svg" alt="heart"> add to my wishlist</span> 
+                        </div>
+                    {% else %}
+                        <div class="bg-red-100 p-6 mt-20 border border-red-200 text-red-500">Momenteel niet beschikbaar</div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "_commerce/shop/partials/relatedProducts" %}
+{% endblock %}
+
+
+  {# {% for attributeLabel in variantAttributesLabels %}
                             <div class="flex flex-col w-[80%]">
                             <label class="font-serif text-18 mb-10" for="{{ attributeLabel.slug }}">{{ attributeLabel.title }}</label>
 
@@ -140,23 +160,3 @@
                                 {% endif %}
                             </div>
                         {% endfor %} #}
-
-                    {# if the product is not in stock #}
-                    {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == ''%}
-                        <div class="flex flex-row flex-wrap items-center justify-start gap-20 mt-20">
-                            <button type="submit" class="bg-black text-white py-10 px-20 block w-max | js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
-                            <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-fill.svg" alt="heart"> add to my wishlist</span> 
-                        </div>
-                    {% else %}
-                        <div class="bg-red-100 p-6 mt-20 border border-red-200 text-red-500">Momenteel niet beschikbaar</div>
-                    {% endif %}
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-{% include "_commerce/shop/partials/relatedProducts" %}
-{% endblock %}
-
-
