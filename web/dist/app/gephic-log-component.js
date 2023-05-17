@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkhannahvanderhaeghen"] = self["webpackChunkhannahvanderhaeghen"] || []).push([["src_scripts_components_grephic-log_index_js"],{
+(self["webpackChunkhannahvanderhaeghen"] = self["webpackChunkhannahvanderhaeghen"] || []).push([["gephic-log-component"],{
 
 /***/ "./src/scripts/components/grephic-log/index.js":
 /*!*****************************************************!*\

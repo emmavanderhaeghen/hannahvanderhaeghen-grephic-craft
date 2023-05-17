@@ -1,4 +1,7 @@
 {
-    "/app.js": "/app.js?id=dde05f63ef70670fe8c4981bb8d80d7e",
-    "/app.css": "/app.css?id=a6ffa0d21843fbabc31c72406ffcaef6"
+    "/app.js": "/app.js?id=a6669b44fbb43268673a207bb0520ef9",
+    "/app.css": "/app.css?id=74ba309860f652c8263ff923f2fca102",
+    "/app/gephic-log-component.js": "/app/gephic-log-component.js?id=3977f60f815c2aa7c15b1fe53208a5a8",
+    "/app/nav.js": "/app/nav.js?id=c4afab9b200b43ade8063d7483bd92e7",
+    "/app/grephic-log-component.js": "/app/grephic-log-component.js?id=6738a76df02effaf3184c20fc66a515f"
 }
