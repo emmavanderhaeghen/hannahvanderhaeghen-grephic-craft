@@ -6,23 +6,17 @@
         </div>
     {% endif %}
 
-    <div class="container flex items-center justify-between text-10">
-        <div class="w-6/12 flex items-center gap-30">
+    <div class="container flex flex-col lg:flex-row items-center justify-between text-10">
+        <div class="w-12/12 lg:w-8/12 flex flex-col lg:flex-row items-center gap-20">
             <a class="p-5" href="/home"><img class="" src="../assets/www/svg/icon.svg" alt="Logo-icon"></a>
             <ul class="flex items-center gap-30">
                 <li><a href="{{url('privacy-policy')}}">privacy policy</a></li>
                 <li><a href="{{url('cookie-policy')}}">cookie policy</a></li>
                 <li><a href="{{url('copyright')}}">copyright</a></li>
                 <li><a href="{{url('faq')}}">faq</a></li>
-
-                {# {% for item in legalNav %}
-                    <li class="block my-25 italic hover:not-italic">
-                        <a class="py-5" href="/{{item.title}}">{{item.title}}</a>
-                    </li>
-                {% endfor %} #}
             </ul>
         </div>
-        <a href="">by <span class="underline">Grephic</span></a>
+        <a class="mt-20 md:mt-0">by <span class="underline">Grephic</span></a>
     </div>
 </footer>
 

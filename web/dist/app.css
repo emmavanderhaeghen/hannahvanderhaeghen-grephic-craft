@@ -521,6 +521,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.my-0 {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
 .my-10 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -533,10 +537,6 @@ video {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.my-200 {
-  margin-top: 20rem;
-  margin-bottom: 20rem;
-}
 .my-25 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -545,23 +545,16 @@ video {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-.my-80 {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
-}
-.my-0 {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-}
 .my-50 {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+.my-80 {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
 .mb-10 {
   margin-bottom: 1rem;
-}
-.mb-100 {
-  margin-bottom: 10rem;
 }
 .mb-15 {
   margin-bottom: 1.5rem;
@@ -707,9 +700,6 @@ video {
 }
 .w-4\/6 {
   width: 66.666667%;
-}
-.w-5\/12 {
-  width: 41.666667%;
 }
 .w-500 {
   width: 50rem;
@@ -1160,28 +1150,28 @@ input:-webkit-autofill:active{
 }
 
 .button::before {
-  bottom: 0;
+  top: 0;
   left: 0;
-  border-top: none;
+  border-bottom: none;
   border-right: none;
-  transition: bottom 0.3s ease, left 0.3s ease;
+  transition: top 0.3s ease, left 0.3s ease;
 }
 
 .button::after {
-  top: 0;
+  bottom: 0;
   right: 0;
-  border-bottom: none;
+  border-top: none;
   border-left: none;
-  transition: top 0.3s ease, right 0.3s ease;
+  transition: bottom 0.3s ease, right 0.3s ease;
 }
 
 .button:hover::before {
-  bottom: -0.5rem;
+  top: -0.5rem;
   left: -0.5rem;
 }
 
 .button:hover::after {
-  top: -0.5rem;
+  bottom: -0.5rem;
   right: -0.5rem;
 }
 
@@ -1192,11 +1182,6 @@ input:-webkit-autofill:active{
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 30 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-pink:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 246 246 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-white:hover {
@@ -1284,17 +1269,17 @@ input:-webkit-autofill:active{
   .lg\:w-3\/6 {
     width: 50%;
   }
-  .lg\:w-8\/12 {
-    width: 66.666667%;
-  }
-  .lg\:w-6\/12 {
-    width: 50%;
-  }
   .lg\:w-4\/12 {
     width: 33.333333%;
   }
   .lg\:w-5\/12 {
     width: 41.666667%;
+  }
+  .lg\:w-6\/12 {
+    width: 50%;
+  }
+  .lg\:w-8\/12 {
+    width: 66.666667%;
   }
   .lg\:flex-row {
     flex-direction: row;
