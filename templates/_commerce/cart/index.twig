@@ -23,16 +23,16 @@
             {{ csrfInput() }}
             {% set lineItemHasErrors = false %}
 
+
             {% for item in cart.lineItems %}
+            {# {{dump(item)}} #}
             <div class="flex justify-between items-center {{ not loop.last ? 'mb-20' }}">
                 <a href="{{ item.purchasable.product.url }}" class="hidden md:flex flex-grow-0 mr-6 w-1/6">
-                    {{ transform.image(item.purchasable.product.image1.one|default('/fallback/fallback.jpg'), { width: 120, height: 120 }) }}
+                    <img class="" src="{{item.purchasable.product.imageOne}}" alt="product">
                 </a>
                 <div class="w-[40%] lg:w-3/6 pr-4">
                     <div class="">
-                        <h3 class="font-serif mb-3">{{ item.purchasable.product.filterMerken[0].title }}</h3>
-                        <span class="block">{{ item.description }}</span>
-                        <span class="block">{{ item.purchasable.descriptionOne }}</span>
+                        <h3 class="mb-3">{{ item.purchasable.product.title }}</h3>
                     </div>
                         {% set pickupRules = craft.entries.section('pickupRules').relatedTo([
                         'or',
