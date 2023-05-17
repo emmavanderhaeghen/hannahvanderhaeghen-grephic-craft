@@ -3,30 +3,32 @@
 
 {# Set variables  #}
 {% set cart = craft.commerce.carts.cart %}
+{% set product = craft.products().one() %}
+{% set variant = product.defaultVariant %}
 
 {# Get all options (and their labels) for this product #}
-{% set variantAttributesValues = craft.entries.section('variantAttributeOptionValues').relatedTo(product.variants|filter(el => el.enabled)).all() %}
-{% set variantAttributesLabels = craft.entries.section('variantAttributeOptionLabels').relatedTo(variantAttributesValues|default([0])).all() %}
+{# {% set variantAttributesValues = craft.entries.section('variantAttributeOptionValues').relatedTo(product.variants|filter(el => el.enabled)).all() %}
+{% set variantAttributesLabels = craft.entries.section('variantAttributeOptionLabels').relatedTo(variantAttributesValues|default([0])).all() %} #}
 
 {# Get the current set of options #}
-{% set selectedOptions = craft.app.request.getBodyParam('options') %}
+{# {% set selectedOptions = craft.app.request.getBodyParam('options') %}
 {% if selectedOptions is null %}
     {% set selectedOptions = [] %}
     {% for item in product.defaultVariant.uniqueCombinationOfVariantAttributes %}
         {% set selectedOptions = selectedOptions|merge({(item.variantAttributeLabel.one().slug): item.id}) %}
     {% endfor %}
-{% endif %}
+{% endif %} #}
 
 {# Set the current variant based on the chosen options #}
 {# We should have a fallback for if this fails #}
-{% set filteredVariants = product.variants|filter(el => el.enabled) %}
-{% for option, value in selectedOptions %}
+{# {% set filteredVariants = product.variants|filter(el => el.enabled) %}
+{% for option, value in selectedOptions %} #}
     {# {% set filteredVariants = filteredVariants|filter(el => value in el.uniqueCombinationOfVariantAttributesIds|split(',')) %} #}
-{% endfor %}
-{% set filteredVariants = filteredVariants|first|default(null) %}
+{# {% endfor %}
+{% set filteredVariants = filteredVariants|first|default(null) %} #}
 
 {# Set current variant, fallback to default #}
-{% set currentVariant = filteredVariants|default(product.defaultVariant) %}
+{# {% set currentVariant = filteredVariants|default(product.defaultVariant) %} #}
 {# {% set currentVariantOptionIds = currentVariant.uniqueCombinationOfVariantAttributesIds|split(',') %} #}
 
 {% block content %}
@@ -63,77 +65,86 @@
                 <h1 class="text-20 font-sans uppercase">{{ product.title }}</h1>
 
                 <form method="post" class="js-validate mb-40" action="{{ url(craft.app.request.pathInfo) }}" accept-charset="UTF-8" enctype="multipart/form-data">
-                    {# Start hidden inputs #}
-                    {{ actionInput('commerce/cart/update-cart') }}
                     {{ csrfInput() }}
-                    <input type="hidden" name="purchasableId" :value="getCurrentVariant().id" />
-                    {{ not cart.shippingMethodHandle ? hiddenInput('shippingMethodHandle', 'delivery') }}
                     {{ redirectInput('cart') }}
-                    {# End hidden inputs #}
+                    {{ actionInput('commerce/cart/update-cart') }}
+                    {{ hiddenInput('purchasableId', variant.id) }}
+                    {{ hiddenInput('qty', 1) }}
+                    {{ successMessageInput('{product} added to cart.'|t({
+                        product: product.title
+                    })) }}
+                    {{ not cart.shippingMethodHandle ? hiddenInput('shippingMethodHandle', 'delivery') }}
 
                     {# price #}
                     <div class="mt-15">
                         {% include "_commerce/shop/partials/price" %}
                     </div>
 
+                    <select name="purchasableId">
+                        {% for variant in product.variants %}
+                        <option value="{{ variant.id }}">{{ variant.sku }}</option>
+                        {% endfor %}
+                    </select>
+
+                    {# description #}
                     {% if product.descriptionOne %}
                         <div class="mt-30">
                             <p class="text-9">{{ product.descriptionOne|nl2br }}</p>
                         </div>
                     {% endif %}
 
-                    {% for attributeLabel in variantAttributesLabels %}
-                        <div class="flex flex-col w-[80%]">
-                        <label class="font-serif text-18 mb-10" for="{{ attributeLabel.slug }}">{{ attributeLabel.title }}</label>
+                        {# {% for attributeLabel in variantAttributesLabels %}
+                            <div class="flex flex-col w-[80%]">
+                            <label class="font-serif text-18 mb-10" for="{{ attributeLabel.slug }}">{{ attributeLabel.title }}</label>
 
-                        {% set labelOptions = [] %}
-                        {% set values = variantAttributesValues|filter(el => el.variantAttributeLabel.select('entries.id').column()|first == attributeLabel.id) %}
-                        {% for value in values %}
-                            {# Get variant for this filter + the other selected ones #}
-                            {% set currentSetOfOptions = selectedOptions|merge({ (attributeLabel.slug): value.id }) %}
-                            {% set variant = product.variants|filter(el => el.enabled) %}
-                            {% for option, value in currentSetOfOptions %}
-                            {% set variant = variant|filter(el => value in el.uniqueCombinationOfVariantAttributes.ids()) %}
-                            {% endfor %}
-                            {% set variant = variant|first|default(null) %}
-
-                            {% set labelOptions = labelOptions|merge([{
-                            value: value,
-                            valueId: value.id,
-                            valueTitle: value.title,
-                            selected: value.id in currentVariantOptionIds ? true : false,
-                            sku: variant.sku|default(''),
-                            disabled: (variant.stock <= 0 and not variant.hasUnlimitedStock) ? true : false,
-                            variant: variant,
-                            variantId: variant.id,
-                            
-                            }]) %}
-                        {% endfor %}
-
-                            {% if attributeLabel.displayType == 'dropdown' %}
-                            <select
-                                name="{{ variantAttributesLabels|length > 1 ? "options[#{attributeLabel.slug}]" : "purchasableId" }}"
-                                id="{{ attributeLabel.slug }}" x-on:change="currentVariant = parseInt($event.target.value)"
-                                class="w-full px-20 py-3 h-40 rounded-full bg-white mb-2 focus:outline-none focus:border-primary">
-                                {% for attributeOption in labelOptions %}
-                                <option value="{{ variantAttributesLabels|length > 1 ? attributeOption.valueId : attributeOption.variant.id }}" {{ attributeOption.selected ? 'selected' }} {{ attributeOption.disabled ? 'disabled' }}>{{ attributeOption.valueTitle }}</option>
+                            {% set labelOptions = [] %}
+                            {% set values = variantAttributesValues|filter(el => el.variantAttributeLabel.select('entries.id').column()|first == attributeLabel.id) %}
+                            {% for value in values %}
+                                Get variant for this filter + the other selected ones
+                                {% set currentSetOfOptions = selectedOptions|merge({ (attributeLabel.slug): value.id }) %}
+                                {% set variant = product.variants|filter(el => el.enabled) %}
+                                {% for option, value in currentSetOfOptions %}
+                                {% set variant = variant|filter(el => value in el.uniqueCombinationOfVariantAttributes.ids()) %}
                                 {% endfor %}
-                            </select>
-                            {% endif %}
+                                {% set variant = variant|first|default(null) %}
 
-                            {% if attributeLabel.displayType == 'radioButtons' %}
-                            {% for attributeOption in labelOptions %}
-                                <label for="options-{{ attributeLabel.slug }}-{{ attributeOption.valueId }}">{{ attributeOption.valueTitle }}</label>
-                                <input id="options-{{ attributeLabel.slug }}-{{ attributeOption.valueId }}" name="{{ variantAttributesLabels|length > 1 ? "options[#{attributeLabel.slug}]" : "purchasableId" }}" type="radio" value="{{ variantAttributesLabels|length > 1 ? attributeOption.valueId : attributeOption.variant.id }}" {{ attributeOption.selected ? 'checked' }} {{ attributeOption.disabled ? 'disabled' }} />
+                                {% set labelOptions = labelOptions|merge([{
+                                value: value,
+                                valueId: value.id,
+                                valueTitle: value.title,
+                                selected: value.id in currentVariantOptionIds ? true : false,
+                                sku: variant.sku|default(''),
+                                disabled: (variant.stock <= 0 and not variant.hasUnlimitedStock) ? true : false,
+                                variant: variant,
+                                variantId: variant.id,
+                                
+                                }]) %}
                             {% endfor %}
-                            {% endif %}
-                        </div>
-                    {% endfor %}
+
+                                {% if attributeLabel.displayType == 'dropdown' %}
+                                <select
+                                    name="{{ variantAttributesLabels|length > 1 ? "options[#{attributeLabel.slug}]" : "purchasableId" }}"
+                                    id="{{ attributeLabel.slug }}" x-on:change="currentVariant = parseInt($event.target.value)"
+                                    class="w-full px-20 py-3 h-40 rounded-full bg-white mb-2 focus:outline-none focus:border-primary">
+                                    {% for attributeOption in labelOptions %}
+                                    <option value="{{ variantAttributesLabels|length > 1 ? attributeOption.valueId : attributeOption.variant.id }}" {{ attributeOption.selected ? 'selected' }} {{ attributeOption.disabled ? 'disabled' }}>{{ attributeOption.valueTitle }}</option>
+                                    {% endfor %}
+                                </select>
+                                {% endif %}
+
+                                {% if attributeLabel.displayType == 'radioButtons' %}
+                                {% for attributeOption in labelOptions %}
+                                    <label for="options-{{ attributeLabel.slug }}-{{ attributeOption.valueId }}">{{ attributeOption.valueTitle }}</label>
+                                    <input id="options-{{ attributeLabel.slug }}-{{ attributeOption.valueId }}" name="{{ variantAttributesLabels|length > 1 ? "options[#{attributeLabel.slug}]" : "purchasableId" }}" type="radio" value="{{ variantAttributesLabels|length > 1 ? attributeOption.valueId : attributeOption.variant.id }}" {{ attributeOption.selected ? 'checked' }} {{ attributeOption.disabled ? 'disabled' }} />
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                        {% endfor %} #}
 
                     {# if the product is not in stock #}
                     {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == ''%}
                         <div class="flex flex-row flex-wrap items-center justify-start gap-20 mt-20">
-                            <button type="submit" name="action" value="commerce/cart/update-cart" class="bg-black text-white py-10 px-20 block w-max | js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
+                            <button type="submit" class="bg-black text-white py-10 px-20 block w-max | js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
                             <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-fill.svg" alt="heart"> add to my wishlist</span> 
                         </div>
                     {% else %}
@@ -147,3 +158,5 @@
 
 {% include "_commerce/shop/partials/relatedProducts" %}
 {% endblock %}
+
+
