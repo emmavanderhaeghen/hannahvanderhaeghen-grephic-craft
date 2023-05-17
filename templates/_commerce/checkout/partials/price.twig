@@ -1,0 +1,6 @@
+ {% if variant.onSale %}
+    <span class="text-sm text-gray-500">{{ variant.priceAsCurrency }}</span>
+    <br>{{ variant.salePriceAsCurrency }}
+{% else %}
+    {{ variant.priceAsCurrency }}
+{% endif %}
