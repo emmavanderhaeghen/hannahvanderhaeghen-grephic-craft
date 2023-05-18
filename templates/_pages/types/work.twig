@@ -4,12 +4,12 @@
 {% set galleryPages = craft.entries.section('galleryPages') %}
 
 {% block content %}
-    <section class="ml-60">
+    <section class="md:ml-60">
         <article class="w-12/12 flex flex-wrap mt-50 mb-50 items-center">
             {% for galleryPage in galleryPages %}
-                <a href="{{ galleryPage.url }}" class="w-4/12 gap-20">
+                <a href="{{ galleryPage.url }}" class="w-12/12 md:w-6/12 lg:w-4/12 gap-20">
                 {% for image in galleryPage.imageOne %}
-                    <img class="w-300 pb-40" src="{{image.url()}}" alt="work" loading="lazy">
+                    <img class="w-200 lg:w-300 pb-40" src="{{image.url()}}" alt="work" loading="lazy">
                 {% endfor %}                          
                 </a>
             {% endfor %}
