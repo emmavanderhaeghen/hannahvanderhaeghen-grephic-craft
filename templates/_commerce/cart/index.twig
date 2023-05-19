@@ -23,7 +23,6 @@
             {{ csrfInput() }}
             {% set lineItemHasErrors = false %}
 
-
             {% for item in cart.lineItems %}
             {# {{dump(item)}} #}
             <div class="flex justify-between items-center {{ not loop.last ? 'mb-20' }}">
