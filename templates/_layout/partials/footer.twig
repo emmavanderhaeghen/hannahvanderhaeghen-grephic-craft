@@ -1,13 +1,13 @@
 <footer class="w-12/12 py-25 relative bg-black text-white">
-    {% if craft.app.request.url == siteUrl %}
+    {# {% if craft.app.request.url == siteUrl %}
         <div class="container text-white bg-black py-25 mb-40 flex flex-col items-center">
             <h2 class="text-50 font-serif uppercase pb-10">Let's meet</h2>
             <a class="border border-white bg-transparent py-10 px-20 block w-max hover:bg-white hover:text-black transition duration-300" href="/contact" target="_blank">Contact</a>
         </div>
-    {% endif %}
+    {% endif %} #}
 
     <div class="container flex flex-col lg:flex-row items-center justify-between text-10">
-        <div class="w-12/12 lg:w-8/12 flex flex-col lg:flex-row items-center gap-20">
+        <div class="w-12/12 lg:w-8/12 flex flex-col lg:flex-row items-center gap-20 stagger-in">
             <a class="p-5" href="/home"><img class="" src="../assets/www/svg/icon.svg" alt="Logo-icon"></a>
             <ul class="flex items-center gap-30">
                 <li><a href="{{url('privacy-policy')}}">privacy policy</a></li>

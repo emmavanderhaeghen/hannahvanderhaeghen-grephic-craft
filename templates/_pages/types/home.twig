@@ -14,7 +14,7 @@
 
     <section class="container">
         <article class="flex flex-col lg:flex-row mb-50 lg:mb-100 lg:items-center">
-            <h2 class="w-12/12 lg:w-6/12 text-50 font-serif uppercase">{{entry.titleOne|nl2br}}</h2>
+            <h2 class="w-12/12 lg:w-6/12 text-50 font-serif uppercase fade-in">{{entry.titleOne|nl2br}}</h2>
             <div class="w-12/12 lg:w-6/12 flex">
                 <ul class="flex flex-wrap items-center">
                     {% for product in entry.featuredProducts.all()  %}
@@ -40,7 +40,7 @@
         </article>
 
         <article class="flex flex-col lg:flex-row my-0 lg:mb-200 items-center">
-            <div class="w-12/12 lg:w-4/12 mx-auto">
+            <div class="w-12/12 lg:w-4/12 mx-auto fade-in">
                 <h2 class="text-50 font-serif uppercase">{{entry.titleThree|nl2br}}</h2>
                 <p class="w-3/4 py-20 text-9">{{entry.descriptionTwo|nl2br}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkTwo}) }}

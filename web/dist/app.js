@@ -14,59 +14,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
 /* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.min.css");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+// imports
 
 
-// import Swiper bundle with all modules installed
-
-
-// import styles bundle
-
+ // Swiper bundle with all modules installed
+ // styles bundle
 var App = /*#__PURE__*/function () {
   function App() {
     _classCallCheck(this, App);
     this.button = document.querySelector('.js-nav-button');
     this.lines = document.querySelectorAll('.js-lines');
     this.nav = document.querySelector('.js-nav');
-    this.containerItems = _toConsumableArray(document.querySelectorAll('.fade-in'));
-    this.onIsVisible = this.isVisible.bind(this);
+    this.fadeItems = document.querySelectorAll('.fade-in');
+    this.staggerItems = document.querySelectorAll('.stagger-in');
     this.init();
   }
   _createClass(App, [{
     key: "init",
     value: function init() {
-      this.addEventListeners();
-      var containerItems = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.utils.toArray('.fade-in');
-      containerItems.forEach(function (containerItem, i) {
-        var anim = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.fromTo(containerItem, {
-          autoAlpha: 0,
-          y: 50
-        }, {
-          duration: 1,
-          autoAlpha: 1,
-          y: 0
-        });
-        gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.create({
-          trigger: containerItem,
-          animation: anim,
-          toggleActions: 'play none none none',
-          once: true
-        });
-      });
+      this.initOpenNav();
+      this.initSwiper();
+      this.initFadeIn();
+      this.initStaggerIn();
     }
+
+    // Open Navigation
   }, {
-    key: "addEventListeners",
-    value: function addEventListeners() {
+    key: "initOpenNav",
+    value: function initOpenNav() {
       var _this = this;
       this.button.addEventListener('click', function () {
         _this.button.classList.toggle('open');
@@ -100,58 +80,97 @@ var App = /*#__PURE__*/function () {
         }
       });
     }
+
+    // Image Swiper
+  }, {
+    key: "initSwiper",
+    value: function initSwiper() {
+      var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-slider', {
+        // Optional parameters
+        slidesPerView: 1.2,
+        loop: true,
+        allowTouchMove: true,
+        shortSwipes: false,
+        spaceBetween: 15,
+        centeredSlides: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: false
+        },
+        breakpoints: {
+          768: {
+            centeredSlides: false,
+            slidesPerView: 3,
+            spaceBetween: 30
+          }
+        },
+        // Navigation arrows
+        navigation: {
+          nextEl: '.button-next',
+          prevEl: '.button-prev'
+        }
+      });
+      var swiperProject = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-slider-project', {
+        // Optional parameters
+        slidesPerView: 1,
+        loop: true,
+        allowTouchMove: true,
+        shortSwipes: false,
+        spaceBetween: 30,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: false
+        },
+        // Navigation arrows
+        navigation: {
+          nextEl: '.button-next',
+          prevEl: '.button-prev'
+        }
+      });
+    }
+
+    // Fade in when scrolling
+  }, {
+    key: "initFadeIn",
+    value: function initFadeIn() {
+      gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger);
+      this.fadeItems.forEach(function (item) {
+        gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 80%'
+          },
+          y: 50,
+          opacity: 0,
+          duration: 1.5,
+          ease: 'power4.out'
+        });
+      });
+    }
+
+    // Stagger in when scrolling
+  }, {
+    key: "initStaggerIn",
+    value: function initStaggerIn() {
+      gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger);
+
+      // this.staggerItems.forEach((item) => {
+      //   gsap.from(item, {
+      //     scrollTrigger: {
+      //       trigger: item,
+      //       start: 'top 80%',
+      //     },
+      //     y: 50,
+      //     autoAlpha: 0,
+      //     duration: 1.5,
+      //     ease: 'power4.out',
+      //   });
+      // });
+    }
   }]);
   return App;
 }();
 new App();
-
-// const swiper = new Swiper('.js-slider', {
-//   // Optional parameters
-//   slidesPerView: 1.2,
-//   loop: true,
-//   allowTouchMove: true,
-//   shortSwipes: false,
-//   spaceBetween: 15,
-//   centeredSlides: true,
-//   keyboard: {
-//     enabled: true,
-//     onlyInViewport: false
-//   },
-//   breakpoints: {
-//     768: {
-//       centeredSlides: false,
-//       slidesPerView: 3,
-//       spaceBetween: 30,
-//     },
-//   },
-
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.button-next',
-//     prevEl: '.button-prev',
-//   },
-
-// });
-
-// const swiperProject = new Swiper('.js-slider-project', {
-//   // Optional parameters
-//   slidesPerView: 1,
-//   loop: true,
-//   allowTouchMove: true,
-//   shortSwipes: false,
-//   spaceBetween: 30,
-//   keyboard: {
-//     enabled: true,
-//     onlyInViewport: false
-//   },
-
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.button-next',
-//     prevEl: '.button-prev',
-//   },
-
-// });
 
 /***/ }),
 

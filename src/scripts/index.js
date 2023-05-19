@@ -1,38 +1,29 @@
+// imports
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
- // import Swiper bundle with all modules installed
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper/bundle';  // Swiper bundle with all modules installed
+import 'swiper/css/bundle'; // styles bundle
 
- // import styles bundle
-import 'swiper/css/bundle';
 class App {
   constructor() {
     this.button = document.querySelector('.js-nav-button');
     this.lines = document.querySelectorAll('.js-lines');
     this.nav = document.querySelector('.js-nav');
-    
-    this.containerItems = [...document.querySelectorAll('.fade-in')];
-    this.onIsVisible = this.isVisible.bind(this);
+    this.fadeItems = document.querySelectorAll('.fade-in');
+    this.staggerItems = document.querySelectorAll('.stagger-in');
 
     this.init();
   }
 
   init() {
-    this.addEventListeners();
-    const containerItems = gsap.utils.toArray('.fade-in');
-
-    containerItems.forEach((containerItem, i) => {
-      const anim = gsap.fromTo(containerItem, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
-      ScrollTrigger.create({
-        trigger: containerItem,
-        animation: anim,
-        toggleActions: 'play none none none',
-        once: true,
-      });
-    });
+    this.initOpenNav();
+    this.initSwiper();
+    this.initFadeIn();
+    this.initStaggerIn();
   }
 
-  addEventListeners() {
+  // Open Navigation
+  initOpenNav() {
     this.button.addEventListener('click', () => {
       this.button.classList.toggle('open');
       this.nav.classList.toggle('hidden');
@@ -46,6 +37,92 @@ class App {
     });
   } 
 
+  // Image Swiper
+  initSwiper() {
+    const swiper = new Swiper('.js-slider', {
+      // Optional parameters
+      slidesPerView: 1.2,
+      loop: true,
+      allowTouchMove: true,
+      shortSwipes: false,
+      spaceBetween: 15,
+      centeredSlides: true,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false
+      },
+      breakpoints: {
+        768: {
+          centeredSlides: false,
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
+      },
+
+    });
+
+    const swiperProject = new Swiper('.js-slider-project', {
+      // Optional parameters
+      slidesPerView: 1,
+      loop: true,
+      allowTouchMove: true,
+      shortSwipes: false,
+      spaceBetween: 30,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
+      },
+
+    });
+  }
+
+  // Fade in when scrolling
+  initFadeIn() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    this.fadeItems.forEach((item) => {
+      gsap.from(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 80%',
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1.5,
+        ease: 'power4.out',
+      });
+    });
+  }
+
+  // Stagger in when scrolling
+  initStaggerIn() {
+    gsap.registerPlugin(ScrollTrigger);
+  
+    // this.staggerItems.forEach((item) => {
+    //   gsap.from(item, {
+    //     scrollTrigger: {
+    //       trigger: item,
+    //       start: 'top 80%',
+    //     },
+    //     y: 50,
+    //     autoAlpha: 0,
+    //     duration: 1.5,
+    //     ease: 'power4.out',
+    //   });
+    // });
+  }
   
 
 }
@@ -53,50 +130,3 @@ class App {
 new App();
 
 
-// const swiper = new Swiper('.js-slider', {
-//   // Optional parameters
-//   slidesPerView: 1.2,
-//   loop: true,
-//   allowTouchMove: true,
-//   shortSwipes: false,
-//   spaceBetween: 15,
-//   centeredSlides: true,
-//   keyboard: {
-//     enabled: true,
-//     onlyInViewport: false
-//   },
-//   breakpoints: {
-//     768: {
-//       centeredSlides: false,
-//       slidesPerView: 3,
-//       spaceBetween: 30,
-//     },
-//   },
-
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.button-next',
-//     prevEl: '.button-prev',
-//   },
-
-// });
-
-// const swiperProject = new Swiper('.js-slider-project', {
-//   // Optional parameters
-//   slidesPerView: 1,
-//   loop: true,
-//   allowTouchMove: true,
-//   shortSwipes: false,
-//   spaceBetween: 30,
-//   keyboard: {
-//     enabled: true,
-//     onlyInViewport: false
-//   },
-
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.button-next',
-//     prevEl: '.button-prev',
-//   },
-
-// });
