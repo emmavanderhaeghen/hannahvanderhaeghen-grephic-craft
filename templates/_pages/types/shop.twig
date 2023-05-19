@@ -1,17 +1,18 @@
 {# Layouts and macros #}
 {% extends "_layout/site" %}
 
-{% set products = craft.products().limit(32) %}
 {% set categories = craft.categories.group('shop') %}
-{% set firstCategory = craft.categories.group('shop').one() %}
+{% set currentCategory = craft.categories.group('shop').title(craft.app.request.pathInfo) %}
+{% set products = craft.products().type(craft.app.request.pathInfo).limit(3) %}
+{% paginate products as pageInfo, pageProducts %}
 
 {% block content %}
-    <section class="container" x-data="{ filter: '' }">
+    <section class="container mb-120">
         <div class="w-fit mx-auto mb-30">
             {% if categories|length %}
             <div class="relative" x-data="{ open: false }">
                 <button class="flex font-medium items-center py-3 px-6 border-b-2 border-black" x-on:click="open = !open" type="button" x-model="filter">
-                    {{ firstCategory.title }}
+                    {{ currentCategory.title }}
                     <img :class="{ 'rotate-180': open }" class="ml-10" src="../assets/www/svg/arrow.svg" alt="hero">
                 </button>
                 <div class="absolute z-10 p-2 bg-pink min-w-full capitalize w-max text-black text-14 rounded-[10px] mt-10 shadow-md" x-show="open" x-cloak>
@@ -27,16 +28,36 @@
             {% endif %}
         </div>
 
-        <ul class="flex flex-wrap items-center mt-20 mb-200">
-            {% if products|length == 0 %}
-                <h2 class="uppercase font-sans-wide text-h3 mx-auto">{{ 'Kom terug als we meer hebben...'|t }}</h2>
+        <ul class="flex flex-wrap items-center mt-20">
+            {% if pageProducts|length == 0 %}
+                <h2 class="uppercase font-sans-wide text-h3 mx-auto">{{ 'Come back when we have more...'|t }}</h2>
             {% endif %}
-            {% for product in products %}
-                <li class="w-12/12 sm:w-6/12 lg:w-4/12" x-show="!filter || product.title.toLowerCase().includes(filter.toLowerCase())">
+            {% for product in pageProducts %}
+                <li class="w-12/12 sm:w-6/12 lg:w-4/12">
                     {% include '_commerce/shop/partials/thumbnail' %}
                 </li>
             {% endfor %}
         </ul>
+
+        {# Pagination #}
+            {% if pageInfo.totalPages > 1 %}
+            <span class="relative top-80">page {{ pageInfo.currentPage }} of {{ pageInfo.totalPages }}</span>
+            <div class="flex justify-center mt-50 text-base items-center">
+                {% for page, url in pageInfo.getPrevUrls() %}
+                    <div class="relative">
+                        <a class="mx-20" href="{{ url }}">{{ page }}</a>
+                    </div>
+                {% endfor %}
+                    <div class="relative">
+                    <span class="mx-20 text-bold">{{ pageInfo.currentPage }}</span>
+                    </div>
+                {% for page, url in pageInfo.getNextUrls() %}
+                    <div class="relative">
+                        <a class="mx-20" href="{{ url }}">{{ page }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %}
     </section>
 {% endblock %}
 
