@@ -39,6 +39,54 @@ productFieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: be22cb79-003d-4a7e-bab2-c408d736e421
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b8121e38-5a85-4234-bcbb-d72829174130
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f94bb65d-340e-44bb-abbf-0460d9f97e27
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd # Filter: shop
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 918ab672-d18e-47cc-bf2d-f0bc62faa2d0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Filters
+        uid: feedc03e-afab-49ad-989d-f0ff22032b2e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
             instructions: null
             label: null
             required: false
@@ -47,8 +95,8 @@ productFieldLayouts:
             uid: 0fefa22c-485f-4796-88f8-6248c8872169
             userCondition: null
             warning: null
-        name: Content
-        uid: f94bb65d-340e-44bb-abbf-0460d9f97e27
+        name: Variants
+        uid: f347f935-145e-4e1a-80af-887326d685e9
         userCondition: null
 productTitleFormat: ''
 siteSettings:
