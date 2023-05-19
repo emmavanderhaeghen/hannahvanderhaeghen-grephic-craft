@@ -3,7 +3,7 @@
 
 {% set categories = craft.categories.group('shop') %}
 {% set currentCategory = craft.categories.group('shop').title(craft.app.request.pathInfo) %}
-{% set products = craft.products().type(craft.app.request.pathInfo).limit(3) %}
+{% set products = craft.products().type(craft.app.request.pathInfo).limit(12) %}
 {% paginate products as pageInfo, pageProducts %}
 
 {% block content %}
@@ -33,7 +33,7 @@
                 <h2 class="uppercase font-sans-wide text-h3 mx-auto">{{ 'Come back when we have more...'|t }}</h2>
             {% endif %}
             {% for product in pageProducts %}
-                <li class="w-12/12 sm:w-6/12 lg:w-4/12">
+                <li class="w-12/12 sm:w-6/12 lg:w-4/12 mb-30 px-10">
                     {% include '_commerce/shop/partials/thumbnail' %}
                 </li>
             {% endfor %}

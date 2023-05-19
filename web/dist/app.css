@@ -494,6 +494,24 @@ video {
 .top-\[45\%\] {
   top: 45%;
 }
+.-bottom-\[\.8rem\] {
+  bottom: -.8rem;
+}
+.right-\[\.65rem\] {
+  right: .65rem;
+}
+.top-80 {
+  top: 8rem;
+}
+.right-60 {
+  right: 6rem;
+}
+.right-40 {
+  right: 4rem;
+}
+.top-10 {
+  top: 1rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -552,6 +570,14 @@ video {
 .my-80 {
   margin-top: 8rem;
   margin-bottom: 8rem;
+}
+.mx-20 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.mx-10 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .mb-10 {
   margin-bottom: 1rem;
@@ -643,6 +669,21 @@ video {
 .mt-\[\.4rem\] {
   margin-top: .4rem;
 }
+.mb-180 {
+  margin-bottom: 18rem;
+}
+.mb-160 {
+  margin-bottom: 16rem;
+}
+.mb-120 {
+  margin-bottom: 12rem;
+}
+.ml-40 {
+  margin-left: 4rem;
+}
+.ml-60 {
+  margin-left: 6rem;
+}
 .block {
   display: block;
 }
@@ -683,6 +724,9 @@ video {
 .w-10\/12 {
   width: 83.333333%;
 }
+.w-200 {
+  width: 20rem;
+}
 .w-3\/12 {
   width: 25%;
 }
@@ -697,9 +741,6 @@ video {
 }
 .w-4\/12 {
   width: 33.333333%;
-}
-.w-4\/6 {
-  width: 66.666667%;
 }
 .w-500 {
   width: 50rem;
@@ -957,6 +998,10 @@ video {
 .py-80 {
   padding-top: 8rem;
   padding-bottom: 8rem;
+}
+.px-10 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .pb-10 {
   padding-bottom: 1rem;
@@ -1230,6 +1275,9 @@ input:-webkit-autofill:active{
 }
 
 @media (min-width: 768px) {
+  .md\:ml-60 {
+    margin-left: 6rem;
+  }
   .md\:mt-0 {
     margin-top: 0rem;
   }
@@ -1238,6 +1286,9 @@ input:-webkit-autofill:active{
   }
   .md\:w-4\/12 {
     width: 33.333333%;
+  }
+  .md\:w-6\/12 {
+    width: 50%;
   }
   .md\:flex-row {
     flex-direction: row;
@@ -1264,6 +1315,9 @@ input:-webkit-autofill:active{
   .lg\:mb-200 {
     margin-bottom: 20rem;
   }
+  .lg\:mt-0 {
+    margin-top: 0rem;
+  }
   .lg\:block {
     display: block;
   }
@@ -1276,8 +1330,14 @@ input:-webkit-autofill:active{
   .lg\:w-3\/6 {
     width: 50%;
   }
+  .lg\:w-300 {
+    width: 30rem;
+  }
   .lg\:w-4\/12 {
     width: 33.333333%;
+  }
+  .lg\:w-4\/6 {
+    width: 66.666667%;
   }
   .lg\:w-5\/12 {
     width: 41.666667%;

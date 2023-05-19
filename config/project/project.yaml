@@ -1,4 +1,4 @@
-dateModified: 1681386182
+dateModified: 1684503003
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -208,6 +208,30 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.1.0
+    settings:
+      enableCsrfProtection: '1'
+      entryVariable: ''
+      sections:
+        __assoc__:
+          -
+            - 7bfd2eb5-6578-4433-9c41-d19176243b02 # Contact berichten
+            -
+              __assoc__:
+                -
+                  - sectionUid
+                  - 7bfd2eb5-6578-4433-9c41-d19176243b02 # Contact berichten
+                -
+                  - allowGuestSubmissions
+                  - '1'
+                -
+                  - enabledByDefault
+                  - '1'
+                -
+                  - runValidation
+                  - '1'
+                -
+                  - authorUid
+                  - 747476af-ef78-4e7c-87b0-c823cab47c36
   mix:
     edition: standard
     enabled: true
