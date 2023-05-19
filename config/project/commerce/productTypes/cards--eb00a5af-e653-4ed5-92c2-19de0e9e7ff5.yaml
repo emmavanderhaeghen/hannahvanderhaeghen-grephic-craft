@@ -39,14 +39,28 @@ productFieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
             instructions: null
             label: null
             required: false
             tip: null
-            type: craft\commerce\fieldlayoutelements\VariantsField
-            uid: 8b15bf57-b097-444d-98a4-c396703bf92a
+            type: craft\fieldlayoutelements\CustomField
+            uid: bab05eee-9053-4e00-868e-2efe0e77acc4
             userCondition: null
             warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 47bb54c8-61ff-4d89-b9f0-282c0601d73c
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: bde9f038-5093-4e0d-8cbf-b82ee6549b46
         userCondition: null
@@ -67,6 +81,22 @@ productFieldLayouts:
             width: 100
         name: Filters
         uid: 6a532970-a24f-440d-a191-cf3348d0e2b4
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\commerce\fieldlayoutelements\VariantsField
+            uid: 8b15bf57-b097-444d-98a4-c396703bf92a
+            userCondition: null
+            warning: null
+        name: Variants
+        uid: 36c20084-f167-4eb7-af51-9756152795b2
         userCondition: null
 productTitleFormat: ''
 siteSettings:
