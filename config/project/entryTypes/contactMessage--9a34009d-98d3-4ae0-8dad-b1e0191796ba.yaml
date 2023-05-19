@@ -68,13 +68,13 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7 # Telefoonnummer
+            fieldUid: 48abcf61-f6f1-411b-903a-81f034608b53 # Bericht
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 6f0c6a64-6f90-4060-a4f1-53fde75f12a9
+            uid: eae13cb5-a25a-48ae-9182-dbc3fb64236a
             userCondition: null
             warning: null
             width: 100
@@ -82,10 +82,10 @@ fieldLayouts:
         uid: de221c2a-170f-4e3c-a6de-e3bd484087f0
         userCondition: null
 handle: contactMessage
-hasTitleField: true
+hasTitleField: false
 name: Contactbericht
 section: 7bfd2eb5-6578-4433-9c41-d19176243b02 # Contact berichten
 sortOrder: 1
-titleFormat: null
+titleFormat: '{ firstName } { lastName } - { email}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
