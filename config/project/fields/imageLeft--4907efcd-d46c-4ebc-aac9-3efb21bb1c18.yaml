@@ -1,0 +1,14 @@
+columnSuffix: withkttx
+contentColumnType: boolean
+fieldGroup: 5abaf161-4cf4-4485-8e4a-2e257439dda4 # Form elements (filters, checkboxes, dropdowns)
+handle: imageLeft
+instructions: null
+name: 'image left'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\Lightswitch

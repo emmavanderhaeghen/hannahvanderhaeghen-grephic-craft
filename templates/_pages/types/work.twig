@@ -4,7 +4,39 @@
 {% set galleryPages = craft.entries.section('galleryPages') %}
 
 {% block content %}
-    <section class="md:ml-60">
+
+    <section class="container">
+        <article class="flex mt-50 mb-50">
+            <div class="w-8/12 mx-auto text-9 relative">
+                {% for galleryPage in galleryPages %}
+                    {% if galleryPage.imageLeft %}
+                        <a class="fade-in" href="{{ galleryPage.url }}">
+                            {% for image in galleryPage.imageOne %}
+                                <img class="w-400 pb-40" src="{{ image.url() }}" alt="work" loading="lazy">
+                            {% endfor %}
+                        </a>
+                    {% elseif galleryPage.imageRight %}
+                        <a class="relative -right-[40rem] fade-in" href="{{ galleryPage.url }}">
+                            {% for image in galleryPage.imageOne %}
+                                <img class="w-400 pb-40" src="{{ image.url() }}" alt="work" loading="lazy">
+                            {% endfor %}
+                        </a>
+                    {% else %}
+                        <a class="relative left-[20rem] fade-in" href="{{ galleryPage.url }}">
+                            {% for image in galleryPage.imageOne %}
+                                <img class="w-400 pb-40" src="{{ image.url() }}" alt="work" loading="lazy">
+                            {% endfor %}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </article>
+    </section>
+
+{% endblock %}
+
+
+    {# <section class="md:ml-60">
         <article class="w-12/12 flex flex-wrap mt-50 mb-50 items-center">
             {% for galleryPage in galleryPages %}
                 <a href="{{ galleryPage.url }}" class="w-12/12 md:w-6/12 lg:w-4/12 gap-20">
@@ -14,30 +46,4 @@
                 </a>
             {% endfor %}
         </article>
-    </section>
-{% endblock %}
-
-{# 
-    <section class="container">
-        <article class="flex mt-50 mb-50">
-            <div class="w-3/12">
-                {% if categories|length %}
-                <ul  class="fixed left-100 bottom-100">
-                    {% for category in categories %}
-                    <li class="py-15 hover:font-medium"><a href="{{ category.url }}">{{ category.title }}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endif %}       
-            </div>
-            <div class="w-8/12 mx-auto text-9">
-            {% for galleryPage in galleryPages %}
-                <a href="{{ galleryPage.url }}">
-                {% for image in galleryPage.imageOne %}
-                    <img class="w-500 pb-40" src="{{image.url()}}" alt="work" loading="lazy">
-                {% endfor %}                          
-                </a>
-            {% endfor %}
-            </div>
-        </article>
-    </section>
-#}
+    </section> #}
