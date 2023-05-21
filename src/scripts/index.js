@@ -100,7 +100,7 @@ class App {
         },
         y: 50,
         opacity: 0,
-        duration: 1.5,
+        duration: 3,
         ease: 'power4.out',
       });
     });
