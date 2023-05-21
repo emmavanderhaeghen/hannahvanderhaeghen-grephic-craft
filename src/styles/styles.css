@@ -3,10 +3,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* .fade-in {
-  @apply opacity-0 translate-y-4 duration-300 ease-linear;
-} */
-
 input::placeholder, textarea::placeholder, select::placeholder {
   @apply text-9;
   opacity: 0.8;
@@ -20,7 +16,15 @@ input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-/* .button::before,
+.button {
+  border: 1px solid #e7e7e7;
+}
+
+.button:hover {
+  border: 1px solid #fff;
+}
+
+.button::before,
 .button::after {
   content: "";
   position: absolute;
@@ -53,4 +57,4 @@ input:-webkit-autofill:active{
 .button:hover::after {
   bottom: -0.5rem;
   right: -0.5rem;
-}*/
+}
