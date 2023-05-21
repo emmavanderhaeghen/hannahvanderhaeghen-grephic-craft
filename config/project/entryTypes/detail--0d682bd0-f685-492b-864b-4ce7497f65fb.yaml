@@ -87,6 +87,36 @@ fieldLayouts:
         name: Filters
         uid: bc26c552-6423-45b4-b9ca-fd4cd71703fe
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 4907efcd-d46c-4ebc-aac9-3efb21bb1c18 # image left
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b9bd4bdb-bc4f-496d-a751-95723e2e5f04
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 986126ba-250e-463e-8f3c-3f9257acc84c # image right
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 892cf2f4-2cee-44a9-9dc0-7c6bd5f7cc6b
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Image Alignment'
+        uid: fe243c6f-8233-4bf0-b56a-4b67cfb2612f
+        userCondition: null
 handle: detail
 hasTitleField: true
 name: Detail
