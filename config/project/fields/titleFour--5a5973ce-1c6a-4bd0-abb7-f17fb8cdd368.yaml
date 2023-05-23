@@ -1,0 +1,19 @@
+columnSuffix: dfyvfzkl
+contentColumnType: text
+fieldGroup: 94c51b0c-961c-4fd5-904f-5b7871f98cf7 # Text
+handle: titleFour
+instructions: null
+name: 'Titel 4'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 1
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\PlainText
