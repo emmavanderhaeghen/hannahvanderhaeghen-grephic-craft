@@ -80,12 +80,17 @@ module.exports = {
         '25': ['2.5rem', { lineHeight: '4.5rem' }],
         '30': ['3rem', { lineHeight: '4.8rem' }],
         '50': ['3.125rem', { lineHeight: '5rem' }],
+        '80': ['8rem', { lineHeight: '5rem' }],
+
       },
       colors: {
         'white': '#FFF',
         'black': '#1E1E1E',
+        'black-transparent': 'rgba(0, 0, 0, 0.5)',
         'grey': '#EBE9E7',
         'pink': '#FBF6F6',
+        'pink-500': '#EBC3C3',
+
       }
     },
   },
