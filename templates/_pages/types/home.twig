@@ -13,6 +13,7 @@
     </div>
 
     <section class="container">
+        {# featured products #}
         <article class="flex flex-col lg:flex-row mb-50 lg:mb-100 lg:items-center">
             <h2 class="w-12/12 lg:w-6/12 text-50 font-serif uppercase fade-in">{{entry.titleOne|nl2br}}</h2>
             <div class="w-12/12 lg:w-6/12 flex">
@@ -26,31 +27,54 @@
             </div>
         </article>
 
+        {# collections - work page #}
         <article class="flex flex-col-reverse lg:flex-row my-0 lg:my-200 items-center">
-            <div class="w-12/12 lg:w-6/12 my-50">
+            <div class="w-12/12 lg:w-6/12 my-50 fade-in">
                 {% for image in entry.imageTwo %}
-                    <img src="{{image.url()}}" alt="hero">
+                    <img class="w-400" src="{{image.url()}}" alt="hero">
                 {% endfor %}
             </div>
-            <div class="w-12/12 lg:w-4/12 mx-auto fade-in">
-                <h2 class="text-50 font-serif uppercase">{{entry.titleTwo|nl2br}}</h2>
-                <p class="w-3/4 py-20 text-9">{{entry.descriptionOne}}</p>
+            <div class="w-12/12 lg:w-4/12 mx-auto relative fade-in">
+                <h2 class="absolute -right-80 -top-[15.5rem] text-80 font-serif uppercase text-pink-500 scroll-title-right">{{entry.titleTwo|nl2br}}</h2>
+                <p class="w-3/4 py-80 text-9">{{entry.descriptionOne}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkOne}) }}
             </div>
         </article>
 
+        {# quote #}
+        <article class="my-200">
+            <div class="w-12/12 lg:w-10/12 mx-auto py-80 px-100 bg-pink fade-in">
+                <h2 class="text-50 font-serif uppercase text-center">In the Eye <br> of the <span class="italic">Beholder</span></h2>
+            </div>
+        </article>
+
+        {# the artist - about page #}
         <article class="flex flex-col lg:flex-row my-0 lg:mb-200 items-center">
-            <div class="w-12/12 lg:w-4/12 mx-auto fade-in">
-                <h2 class="text-50 font-serif uppercase">{{entry.titleThree|nl2br}}</h2>
-                <p class="w-3/4 py-20 text-9">{{entry.descriptionTwo|nl2br}}</p>
+            <div class="w-12/12 lg:w-4/12 mx-auto relative fade-in">
+                <h2 class="z-[20] absolute -left-[5rem] -top-[11.5rem] w-max text-80 font-serif uppercase text-pink-500 scroll-title-right">{{entry.titleThree}}</h2>
+                <p class="w-3/4 py-80 text-9">{{entry.descriptionTwo|nl2br}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkTwo}) }}
             </div>
-            <div class="w-12/12 lg:w-5/12 mx-auto my-50">
+            <div class="w-12/12 lg:w-5/12 mx-auto my-50 fade-in">
                 {% for image in entry.imageThree %}
                     <img src="{{image.url()}}" alt="hero">
                 {% endfor %}            
             </div>
         </article>
+
     </section>
+        {# connect - contact page #}
+        <article class="relative">
+            <div class="z-20 w-12/12 lg:w-6/12 absolute right-20 bg-black-transparent pr-[24rem] pt-50 pl-80 pb-70 fade-in">
+                <h2 class="text-80 font-serif uppercase absolute left-80 -top-[2.25rem] text-pink-500 scroll-title-right">{{entry.titleFour}}</h2>
+                <p class="py-80 text-9 text-white">{{entry.descriptionThree}}</p>
+                {{ include ("_layout/partials/button", {button: entry.linkThree, class:'text-white!'}) }}
+            </div>
+            <div class="relative bottom-0 left-0">
+            {% for image in entry.imageFour %}
+                <img class="h-500 w-full object-cover relative top-0 left-0" src="{{image.url()}}" alt="hero">
+            {% endfor %}
+            </div>
+        </article>
 
 {% endblock %}

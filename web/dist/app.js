@@ -32,6 +32,8 @@ var App = /*#__PURE__*/function () {
     this.nav = document.querySelector('.js-nav');
     this.fadeItems = document.querySelectorAll('.fade-in');
     this.staggerItems = document.querySelectorAll('.stagger-in');
+    this.scrollTitlesRight = document.querySelectorAll(".scroll-title-right");
+    if (this.scrollTitlesRight[0]) this.initScrollTitlesRight();
     this.init();
   }
   _createClass(App, [{
@@ -41,6 +43,7 @@ var App = /*#__PURE__*/function () {
       this.initSwiper();
       this.initFadeIn();
       this.initStaggerIn();
+      this.initScrollTitlesRight();
     }
 
     // Open Navigation
@@ -166,6 +169,25 @@ var App = /*#__PURE__*/function () {
       //     ease: 'power4.out',
       //   });
       // });
+    }
+
+    // Scroll titles right
+  }, {
+    key: "initScrollTitlesRight",
+    value: function initScrollTitlesRight() {
+      for (var i = 0; i < this.scrollTitlesRight.length; i++) {
+        var scrollTitle = this.scrollTitlesRight[i];
+        gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(scrollTitle, {
+          scrollTrigger: {
+            trigger: scrollTitle.parentNode,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 2
+          },
+          x: window.innerWidth / 6,
+          ease: "power2.inOut"
+        });
+      }
     }
   }]);
   return App;

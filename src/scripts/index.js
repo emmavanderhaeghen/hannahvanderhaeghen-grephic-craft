@@ -12,6 +12,9 @@ class App {
     this.fadeItems = document.querySelectorAll('.fade-in');
     this.staggerItems = document.querySelectorAll('.stagger-in');
 
+    this.scrollTitlesRight = document.querySelectorAll(".scroll-title-right");
+    if (this.scrollTitlesRight[0]) this.initScrollTitlesRight();
+
     this.init();
   }
 
@@ -20,6 +23,7 @@ class App {
     this.initSwiper();
     this.initFadeIn();
     this.initStaggerIn();
+    this.initScrollTitlesRight();
   }
 
   // Open Navigation
@@ -124,7 +128,22 @@ class App {
     // });
   }
   
-
+  // Scroll titles right
+  initScrollTitlesRight() {
+    for (let i = 0; i < this.scrollTitlesRight.length; i++) {
+      const scrollTitle = this.scrollTitlesRight[i];
+      gsap.to(scrollTitle, {
+        scrollTrigger: {
+          trigger: scrollTitle.parentNode,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 2,
+        },
+        x: window.innerWidth / 6,
+        ease: "power2.inOut",
+      });
+    }
+  }
 }
 
 new App();

@@ -1,4 +1,4 @@
-dateModified: 1684670335
+dateModified: 1684832222
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -26,6 +26,7 @@ meta:
     3ebf8831-4a21-48bd-a049-493560af4308: Common # Common
     4f3af52d-dc34-45b8-96e8-0355358d1890: About # About
     4fd1bc8c-b3eb-457e-9696-d2ac0b407f4b: Wishlist # Wishlist
+    5a5973ce-1c6a-4bd0-abb7-f17fb8cdd368: 'Titel 4' # Titel 4
     5abaf161-4cf4-4485-8e4a-2e257439dda4: 'Form elements (filters, checkboxes, dropdowns)' # Form elements (filters, checkboxes, dropdowns)
     5e45130b-d008-42a5-9107-35670a0d35c3: 'Gallery pagina''s' # Gallery pagina's
     5f5630f3-da19-4241-a164-79bdca4f52f7: 'LinkedIn link' # LinkedIn link
@@ -54,6 +55,7 @@ meta:
     619a8e46-e785-4b25-90f9-85ba6dcdf9c6: Home # Home
     643cb138-4a82-4f14-a789-948b643043bc: 'Gallery filters' # Gallery filters
     0657cf24-ecbd-4107-adb2-3a4f69e4ad8b: Policy # Policy
+    862eb467-ce26-4fc3-8289-42571aaff556: 'Beschrijving 3' # Beschrijving 3
     958e2e03-63a3-4194-b1cf-ebd5fa9fc895: 'Instagram link' # Instagram link
     4907efcd-d46c-4ebc-aac9-3efb21bb1c18: 'image left' # image left
     7521d7d4-bfee-4451-beed-90ad1d724c5b: Work # Work
@@ -64,6 +66,7 @@ meta:
     361382ab-c268-4ec2-a944-660822aea169: English # English
     986126ba-250e-463e-8f3c-3f9257acc84c: 'image right' # image right
     01680712-796d-48bb-80fc-3e79cb98d2d3: Prints # Prints
+    16573316-2b9f-4846-b6f2-ffe2e1a79da7: quote # quote
     a3b7618e-f5d1-4b5f-bd32-db20dd35c26b: SEO # SEO
     a48ddbb3-33df-449b-a3c0-53e95f5b4f88: Wishlist # Wishlist
     a576e86a-698c-4e39-8bb2-f03c1164f56b: 'Variant Attribute Label' # Variant Attribute Label
@@ -71,6 +74,7 @@ meta:
     ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd: 'Filter: shop' # Filter: shop
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
     b94dc6c9-aae8-45c7-b754-5f6a3c81039a: 'Facebook link' # Facebook link
+    bba3f6c6-4034-448c-b3b5-62ef276276cd: 'Afbeelding 4' # Afbeelding 4
     be98b21a-7959-4658-93c8-ac8484da53b1: 'Variant Attribute Option Values' # Variant Attribute Option Values
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
     c871bcad-3990-4bf3-954f-b29d2e335773: 'Filter: gallery' # Filter: gallery
@@ -87,6 +91,7 @@ meta:
     ed335616-6cd9-410b-9d9f-5992c89f02c7: USP # USP
     f016f34d-e9d9-41bf-86cf-5fc0c29b036c: 'Algemene gegevens' # Algemene gegevens
     f2fda0de-15eb-4ada-a4c1-c88f8dc38392: 'Afbeelding 3' # Afbeelding 3
+    f3c222fb-a954-43f0-9d6c-a54baae77aa2: 'Link 3' # Link 3
     fe6b4ecc-45d5-44bf-8dbb-dd6b403e53b7: Telefoonnummer # Telefoonnummer
 plugins:
   blitz:
