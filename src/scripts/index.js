@@ -16,6 +16,8 @@ class App {
     if (this.scrollTitlesRight[0]) this.initScrollTitlesRight();
 
     this.init();
+
+    
   }
 
   init() {

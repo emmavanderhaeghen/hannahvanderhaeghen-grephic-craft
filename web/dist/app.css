@@ -458,6 +458,9 @@ video {
   top: 0rem;
   bottom: 0rem;
 }
+.-left-\[5rem\] {
+  left: -5rem;
+}
 .-right-80 {
   right: -8rem;
 }
@@ -476,6 +479,9 @@ video {
 .-top-\[15\.5rem\] {
   top: -15.5rem;
 }
+.-top-\[2\.25rem\] {
+  top: -2.25rem;
+}
 .bottom-0 {
   bottom: 0rem;
 }
@@ -488,11 +494,11 @@ video {
 .left-20 {
   left: 2rem;
 }
+.left-80 {
+  left: 8rem;
+}
 .left-\[20rem\] {
   left: 20rem;
-}
-.left-\[5rem\] {
-  left: 5rem;
 }
 .right-0 {
   right: 0rem;
@@ -517,27 +523,6 @@ video {
 }
 .top-\[45\%\] {
   top: 45%;
-}
-.-top-40 {
-  top: -4rem;
-}
-.-top-\[2\.25rem\] {
-  top: -2.25rem;
-}
-.left-80 {
-  left: 8rem;
-}
-.left-\[25rem\] {
-  left: 25rem;
-}
-.-left-\[25rem\] {
-  left: -25rem;
-}
-.-left-\[15rem\] {
-  left: -15rem;
-}
-.-left-\[5rem\] {
-  left: -5rem;
 }
 .z-10 {
   z-index: 10;
@@ -732,6 +717,9 @@ video {
 .h-40 {
   height: 4rem;
 }
+.h-500 {
+  height: 50rem;
+}
 .h-\[2px\] {
   height: 2px;
 }
@@ -741,9 +729,6 @@ video {
 }
 .h-screen {
   height: 100vh;
-}
-.h-500 {
-  height: 50rem;
 }
 .w-1\/6 {
   width: 16.666667%;
@@ -923,6 +908,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 30 / var(--tw-bg-opacity));
 }
+.bg-black-transparent {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .bg-pink {
   --tw-bg-opacity: 1;
   background-color: rgb(251 246 246 / var(--tw-bg-opacity));
@@ -937,9 +925,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-black-transparent {
-  background-color: rgba(0, 0, 0, 0.5);
 }
 .stroke-black {
   stroke: #1E1E1E;
@@ -1040,8 +1025,14 @@ video {
 .pb-40 {
   padding-bottom: 4rem;
 }
+.pb-70 {
+  padding-bottom: 7rem;
+}
 .pl-60 {
   padding-left: 6rem;
+}
+.pl-80 {
+  padding-left: 8rem;
 }
 .pr-3 {
   padding-right: 0.3rem;
@@ -1052,20 +1043,11 @@ video {
 .pr-70 {
   padding-right: 7rem;
 }
-.pt-40 {
-  padding-top: 4rem;
-}
-.pl-80 {
-  padding-left: 8rem;
-}
-.pr-40 {
-  padding-right: 4rem;
-}
-.pb-70 {
-  padding-bottom: 7rem;
-}
 .pr-\[24rem\] {
   padding-right: 24rem;
+}
+.pt-40 {
+  padding-top: 4rem;
 }
 .pt-50 {
   padding-top: 5rem;
@@ -1283,6 +1265,10 @@ input:-webkit-autofill:active{
 .button:hover::after {
   bottom: -0.5rem;
   right: -0.5rem;
+}
+
+.image {
+  width: -webkit-fill-available;
 }
 
 .last\:pb-0:last-child {

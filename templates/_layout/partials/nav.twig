@@ -3,10 +3,59 @@
 {% set navItems = craft.entries().section('pages').level(1).offset(1).limit(4) %}
 
 <nav class="hidden z-40 fixed overflow-hidden w-screen h-screen bg-black top-0 left-0 flex items-center | js-nav">
-    <img class="w-6/12 h-fit" src="../assets/www/images/bergen-4.jpg" alt="nav">
+    <div class="image-holder w-6/12 h-fit">
+    <img class="image" src="../assets/www/images/work.png">
+    </div>
+    
+    <div class="w-4/12 mx-auto text-white uppercase">
+        <ul class="list mt-100 font-serif text-25">
+            <li class="block my-25 italic hover:not-italic"><a href="#" data-src="../assets/www/images/work.png">Work</a></li>
+            <li class="block my-25 italic hover:not-italic"><a href="#" data-src="../assets/www/images/about.png">About</a></li>
+            <li class="block my-25 italic hover:not-italic"><a href="#" data-src="../assets/www/images/shop.png">Shop</a></li>
+            <li class="block my-25 italic hover:not-italic"><a href="#" data-src="../assets/www/images/contact.png">Contact</a></li>
+        </ul>
+
+        <div class="mt-150 font-sans text-12 flex gap-40">
+            <a href="/">Instagram</a>
+            <a href="/">LinkedIn</a>
+        </div>
+    </div>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+$('.list li a').hover(function() {
+  var value = $(this).attr('data-src');
+  gsap.to('.image-holder img', {
+    duration: 0.5,
+    opacity: 0,
+    onComplete: function() {
+      $('.image-holder img').attr('src', value);
+      gsap.to('.image-holder img', {
+        duration: 0.5,
+        opacity: 1,
+        ease: Power1.easeOut
+      });
+    },
+    ease: Power1.easeInOut
+  });
+});
+</script>
+
+
+
+
+    {# <div class="image-holder w-6/12 h-fit">
+        <img id="work" class="" src="../assets/www/images/bergen-4.jpg" alt="nav">
+        <img id="about" class="" src="../assets/www/images/about.jpg" alt="nav">
+        <img id="shop" class="" src="../assets/www/images/Fashion-3.jpg" alt="nav">
+        <img id="contact" class="" src="../assets/www/images/hero.jpg" alt="nav">
+    </div>
 
     <div class="w-4/12 mx-auto text-white uppercase">
-        <ul class="mt-100 font-serif text-25">
+        <ul class="list mt-100 font-serif text-25">
         {% for item in navItems %}
             <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/{{item.title}}">{{item.title}}</a></li>
         {% endfor %}
@@ -16,5 +65,4 @@
             <a href="/">Instagram</a>
             <a href="/">LinkedIn</a>
         </div>
-    </div>
-</nav>
+    </div> #}
