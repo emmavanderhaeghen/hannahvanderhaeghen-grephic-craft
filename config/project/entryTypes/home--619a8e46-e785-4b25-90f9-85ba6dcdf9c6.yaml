@@ -65,7 +65,7 @@ fieldLayouts:
             uid: b02feba5-fc43-4ff8-af51-2bdf740f2118
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: 6fe480a1-4d15-498b-90c0-51adb5580098 # Uitgelichte producten
@@ -77,7 +77,7 @@ fieldLayouts:
             uid: be1cd2e6-5448-4fb4-9101-c089a07c60b2
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             heading: 'Work Sectie'
@@ -95,7 +95,7 @@ fieldLayouts:
             uid: 5f915dcc-6d22-4ba0-9f57-96ebb4be5680
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: d1f9737c-c74a-4ffd-8fde-fed08a33c48c # Afbeelding 2
@@ -131,6 +131,24 @@ fieldLayouts:
             uid: 832e0ec0-1382-448b-b1a7-d137363153dd
             userCondition: null
             warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: Quote
+            type: craft\fieldlayoutelements\Heading
+            uid: e0a11196-5200-49e0-b031-eb624460fae5
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 16573316-2b9f-4846-b6f2-ffe2e1a79da7 # quote
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ef2a55aa-d805-4322-a2d2-50c757950c8f
+            userCondition: null
+            warning: null
             width: 100
           -
             elementCondition: null
@@ -149,7 +167,7 @@ fieldLayouts:
             uid: df1ef8ab-f233-41da-a31e-5d3212214403
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: f2fda0de-15eb-4ada-a4c1-c88f8dc38392 # Afbeelding 3
@@ -185,7 +203,61 @@ fieldLayouts:
             uid: db80b016-9885-40c5-97b9-7a1fe9e49d2b
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            elementCondition: null
+            heading: 'Contact sectie'
+            type: craft\fieldlayoutelements\Heading
+            uid: 0f09c55d-cfa5-4d05-99aa-4000632b910d
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5a5973ce-1c6a-4bd0-abb7-f17fb8cdd368 # Titel 4
+            instructions: null
+            label: Titel
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d76de134-0680-489c-9b5b-44e215d5395e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 862eb467-ce26-4fc3-8289-42571aaff556 # Beschrijving 3
+            instructions: null
+            label: Beschrijving
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a7cf7083-e38b-49e1-9b69-cb5eeaf86929
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: bba3f6c6-4034-448c-b3b5-62ef276276cd # Afbeelding 4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9bab77f5-c70c-49c9-912b-34f3cf72c6f1
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: f3c222fb-a954-43f0-9d6c-a54baae77aa2 # Link 3
+            instructions: null
+            label: Link
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b9e4a88-06e4-44a1-8575-90960828ab25
+            userCondition: null
+            warning: null
+            width: 50
         name: Inhoud
         uid: 995c4c91-d868-48bd-be12-16a7b2892d89
         userCondition: null
