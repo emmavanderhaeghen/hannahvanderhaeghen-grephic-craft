@@ -1,4 +1,4 @@
-dateModified: 1684832222
+dateModified: 1684926652
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -13,6 +13,7 @@ fs:
     url: $UPLOAD_URL
 meta:
   __names__:
+    0a57c908-5d24-4b0d-a9d4-80615b2cd97f: FAQ # FAQ
     00c5f631-3ba6-4457-8520-81aaf01dbc68: 'Beschrijving 1' # Beschrijving 1
     0d651d0e-b1d7-45ec-a026-bb77e4ababe3: Navigation # Navigation
     0d682bd0-f685-492b-864b-4ce7497f65fb: Detail # Detail

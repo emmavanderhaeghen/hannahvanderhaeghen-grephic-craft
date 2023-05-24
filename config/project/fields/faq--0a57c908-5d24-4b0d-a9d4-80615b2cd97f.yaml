@@ -1,0 +1,58 @@
+columnSuffix: obuiozud
+contentColumnType: text
+fieldGroup: 94c51b0c-961c-4fd5-904f-5b7871f98cf7 # Text
+handle: faq
+instructions: null
+name: FAQ
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Vraag
+            -
+              - handle
+              - question
+            -
+              - width
+              - ''
+            -
+              - type
+              - multiline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Antwoord
+            -
+              - handle
+              - answer
+            -
+              - width
+              - ''
+            -
+              - type
+              - multiline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: null
+  minRows: null
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\Table
