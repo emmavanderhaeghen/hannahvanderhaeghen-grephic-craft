@@ -10,23 +10,52 @@
     </section> #}
 
     {# Carousel #}
-    <section class="my-20">
-            <div class="button-next hidden lg:block -rotate-90 right-8 top-[45%] lg:right-25 -translate-y-1/2 absolute z-[2] py-20 px-15 rounded-full bg-pink">
-                <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
-            </div>
-            <div class="relative">
-                <div class="overflow-hidden swiper js-slider">
-                    <ul class="block swiper-wrapper">
-                        {% for image in entry.imageTwo.all() %}
-                        <li class="swiper-slide xl:w-[50vw]">
-                            <img class="h-fit w-fit object-cover" src="{{image.url()}}" alt="hero">
-                        </li>
-                        {% endfor %}                          
-                    </ul>
+    <section class="my-20 relative">
+        <div class="button-next hidden lg:block -rotate-90 right-8 top-[45%] lg:right-25 -translate-y-1/2 absolute z-[2] py-20 px-15 rounded-full bg-pink">
+            <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for image in entry.imageTwo.all() %}
+                <div class="swiper-slide">
+                    <div class="image-holder">
+                        <img class="w-screen h-screen object-cover" src="{{image.url()}}" alt="hero">
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            <div class="button-prev hidden lg:block rotate-90 top-[45%] left-20 lg:left-25 absolute -translate-y-1/2 z-[2] py-20 px-15 rounded-full bg-pink">
-                <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
-            </div>
+        </div>
+        <div class="button-prev hidden lg:block rotate-90 top-[45%] left-20 lg:left-25 absolute -translate-y-1/2 z-[2] py-20 px-15 rounded-full bg-pink">
+            <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
+        </div>
     </section>
+
+    <script>
+        var swiper = new Swiper(".swiper-container", {
+            navigation: {
+                nextEl: ".button-next",
+                prevEl: ".button-prev",
+            },
+        });
+    </script>
 {% endblock %}
+
+{# <section class="my-20">
+        <div class="button-next hidden lg:block -rotate-90 right-8 top-[45%] lg:right-25 -translate-y-1/2 absolute z-[2] py-20 px-15 rounded-full bg-pink">
+            <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
+        </div>
+        <div class="relative">
+            <div class="overflow-hidden swiper js-slider">
+                <ul class="block swiper-wrapper">
+                    {% for image in entry.imageTwo.all() %}
+                    <li class="swiper-slide xl:w-[50vw]">
+                        <img class="h-fit w-fit object-cover" src="{{image.url()}}" alt="hero">
+                    </li>
+                    {% endfor %}                          
+                </ul>
+            </div>
+        </div>
+        <div class="button-prev hidden lg:block rotate-90 top-[45%] left-20 lg:left-25 absolute -translate-y-1/2 z-[2] py-20 px-15 rounded-full bg-pink">
+            <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
+        </div>
+</section> #}
