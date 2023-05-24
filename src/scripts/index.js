@@ -11,6 +11,7 @@ class App {
     this.nav = document.querySelector('.js-nav');
     this.fadeItems = document.querySelectorAll('.fade-in');
     this.staggerItems = document.querySelectorAll('.stagger-in');
+    this.navIcons = document.querySelectorAll('.nav-icon');
 
     this.scrollTitlesRight = document.querySelectorAll(".scroll-title-right");
     if (this.scrollTitlesRight[0]) this.initScrollTitlesRight();
@@ -36,6 +37,7 @@ class App {
       if (this.button.classList.contains('open')) {
         gsap.to(this.lines[0], { duration: 0.2, rotate: '45deg', top: '8px', backgroundColor: 'white' });
         gsap.to(this.lines[1], { duration: 0.2, rotate: '-45deg', bottom: '2px', backgroundColor: 'white' });
+        this.navIcons.classlist.remove('hidden');
       } else {
         gsap.to(this.lines[0], { duration: 0.2, rotate: '0deg', top: '0', backgroundColor: 'black' });
         gsap.to(this.lines[1], { duration: 0.2, rotate: '0deg', top: '0', backgroundColor: 'black' });
@@ -47,11 +49,11 @@ class App {
   initSwiper() {
     const swiper = new Swiper('.js-slider', {
       // Optional parameters
-      slidesPerView: 1.2,
+      slidesPerView: 1,
       loop: true,
       allowTouchMove: true,
       shortSwipes: false,
-      spaceBetween: 15,
+      spaceBetween: 50,
       centeredSlides: true,
       keyboard: {
         enabled: true,
@@ -59,9 +61,9 @@ class App {
       },
       breakpoints: {
         768: {
-          centeredSlides: false,
-          slidesPerView: 3,
-          spaceBetween: 30,
+          centeredSlides: true,
+          slidesPerView: 1,
+          spaceBetween: 50,
         },
       },
 

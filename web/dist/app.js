@@ -32,6 +32,7 @@ var App = /*#__PURE__*/function () {
     this.nav = document.querySelector('.js-nav');
     this.fadeItems = document.querySelectorAll('.fade-in');
     this.staggerItems = document.querySelectorAll('.stagger-in');
+    this.navIcons = document.querySelectorAll('.nav-icon');
     this.scrollTitlesRight = document.querySelectorAll(".scroll-title-right");
     if (this.scrollTitlesRight[0]) this.initScrollTitlesRight();
     this.init();
@@ -67,6 +68,7 @@ var App = /*#__PURE__*/function () {
             bottom: '2px',
             backgroundColor: 'white'
           });
+          _this.navIcons.classlist.remove('hidden');
         } else {
           gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(_this.lines[0], {
             duration: 0.2,
@@ -90,11 +92,11 @@ var App = /*#__PURE__*/function () {
     value: function initSwiper() {
       var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-slider', {
         // Optional parameters
-        slidesPerView: 1.2,
+        slidesPerView: 1,
         loop: true,
         allowTouchMove: true,
         shortSwipes: false,
-        spaceBetween: 15,
+        spaceBetween: 50,
         centeredSlides: true,
         keyboard: {
           enabled: true,
@@ -102,9 +104,9 @@ var App = /*#__PURE__*/function () {
         },
         breakpoints: {
           768: {
-            centeredSlides: false,
-            slidesPerView: 3,
-            spaceBetween: 30
+            centeredSlides: true,
+            slidesPerView: 1,
+            spaceBetween: 50
           }
         },
         // Navigation arrows
