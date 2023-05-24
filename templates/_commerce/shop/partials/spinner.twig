@@ -1,0 +1,23 @@
+<!-- template: {{ _self }} -->
+
+<div class="">
+  <div>
+    <input
+      class="px-10 py-5 bg-grey bg-opacity-25 w-50"
+      type="number"
+      id="frontend-qty"
+      name="frontend-qty"
+      data-name="{{ name }}"
+      data-qty-interval="1"
+      value="{{ qty|default ? qty : 1 }}"
+      step="1"
+      min="{{ variant.minQty|default(0) }}"
+      {% if isProduct|default(false) %}
+      x-bind:max="getCurrentVariantStock()"
+      {% else %}
+        {% if not variant.hasUnlimitedStock %}
+          max="{{ variant.stock }}"
+        {% endif %}
+      {% endif %}>
+  </div>
+</div>
