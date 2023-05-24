@@ -21,7 +21,7 @@
         {% else %}
         
         <div class="container flex justify-between">
-            <div class=" w-6/12 bg-white relative p-40">
+            <div class=" w-[55%] bg-white relative p-40">
                 <h1 class="text-30 font-serif uppercase">Cart</h1>
                 <form method="POST" class="w-full mb-10" accept-charset="UTF-8" enctype="multipart/form-data" onkeydown="return event.key != 'Enter';">
                     <input type="hidden" name="action" value="commerce/cart/update-cart">
@@ -30,59 +30,74 @@
                     {% set lineItemHasErrors = false %}
 
                     {% for item in cart.lineItems %}
-                    {# {{dump(item)}} #}
-                    <div class="flex justify-between items-center my-20 {{ not loop.last ? 'mb-20' }}">
-                        <a href="{{ item.purchasable.product.url }}" class="hidden md:flex flex-grow-0 mr-6 w-1/6">
-                            {# <img class="" src="{{item.purchasable.product.imageOne.one()}}" alt="product"> #}
-                            <img src="../assets/www/images/work.png" alt="">
-                        </a>
-                        <div class="w-[40%] lg:w-3/6 px-10">
-                            <div class="">
-                                <h3 class="mb-3">{{ item.purchasable.product.title }}</h3>
+                        <div class="flex justify-between items-center my-20 {{ not loop.last ? 'mb-20' }}">
+                            <a href="{{ item.purchasable.product.url }}" class="hidden md:flex flex-grow-0 mr-6 w-1/6">
+                                {# <img class="" src="{{item.purchasable.product.imageOne.one()}}" alt="product"> #}
+                                <img src="../assets/www/images/work.png" alt="">
+                            </a>
+                            <div class="w-[40%] lg:w-3/6 px-10">
+                                <div class="">
+                                    <h3 class="mb-3">{{ item.purchasable.product.title }}</h3>
+                                </div>
+                                    {% set pickupRules = craft.entries.section('pickupRules').relatedTo([
+                                    'or',
+                                    { targetElement: item.purchasable.product },
+                                    { targetElement: item.purchasable.product.shopCategory.one()|default([]) }
+                                    ]).all() %}
+                                {% if pickupRules %}
+                                <div class="">
+                                    {% for item in pickupRules %}
+                                    {{ item.pickupRuleMessage }}
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
                             </div>
-                                {% set pickupRules = craft.entries.section('pickupRules').relatedTo([
-                                'or',
-                                { targetElement: item.purchasable.product },
-                                { targetElement: item.purchasable.product.shopCategory.one()|default([]) }
-                                ]).all() %}
-                            {% if pickupRules %}
-                            <div class="">
-                                {% for item in pickupRules %}
-                                {{ item.pickupRuleMessage }}
-                                {% endfor %}
+                            <div class="w-1/6 mr-10">
+                                {% include '_commerce/shop/partials/spinner' with { name: "lineItems[#{item.id}][qty]", qty: item.qty, variant: item.purchasable, cart: cart } only %}
                             </div>
-                            {% endif %}
+                            <div class="w-1/6 text-right flex-shrink-0 font-bold">
+                                {% include '_commerce/checkout/partials/price' with { variant: item, cart: cart } only %}
+                            </div>
+                            <button type="submit" name="lineItems[{{ item.id }}][remove]" value="1" class="ml-20" title="Verwijder {{ item.description }}"><img class="" src="../assets/www/svg/cross.svg" alt="account"></button>
                         </div>
-                        <div class="w-1/6 mr-10">
-                            {% include '_commerce/shop/partials/spinner' with { name: "lineItems[#{item.id}][qty]", qty: item.qty, variant: item.purchasable, cart: cart } only %}
-                        </div>
-                        <div class="w-1/6 text-right flex-shrink-0 font-bold">
-                            {% include '_commerce/checkout/partials/price' with { variant: item, cart: cart } only %}
-                        </div>
-                        <button type="submit" name="lineItems[{{ item.id }}][remove]" value="1" class="ml-20" title="Verwijder {{ item.description }}">x</button>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
                 </form>
-                <div class="flex">
-                    <a class="button relative ml-auto mt-40 pointer border-1 border-black bg-transparent text-black py-10 px-20 block w-max transition duration-300" href="{{ url('/checkout') }}">go to checkout</a>
-                </div>
+
             </div>
 
             <div class=" w-4/12 bg-white relative p-40">
                 <h2 class="text-20 font-serif uppercase mb-20">Total</h2>
+                {% include '_commerce/cart/partials/totals' with { isCartIndex: true } %}
 
-                {% for item in cart.lineItems %}
-                <div class="flex justify-between items-center {{ not loop.last ? 'mb-20' }}">
-                    <div class="w-[40%] lg:w-3/6 pr-4">
-                        <div class="">
-                            <h3 class="mb-3">subtotal</h3>
+                <div class="mt-30 mb-10 sm:mb-0">
+                    {% if cart.getFirstError('couponCode') %}
+                    <div class="text-left text-red-500">{{ cart.getFirstError('couponCode') }}</div>
+                    {% endif %}
+                    <div x-data="{ active: false }">
+                    <button class="bg-grey bg-opacity-25 py-10 px-20" @click="active = !active" x-show="!active">coupon code ?</button>
+                    <form method="POST" class="js-validate" x-show="active">
+                        <input type="hidden" name="action" value="commerce/cart/update-cart">
+                        {{ redirectInput(craft.app.request.pathInfo) }}
+                        {% if getenv('ENVIRONMENT') == 'production' or getenv('ENVIRONMENT') == 'staging' %}
+                        {{ craft.blitz.csrfInput() }}
+                        {% else %}
+                            {{ csrfInput() }}
+                        {% endif %}
+
+                        <div class="flex">
+                        <div class="flex-grow">
+                            {{ form.input('', { id:'couponCode', name: 'couponCode', placeholder: 'Fill in your code', class: 'pl-20 mr-20 w-[16rem] h-40' }) }}
                         </div>
-                    </div>
-                    <div class="w-1/6 text-right">
-                        {% include '_commerce/checkout/partials/price' with { variant: item, cart: cart } only %}
+                        <button class="bg-transparent w-30 !px-10 !py-20" type="submit">
+                            &rarr;
+                        </button>
+                        </div>
+                    </form>
                     </div>
                 </div>
-                {% endfor %}
+
+                <a class="button relative mt-40 pointer border-1 border-black bg-transparent text-black py-10 px-20 block w-max transition duration-300" href="{{ url('/checkout') }}">go to checkout</a>
+
             </div>
         </div>
 
