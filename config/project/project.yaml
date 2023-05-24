@@ -1,4 +1,4 @@
-dateModified: 1684926652
+dateModified: 1684939231
 email:
   fromEmail: emmavand24@student.arteveldehs.be
   fromName: 'Hannah Van der Haeghen'
@@ -172,7 +172,7 @@ plugins:
       trackElementQueries: true
       trackElements: true
   commerce:
-    edition: lite
+    edition: pro
     enabled: true
     licenseKey: HCD9OPKMESAZGLLF1DWD0943
     schemaVersion: 4.2.3
