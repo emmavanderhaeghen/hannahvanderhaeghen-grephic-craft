@@ -1,4 +1,4 @@
-descriptionFormat: '{product.title} - {title}'
+descriptionFormat: '{product.title}'
 handle: accessoires
 hasDimensions: false
 hasProductTitleField: true
