@@ -1,16 +1,65 @@
 {% extends "_layout/site" %}
 
-{% block content %}
+{% block app %}
 
-    {# <section class="container">
-        <button onclick="window.history.go(-1);" class="text-gray-300">Go back</button>
-        <div class="w-3/12">
-            <h1>{{entry.title}}</h1>
+<header class="z-10 container py-30 absolute left-0 right-0 mx-auto">
+    <div class="flex items-center justify-between">
+        <a class="p-5" href="/"><img class="hidden" src="../assets/www/svg/logo.svg" alt="Logo"></a>
+        <div class="w-4/12 z-50 flex items-center gap-30 justify-end">
+            <a class="nav-icon hidden" href="/account"><img class="stroke-black" src="../assets/www/svg/account.svg" alt="account"></a>
+            <a class="nav-icon hidden" href="/wishlist"><img class="" src="../assets/www/svg/heart.svg" alt="heart"></a>
+            <a class="nav-icon hidden mr-50" href="/cart"><img class="" src="../assets/www/svg/bag.svg" alt="bag"></a>
+            <button class="fixed inline-block p-1 | js-nav-button">
+                <div class="w-[25px] h-[2px] bg-black mb-[.4rem] relative | js-lines"></div>
+                <div class="w-[25px] h-[2px] bg-black mt-[.4rem] relative | js-lines"></div>
+            </button>
         </div>
-    </section> #}
+    </div>
+
+    {% include "_layout/partials/nav.twig" %}
+</header>
+
+<main class="flex-grow">
+    <section class="absolute z-30 top-30 left-30">
+        <button onclick="window.history.go(-1);" class="flex items-center mb-20"><img class="rotate-90 mr-10" src="../assets/www/svg/arrow.svg" alt="hero"> go back</button>
+        <div class="w-[12rem]">
+            <h1 class="font-serif text-12 leading-8">{{entry.title}}</h1>
+        </div>
+    </section>
 
     {# Carousel #}
-    <section class="my-20 relative">
+    <section class="">
+            <div class="button-next hidden lg:block -rotate-90 right-10 top-[50%] lg:right-25 -translate-y-1/2 absolute z-[2]">
+                <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
+            </div>
+            <div class="relative">
+                <div class="overflow-hidden swiper js-slider">
+                    <ul class="block swiper-wrapper">
+                        {% for image in entry.imageTwo.all() %}
+                        <li class="swiper-slide">
+                            <img class="h-[54rem] mx-auto mt-20" src="{{image.url()}}" alt="hero">
+                        </li>
+                        {% endfor %}                          
+                    </ul>
+                </div>
+            </div>
+            <div class="button-prev hidden lg:block rotate-90 top-[50%] left-20 lg:left-25 absolute -translate-y-1/2 z-[2]">
+                <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
+            </div>
+    </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+    {# <section class="my-20 relative">
         <div class="button-next hidden lg:block -rotate-90 right-8 top-[45%] lg:right-25 -translate-y-1/2 absolute z-[2] py-20 px-15 rounded-full bg-pink">
             <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
         </div>
@@ -19,7 +68,7 @@
                 {% for image in entry.imageTwo.all() %}
                 <div class="swiper-slide">
                     <div class="image-holder">
-                        <img class="w-screen h-screen object-cover" src="{{image.url()}}" alt="hero">
+                        <img class="h-screen object-cover" src="{{image.url()}}" alt="hero">
                     </div>
                 </div>
                 {% endfor %}
@@ -28,8 +77,8 @@
         <div class="button-prev hidden lg:block rotate-90 top-[45%] left-20 lg:left-25 absolute -translate-y-1/2 z-[2] py-20 px-15 rounded-full bg-pink">
             <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
         </div>
-    </section>
-
+    </section> #}
+{# 
     <script>
         var swiper = new Swiper(".swiper-container", {
             navigation: {
@@ -37,7 +86,7 @@
                 prevEl: ".button-prev",
             },
         });
-    </script>
+    </script> #}
 {% endblock %}
 
 {# <section class="my-20">
