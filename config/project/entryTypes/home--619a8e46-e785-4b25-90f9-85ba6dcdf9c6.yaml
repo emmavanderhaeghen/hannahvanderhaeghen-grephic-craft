@@ -50,36 +50,6 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            heading: 'Shop preview'
-            type: craft\fieldlayoutelements\Heading
-            uid: 4f696775-f4fd-4675-99f9-7fadb7b0d5e2
-            userCondition: null
-          -
-            elementCondition: null
-            fieldUid: 31bb0e04-2a70-4557-8090-a52c1a2254f2 # Titel 1
-            instructions: null
-            label: 'Shop titel'
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b02feba5-fc43-4ff8-af51-2bdf740f2118
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 6fe480a1-4d15-498b-90c0-51adb5580098 # Uitgelichte producten
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: be1cd2e6-5448-4fb4-9101-c089a07c60b2
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
             heading: 'Work Sectie'
             type: craft\fieldlayoutelements\Heading
             uid: 2bc64802-9f31-4a11-84db-cf7cab644ba5
@@ -206,6 +176,48 @@ fieldLayouts:
             width: 50
           -
             elementCondition: null
+            heading: 'Shop preview'
+            type: craft\fieldlayoutelements\Heading
+            uid: 4f696775-f4fd-4675-99f9-7fadb7b0d5e2
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 31bb0e04-2a70-4557-8090-a52c1a2254f2 # Titel 1
+            instructions: null
+            label: 'Shop titel'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b02feba5-fc43-4ff8-af51-2bdf740f2118
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 6fe480a1-4d15-498b-90c0-51adb5580098 # Uitgelichte producten
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: be1cd2e6-5448-4fb4-9101-c089a07c60b2
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: f3c222fb-a954-43f0-9d6c-a54baae77aa2 # Link 3
+            instructions: null
+            label: Link
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b9e4a88-06e4-44a1-8575-90960828ab25
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
             heading: 'Contact sectie'
             type: craft\fieldlayoutelements\Heading
             uid: 0f09c55d-cfa5-4d05-99aa-4000632b910d
@@ -238,7 +250,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bba3f6c6-4034-448c-b3b5-62ef276276cd # Afbeelding 4
             instructions: null
-            label: null
+            label: Afbeelding
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -248,13 +260,13 @@ fieldLayouts:
             width: 50
           -
             elementCondition: null
-            fieldUid: f3c222fb-a954-43f0-9d6c-a54baae77aa2 # Link 3
+            fieldUid: e71ca281-b0a5-4e2c-8c68-53c0bf3fe520 # Link 4
             instructions: null
             label: Link
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 7b9e4a88-06e4-44a1-8575-90960828ab25
+            uid: 796c5a4a-1911-4fb4-9768-4e3ef178dde8
             userCondition: null
             warning: null
             width: 50
