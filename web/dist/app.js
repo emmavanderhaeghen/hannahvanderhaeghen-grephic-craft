@@ -96,8 +96,12 @@ var App = /*#__PURE__*/function () {
     value: function initModal() {
       var _this2 = this;
       this.modalBtn.addEventListener('click', function () {
-        _this2.modal.classList.toggle('hidden');
-        _this2.closeBtn.classList.toggle('hidden');
+        _this2.modal.classList.remove('hidden');
+        _this2.closeBtn.classList.remove('hidden');
+      });
+      this.closeBtn.addEventListener('click', function () {
+        _this2.modal.classList.add('hidden');
+        _this2.closeBtn.classList.add('hidden');
       });
     }
 
