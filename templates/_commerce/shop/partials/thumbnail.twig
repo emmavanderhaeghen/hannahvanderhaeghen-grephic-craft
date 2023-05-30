@@ -8,9 +8,13 @@
     <div class="relative mt-20 mb-20 ml-40">
         <h3 class="uppercase">{{product.title}}</h3>
         {% include "_commerce/shop/partials/price" %}
-        <div class="relative">
-            <img class="absolute right-40 bottom-15 transition-transform transform hover:scale-125" src="../assets/www/svg/heart-fill.svg">
-        </div>        
-        {{ sprig.script }}
     </div>
 </a>
+
+{# Passes a variable called `entryId` into the component #}
+{{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id}) }}
+{{ sprig.script }}
+
+{# 
+<img class="absolute right-40 bottom-30 transition-transform transform hover:scale-125" src="../assets/www/svg/heart-fill.svg">
+{{ sprig.script }} #}
