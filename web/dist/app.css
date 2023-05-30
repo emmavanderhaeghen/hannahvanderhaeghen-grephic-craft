@@ -655,6 +655,10 @@ video {
   margin-top: 8rem;
   margin-bottom: 8rem;
 }
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .mb-1 {
   margin-bottom: 0.1rem;
 }
@@ -771,6 +775,9 @@ video {
 }
 .mt-200 {
   margin-top: 20rem;
+}
+.mt-25 {
+  margin-top: 2.5rem;
 }
 .block {
   display: block;

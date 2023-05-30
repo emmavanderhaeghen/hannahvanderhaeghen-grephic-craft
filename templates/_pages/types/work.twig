@@ -67,4 +67,22 @@
             </div>
         </article>
     </section>
+
+<script>
+// IIFE
+(() => {
+    const modalBtn = document.querySelector('.js-modal-button');
+    const modal = document.querySelector('.js-modal');
+    const closeBtn = document.querySelector('.js-close-button');
+
+    modalBtn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        closeBtn.classList.remove('hidden');
+    });
+    closeBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        closeBtn.classList.add('hidden');
+    });
+})();
+</script>
 {% endblock %}
