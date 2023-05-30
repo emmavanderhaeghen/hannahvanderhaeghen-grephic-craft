@@ -10,17 +10,17 @@
 
     <div class="flex flex-wrap -mx-30">
     {% if list.items is defined and list.items.all()|length > 0 %}
-        <ul class="flex flex-wrap align-center mt-40 w-full">
-        {% for item in list.items.all() %}
-            {% set products = craft.products().id(item.elementId) %}
-            {% if products|length %}
-                {% for item in products %}
-                <li class="w-12/12 sm:w-6/12 lg:w-3/12 px-20 py-20 relative">
-                    {% include '_commerce/shop/partials/thumbnail' %}
-                </li>                
-                {% endfor %}
-            {% endif %}
-        {% endfor %}
+        <ul class="flex flex-wrap items-center mt-20">
+            {% for item in list.items.all() %}
+                {% set products = craft.products().id(item.elementId) %}
+                {% if products|length %}
+                    {% for product in products %}
+                    <li class="w-12/12 sm:w-6/12 lg:w-4/12 mb-30 px-10 relative">
+                        {% include '_commerce/shop/partials/thumbnail' %}
+                    </li>                
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
         </ul>
     </div>
     {% else %}
@@ -28,10 +28,6 @@
             <h2 class="font-sans text-10 mb-40">{{ 'Geen producten gevonden' }}</h2>
             <a class="button bg-green !text-white" href="{{ url('honden') }}">Voeg producten toe</a>
         </div>
-    {% endif %}
-
-    {% if list.reference is defined %}
-        <span class="hidden js-copy-clipboard-text" data-link="{{ alias(currentSite.baseUrl) }}verlanglijstje?id={{ list.reference }}"></span>
     {% endif %}
 </section>
 {% endblock %}
