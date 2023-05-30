@@ -41,26 +41,38 @@ productFieldLayouts:
             elementCondition: null
             fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
             instructions: null
-            label: null
+            label: Afbeelding
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b1c9a857-0224-4a76-8309-ee58d61f080e
             userCondition: null
             warning: null
-            width: 100
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 31bb0e04-2a70-4557-8090-a52c1a2254f2 # Titel 1
+            instructions: null
+            label: Collectienaam
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7404af33-70e4-4364-b734-0c6dc8868d71
+            userCondition: null
+            warning: null
+            width: 25
           -
             elementCondition: null
             fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
             instructions: null
-            label: null
+            label: 'Beschrijving product'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 55c145ee-1b8e-4f8f-8f59-9bc08ae57f4f
+            uid: 346c40f7-a926-4d9c-8961-124e4c3b1762
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Content
         uid: 52882e48-291e-42ed-b57c-a6f7120d4bf6
         userCondition: null
