@@ -1,32 +1,34 @@
 {# Layouts and macros #}
 {% extends "_layout/site" %}
 
+{% import '_macros/form' as form %}
+
 {# Set variables  #}
 {% set cart = craft.commerce.carts.cart %}
 
 {# Get all options (and their labels) for this product #}
-{# {% set variantAttributesValues = craft.entries.section('variantAttributeOptionValues').relatedTo(product.variants|filter(el => el.enabled)).all() %}
-{% set variantAttributesLabels = craft.entries.section('variantAttributeOptionLabels').relatedTo(variantAttributesValues|default([0])).all() %} #}
+{% set variantAttributesValues = craft.entries.section('variantAttributeOptionValues').relatedTo(product.variants|filter(el => el.enabled)).all() %}
+{% set variantAttributesLabels = craft.entries.section('variantAttributeOptionLabels').relatedTo(variantAttributesValues|default([0])).all() %}
 
 {# Get the current set of options #}
-{# {% set selectedOptions = craft.app.request.getBodyParam('options') %}
+{% set selectedOptions = craft.app.request.getBodyParam('options') %}
 {% if selectedOptions is null %}
     {% set selectedOptions = [] %}
-    {% for item in product.defaultVariant.uniqueCombinationOfVariantAttributes %}
+    {% for item in product.defaultVariant.uniqueCombinationOfVariantAttributes.all() %}
         {% set selectedOptions = selectedOptions|merge({(item.variantAttributeLabel.one().slug): item.id}) %}
     {% endfor %}
-{% endif %} #}
+{% endif %}
 
 {# Set the current variant based on the chosen options #}
 {# We should have a fallback for if this fails #}
-{# {% set filteredVariants = product.variants|filter(el => el.enabled) %}
-{% for option, value in selectedOptions %} #}
+{% set filteredVariants = product.variants|filter(el => el.enabled) %}
+{% for option, value in selectedOptions %}
     {# {% set filteredVariants = filteredVariants|filter(el => value in el.uniqueCombinationOfVariantAttributesIds|split(',')) %} #}
-{# {% endfor %}
-{% set filteredVariants = filteredVariants|first|default(null) %} #}
+{% endfor %}
+{% set filteredVariants = filteredVariants|first|default(null) %}
 
 {# Set current variant, fallback to default #}
-{# {% set currentVariant = filteredVariants|default(product.defaultVariant) %} #}
+{% set currentVariant = filteredVariants|default(product.defaultVariant) %}
 {# {% set currentVariantOptionIds = currentVariant.uniqueCombinationOfVariantAttributesIds|split(',') %} #}
 
 {% block content %}
@@ -46,7 +48,7 @@
                 </div>
 
                 {# usp #}
-                <div class="bg-pink py-40 pr-70 pl-60 ml-30 mb-80">
+                <div class="bg-pink py-40 pr-70 pl-60 ml-30 my-80">
                     <ul class="z-[1]">
                         {% for item in commonlyUsed.usp %}
                         <li class="flex {{ not loop.last ? 'mb-10' }}">
@@ -59,7 +61,7 @@
             </div>
 
             {# right column #}
-            <div class="lg:w-1/2 px-60 my-80 lg:mb-0">
+            <div class="lg:w-1/2 px-60 mt-20 lg:mb-0">
                 <h1 class="text-20 font-sans uppercase">{{ product.title }}</h1>
 
                 <form method="post" class="js-validate mb-40" action="{{ url(craft.app.request.pathInfo) }}" accept-charset="UTF-8" enctype="multipart/form-data">
@@ -77,22 +79,35 @@
                     {{ not cart.shippingMethodHandle ? hiddenInput('shippingMethodHandle', 'delivery') }}
 
                     {# price #}
-                    <div class="mt-15">
+                    <div class="mt-10 text-12">
                         {% include "_commerce/shop/partials/price" %}
                     </div>
 
-                    <select name="purchasableId">
+                    {# description #}
+                    {% if product.descriptionOne %}
+                        <p class="my-30 text-10">{{ product.descriptionOne|nl2br }}</p>
+                    {% endif %}
+
+                    <p class="mt-15 mb-5">Frame type</p>
+                    <select class="border-none bg-grey bg-opacity-25 h-auto w-full p-10 leading-normal" name="purchasableId">
                         {% for variant in product.variants %}
-                            <option value="{{ variant.id }}">{{ variant.sku }}</option>
+                            <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
                         {% endfor %}
                     </select>
 
-                    {# description #}
-                    {% if product.descriptionOne %}
-                        <div class="mt-30">
-                            <p class="text-9">{{ product.descriptionOne|nl2br }}</p>
-                        </div>
-                    {% endif %}
+                    <p class="mt-15 mb-5">Material</p>
+                    <select class="border-none bg-grey bg-opacity-25 h-auto w-full p-10 leading-normal" name="purchasableId">
+                        {% for variant in product.variants %}
+                            <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <p class="mt-15 mb-5">Print size</p>
+                    <select class="border-none bg-grey bg-opacity-25 h-auto w-full p-10 leading-normal" name="purchasableId">
+                        {% for variant in product.variants %}
+                            <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
+                        {% endfor %}
+                    </select>
 
                     {# if the product is not in stock #}
                     {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == ''%}
