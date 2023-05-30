@@ -52,8 +52,12 @@ class App {
   // Modal
   initModal() {
     this.modalBtn.addEventListener('click', () => {
-      this.modal.classList.toggle('hidden');
-      this.closeBtn.classList.toggle('hidden');
+      this.modal.classList.remove('hidden');
+      this.closeBtn.classList.remove('hidden');
+    });
+    this.closeBtn.addEventListener('click', () => {
+      this.modal.classList.add('hidden');
+      this.closeBtn.classList.add('hidden');
     });
   }
 
