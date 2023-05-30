@@ -1,14 +1,16 @@
 <a href="{{ product.url }}" class="mb-30">
     <div class="overflow-hidden">   
     {% for image in product.imageOne %}
-        <img src="{{image.url()}}" alt="hero">
+        <img class="object-cover w-full aspect-square transition-transform transform hover:scale-105 duration-6000" src="{{image.url()}}" alt="product">
     {% endfor %}    
     </div>
 
     <div class="relative mt-20 mb-20 ml-40">
         <h3 class="uppercase">{{product.title}}</h3>
         {% include "_commerce/shop/partials/price" %}
-        <img class="absolute right-40 bottom-15" sprig s-method="post" s-action="wishlist/items/add" src="../assets/www/svg/heart-fill.svg" alt="hero">
+        <div class="relative">
+            <img class="absolute right-40 bottom-15 transition-transform transform hover:scale-125" src="../assets/www/svg/heart-fill.svg">
+        </div>        
         {{ sprig.script }}
     </div>
 </a>
