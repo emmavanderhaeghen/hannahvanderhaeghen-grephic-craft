@@ -1,0 +1,45 @@
+columnSuffix: gbqqyphz
+contentColumnType: string
+fieldGroup: a3934515-f94c-4ab0-891d-f8519a8b1561 # Assets
+handle: imageAlignment
+instructions: null
+name: 'Afbeelding plaatsing'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Links
+        -
+          - value
+          - left
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Midden
+        -
+          - value
+          - center
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Rechts
+        -
+          - value
+          - right
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: language
+type: craft\fields\Dropdown
