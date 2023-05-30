@@ -1,0 +1,19 @@
+{#--- _components/wishlist ---#}
+
+{# The value of this input field will be posted to the action #}
+<input type="hidden" name="elementId" value="{{ productId }}">
+
+{% set item = craft.wishlist.item(productId) %}
+
+{% if item.inList %}
+    {# Remove from wishlist #}
+    <button sprig s-method="post" s-action="wishlist/items/remove">
+        <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-15" src="../assets/www/svg/heart-pink.svg">
+    </button>
+    {% else %}
+
+    {# Add to wishlist #}
+    <button sprig s-method="post" s-action="wishlist/items/add">
+        <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-15" src="../assets/www/svg/heart-grey.svg">
+    </button>
+{% endif %}
