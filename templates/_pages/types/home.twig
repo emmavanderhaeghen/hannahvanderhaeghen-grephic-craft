@@ -6,11 +6,11 @@
 {% endif %}
 
 {% block content %}
-    <div class="relative -top-[10.75rem] left-0">
+<div class="relative -top-[10.75rem] left-0">
     {% for image in entry.imageOne %}
-        <img class="h-screen w-full object-cover relative top-0 left-0" src="{{image.url()}}" alt="hero">
+        <img class="h-screen w-full object-cover object-top relative top-0 left-0" src="{{image.url()}}" alt="hero">
     {% endfor %}
-    </div>
+</div>
 
     <section class="container">
 
@@ -29,10 +29,13 @@
         </article>
 
         {# quote #}
-        <article class="my-200">
-            <div class="w-12/12 lg:w-10/12 mx-auto py-80 px-100 bg-pink fade-in">
-                <h2 class="text-50 font-serif uppercase text-center">{{entry.quote}}</h2>
+        <article class="mt-200 mb-250 relative">
+            <div class="w-12/12 lg:w-10/12 relative z-[100] mx-auto py-80 px-100 bg-pink bg-opacity-[80%] fade-in">
+                <h2 class="text-50 font-serif uppercase text-center">{{entry.quote|nl2br}}</h2>
             </div>
+            {% for image in entry.imageQuote %}
+                <img class="w-800 z-10 absolute -top-80 -right-40" src="{{image.url()}}" alt="hero">
+            {% endfor %}
         </article>
 
         {# the artist - about page #}
@@ -52,11 +55,11 @@
         {# featured products #}
         <article class="mb-50 lg:mb-100 lg:items-center">
             <div class="flex flex-col lg:flex-row">
-                <h2 class="w-12/12 lg:w-6/12 text-50 font-serif uppercase fade-in">{{entry.titleOne|nl2br}}</h2>
-                <div class="w-12/12 lg:w-6/12 flex">
+                <h2 class="w-12/12 lg:w-4/12 text-50 font-serif uppercase fade-in">{{entry.titleOne|nl2br}}</h2>
+                <div class="w-12/12 lg:w-8/12 flex">
                     <ul class="flex flex-wrap items-center">
                         {% for product in entry.featuredProducts.all()  %}
-                            <li class="w-3/6" x-show="!filter || product.title.toLowerCase().includes(filter.toLowerCase())">
+                            <li class="w-[48%] last:ml-15 relative">
                                 {% include '_commerce/shop/partials/thumbnail' %}
                             </li>
                         {% endfor %}

@@ -25,7 +25,7 @@ class App {
 
   init() {
     this.initOpenNav();
-    this.initModal();
+    // this.initModal();
     this.initSwiper();
     this.initFadeIn();
     this.initStaggerIn();
@@ -50,16 +50,16 @@ class App {
 
   
   // Modal
-  initModal() {
-    this.modalBtn.addEventListener('click', () => {
-      this.modal.classList.remove('hidden');
-      this.closeBtn.classList.remove('hidden');
-    });
-    this.closeBtn.addEventListener('click', () => {
-      this.modal.classList.add('hidden');
-      this.closeBtn.classList.add('hidden');
-    });
-  }
+  // initModal() {
+  //   this.modalBtn.addEventListener('click', () => {
+  //     this.modal.classList.remove('hidden');
+  //     this.closeBtn.classList.remove('hidden');
+  //   });
+  //   this.closeBtn.addEventListener('click', () => {
+  //     this.modal.classList.add('hidden');
+  //     this.closeBtn.classList.add('hidden');
+  //   });
+  // }
 
   // Image Swiper
   initSwiper() {

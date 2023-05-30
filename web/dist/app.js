@@ -44,7 +44,7 @@ var App = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       this.initOpenNav();
-      this.initModal();
+      // this.initModal();
       this.initSwiper();
       this.initFadeIn();
       this.initStaggerIn();
@@ -91,19 +91,16 @@ var App = /*#__PURE__*/function () {
     }
 
     // Modal
-  }, {
-    key: "initModal",
-    value: function initModal() {
-      var _this2 = this;
-      this.modalBtn.addEventListener('click', function () {
-        _this2.modal.classList.remove('hidden');
-        _this2.closeBtn.classList.remove('hidden');
-      });
-      this.closeBtn.addEventListener('click', function () {
-        _this2.modal.classList.add('hidden');
-        _this2.closeBtn.classList.add('hidden');
-      });
-    }
+    // initModal() {
+    //   this.modalBtn.addEventListener('click', () => {
+    //     this.modal.classList.remove('hidden');
+    //     this.closeBtn.classList.remove('hidden');
+    //   });
+    //   this.closeBtn.addEventListener('click', () => {
+    //     this.modal.classList.add('hidden');
+    //     this.closeBtn.classList.add('hidden');
+    //   });
+    // }
 
     // Image Swiper
   }, {
