@@ -27,7 +27,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 var App = /*#__PURE__*/function () {
   function App() {
     _classCallCheck(this, App);
-    this.button = document.querySelector('.js-nav-button');
+    this.navBtn = document.querySelector('.js-nav-button');
     this.lines = document.querySelectorAll('.js-lines');
     this.nav = document.querySelector('.js-nav');
     this.fadeItems = document.querySelectorAll('.fade-in');
@@ -35,12 +35,16 @@ var App = /*#__PURE__*/function () {
     this.navIcons = document.querySelectorAll('.nav-icon');
     this.scrollTitlesRight = document.querySelectorAll(".scroll-title-right");
     if (this.scrollTitlesRight[0]) this.initScrollTitlesRight();
+    this.modalBtn = document.querySelector('.js-modal-button');
+    this.modal = document.querySelector('.js-modal');
+    this.closeBtn = document.querySelector('.js-close-button');
     this.init();
   }
   _createClass(App, [{
     key: "init",
     value: function init() {
       this.initOpenNav();
+      this.initModal();
       this.initSwiper();
       this.initFadeIn();
       this.initStaggerIn();
@@ -52,10 +56,10 @@ var App = /*#__PURE__*/function () {
     key: "initOpenNav",
     value: function initOpenNav() {
       var _this = this;
-      this.button.addEventListener('click', function () {
-        _this.button.classList.toggle('open');
+      this.navBtn.addEventListener('click', function () {
+        _this.navBtn.classList.toggle('open');
         _this.nav.classList.toggle('hidden');
-        if (_this.button.classList.contains('open')) {
+        if (_this.navBtn.classList.contains('open')) {
           gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(_this.lines[0], {
             duration: 0.2,
             rotate: '45deg',
@@ -83,6 +87,17 @@ var App = /*#__PURE__*/function () {
             backgroundColor: 'black'
           });
         }
+      });
+    }
+
+    // Modal
+  }, {
+    key: "initModal",
+    value: function initModal() {
+      var _this2 = this;
+      this.modalBtn.addEventListener('click', function () {
+        _this2.modal.classList.toggle('hidden');
+        _this2.closeBtn.classList.toggle('hidden');
       });
     }
 

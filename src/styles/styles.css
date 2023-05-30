@@ -16,6 +16,10 @@ input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
+.stroke-white svg {
+  stroke: #fff !important;
+}
+
 .button {
   border: 1px solid #e7e7e7;
 }
@@ -76,8 +80,6 @@ input:-webkit-autofill:active{
   justify-content: center;
   align-items: center;
 }
-
-
 
 .swiper-container {
   width: 60%; /* Adjust the width value as needed */

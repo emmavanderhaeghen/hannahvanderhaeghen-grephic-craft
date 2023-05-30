@@ -4,46 +4,67 @@
 {% set galleryPages = craft.entries.section('galleryPages') %}
 
 {% block content %}
+    <button class="button absolute left-200 top-200 pointer border-1 border-black bg-transparent text-black py-10 px-20 transition duration-300 js-modal-button">See all collections</button>
+    {% include "_layout/partials/modal" %}
 
     <section class="container">
         <article class="flex mt-50 mb-50">
             <div class="w-8/12 mx-auto text-9 relative">
                 {% for galleryPage in galleryPages %}
-                    {% if galleryPage.imageLeft %}
+                    {% if galleryPage.imageAlignment == 'left' %}
                         <a class="fade-in" href="{{ galleryPage.url }}">
-                            {% for image in galleryPage.imageOne %}
-                                <img class="w-400 pb-40" src="{{ image.url() }}" alt="work" loading="lazy">
-                            {% endfor %}
+                            <div class='pb-40 flex items-center justify-center'>
+                                <div class="aspect-video cursor-pointer relative group">
+                                    <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                        <div>
+                                            <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                                                <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% for image in galleryPage.imageOne %}
+                                    <img alt="" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </a>
-                    {% elseif galleryPage.imageRight %}
-                        <a class="relative -right-[40rem] fade-in" href="{{ galleryPage.url }}">
-                            {% for image in galleryPage.imageOne %}
-                                <img class="w-400 pb-40" src="{{ image.url() }}" alt="work" loading="lazy">
-                            {% endfor %}
-                        </a>
-                    {% else %}
+                    {% elseif galleryPage.imageAlignment == 'center' %}
                         <a class="relative left-[20rem] fade-in" href="{{ galleryPage.url }}">
-                            {% for image in galleryPage.imageOne %}
-                                <img class="w-400 pb-40" src="{{ image.url() }}" alt="work" loading="lazy">
-                            {% endfor %}
+                            <div class='pb-40 flex items-center justify-center'>
+                                <div class="aspect-video cursor-pointer relative group">
+                                    <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                        <div>
+                                            <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                                                <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% for image in galleryPage.imageOne %}
+                                    <img alt="" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </a>
+                    {% elseif galleryPage.imageAlignment == 'right' %}
+                        <a class="relative -right-[40rem] fade-in" href="{{ galleryPage.url }}">
+                            <div class='pb-40 flex items-center justify-center'>
+                                <div class="aspect-video cursor-pointer relative group">
+                                    <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                        <div>
+                                            <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                                                <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% for image in galleryPage.imageOne %}
+                                    <img alt="" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </a>
                     {% endif %}
                 {% endfor %}
             </div>
         </article>
     </section>
-
 {% endblock %}
-
-
-    {# <section class="md:ml-60">
-        <article class="w-12/12 flex flex-wrap mt-50 mb-50 items-center">
-            {% for galleryPage in galleryPages %}
-                <a href="{{ galleryPage.url }}" class="w-12/12 md:w-6/12 lg:w-4/12 gap-20">
-                {% for image in galleryPage.imageOne %}
-                    <img class="w-200 lg:w-300 pb-40" src="{{image.url()}}" alt="work" loading="lazy">
-                {% endfor %}                          
-                </a>
-            {% endfor %}
-        </article>
-    </section> #}

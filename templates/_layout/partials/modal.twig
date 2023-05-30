@@ -1,0 +1,19 @@
+{# Template: {{ _self }}.twig #}
+
+{% set galleryPages = craft.entries.section('galleryPages') %}
+
+<div class="hidden z-40 absolute w-screen h-fit bg-black bg-opacity-75 top-0 left-0 flex js-modal">
+    <div class="w-10/12 mx-auto text-white uppercase">
+        <ul class="list mt-100 font-serif text-25">
+        {% for gallerypage in galleryPages %}
+            <li class="block my-25 italic hover:not-italic"><a class="py-5" href="{{gallerypage.url()}}">{{gallerypage.title}}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    <button class="hidden relative right-100 flex items-center js-close-button">
+        <span class="text-white text-12 mr-10">close</span>
+        <img class="stroke-white" src="../assets/www/svg/cross.svg" alt="account">
+    </button>
+
+</div>
+

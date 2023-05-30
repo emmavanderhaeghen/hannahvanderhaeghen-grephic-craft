@@ -6,7 +6,7 @@ import 'swiper/css/bundle'; // styles bundle
 
 class App {
   constructor() {
-    this.button = document.querySelector('.js-nav-button');
+    this.navBtn = document.querySelector('.js-nav-button');
     this.lines = document.querySelectorAll('.js-lines');
     this.nav = document.querySelector('.js-nav');
     this.fadeItems = document.querySelectorAll('.fade-in');
@@ -16,13 +16,16 @@ class App {
     this.scrollTitlesRight = document.querySelectorAll(".scroll-title-right");
     if (this.scrollTitlesRight[0]) this.initScrollTitlesRight();
 
-    this.init();
+    this.modalBtn = document.querySelector('.js-modal-button');
+    this.modal = document.querySelector('.js-modal');
+    this.closeBtn = document.querySelector('.js-close-button');
 
-    
+    this.init();
   }
 
   init() {
     this.initOpenNav();
+    this.initModal();
     this.initSwiper();
     this.initFadeIn();
     this.initStaggerIn();
@@ -31,10 +34,10 @@ class App {
 
   // Open Navigation
   initOpenNav() {
-    this.button.addEventListener('click', () => {
-      this.button.classList.toggle('open');
+    this.navBtn.addEventListener('click', () => {
+      this.navBtn.classList.toggle('open');
       this.nav.classList.toggle('hidden');
-      if (this.button.classList.contains('open')) {
+      if (this.navBtn.classList.contains('open')) {
         gsap.to(this.lines[0], { duration: 0.2, rotate: '45deg', top: '8px', backgroundColor: 'white' });
         gsap.to(this.lines[1], { duration: 0.2, rotate: '-45deg', bottom: '2px', backgroundColor: 'white' });
         this.navIcons.classlist.remove('hidden');
@@ -44,6 +47,15 @@ class App {
       }
     });
   } 
+
+  
+  // Modal
+  initModal() {
+    this.modalBtn.addEventListener('click', () => {
+      this.modal.classList.toggle('hidden');
+      this.closeBtn.classList.toggle('hidden');
+    });
+  }
 
   // Image Swiper
   initSwiper() {
