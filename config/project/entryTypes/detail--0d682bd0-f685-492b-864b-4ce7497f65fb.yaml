@@ -37,6 +37,14 @@ fieldLayouts:
             uid: aa5d2b92-cbe2-453e-ba7b-6420461a6a34
             userCondition: null
           -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Je kan zelf kiezen waar deze thumbnail staat op de pagina!'
+            type: craft\fieldlayoutelements\Tip
+            uid: d4870e09-5c50-4264-b515-2a4fd896c9dd
+            userCondition: null
+          -
             elementCondition: null
             fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
             instructions: null
@@ -47,7 +55,19 @@ fieldLayouts:
             uid: 9757016b-74fa-4bc1-a608-750c73587d3e
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 3a62f4a6-a4f4-4fad-830a-10a5e8dbdc20 # Afbeelding plaatsing
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d72c77f3-0dc4-45cd-8d13-ee4a05225717
+            userCondition: null
+            warning: null
+            width: 50
           -
             elementCondition: null
             heading: slider
