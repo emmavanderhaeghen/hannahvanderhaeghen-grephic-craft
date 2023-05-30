@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="271" height="61" viewBox="0 0 271 61">
-  <g id="Group_154" data-name="Group 154" transform="translate(6552 -6992)">
-    <text id="Hannah_Van_der_Haeghen" data-name="Hannah Van der Haeghen" transform="translate(-6552 7012)" fill="#111" font-size="18" font-family="BodoniModa9pt-Regular, 'Bodoni Moda \39 pt'"><tspan x="0" y="0">HANNAH VAN DER HAEGHEN</tspan></text>
-    <text id="visual_artist" data-name="visual artist" transform="translate(-6552 7048)" fill="#111" font-size="13" font-family="Poppins-Regular, Poppins"><tspan x="0" y="0">VISUAL ARTIST</tspan></text>
-    <line id="Line_48" data-name="Line 48" x2="50" transform="translate(-6551.5 7025.958)" fill="none" stroke="#111" stroke-width="1"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60">
+  <text id="Hannah_Van_der_Haeghen" data-name="Hannah Van der Haeghen" transform="translate(0 19)" fill="#111" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">HANNAH VAN DER HAEGHEN</tspan></text>
+  <text id="visual_artist" data-name="visual artist" transform="translate(0 55)" fill="#111" font-size="13" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">VISUAL ARTIST</tspan></text>
+  <line id="Line_1" data-name="Line 1" x2="50" transform="translate(0.5 32.958)" fill="none" stroke="#111" stroke-width="1"/>
 </svg>
