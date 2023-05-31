@@ -51,13 +51,13 @@ productFieldLayouts:
             width: 25
           -
             elementCondition: null
-            fieldUid: 31bb0e04-2a70-4557-8090-a52c1a2254f2 # Titel 1
+            fieldUid: 02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d # Link 1
             instructions: null
-            label: Collectienaam
+            label: Collectie
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d7712e51-04c5-43fe-81dc-29432017c68f
+            uid: 87cdefb0-1dae-49b5-99c0-164e828be1a1
             userCondition: null
             warning: null
             width: 25

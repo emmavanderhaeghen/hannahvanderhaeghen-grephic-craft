@@ -65,7 +65,7 @@ productFieldLayouts:
             elementCondition: null
             fieldUid: 02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d # Link 1
             instructions: null
-            label: 'Collectienaam en link'
+            label: Collectie
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

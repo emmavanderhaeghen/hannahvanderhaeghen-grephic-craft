@@ -41,7 +41,7 @@ productFieldLayouts:
             elementCondition: null
             fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
             instructions: null
-            label: null
+            label: Afbeelding
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -51,9 +51,21 @@ productFieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d # Link 1
+            instructions: null
+            label: Collectie
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 60f29c5d-5efd-4a45-af94-de651acac3c8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
             instructions: null
-            label: null
+            label: 'Beschrijving product'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
