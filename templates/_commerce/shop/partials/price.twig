@@ -3,4 +3,4 @@
 {% set cart = craft.commerce.carts.cart %}
 {% endif %}
 
-<p class="font-medium">{{ product.defaultVariant.price|currency(cart.currency) }}</p>
+<p id="selectedPrice" class="font-medium">€ {{ product.variants[0].price }}</p>

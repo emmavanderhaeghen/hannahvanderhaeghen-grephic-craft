@@ -1,35 +1,34 @@
 {# Layouts and macros #}
 {% extends "_layout/site" %}
-
 {% import '_macros/form' as form %}
 
 {# Set variables  #}
 {% set cart = craft.commerce.carts.cart %}
 
 {# Get all options (and their labels) for this product #}
-{# {% set variantAttributesValues = craft.entries.section('variantAttributeOptionValues').relatedTo(product.variants|filter(el => el.enabled)).all() %}
-{% set variantAttributesLabels = craft.entries.section('variantAttributeOptionLabels').relatedTo(variantAttributesValues|default([0])).all() %} #}
+{% set variantAttributesValues = craft.entries.section('variantAttributeOptionValues').relatedTo(product.variants|filter(el => el.enabled)).all() %}
+{% set variantAttributesLabels = craft.entries.section('variantAttributeOptionLabels').relatedTo(variantAttributesValues|default([0])).all() %}
 
 {# Get the current set of options #}
-{# {% set selectedOptions = craft.app.request.getBodyParam('options') %}
+{% set selectedOptions = craft.app.request.getBodyParam('options') %}
 {% if selectedOptions is null %}
-    {% set selectedOptions = [] %}
-    {% for item in product.defaultVariant.uniqueCombinationOfVariantAttributes.all() %}
-        {% set selectedOptions = selectedOptions|merge({(item.variantAttributeLabel.one().slug): item.id}) %}
-    {% endfor %}
-{% endif %} #}
+  {% set selectedOptions = [] %}
+  {% for item in product.defaultVariant.uniqueCombinationOfVariantAttributes.all() %}
+    {% set selectedOptions = selectedOptions|merge({(item.variantAttributeLabel.one().slug): item.id}) %}
+  {% endfor %}
+{% endif %}
 
 {# Set the current variant based on the chosen options #}
 {# We should have a fallback for if this fails #}
-{# {% set filteredVariants = product.variants|filter(el => el.enabled) %}
+{% set filteredVariants = product.variants|filter(el => el.enabled) %}
 {% for option, value in selectedOptions %}
-    {% set filteredVariants = filteredVariants|filter(el => value in el.uniqueCombinationOfVariantAttributesIds|split(',')) %}
+  {% set filteredVariants = filteredVariants|filter(el => value in el.uniqueCombinationOfVariantAttributes.ids()) %}
 {% endfor %}
-{% set filteredVariants = filteredVariants|first|default(null) %} #}
+{% set filteredVariants = filteredVariants|first|default(null) %}
 
 {# Set current variant, fallback to default #}
-{# {% set currentVariant = filteredVariants|default(product.defaultVariant) %}
-{% set currentVariantOptionIds = currentVariant.uniqueCombinationOfVariantAttributesIds|split(',') %} #}
+{% set currentVariant = filteredVariants|default(product.defaultVariant) %}
+{% set currentVariantOptionIds = currentVariant.uniqueCombinationOfVariantAttributes.ids() %}
 
 {% block content %}
 
@@ -38,6 +37,9 @@
         <div class=" flex lg:justify-between flex-col lg:flex-row">
             {# left column #}
             <div class="lg:w-1/2 flex flex-col items-start">
+                {# breadcrumbs #}
+                <a href="/prints" class="flex items-center mb-20"><img class="rotate-90 mr-10" src="../assets/www/svg/arrow.svg" alt="hero">back to shop</a>
+
                 {# product images #}
                 <div class="w-full flex flex-col md:flex-row justify-between relative">
                     <div class="relative w-full aspect-square">
@@ -61,22 +63,21 @@
             </div>
 
             {# right column #}
-            <div class="lg:w-1/2 px-60 mt-20 lg:mb-0">
-                <h1 class="text-20 font-sans uppercase">{{ product.title }}</h1>
+            <form class="lg:w-1/2 px-60 mt-30 lg:mb-0" method="post"class="js-validate mb-40" action="{{ url(craft.app.request.pathInfo) }}"accept-charset="UTF-8" enctype="multipart/form-data">
+                {{ csrfInput() }}
+                {{ redirectInput('cart') }}
+                {{ actionInput('commerce/cart/update-cart') }}
+                {% for variant in product.variants %}
+                    <input type="hidden" name="purchasables[{{ variant.id }}][id]" value="{{ variant.id }}">
+                    <input type="hidden" name="purchasables[{{ variant.id }}][qty]" value="1">
+                {% endfor %}
+                {{ successMessageInput('{product} added to cart.'|t({
+                    product: product.title
+                })) }}
+                {{ not cart.shippingMethodHandle ? hiddenInput('shippingMethodHandle','delivery') }}
 
-                <form method="post" class="js-validate mb-40" action="{{ url(craft.app.request.pathInfo) }}" accept-charset="UTF-8" enctype="multipart/form-data">
-                    {{ csrfInput() }}
-                    {{ redirectInput('cart') }}
-                    {{ actionInput('commerce/cart/update-cart') }}
-                    {% for variant in product.variants %}
-                        <input type="hidden" name="purchasables[{{ variant.id }}][id]" value="{{ variant.id }}">
-                        <input type="hidden" name="purchasables[{{ variant.id }}][qty]" value="1">
-                    {% endfor %}
-                    {{ hiddenInput('qty', 1) }}
-                    {{ successMessageInput('{product} added to cart.'|t({
-                        product: product.title
-                    })) }}
-                    {{ not cart.shippingMethodHandle ? hiddenInput('shippingMethodHandle', 'delivery') }}
+                    <h1 class="text-20 font-sans uppercase">{{ product.title }}</h1>
+                    <h2>Collection - <a href="{{product.linkOne.getURL()}}" class="opacity-50 italic">{{product.linkOne.getText()}}</a></h2>
 
                     {# price #}
                     <div class="mt-10 text-12">
@@ -88,42 +89,110 @@
                         <p class="my-30 text-10">{{ product.descriptionOne|nl2br }}</p>
                     {% endif %}
 
-                    <p class="mt-15 mb-5">Frame type</p>
-                    <select class="border-none bg-pink h-auto w-full p-10 leading-normal" name="purchasableId">
-                        {% for variant in product.variants %}
-                            <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
-                        {% endfor %}
-                    </select>
+                    {% if product.variants|length > 1 %}
+                        <p class="mt-15 mb-5">Frame type</p>
+                        <select class="border-none bg-pink h-auto w-full p-10 leading-normal" name="purchasableId" onchange="updatePrice(this)">
+                            {% for variant in product.variants %}
+                                <option class="p-10" value="{{ variant.price }}">{{ variant.sku }}</option>
+                            {% endfor %}
+                        </select>
 
-                    <p class="mt-15 mb-5">Material</p>
-                    <select class="border-none bg-pink h-auto w-full p-10 leading-normal" name="purchasableId">
-                        {% for variant in product.variants %}
-                            <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
-                        {% endfor %}
-                    </select>
-
-                    <p class="mt-15 mb-5">Print size</p>
-                    <select class="border-none bg-pink h-auto w-full p-10 leading-normal" name="purchasableId">
-                        {% for variant in product.variants %}
-                            <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
-                        {% endfor %}
-                    </select>
+                        
+                        <script>
+                            function updatePrice(select) {
+                                const price = select.value;
+                                document.getElementById('selectedPrice').textContent = '€ ' + price;
+                            }
+                        </script>
+                    {% endif %}
 
                     {# if the product is not in stock #}
                     {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == ''%}
-                        <div class="flex flex-row flex-wrap items-center justify-between gap-20 mt-20">
-                            <button type="submit" class="bg-black text-white py-10 px-20 block w-max hover:bg-pink hover:text-black | js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
-                            
+                        <div class="flex flex-row flex-wrap items-center justify-between gap-20 mt-40">
                             <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-grey.svg" alt="heart"> add to my wishlist</span> 
+                            <button type="submit" class="border border-black text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300 js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
+                            
                         </div>
                     {% else %}
                         <div class="bg-red-100 p-6 mt-20 border border-red-200 text-red-500">Momenteel niet beschikbaar</div>
                     {% endif %}
-                </form>
-            </div>
+            </form>
         </div>
     </div>
 </section>
 
 {% include "_commerce/shop/partials/relatedProducts" %}
 {% endblock %}
+
+{# Alpine.js data source #}
+{% js at head %}
+    window.product{{ product.id }}Prices = function() {
+    return {
+        {# Used on change events in priceVariants.twig elements #}
+        setCurrentVariant() {
+        const options = document.querySelectorAll('[name^=variantOptions]');
+        const selectedOptions = this.getSelectedOptions(options);
+        const variant = this.variants.find((el) => this.arrayEquals(JSON.parse(JSON.stringify(el.variantAttributesValues)), selectedOptions));
+        this.currentVariant = variant.id;
+        },
+
+        {# Internal helper function #}
+        getSelectedOptions(options) {
+        const arr = [];
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].nodeName === 'SELECT') {
+            arr.push(parseInt(options[i].value));
+            } else if (options[i].checked) {
+            arr.push(parseInt(options[i].value));
+            }
+        }
+        return arr;
+        },
+        {# Used to determine which options should be selectable in priceVariants.twig #}
+        getVariantMatch(slug, value) {
+        {# Force a reaction by getting a linked property #}
+        const v = this.currentVariant;
+        {# Get other selected options except current changed one #}
+        const options = document.querySelectorAll('[name^="variantOptions"]:not([name="variantOptions['+slug+']"])');
+        const selectedOptions = this.getSelectedOptions(options);
+        selectedOptions.push(value);
+        {# Return the variant based on future matches #}
+        const variant = this.variants.find((el) => this.arrayEquals(JSON.parse(JSON.stringify(el.variantAttributesValues)), selectedOptions));
+        return variant;
+        },
+        {# Get current variant #}
+        getCurrentVariant() {
+        return this.variants.find((el) => el.id === this.currentVariant);
+        },
+        {# Normalize stock value #}
+        getCurrentVariantStock() {
+        const variant = this.getCurrentVariant();
+        if (variant.stock === '') return '';
+        return this.getCurrentVariant().stock;
+        },
+        {# currentOptions: [], #}
+        currentVariant: {{ currentVariant.id }},
+        variants: [
+        {% for item in product.variants|filter(el => el.enabled) %}
+        {
+            id: {{ item.id }},
+            variantAttributesValues: [{{ item.uniqueCombinationOfVariantAttributes.ids()|sort|join(',') }}],
+            onSale: {{ item.onSale ? 'true' : 'false' }},
+            price: '{{ item.price|currency(cart.currency) }}',
+            salePrice: '{{ item.salePrice|currency(cart.currency) }}',
+            stock: {{ item.hasUnlimitedStock ? "''" : item.stock }},
+        },
+        {% endfor %}
+        ],
+        {# Helper function #}
+        arrayEquals(a, b) {
+        a.sort();
+        b.sort();
+        return Array.isArray(a) &&
+            Array.isArray(b) &&
+            a.length === b.length &&
+            a.every((val, index) => val === b[index]);
+        }
+    };
+    }
+{% endjs %}
