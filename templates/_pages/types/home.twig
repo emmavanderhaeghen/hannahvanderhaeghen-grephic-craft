@@ -6,14 +6,13 @@
 {% endif %}
 
 {% block content %}
-<div class="relative -top-[10.75rem] left-0">
-    {% for image in entry.imageOne %}
-        <img class="h-screen w-full object-cover object-top relative top-0 left-0" src="{{image.url()}}" alt="hero">
-    {% endfor %}
-</div>
+    <div class="relative -top-[10.75rem] left-0">
+        {% for image in entry.imageOne %}
+            <img class="h-screen w-full object-cover object-top relative top-0 left-0" src="{{image.url()}}" alt="hero">
+        {% endfor %}
+    </div>
 
     <section class="container">
-
         {# collections - work page #}
         <article class="flex flex-col-reverse lg:flex-row my-0 lg:mb-100 items-center">
             <div class="w-12/12 lg:w-6/12 my-50 fade-in">
@@ -30,12 +29,14 @@
 
         {# quote #}
         <article class="mt-200 mb-250 relative">
+        <a href="/the-road-paved-with-a-single-stone">
             <div class="w-12/12 lg:w-10/12 relative z-[100] mx-auto py-80 px-100 bg-pink bg-opacity-[80%] fade-in">
                 <h2 class="text-50 font-serif uppercase text-center">{{entry.quote|nl2br}}</h2>
             </div>
             {% for image in entry.imageQuote %}
                 <img class="w-800 z-10 absolute -top-80 -right-40" src="{{image.url()}}" alt="hero">
             {% endfor %}
+        </a>
         </article>
 
         {# the artist - about page #}
@@ -68,20 +69,20 @@
             </div>
             <a class="button relative pointer border-1 border-black bg-transparent text-black mt-80 ml-auto py-10 px-20 block w-max transition duration-300" href="{{ entry.linkThree.getUrl() }}" target="{{ entry.linkThree.getTarget() }}">{{ entry.linkThree.getText() }}</a>
         </article>
-
     </section>
-        {# connect - contact page #}
-        <article class="relative lg:mt-200">
-            <div class="z-20 w-12/12 lg:w-6/12 absolute right-20 bg-black bg-opacity-75 pr-[24rem] pt-50 pl-80 pb-70 fade-in">
-                <h2 class="text-80 font-serif uppercase absolute left-80 -top-[2.25rem] text-pink-500 scroll-title-right">{{entry.titleFour}}</h2>
-                <p class="py-80 text-9 text-white">{{entry.descriptionThree}}</p>
-                <a class="relative pointer bg-pink text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300" href="{{ entry.linkFour.getUrl() }}" target="{{ entry.linkFour.getTarget() }}">{{ entry.linkFour.getText() }}</a>
-            </div>
-            <div class="relative bottom-0 left-0">
-            {% for image in entry.imageFour %}
-                <img class="h-500 w-full object-cover relative top-0 left-0" src="{{image.url()}}" alt="hero">
-            {% endfor %}
-            </div>
-        </article>
+
+    {# connect - contact page #}
+    <article class="relative lg:mt-200">
+        <div class="z-20 w-12/12 lg:w-6/12 absolute right-20 bg-black bg-opacity-75 pr-[24rem] pt-50 pl-80 pb-70 fade-in">
+            <h2 class="text-80 font-serif uppercase absolute left-80 -top-[2.25rem] text-pink-500 scroll-title-right">{{entry.titleFour}}</h2>
+            <p class="py-80 text-9 text-white">{{entry.descriptionThree}}</p>
+            <a class="relative pointer bg-pink text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300" href="{{ entry.linkFour.getUrl() }}" target="{{ entry.linkFour.getTarget() }}">{{ entry.linkFour.getText() }}</a>
+        </div>
+        <div class="relative bottom-0 left-0">
+        {% for image in entry.imageFour %}
+            <img class="h-500 w-full object-cover relative top-0 left-0" src="{{image.url()}}" alt="hero">
+        {% endfor %}
+        </div>
+    </article>
 
 {% endblock %}
