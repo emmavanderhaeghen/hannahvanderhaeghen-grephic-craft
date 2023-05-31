@@ -4,6 +4,7 @@
     "craftcms/cms": "^4.4.0",
     "craftcms/commerce": "4.2.6",
     "craftcms/guest-entries": "3.0.1",
+    "craftcms/postmark": "3.0.0",
     "craftcms/redactor": "3.0.4",
     "misterbk/mix": "1.6.0",
     "nystudio107/craft-seomatic": "4.0.23",
@@ -21,10 +22,9 @@
     "yiisoft/yii2-shell": "^2.0.3"
   },
   "autoload": {
-    // "psr-4": {
-    //     "modules\\businesslogicmodule\\": "modules/businesslogicmodule/src/",
-    //     "modules\\shopadjustersmodule\\": "modules/shopadjustersmodule/src/"
-    // }
+    "psr-4": {
+        "App\\": "src/"
+    }
   },
   "config": {
     "allow-plugins": {
