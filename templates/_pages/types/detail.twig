@@ -2,7 +2,7 @@
 
 {% block app %}
 
-<header class="z-10 container py-30 absolute left-0 right-0 mx-auto">
+<header class="hidden container py-30 absolute left-0 right-0 mx-auto">
     <div class="flex items-center justify-between">
         <a class="p-5" href="/"><img class="hidden" src="../assets/www/svg/logo.svg" alt="Logo"></a>
         <div class="w-4/12 z-50 flex items-center gap-30 justify-end">
@@ -19,9 +19,9 @@
     {% include "_layout/partials/nav.twig" %}
 </header>
 
-<main class="mt-25">
+<main class="">
     <section class="absolute z-30 top-30 left-30">
-        <button onclick="window.history.go(-1);" class="flex items-center mb-20"><img class="rotate-90 mr-10" src="../assets/www/svg/arrow.svg" alt="hero"> go back</button>
+        <button onclick="window.history.go(-1);" class="flex items-center mb-20"><img class="rotate-90 mr-10" src="../assets/www/svg/cross.svg" alt="hero"></button>
     </section>
 
     {# Carousel #}
@@ -34,7 +34,7 @@
                     <ul class="block swiper-wrapper">
                         {% for image in entry.imageTwo.all() %}
                         <li class="swiper-slide">
-                            <img class="h-[54rem] mx-auto mt-20" src="{{image.url()}}" alt="hero">
+                            <img class="h-screen mx-auto" src="{{image.url()}}" alt="hero">
                         </li>
                         {% endfor %}                          
                     </ul>
@@ -44,6 +44,10 @@
                 <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
             </div>
     </section>
+
+    <div class="absolute z-10 bottom-40 right-40">
+        <img class="" src="../assets/www/svg/grid.svg" alt="grid">
+    </div>
 </main>
 
 
