@@ -39,6 +39,60 @@ productFieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
+            instructions: null
+            label: Afbeelding
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e1588eea-3d7a-47af-baa6-612908a164eb
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 31bb0e04-2a70-4557-8090-a52c1a2254f2 # Titel 1
+            instructions: null
+            label: 'Artist naam'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 740c2149-7825-4d8b-9060-f77c4fe42df1
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d # Link 1
+            instructions: null
+            label: 'Collectienaam en link'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 37266a86-79ab-40e0-a8f7-822726e09704
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
+            instructions: null
+            label: 'Beschrijving product'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 70679343-1c63-44be-b5cd-04da6daa03a9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 0503f2ae-466b-401e-ae33-1b95541a1d9e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
             instructions: null
             label: null
             required: false
@@ -47,8 +101,8 @@ productFieldLayouts:
             uid: 7a33c93f-708c-4096-b250-01bc274a2b01
             userCondition: null
             warning: null
-        name: Content
-        uid: 0503f2ae-466b-401e-ae33-1b95541a1d9e
+        name: Variants
+        uid: bb398824-fbb3-4233-98b6-5d865301b5ba
         userCondition: null
 productTitleFormat: ''
 siteSettings:
@@ -90,6 +144,18 @@ variantFieldLayouts:
             title: null
             type: craft\commerce\fieldlayoutelements\VariantTitleField
             uid: ffa6e234-9f58-4c9e-bab7-558770703c73
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7a2f79e4-83dc-4af4-8d09-fc747d840496 # Unique Combination of Variant Attributes
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 125764bb-a869-401a-a2a5-be7596f73399
             userCondition: null
             warning: null
             width: 100
