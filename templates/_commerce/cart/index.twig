@@ -33,32 +33,22 @@
                         <div class="flex justify-between items-center my-20 {{ not loop.last ? 'mb-20' }}">
                             <a href="{{ item.purchasable.product.url }}" class="hidden md:flex flex-grow-0 mr-6 w-1/6">
                                 {# <img class="" src="{{item.purchasable.product.imageOne.one()}}" alt="product"> #}
-                                <img src="../assets/www/images/work.png" alt="">
+                                <img class="" src="../assets/www/images/work.png" alt="">
                             </a>
+
                             <div class="w-[40%] lg:w-3/6 px-10">
                                 <div class="">
                                     <h3 class="mb-3">{{ item.purchasable.product.title }}</h3>
                                 </div>
-                                    {% set pickupRules = craft.entries.section('pickupRules').relatedTo([
-                                    'or',
-                                    { targetElement: item.purchasable.product },
-                                    { targetElement: item.purchasable.product.shopCategory.one()|default([]) }
-                                    ]).all() %}
-                                {% if pickupRules %}
-                                <div class="">
-                                    {% for item in pickupRules %}
-                                    {{ item.pickupRuleMessage }}
-                                    {% endfor %}
-                                </div>
-                                {% endif %}
+
                             </div>
-                            <div class="w-1/6 mr-10">
+                            {# <div class="w-1/6 mr-10">
                                 {% include '_commerce/shop/partials/spinner' with { name: "lineItems[#{item.id}][qty]", qty: item.qty, variant: item.purchasable, cart: cart } only %}
-                            </div>
+                            </div> #}
                             <div class="w-1/6 text-right flex-shrink-0 font-bold">
                                 {% include '_commerce/checkout/partials/price' with { variant: item, cart: cart } only %}
                             </div>
-                            <button type="submit" name="lineItems[{{ item.id }}][remove]" value="1" class="ml-20" title="Verwijder {{ item.description }}"><img class="" src="../assets/www/svg/cross.svg" alt="account"></button>
+                            <button type="submit" name="lineItems[{{ item.id }}][remove]" value="1" class="ml-40" title="Verwijder {{ item.description }}"><img class="w-[.75rem]" src="../assets/www/svg/cross.svg" alt="account"></button>
                         </div>
                     {% endfor %}
                 </form>
