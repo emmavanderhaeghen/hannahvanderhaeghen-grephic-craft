@@ -30,9 +30,9 @@ var App = /*#__PURE__*/function () {
     this.navBtn = document.querySelector('.js-nav-button');
     this.lines = document.querySelectorAll('.js-lines');
     this.nav = document.querySelector('.js-nav');
+    this.navIcons = document.querySelectorAll('.nav-icon');
     this.fadeItems = document.querySelectorAll('.fade-in');
     this.staggerItems = document.querySelectorAll('.stagger-in');
-    this.navIcons = document.querySelectorAll('.nav-icon');
     this.scrollTitlesRight = document.querySelectorAll(".scroll-title-right");
     if (this.scrollTitlesRight[0]) this.initScrollTitlesRight();
     this.modalBtn = document.querySelector('.js-modal-button');
@@ -59,6 +59,9 @@ var App = /*#__PURE__*/function () {
       this.navBtn.addEventListener('click', function () {
         _this.navBtn.classList.toggle('open');
         _this.nav.classList.toggle('hidden');
+        _this.navIcons.forEach(function (icon) {
+          return icon.classList.toggle('hidden');
+        });
         if (_this.navBtn.classList.contains('open')) {
           gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(_this.lines[0], {
             duration: 0.2,
