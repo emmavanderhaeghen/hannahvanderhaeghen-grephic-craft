@@ -3,7 +3,10 @@
 
 {% set categories = craft.categories.group('shop') %}
 {% set currentCategory = craft.categories.group('shop').title(craft.app.request.pathInfo) %}
-{% set products = craft.products().type(craft.app.request.pathInfo).limit(12) %}
+{% set products = craft.products()
+    .status('enabled')
+    .type(craft.app.request.pathInfo)
+    .limit(12) %}
 {% paginate products as pageInfo, pageProducts %}
 
 {% block content %}
@@ -13,13 +16,14 @@
             {% if categories|length %}
                 <ul class="flex">
                     {% for category in categories %}
-                    <li class="mx-30 text-12 items-center p-10">
-                        <a href="{{ category.url }}" class="{% if category.url == craft.app.request.absoluteUrl %}font-medium{% else %} hover:border-b-2 hover:border-black{% endif %}">{{ category.title }}</a>
+                    <li class="mx-30 text-11 items-center p-10">
+                        <a href="{{ category.url }}" class=" pb-[.5rem] {% if category.url == craft.app.request.absoluteUrl %}font-medium border-b-2 border-black{% else %}hover:border-b-2 hover:border-black{% endif %}">{{ category.title }}</a>
                     </li>
                     {% endfor %}
                 </ul>
             {% endif %}
         </div>
+
 
         <ul class="flex flex-wrap items-center mt-20">
             {% if pageProducts|length == 0 %}
