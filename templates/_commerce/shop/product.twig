@@ -89,21 +89,21 @@
                     {% endif %}
 
                     <p class="mt-15 mb-5">Frame type</p>
-                    <select class="border-none bg-grey bg-opacity-25 h-auto w-full p-10 leading-normal" name="purchasableId">
+                    <select class="border-none bg-pink h-auto w-full p-10 leading-normal" name="purchasableId">
                         {% for variant in product.variants %}
                             <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
                         {% endfor %}
                     </select>
 
                     <p class="mt-15 mb-5">Material</p>
-                    <select class="border-none bg-grey bg-opacity-25 h-auto w-full p-10 leading-normal" name="purchasableId">
+                    <select class="border-none bg-pink h-auto w-full p-10 leading-normal" name="purchasableId">
                         {% for variant in product.variants %}
                             <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
                         {% endfor %}
                     </select>
 
                     <p class="mt-15 mb-5">Print size</p>
-                    <select class="border-none bg-grey bg-opacity-25 h-auto w-full p-10 leading-normal" name="purchasableId">
+                    <select class="border-none bg-pink h-auto w-full p-10 leading-normal" name="purchasableId">
                         {% for variant in product.variants %}
                             <option class="p-10" value="{{ variant.id }}">{{ variant.sku }}</option>
                         {% endfor %}
@@ -111,9 +111,10 @@
 
                     {# if the product is not in stock #}
                     {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == ''%}
-                        <div class="flex flex-row flex-wrap items-center justify-start gap-20 mt-20">
-                            <button type="submit" class="bg-black text-white py-10 px-20 block w-max | js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
-                            <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-fill.svg" alt="heart"> add to my wishlist</span> 
+                        <div class="flex flex-row flex-wrap items-center justify-between gap-20 mt-20">
+                            <button type="submit" class="bg-black text-white py-10 px-20 block w-max hover:bg-pink hover:text-black | js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
+                            
+                            <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-grey.svg" alt="heart"> add to my wishlist</span> 
                         </div>
                     {% else %}
                         <div class="bg-red-100 p-6 mt-20 border border-red-200 text-red-500">Momenteel niet beschikbaar</div>
