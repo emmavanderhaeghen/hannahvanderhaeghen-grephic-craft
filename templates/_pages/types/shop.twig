@@ -14,7 +14,7 @@
                 <ul class="flex">
                     {% for category in categories %}
                     <li class="mx-30 text-12 items-center p-10">
-                        <a href="{{ category.url }}" class="{% if category.url == craft.app.request.absoluteUrl %}font-medium border-b-2 border-black{% else %}hover:font-medium hover:border-b-2 hover:border-black{% endif %}">{{ category.title }}</a>
+                        <a href="{{ category.url }}" class="{% if category.url == craft.app.request.absoluteUrl %}font-medium{% else %} hover:border-b-2 hover:border-black{% endif %}">{{ category.title }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -34,7 +34,7 @@
 
         {# Pagination #}
             {% if pageInfo.totalPages > 1 %}
-            <span class="relative top-80">page {{ pageInfo.currentPage }} of {{ pageInfo.totalPages }}</span>
+            <span class="relative top-[6.5rem]">page {{ pageInfo.currentPage }} of {{ pageInfo.totalPages }}</span>
             <div class="flex justify-center mt-50 text-base items-center">
                 {% for page, url in pageInfo.getPrevUrls() %}
                     <div class="relative">
@@ -42,7 +42,7 @@
                     </div>
                 {% endfor %}
                     <div class="relative">
-                    <span class="mx-20 text-bold">{{ pageInfo.currentPage }}</span>
+                    <span class="mx-20 font-bold">{{ pageInfo.currentPage }}</span>
                     </div>
                 {% for page, url in pageInfo.getNextUrls() %}
                     <div class="relative">
