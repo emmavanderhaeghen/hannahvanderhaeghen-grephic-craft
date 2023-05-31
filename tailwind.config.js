@@ -72,6 +72,7 @@ module.exports = {
         '8': ['.8rem', { lineHeight: '2.2rem' }],
         '9': ['.9rem', { lineHeight: '2.4rem' }],
         '10': ['1rem', { lineHeight: '2.4rem' }],
+        '11': ['1.1rem', { lineHeight: '2.5rem' }],
         '12': ['1.2rem', { lineHeight: '2.6rem' }],
         '16': ['1.6rem', { lineHeight: '2.8rem' }],
         '18': ['1.8rem', { lineHeight: '3rem' }],
