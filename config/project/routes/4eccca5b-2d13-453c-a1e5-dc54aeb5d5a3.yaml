@@ -1,6 +1,6 @@
 siteUid: null
 sortOrder: 4
-template: _commerce/account/adresses
+template: _commerce/account/addresses
 uriParts:
   - account/adresboek
 uriPattern: account/adresboek
