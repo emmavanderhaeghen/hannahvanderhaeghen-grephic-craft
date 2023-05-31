@@ -8,12 +8,12 @@
 {% if item.inList %}
     {# Remove from wishlist #}
     <button sprig s-method="post" s-action="wishlist/items/remove">
-        <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-15" src="../assets/www/svg/heart-pink.svg">
+        <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-[1.25rem]" src="../assets/www/svg/heart-pink.svg">
     </button>
     {% else %}
 
     {# Add to wishlist #}
     <button sprig s-method="post" s-action="wishlist/items/add">
-        <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-15" src="../assets/www/svg/heart-grey.svg">
+        <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-[1.25rem]" src="../assets/www/svg/heart-grey.svg">
     </button>
 {% endif %}
