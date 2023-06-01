@@ -7,7 +7,7 @@
     class: "block w-full border-b border-black bg-transparent text-10 px-4 focus:outline-none"
     } %}
     {% set attributes = defaults|merge(attributes|merge({ class: "#{defaults.class} #{attributes.class|default}" })) %}
-    <div class="mb-15">
+    <div class="mb-15 w-full">
     {{- label is not empty ? tag('label', {
         text: label,
         for: attributes.id,
