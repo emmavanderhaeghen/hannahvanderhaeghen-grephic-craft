@@ -22,7 +22,7 @@
                 {% endfor %}
             </div>
             <div class="w-12/12 lg:w-4/12 mx-auto relative fade-in">
-                <h2 class="font-serif uppercase text-pink-500 text-25 md:text-50 lg:text-80 lg:absolute lg:-right-80 lg:-top-[10.5rem] lg:scroll-title-right">{{entry.titleTwo|nl2br}}</h2>
+                <h2 class="font-serif uppercase text-pink-500 text-25 md:text-50 lg:text-80 lg:absolute lg:-right-80 lg:-top-[10.5rem] scroll-title-right">{{entry.titleTwo|nl2br}}</h2>
                 <p class="w-4/4 py-30 lg:w-3/4 lg:py-80 text-9">{{entry.descriptionOne|nl2br}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkOne}) }}
             </div>
@@ -43,7 +43,7 @@
         {# about section - about page #}
         <article class="flex flex-col lg:flex-row my-0 lg:mb-100 items-center">
             <div class="w-12/12 lg:w-4/12 mx-auto relative fade-in">
-                <h2 class="font-serif uppercase text-pink-500 z-[20] w-max text-25 md:text-50 lg:text-80 lg:absolute lg:-left-[5rem] lg:-top-[11.5rem] lg:scroll-title-right">{{entry.titleThree|nl2br}}</h2>
+                <h2 class="font-serif uppercase text-pink-500 z-[20] w-max text-25 md:text-50 lg:text-80 lg:absolute lg:-left-[5rem] lg:-top-[11.5rem] scroll-title-right">{{entry.titleThree|nl2br}}</h2>
                 <p class="w-4/4 py-30 lg:w-3/4 lg:py-80 text-9">{{entry.descriptionTwo|nl2br}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkTwo}) }}
             </div>
@@ -75,7 +75,7 @@
     {# contact section - contact page #}
     <article class="relative lg:mt-200">
         <div class="z-20 w-12/12 lg:w-6/12 absolute right-0 bg-black bg-opacity-75 px-20 lg:pr-[24rem] pt-50 lg:pl-80 pb-70 fade-in">
-            <h2 class="text-25 md:text-50 lg:text-80 font-serif uppercase lg:absolute lg:left-80 lg:-top-[2.25rem] text-pink-500 lg:scroll-title-right">{{entry.titleFour}}</h2>
+            <h2 class="text-25 md:text-50 lg:text-80 font-serif uppercase lg:absolute lg:left-80 lg:-top-[2.25rem] text-pink-500 scroll-title-right">{{entry.titleFour}}</h2>
             <p class="py-30 lg:py-80 text-9 text-white">{{entry.descriptionThree}}</p>
             <a class="relative pointer bg-pink text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300" href="{{ entry.linkFour.getUrl() }}" target="{{ entry.linkFour.getTarget() }}">{{ entry.linkFour.getText() }}</a>
         </div>
