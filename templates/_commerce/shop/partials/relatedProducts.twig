@@ -4,7 +4,7 @@
     <h3 class="uppercase text-22 text-center font-serif mx-auto">{{ "Related products"|t }}</h3>
     <ul class="flex flex-wrap justify-between mt-40 mb-80">
         {% for product in relatedProducts %}
-        <li class="w-6/12 md:w-[30%] relative">
+        <li class="w-12/12 md:w-[30%] relative">
             <a href="{{ product.url }}">
                 <div class="overflow-hidden">   
                 {% for image in product.imageOne %}
