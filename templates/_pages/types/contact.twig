@@ -3,39 +3,39 @@
 {% import '_macros/form' as form %}
 
 {% block content %}
-<div class="bg-black py-80">
+<div class="pt-20 mb-80">
     <section class="container">
-        <article class="flex flex-col-reverse lg:flex-row items-center">
-        <div class="w-12/12 mt-40 lg:mt-0 lg:w-6/12">
-            {% for image in entry.imageOne %}
-                <img class="w-300" src="{{image.url()}}" alt="contact">
-            {% endfor %}        
-        </div>
-        <div class="w-12/12 lg:w-6/12 text-white">
-            <h1 class="text-25 font-serif uppercase">{{ entry.title }}</h1>
-            <p class="mb-20">Do you have a question? Feel free to contact me any time!</p>
-            <form class="w-6/6 lg:w-4/6 | js-validate" method="post" action="{{ url(craft.app.request.pathInfo) }}" accept-charset="UTF-8" enctype="multipart/form-data">
-                {{ actionInput('guest-entries/save') }}
-                {{ hiddenInput('sectionUid', '7bfd2eb5-6578-4433-9c41-d19176243b02') }}
-                {{ hiddenInput('fields[siteId]', currentSite.id) }}
-                {{ redirectInput(craft.app.request.absoluteUrl) }}
-                {{ csrfInput() }}
-                {{ craft.snaptcha.field }}
-                <div class="flex justify-between gap-10">
-                    {{ form.input('', { placeholder: 'Firstname'|t, id: 'firstName', name: 'fields[firstName]', type: 'firstName', class: 'mr-10 border-white' }) }}
-                    {{ form.input('', { placeholder: 'Lastname'|t, id: 'lastName', name: 'fields[lastName]', type: 'lastName', class: 'border-white' }) }}
-                </div>
-                    {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'fields[email]', type: 'email', class: 'border-white' }) }}
-                    {{ form.textarea('', { placeholder: 'Message'|t, id: 'message', name: 'fields[message]', type: 'message', class: 'border-white mb-30'  }) }}
-                <button type="submit" class="border border-white text-white py-10 px-20 block w-max uppercase hover:bg-white hover:text-black transition duration-300">Send</button>
-            
-                <div class="js-success-message h-0 overflow-hidden">
-                    <div class="mt-6">
-                        <p>We received your message.</p>
+        <article class="flex flex-col-reverse lg:flex-row items-center fade-in">
+            <div class="w-12/12 mt-40 lg:mt-0 lg:w-6/12">
+                {% for image in entry.imageOne %}
+                    <img class="w-300" src="{{image.url()}}" alt="contact">
+                {% endfor %}        
+            </div>
+            <div class="w-12/12 lg:w-6/12">
+                <h1 class="text-50 font-serif uppercase">{{ entry.title }}</h1>
+                <p class="mb-20">Do you have a question? Feel free to contact me any time!</p>
+                <form class="w-6/6 lg:w-5/6 | js-validate" method="post" action="{{ url(craft.app.request.pathInfo) }}" accept-charset="UTF-8" enctype="multipart/form-data">
+                    {{ actionInput('guest-entries/save') }}
+                    {{ hiddenInput('sectionUid', '7bfd2eb5-6578-4433-9c41-d19176243b02') }}
+                    {{ hiddenInput('fields[siteId]', currentSite.id) }}
+                    {{ redirectInput(craft.app.request.absoluteUrl) }}
+                    {{ csrfInput() }}
+                    {{ craft.snaptcha.field }}
+                    <div class="flex justify-between">
+                        {{ form.input('', { placeholder: 'Firstname'|t, id: 'firstName', name: 'fields[firstName]', type: 'firstName', class: '' }) }}
+                        {{ form.input('', { placeholder: 'Lastname'|t, id: 'lastName', name: 'fields[lastName]', type: 'lastName', class: '' }) }}
                     </div>
-                </div>            
-            </form> 
-        </div>
+                        {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'fields[email]', type: 'email', class: '' }) }}
+                        {{ form.textarea('', { placeholder: 'Message'|t, id: 'message', name: 'fields[message]', type: 'message', class: 'mb-30'  }) }}
+                    <button type="submit" class="button relative pointer border-1 border-black bg-transparent text-black mt-20 lg:mt-80 ml-auto py-10 px-20 block w-max transition duration-300">Send</button>
+                
+                    <div class="js-success-message h-0 overflow-hidden">
+                        <div class="mt-6">
+                            <p>We received your message.</p>
+                        </div>
+                    </div>            
+                </form> 
+            </div>
         </article>
     </section>
 </div>
