@@ -2,13 +2,57 @@
 {% extends "_layout/site" %}
 {% import '_macros/form' as form %}
 
-{% block content %}
-<section class="bg-pink py-20 lg:py-40 xl:py-70">
-    <div class="container w-10/12 bg-white relative p-40 lg:p-80">
-        <h1 class="text-30 font-serif uppercase mb-20">Checkout</h1>
-        <div class="flex">
+{% do seomatic.meta.seoTitle('Checkout') %}
 
+{# Set variables #}
+{% if cart is not defined %}
+  {% set cart = craft.commerce.carts.cart %}
+{% endif %}
+
+{# {% if currentUser and cart.lineItems|length %}
+  {% redirect 'afrekenen/persoonlijke-gegevens' %}
+{% endif %} #}
+
+{% block content %}
+    <section class="bg-pink py-20 lg:py-40 xl:py-70">
+        <div class="container flex justify-between">
+            <div class=" w-[58%] bg-white relative p-40">
+                {% include '_commerce/checkout/partials/checkoutNav' with { step: 1 } %}
+
+                <h2 class="text-20 font-serif uppercase mb-20">Under which e-mail address would you like to place your order?</h2>
+
+                <form method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="mb-40 lg:mb-0 js-validate">
+                    <input type="hidden" name="action" value="commerce/cart/update-cart">
+                    {{ redirectInput('checkout/persoonlijke-gegevens') }}
+                    {{ csrfInput() }}
+
+                    <div class="mb-6 mt-20">
+                    {{ form.input('', { placeholder: 'e-mailadres', id: 'email', name: 'email', class: '', type: 'email', value: cart.email }) }}
+                    </div>
+
+                    {% set emailErrors = cart.getErrors('email') %}
+                    {% if emailErrors|length %}
+                    <span class="text-red text-sm">{{ emailErrors|join }}</span><br>
+                    {% endif %}
+
+                    <button type="submit" class="button relative pointer border-1 border-black bg-transparent text-black mt-20 ml-auto py-10 px-20 block w-max transition duration-300">{{ 'continue'|t }}</button>
+                </form>
+            </div>
+
+            <div class=" w-4/12 bg-white relative p-40">
+                <h2 class="text-20 font-serif uppercase mb-20">Cart</h2>
+                <div class="border-b border-black pb-10 my-20">
+                    {% for item in cart.lineItems %}
+                        <div class="mb-10 flex items-center justify-between">
+                            <div class="flex-grow">
+                                <span class="font-medium">{{ item.qty > 1 ? "#{item.qty} ×" }}</span> {{ item.description }} <span class="italic text-pink-500 pl-10"> {{ item.purchasable.uniqueCombinationOfVariantAttributes.select('title').column()|join(', ') }}</span>  
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% include '_commerce/cart/partials/totals' with { isCartIndex: true } %}
+                <a class="block mt-20 underline" href="{{ url('/cart') }}">edit shopping cart</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}
