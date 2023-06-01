@@ -11,12 +11,12 @@
 
 {% block content %}
 
-    <section class="container mb-120">
+    <section class="container mb-40 lg:mb-120">
         <div class="w-fit mx-auto mb-30">
             {% if categories|length %}
-                <ul class="flex">
+                <ul class="flex flex-wrap">
                     {% for category in categories %}
-                    <li class="mx-30 text-11 items-center p-10">
+                    <li class="mx-2 lg:mx-30 text-9 md:text-11 items-center p-10">
                         <a href="{{ category.url }}" class=" pb-[.5rem] {% if category.url == craft.app.request.absoluteUrl %}font-medium border-b-2 border-black{% else %}hover:border-b-2 hover:border-black{% endif %}">{{ category.title }}</a>
                     </li>
                     {% endfor %}
@@ -38,8 +38,8 @@
 
         {# Pagination #}
             {% if pageInfo.totalPages > 1 %}
-            <span class="relative top-[6.5rem]">page {{ pageInfo.currentPage }} of {{ pageInfo.totalPages }}</span>
-            <div class="flex justify-center mt-50 text-base items-center">
+            <span class="hidden lg:relative lg:top-[6.5rem]">page {{ pageInfo.currentPage }} of {{ pageInfo.totalPages }}</span>
+            <div class="flex justify-center mt-20 lg:mt-50 text-base items-center">
                 {% for page, url in pageInfo.getPrevUrls() %}
                     <div class="relative">
                         <a class="mx-20" href="{{ url }}">{{ page }}</a>
