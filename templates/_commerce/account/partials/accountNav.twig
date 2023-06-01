@@ -32,7 +32,7 @@
 ]) %}
 {% endif %}
 
-<ul class="w-6/12">
+<ul class="md:w-6/12">
     {% for item in pages %}
     <li class="my-2"><a href="{{ item.url }}" class="text-10 {{ item.url == craft.app.request.absoluteUrl ? 'font-medium' }}">{{ item.title }}</a></li>
     {% endfor %}
