@@ -112,6 +112,10 @@ productFieldLayouts:
         userCondition: null
 productTitleFormat: ''
 siteSettings:
+  0c227af7-cc71-4e70-a370-a1a6b63ddf75: # Français
+    hasUrls: true
+    template: _commerce/shop/product.twig
+    uriFormat: 'cards/{slug}'
   9b464eb3-586e-4db0-bf51-3d00017432b0: # Nederlands
     hasUrls: true
     template: _commerce/shop/product.twig

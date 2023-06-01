@@ -1,4 +1,4 @@
-dateModified: 1685533885
+dateModified: 1685626176
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: 'Hannah Van der Haeghen'
@@ -20,6 +20,7 @@ meta:
   __names__:
     0a57c908-5d24-4b0d-a9d4-80615b2cd97f: FAQ # FAQ
     00c5f631-3ba6-4457-8520-81aaf01dbc68: 'Beschrijving 1' # Beschrijving 1
+    0c227af7-cc71-4e70-a370-a1a6b63ddf75: Français # Français
     0d651d0e-b1d7-45ec-a026-bb77e4ababe3: Navigation # Navigation
     0d682bd0-f685-492b-864b-4ce7497f65fb: Detail # Detail
     0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
