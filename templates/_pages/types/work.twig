@@ -4,64 +4,69 @@
 {% set galleryPages = craft.entries.section('galleryPages') %}
 
 {% block content %}
-    <button class="button absolute left-200 top-200 pointer border-1 border-black bg-transparent text-black py-10 px-20 transition duration-300 js-modal-button">See all collections</button>
-    {% include "_layout/partials/modal" %}
+
+<section class="hidden lg:block">
+    <button class="button absolute left-100 top-[15rem] pointer border-1 border-black bg-transparent text-black py-10 px-20 transition duration-300 js-modal-button">all collections</button>
+    <div class="js-modal hidden absolute top-150 left-100">
+        <button class="js-close-button"><img class="w-[.75rem]" src="../assets/www/svg/cross.svg" alt="account"></button>
+        <ul class="font-serif text-12 mt-40">
+            {% for gallerypage in galleryPages %}
+                <li class="block my-10 italic hover:not-italic"><a class="py-5" href="{{gallerypage.url()}}">{{gallerypage.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
 
     <section class="">
-        <article class="flex mt-50 mb-50">
+        <article class="flex mb-50">
             <div class="w-8/12 mx-auto text-9 relative">
                 {% for galleryPage in galleryPages %}
                     {% if galleryPage.imageAlignment == 'left' %}
-                        <a class="fade-in" href="{{ galleryPage.url }}">
-                            <div class='pb-40 flex items-center justify-center'>
-                                <div class="aspect-video cursor-pointer relative group">
-                                    <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
-                                        <div>
-                                            <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
-                                                <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
-                                            </div>
+                        <div class="pb-40 flex items-center justify-center fade-in">
+                            <a href="{{ galleryPage.url }}" class="aspect-video cursor-pointer relative group">
+                                <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                    <div>
+                                        <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                                            <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
                                         </div>
                                     </div>
-                                    {% for image in galleryPage.imageOne %}
-                                    <img alt="" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
-                                    {% endfor %}
                                 </div>
-                            </div>
-                        </a>
+                                {% for image in galleryPage.imageOne %}
+                                <img alt="{{galleryPage.title}}" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
+                                {% endfor %}
+                            </a>
+                        </div>
                     {% elseif galleryPage.imageAlignment == 'center' %}
-                        <a class="relative left-[20rem] fade-in" href="{{ galleryPage.url }}">
-                            <div class='pb-40 flex items-center justify-center'>
-                                <div class="aspect-video cursor-pointer relative group">
-                                    <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
-                                        <div>
-                                            <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
-                                                <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
-                                            </div>
+                        <div class="pb-40 flex items-center justify-center relative md:left-[10rem] lg:left-[20rem] fade-in">
+                            <a href="{{ galleryPage.url }}" class="aspect-video cursor-pointer relative group">
+                                <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                    <div>
+                                        <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                                            <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
                                         </div>
                                     </div>
-                                    {% for image in galleryPage.imageOne %}
-                                    <img alt="" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
-                                    {% endfor %}
                                 </div>
-                            </div>
-                        </a>
+                                {% for image in galleryPage.imageOne %}
+                                <img alt="{{galleryPage.title}}" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
+                                {% endfor %}
+                            </a>
+                        </div>
                     {% elseif galleryPage.imageAlignment == 'right' %}
-                        <a class="relative -right-[40rem] fade-in" href="{{ galleryPage.url }}">
-                            <div class='pb-40 flex items-center justify-center'>
-                                <div class="aspect-video cursor-pointer relative group">
-                                    <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
-                                        <div>
-                                            <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
-                                                <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
-                                            </div>
+                        <div class="pb-40 flex items-center justify-center relative md:-right-[15rem] lg:-right-[35rem] fade-in">
+                            <a href="{{ galleryPage.url }}" class="aspect-video cursor-pointer relative group">
+                                <div class="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                    <div>
+                                        <div class="p-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                                            <h2 class="text-16 font-serif">{{galleryPage.title}}</h2>
                                         </div>
                                     </div>
-                                    {% for image in galleryPage.imageOne %}
-                                    <img alt="" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
-                                    {% endfor %}
                                 </div>
-                            </div>
-                        </a>
+                                {% for image in galleryPage.imageOne %}
+                                <img alt="{{galleryPage.title}}" class="object-cover w-500 transition duration-300 ease-in-out" src="{{ image.url() }}"/>
+                                {% endfor %}
+                            </a>
+                        </div>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -78,10 +83,12 @@
     modalBtn.addEventListener('click', () => {
         modal.classList.remove('hidden');
         closeBtn.classList.remove('hidden');
+        modalBtn.classList.add('hidden');
     });
     closeBtn.addEventListener('click', () => {
         modal.classList.add('hidden');
         closeBtn.classList.add('hidden');
+        modalBtn.classList.remove('hidden');
     });
 })();
 </script>
