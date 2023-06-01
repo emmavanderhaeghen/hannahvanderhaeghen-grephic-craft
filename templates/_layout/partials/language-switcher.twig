@@ -1,0 +1,37 @@
+{% set currentElement = craft.app.urlManager.matchedElement %}
+{% set sites = craft.app.getSites().getGroupById(currentSite.groupId).getSites() %}
+{% set switcherLinks = [] %}
+
+{% for site in sites %}
+    
+    {% set title = craft.app.i18n.getLocaleById(site.language) %}
+    {% set url = site.getBaseUrl() %}
+    {% if currentElement %}
+        {% set otherLocaleElement = craft.app.getElements().getElementById(currentElement.id, currentElement.className(), site.id) %}
+        {% if otherLocaleElement and otherLocaleElement.enabledForSite %}
+            {% set url = otherLocaleElement.url %}
+        {% endif %}
+    {% endif %}
+
+    {% set switcherLinks = switcherLinks|merge([{
+        url: url, 
+        title: title, 
+        countryCode: site.language|split('-')|last,
+        current: site.id == currentSite.id ? true : false,
+        language: site.language,
+    }]) %}
+
+{% endfor %}
+
+{% if switcherLinks|length > 1 %}
+<ul class="text-white language-switcher flex flex-row justify-center uppercase ml-30">
+{% for switcherLink in switcherLinks %}
+    <li class="block ">
+        <a class="flex items-center" href="{{switcherLink.url}}" hreflang="{{switcherLink.language}}" lang="{{switcherLink.language}}">
+        <span class="pr-10">{{ switcherLink.title|split('-')|first}}</span>
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endif %}
