@@ -3,23 +3,22 @@
 
 {% block content %}
     <section class="container">
-        <article class="flex flex-col-reverse lg:flex-row items-center mt-50 mb-200">
+        <article class="flex flex-col-reverse lg:flex-row items-center mt-10 lg:mt-50 mb-100 lg:mb-200">
             <div class="w-12/12 lg:w-6/12">
                 <img src="../assets/www/images/about-page.jpg" alt="hero">
             </div>
-            <div class="w-12/12 lg:w-4/12 mx-auto py-15 text-10 fade-in">
-                <span>{{entry.redactor|nl2br}}</span>
+            <div class="w-12/12 lg:w-4/12 mb-60 lg:mb-0 mx-auto text-10 fade-in">
+                {{entry.redactor|nl2br}}
             </div>
         </article>
 
         <article class="flex flex-col lg:flex-row items-center mt-50 mb-100 lg:mb-200">
-            <div class="w-12/12 lg:w-4/12 mx-auto  fade-in">
-                <p class="py-15 text-10">{{entry.descriptionTwo|nl2br}}</p>
-            </div>
+            <p class="w-12/12 lg:w-4/12 mx-auto text-10 mb-60 lg:mb-0 fade-in">
+                {{entry.descriptionTwo|nl2br}}
+            </p>
             <div class="w-6/12 lg:w-3/12 mx-auto  fade-in">
                 <img src="../assets/www/images/Portret.jpg" alt="portret">
             </div>
         </article>
     </section>
-
 {% endblock %}
