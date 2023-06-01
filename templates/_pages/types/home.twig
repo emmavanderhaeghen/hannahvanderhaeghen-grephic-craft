@@ -6,6 +6,7 @@
 {% endif %}
 
 {% block content %}
+    {# header #}
     <div class="relative -top-[10.75rem] left-0">
         {% for image in entry.imageOne %}
             <img class="h-screen w-full object-cover object-top relative top-0 left-0" src="{{image.url()}}" alt="hero">
@@ -13,7 +14,7 @@
     </div>
 
     <section class="container">
-        {# collections - work page #}
+        {# work section - work page #}
         <article class="flex flex-col-reverse lg:flex-row my-0 lg:mb-100 items-center">
             <div class="w-12/12 lg:w-6/12 my-50 fade-in">
                 {% for image in entry.imageTwo %}
@@ -21,61 +22,61 @@
                 {% endfor %}
             </div>
             <div class="w-12/12 lg:w-4/12 mx-auto relative fade-in">
-                <h2 class="absolute -right-80 -top-[10.5rem] text-80 font-serif uppercase text-pink-500 scroll-title-right">{{entry.titleTwo|nl2br}}</h2>
-                <p class="w-3/4 py-80 text-9">{{entry.descriptionOne}}</p>
+                <h2 class="font-serif uppercase text-pink-500 text-25 md:text-50 lg:text-80 lg:absolute lg:-right-80 lg:-top-[10.5rem] lg:scroll-title-right">{{entry.titleTwo|nl2br}}</h2>
+                <p class="w-4/4 py-30 lg:w-3/4 lg:py-80 text-9">{{entry.descriptionOne|nl2br}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkOne}) }}
             </div>
         </article>
 
-        {# quote #}
-        <article class="mt-200 mb-250 relative">
-        <a href="/the-road-paved-with-a-single-stone">
-            <div class="w-12/12 lg:w-10/12 relative z-[100] mx-auto py-80 px-100 bg-pink bg-opacity-[80%] fade-in">
-                <h2 class="text-50 font-serif uppercase text-center">{{entry.quote|nl2br}}</h2>
-            </div>
-            {% for image in entry.imageQuote %}
-                <img class="w-800 z-10 absolute -top-80 -right-40" src="{{image.url()}}" alt="hero">
-            {% endfor %}
-        </a>
+        {# quote - collection page #}
+        <article class="my-100 lg:mt-200 lg:mb-250 relative">
+            <a href="/the-road-paved-with-a-single-stone">
+                <div class="w-12/12 lg:w-10/12 relative z-[100] mx-auto py-10 md:py-40 lg:py-80 px-10 md:px-50 lg:px-100 bg-pink bg-opacity-[80%] fade-in">
+                    <h2 class="text-16 md:text-20 lg:text-50 font-serif uppercase text-center">{{entry.quote|nl2br}}</h2>
+                </div>
+                {% for image in entry.imageQuote %}
+                    <img class="w-800 z-10 absolute -top-20 md:-top-80 lg:-right-40" src="{{image.url()}}" alt="hero">
+                {% endfor %}
+            </a>
         </article>
 
-        {# the artist - about page #}
+        {# about section - about page #}
         <article class="flex flex-col lg:flex-row my-0 lg:mb-100 items-center">
             <div class="w-12/12 lg:w-4/12 mx-auto relative fade-in">
-                <h2 class="z-[20] absolute -left-[5rem] -top-[11.5rem] w-max text-80 font-serif uppercase text-pink-500 scroll-title-right">{{entry.titleThree}}</h2>
-                <p class="w-3/4 py-80 text-9">{{entry.descriptionTwo|nl2br}}</p>
+                <h2 class="font-serif uppercase text-pink-500 z-[20] w-max text-25 md:text-50 lg:text-80 lg:absolute lg:-left-[5rem] lg:-top-[11.5rem] lg:scroll-title-right">{{entry.titleThree|nl2br}}</h2>
+                <p class="w-4/4 py-30 lg:w-3/4 lg:py-80 text-9">{{entry.descriptionTwo|nl2br}}</p>
                 {{ include ("_layout/partials/button", {button: entry.linkTwo}) }}
             </div>
             <div class="w-12/12 lg:w-5/12 mx-auto my-50 fade-in">
                 {% for image in entry.imageThree %}
-                    <img class="w-300 relative -top-40" src="{{image.url()}}" alt="hero">
+                    <img class="w-300 relative lg:-top-40" src="{{image.url()}}" alt="hero">
                 {% endfor %}            
             </div>
         </article>
 
-        {# featured products #}
-        <article class="mb-50 lg:mb-100 lg:items-center">
+        {# shop preview - shop page #}
+        <article class="mb-100 lg:items-center">
             <div class="flex flex-col lg:flex-row">
-                <h2 class="w-12/12 lg:w-4/12 text-50 font-serif uppercase fade-in">{{entry.titleOne|nl2br}}</h2>
+                <h2 class="font-serif uppercase w-12/12 text-25 mb-20 lg:w-4/12 md:text-50 fade-in">{{entry.titleOne|nl2br}}</h2>
                 <div class="w-12/12 lg:w-8/12 flex">
                     <ul class="flex flex-wrap items-center">
                         {% for product in entry.featuredProducts.all()  %}
-                            <li class="w-[48%] last:ml-15 relative">
+                            <li class="md:w-[48%] last:ml-15 relative">
                                 {% include '_commerce/shop/partials/thumbnail' %}
                             </li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
-            <a class="button relative pointer border-1 border-black bg-transparent text-black mt-80 ml-auto py-10 px-20 block w-max transition duration-300" href="{{ entry.linkThree.getUrl() }}" target="{{ entry.linkThree.getTarget() }}">{{ entry.linkThree.getText() }}</a>
+            <a class="button relative pointer border-1 border-black bg-transparent text-black mt-20 lg:mt-80 ml-auto py-10 px-20 block w-max transition duration-300" href="{{url('prints')}}" target="{{ entry.linkThree.getTarget() }}">{{ entry.linkThree.getText() }}</a>
         </article>
     </section>
 
-    {# connect - contact page #}
+    {# contact section - contact page #}
     <article class="relative lg:mt-200">
-        <div class="z-20 w-12/12 lg:w-6/12 absolute right-20 bg-black bg-opacity-75 pr-[24rem] pt-50 pl-80 pb-70 fade-in">
-            <h2 class="text-80 font-serif uppercase absolute left-80 -top-[2.25rem] text-pink-500 scroll-title-right">{{entry.titleFour}}</h2>
-            <p class="py-80 text-9 text-white">{{entry.descriptionThree}}</p>
+        <div class="z-20 w-12/12 lg:w-6/12 absolute right-0 bg-black bg-opacity-75 px-20 lg:pr-[24rem] pt-50 lg:pl-80 pb-70 fade-in">
+            <h2 class="text-25 md:text-50 lg:text-80 font-serif uppercase lg:absolute lg:left-80 lg:-top-[2.25rem] text-pink-500 lg:scroll-title-right">{{entry.titleFour}}</h2>
+            <p class="py-30 lg:py-80 text-9 text-white">{{entry.descriptionThree}}</p>
             <a class="relative pointer bg-pink text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300" href="{{ entry.linkFour.getUrl() }}" target="{{ entry.linkFour.getTarget() }}">{{ entry.linkFour.getText() }}</a>
         </div>
         <div class="relative bottom-0 left-0">
@@ -84,5 +85,4 @@
         {% endfor %}
         </div>
     </article>
-
 {% endblock %}
