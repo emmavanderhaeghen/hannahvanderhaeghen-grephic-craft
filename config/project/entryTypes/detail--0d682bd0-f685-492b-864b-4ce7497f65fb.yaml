@@ -32,6 +32,18 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8dfcf780-002f-48dc-b0f0-0dcc79b60f8c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             heading: thumbnail
             type: craft\fieldlayoutelements\Heading
             uid: aa5d2b92-cbe2-453e-ba7b-6420461a6a34
@@ -48,7 +60,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
             instructions: null
-            label: null
+            label: thumbnail
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -78,7 +90,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d1f9737c-c74a-4ffd-8fde-fed08a33c48c # Afbeelding 2
             instructions: null
-            label: null
+            label: 'collectie afbeeldingen'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -94,48 +106,18 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            fieldUid: c871bcad-3990-4bf3-954f-b29d2e335773 # Filter: gallery
+            fieldUid: ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd # Filter: shop
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 0a7a9da9-8acd-4f10-9189-3b64c2e34f01
+            uid: d2d8aef9-b0a9-4d18-b80f-5d3205968d8a
             userCondition: null
             warning: null
             width: 100
         name: Filters
-        uid: bc26c552-6423-45b4-b9ca-fd4cd71703fe
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            elementCondition: null
-            fieldUid: 4907efcd-d46c-4ebc-aac9-3efb21bb1c18 # image left
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b9bd4bdb-bc4f-496d-a751-95723e2e5f04
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 986126ba-250e-463e-8f3c-3f9257acc84c # image right
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 892cf2f4-2cee-44a9-9dc0-7c6bd5f7cc6b
-            userCondition: null
-            warning: null
-            width: 100
-        name: 'Image Alignment'
-        uid: fe243c6f-8233-4bf0-b56a-4b67cfb2612f
+        uid: 032ef98a-ce94-406c-ade1-c5b471ab0ed2
         userCondition: null
 handle: detail
 hasTitleField: true

@@ -504,9 +504,6 @@ video {
 .right-40 {
   right: 4rem;
 }
-.right-8 {
-  right: 0.8rem;
-}
 .top-0 {
   top: 0rem;
 }
@@ -518,9 +515,6 @@ video {
 }
 .top-\[15rem\] {
   top: 15rem;
-}
-.top-\[45\%\] {
-  top: 45%;
 }
 .top-\[50\%\] {
   top: 50%;
@@ -596,6 +590,10 @@ video {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+.my-40 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 .my-50 {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -645,9 +643,6 @@ video {
 }
 .mb-\[\.4rem\] {
   margin-bottom: .4rem;
-}
-.mb-\[2\.95rem\] {
-  margin-bottom: 2.95rem;
 }
 .ml-20 {
   margin-left: 2rem;
@@ -708,9 +703,6 @@ video {
 }
 .mt-\[\.4rem\] {
   margin-top: .4rem;
-}
-.mt-24 {
-  margin-top: 6rem;
 }
 .block {
   display: block;
@@ -925,9 +917,6 @@ video {
 .rounded-\[20px\] {
   border-radius: 20px;
 }
-.rounded-full {
-  border-radius: 9999px;
-}
 .border {
   border-width: 1px;
 }
@@ -990,14 +979,14 @@ video {
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
 .bg-opacity-\[80\%\] {
   --tw-bg-opacity: 80%;
-}
-.bg-opacity-50 {
-  --tw-bg-opacity: 0.5;
 }
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
@@ -1012,9 +1001,6 @@ video {
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
   --tw-gradient-to-position:  ;
-}
-.stroke-black {
-  stroke: #1E1E1E;
 }
 .stroke-white {
   stroke: #FFF;
@@ -1045,9 +1031,6 @@ video {
 .p-6 {
   padding: 0.6rem;
 }
-.p-20 {
-  padding: 2rem;
-}
 .\!px-10 {
   padding-left: 1rem !important;
   padding-right: 1rem !important;
@@ -1059,10 +1042,6 @@ video {
 .px-10 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-.px-15 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 .px-20 {
   padding-left: 2rem;
@@ -1115,9 +1094,6 @@ video {
 .pb-\[\.5rem\] {
   padding-bottom: .5rem;
 }
-.pb-\[0\.5rem\] {
-  padding-bottom: 0.5rem;
-}
 .pl-10 {
   padding-left: 1rem;
 }
@@ -1129,6 +1105,9 @@ video {
 }
 .pl-60 {
   padding-left: 6rem;
+}
+.pr-10 {
+  padding-right: 1rem;
 }
 .pr-3 {
   padding-right: 0.3rem;
@@ -1150,12 +1129,6 @@ video {
 }
 .pt-50 {
   padding-top: 5rem;
-}
-.pt-\[0\.75rem\] {
-  padding-top: 0.75rem;
-}
-.pr-10 {
-  padding-right: 1rem;
 }
 .text-left {
   text-align: left;
@@ -1219,10 +1192,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 .font-bold {
   font-weight: 700;
@@ -1736,9 +1705,6 @@ input:-webkit-autofill:active{
 @media (min-width: 1280px) {
   .xl\:mb-120 {
     margin-bottom: 12rem;
-  }
-  .xl\:w-\[50vw\] {
-    width: 50vw;
   }
   .xl\:py-70 {
     padding-top: 7rem;

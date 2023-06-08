@@ -2,30 +2,33 @@
 
 {% block app %}
 
-<header class="hidden container py-30 absolute left-0 right-0 mx-auto">
-    <div class="flex items-center justify-between">
-        <a class="p-5" href="/"><img class="hidden" src="../assets/www/svg/logo.svg" alt="Logo"></a>
-        <div class="w-4/12 z-50 flex items-center gap-30 justify-end">
-            <a class="nav-icon hidden" href="/account"><img class="stroke-black" src="../assets/www/svg/account.svg" alt="account"></a>
-            <a class="nav-icon hidden" href="/wishlist"><img class="" src="../assets/www/svg/heart.svg" alt="heart"></a>
-            <a class="nav-icon hidden mr-50" href="/cart"><img class="" src="../assets/www/svg/bag.svg" alt="bag"></a>
-            <button class="fixed inline-block p-1 | js-nav-button">
-                <div class="w-[25px] h-[2px] bg-black mb-[.4rem] relative | js-lines"></div>
-                <div class="w-[25px] h-[2px] bg-black mt-[.4rem] relative | js-lines"></div>
-            </button>
-        </div>
+    <div class="js-header">
+        {% include "_layout/partials/header.twig" %}
     </div>
 
-    {% include "_layout/partials/nav.twig" %}
-</header>
+    <main class="container js-grid">
+        <h1 class="font-serif uppercase text-pink-500 text-25 md:text-50 w-6/12">{{entry.title}}</h1>
+        <ul class="flex flex-wrap items-center mt-20">
+        {% if entry.descriptionOne is not null %}
+            <div class="w-12/12 lg:w-8/12 my-40">
+                <p class="lg:w-8/12 text-9" >{{entry.descriptionOne|nl2br}}</p>
+            </div>
+        {% endif %}
 
-<main class="">
-    <section class="absolute z-30 top-30 left-30">
-        <button onclick="window.history.go(-1);" class="flex items-center mb-20"><img class="rotate-90 mr-10" src="../assets/www/svg/cross.svg" alt="hero"></button>
-    </section>
+            {% for image in entry.imageTwo.all() %}
+            <li class="w-12/12 sm:w-6/12 lg:w-3/12 mb-30 px-10 cursor-pointer">
+                <img class="js-thumbnail" src="{{image.url()}}" alt="hero" data-fullscreen-url="{{image.url()}}">
+            </li>
+            {% endfor %}                          
+        </ul>
+    </main>
 
-    {# Carousel #}
-    <section class="">
+    <section class="hidden js-img-detail">
+        <section class="absolute z-30 top-30 left-30">
+            <button onclick="closeFullscreen()" class="flex items-center mb-20"><img class="rotate-90 mr-10" src="../assets/www/svg/cross.svg" alt="hero"></button>
+        </section>
+
+        <section class="">
             <div class="button-next hidden lg:block -rotate-90 right-10 top-[50%] lg:right-25 -translate-y-1/2 absolute z-[2]">
                 <img class="w-10 transition-transform transform hover:scale-110" src="../assets/www/svg/arrow.svg" alt="hero">
             </div>
@@ -34,7 +37,7 @@
                     <ul class="block swiper-wrapper">
                         {% for image in entry.imageTwo.all() %}
                         <li class="swiper-slide">
-                            <img class="h-screen mx-auto" src="{{image.url()}}" alt="hero">
+                            <img class="h-screen mx-auto image-fullscreen" src="{{image.url()}}" alt="hero">
                         </li>
                         {% endfor %}                          
                     </ul>
@@ -43,69 +46,43 @@
             <div class="button-prev hidden lg:block rotate-90 top-[50%] left-20 lg:left-25 absolute -translate-y-1/2 z-[2]">
                 <img class="w-10 transition-transform transform hover:scale-110" src="../assets/www/svg/arrow.svg" alt="hero">
             </div>
+        </section>
+
+        {# <div class="absolute z-10 bottom-40 right-40">
+            <img class="" src="../assets/www/svg/grid.svg" alt="grid">
+        </div> #}
     </section>
 
-    <div class="absolute z-10 bottom-40 right-40">
-        <img class="" src="../assets/www/svg/grid.svg" alt="grid">
-    </div>
-</main>
+<script>
+    function closeFullscreen() {
+        const grid = document.querySelector('.js-grid');
+        const imgDetail = document.querySelector('.js-img-detail');
+        const header = document.querySelector('.js-header');
 
+        grid.classList.toggle('hidden');
+        imgDetail.classList.toggle('hidden');
+        header.classList.remove('hidden');
+    }
 
+    function openFullscreen() {
+        const thumbnailImages = document.querySelectorAll('.js-thumbnail');
+        const fullscreenImage = document.querySelector('.image-fullscreen');
+        const grid = document.querySelector('.js-grid');
+        const imgDetail = document.querySelector('.js-img-detail');
+        const header = document.querySelector('.js-header');
 
-
-
-
-
-
-
-
-
-    {# <section class="my-20 relative">
-        <div class="button-next hidden lg:block -rotate-90 right-8 top-[45%] lg:right-25 -translate-y-1/2 absolute z-[2] py-20 px-15 rounded-full bg-pink">
-            <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
-        </div>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                {% for image in entry.imageTwo.all() %}
-                <div class="swiper-slide">
-                    <div class="image-holder">
-                        <img class="h-screen object-cover" src="{{image.url()}}" alt="hero">
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="button-prev hidden lg:block rotate-90 top-[45%] left-20 lg:left-25 absolute -translate-y-1/2 z-[2] py-20 px-15 rounded-full bg-pink">
-            <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
-        </div>
-    </section> #}
-{# 
-    <script>
-        var swiper = new Swiper(".swiper-container", {
-            navigation: {
-                nextEl: ".button-next",
-                prevEl: ".button-prev",
-            },
+        thumbnailImages.forEach((thumbnail) => {
+            thumbnail.addEventListener('click', () => {
+                const fullscreenUrl = thumbnail.dataset.fullscreenUrl;
+                fullscreenImage.src = fullscreenUrl;
+                grid.classList.toggle('hidden');
+                imgDetail.classList.toggle('hidden');
+                header.classList.add('hidden');
+            });
         });
-    </script> #}
-{% endblock %}
+    }
 
-{# <section class="my-20">
-        <div class="button-next hidden lg:block -rotate-90 right-8 top-[45%] lg:right-25 -translate-y-1/2 absolute z-[2] py-20 px-15 rounded-full bg-pink">
-            <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
-        </div>
-        <div class="relative">
-            <div class="overflow-hidden swiper js-slider">
-                <ul class="block swiper-wrapper">
-                    {% for image in entry.imageTwo.all() %}
-                    <li class="swiper-slide xl:w-[50vw]">
-                        <img class="h-fit w-fit object-cover" src="{{image.url()}}" alt="hero">
-                    </li>
-                    {% endfor %}                          
-                </ul>
-            </div>
-        </div>
-        <div class="button-prev hidden lg:block rotate-90 top-[45%] left-20 lg:left-25 absolute -translate-y-1/2 z-[2] py-20 px-15 rounded-full bg-pink">
-            <img class="" src="../assets/www/svg/arrow.svg" alt="hero">
-        </div>
-</section> #}
+    openFullscreen();
+</script>
+
+{% endblock %}

@@ -62,18 +62,6 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: aa46f8a1-9431-4288-b77c-add9768df6b4
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
             fieldUid: 02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d # Link 1
             instructions: null
             label: null

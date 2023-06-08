@@ -49,7 +49,6 @@ class App {
     });
   } 
 
-  
   // Modal
   // initModal() {
   //   this.modalBtn.addEventListener('click', () => {
