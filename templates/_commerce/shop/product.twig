@@ -90,7 +90,7 @@
                     {% endif %}
 
                     {% if product.variants|length > 1 %}
-                        <p class="mt-15 mb-5"></p>
+                        <p class="mt-15 mb-5">Size:</p>
                         <select class="border-none bg-pink h-auto w-full p-10 leading-normal mb-20" name="purchasableId" onchange="updatePrice(this)">
                             {% for variant in product.variants %}
                                 <option class="p-10" value="{{ variant.price }}">{{ variant.sku }}</option>
