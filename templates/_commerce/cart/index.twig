@@ -20,24 +20,29 @@
 
         {% else %}
         
-        <div class="container flex justify-between">
-            <div class=" w-[55%] bg-white relative p-40">
+        <div class="container flex flex-col lg:flex-row justify-between">
+            <div class="w-12/12 lg:w-[55%] bg-white relative p-40">
                 <h1 class="text-30 font-serif uppercase">Cart</h1>
                 <form method="POST" class="w-full mb-10" accept-charset="UTF-8" enctype="multipart/form-data" onkeydown="return event.key != 'Enter';">
                     <input type="hidden" name="action" value="commerce/cart/update-cart">
                     {{ redirectInput(craft.app.request.pathInfo) }}
                     {{ csrfInput() }}
                     {% set lineItemHasErrors = false %}
-
                     {% for item in cart.lineItems %}
+
+                    {# {{ dump(item) }} #}
+
                         <div class="flex justify-between items-center my-20 {{ not loop.last ? 'mb-20' }}">
                             <a href="{{ item.purchasable.product.url }}" class="hidden md:flex flex-grow-0 mr-6 w-1/6">
-                                {# <img class="" src="{{item.purchasable.product.imageOne.one()}}" alt="product"> #}
-                                <img class="" src="../assets/www/images/work.png" alt="">
+                                {% if item.order.imageOne is not null %}
+                                <img class="" src="{{item.order.imageOne()}}" alt="product">
+                                {% endif %}
+                                <img class="" src="../assets/www/images/fallback.png" alt="">
                             </a>
 
                             <div class="w-[40%] lg:w-3/6 px-10">
                                 <div class="">
+                                <span class="font-medium">{{ item.qty > 1 ? "#{item.qty} ×" }}</span>
                                     <h3 class="mb-3">{{ item.purchasable.product.title }}</h3>
                                 </div>
 
@@ -54,7 +59,7 @@
                 </form>
             </div>
 
-            <div class=" w-4/12 bg-white relative p-40">
+            <div class="w-12/12 mt-5 lg:mt-0 lg:w-4/12 bg-white relative p-40">
                 <h2 class="text-20 font-serif uppercase mb-20">Total</h2>
                 {% include '_commerce/cart/partials/totals' with { isCartIndex: true } %}
 

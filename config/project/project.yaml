@@ -1,4 +1,4 @@
-dateModified: 1686230163
+dateModified: 1686558031
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: 'Hannah Van der Haeghen'
@@ -301,7 +301,7 @@ plugins:
     licenseKey: KT80JF8CC81ESVD2MG5V6LZA
     schemaVersion: 1.0.4
 system:
-  edition: solo
+  edition: pro
   live: true
   name: $SYSTEM_NAME
   retryDuration: null

@@ -15,12 +15,10 @@
 
 {% block content %}
     <section class="bg-pink py-20 lg:py-40 xl:py-70">
-        <div class="container flex justify-between">
-            <div class=" w-[58%] bg-white relative p-40">
+        <div class="container flex flex-col lg:flex-row justify-between">
+            <div class="w-12/12 lg:w-[58%] bg-white relative p-40">
                 {% include '_commerce/checkout/partials/checkoutNav' with { step: 1 } %}
-
                 <h2 class="text-20 font-serif uppercase mb-20">Under which e-mail address would you like to place your order?</h2>
-
                 <form method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="mb-40 lg:mb-0 js-validate">
                     <input type="hidden" name="action" value="commerce/cart/update-cart">
                     {{ redirectInput('checkout/persoonlijke-gegevens') }}
@@ -35,11 +33,16 @@
                     <span class="text-red text-sm">{{ emailErrors|join }}</span><br>
                     {% endif %}
 
-                    <button type="submit" class="button relative pointer border-1 border-black bg-transparent text-black mt-20 ml-auto py-10 px-20 block w-max transition duration-300">{{ 'continue'|t }}</button>
+                    <button type="submit" class="button relative pointer border-1 border-black bg-transparent text-black mt-20 ml-auto py-10 px-20 block w-max transition duration-300">{{ 'next'|t }}</button>
                 </form>
+
+                <div class="mt-20">
+                    <h2 class="text-20 font-serif uppercase mb-20">Or continue as guest</h2>
+                    <button type="submit" class="button relative pointer border-1 border-black bg-transparent text-black mt-20 ml-auto py-10 px-20 block w-max transition duration-300">{{ 'continue as guest'|t }}</button>
+                </div>
             </div>
 
-            <div class=" w-4/12 bg-white relative p-40">
+            <div class="w-12/12 mt-5 lg:mt-0 lg:w-4/12 bg-white relative p-40">
                 <h2 class="text-20 font-serif uppercase mb-20">Cart</h2>
                 <div class="border-b border-black pb-10 my-20">
                     {% for item in cart.lineItems %}

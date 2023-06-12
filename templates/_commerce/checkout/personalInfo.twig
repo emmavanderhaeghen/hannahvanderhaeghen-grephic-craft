@@ -5,266 +5,121 @@
 {% do seomatic.meta.seoTitle('Checkout') %}
 
 {% if cart is not defined %}
-  {% set cart = craft.commerce.carts.cart %}
+    {% set cart = craft.commerce.carts.cart %}
 {% endif %}
 
 {% if not cart.email or not cart.lineItems|length %}
-  {% redirect 'afrekenen' %}
+    {% redirect 'afrekenen' %}
 {% endif %}
 
 {% if cart.shippingMethodHandle == 'pickup'
-  and (not cart.pickupDate or not craft.pickupRulesModule.validPickupDate) %}
-  {% redirect 'winkelmandje' %}
+    and (not cart.pickupDate or not craft.pickupRulesModule.validPickupDate) %}
+    {% redirect 'winkelmandje' %}
 {% endif %}
 
 {# Does a user exist with this email address? #}
 {% set userExists = craft.users.email(cart.email).one() %}
 
-{% set addresses = craft.commerce.customers.customer.addresses %}
-{% set addressesWithoutShipping = addresses|filter(el => el.id != cart.shippingAddressId) %}
-
 {# Extra logic because primary address for delivery = shipping & for pickup it's billing #}
 {% if cart.shippingMethodHandle == 'delivery' %}
-  {% set defaultAddress = 'shipping' %}
+    {% set defaultAddress = 'shipping' %}
 {% else %}
-  {% set defaultAddress = 'billing' %}
+    {% set defaultAddress = 'billing' %}
 {% endif %}
 
 {% block content %}
     <section class="bg-pink py-20 lg:py-40 xl:py-70">
-        <div class="container flex justify-between">
-            <div class=" w-[58%] bg-white relative p-40">
+        <div class="container flex flex-col lg:flex-row justify-between">
+            <div class="w-12/12 lg:w-[58%] bg-white relative p-40">
                 {% include '_commerce/checkout/partials/checkoutNav' with { step: 2 } %}
 
-        <form method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="js-validate">
-          <input type="hidden" name="action" value="commerce/cart/update-cart">
-          {{ redirectInput('afrekenen/betaling') }}
-          {% if getenv('ENVIRONMENT') == 'production' or getenv('ENVIRONMENT') == 'staging' %}
-              {{ craft.blitz.csrfInput() }}
-          {% else %}
-              {{ csrfInput() }}
-          {% endif %}
+                <form method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="js-validate">
+                        <input type="hidden" name="action" value="commerce/cart/update-cart">
+                        {{ redirectInput('checkout/betaling') }}
+                        {{ csrfInput() }}
 
-          {% if currentUser and cart.billingAddress %}
-          <h2 class="">welkom terug, {{ cart.billingAddress.firstName|lower }}</h2>
-          {% else %}
-          <h2 class="font-sans-wide text-35">Uw gegevens</h2>
-          {% endif %}
-
-          {% if cart.shippingMethodHandle == 'delivery' %}
-          <h3 class="text-22 uppercase font-sans-wide mb-10">gegevens</h3>
-          {% else %}
-          <h3 class="text-22 uppercase font-sans-wide">factuuradres</h3>
-          {% endif %}
-
-          {% if currentUser %}
-            <div class="mt-20 mb-[2.95rem] w-fit bg-black rounded-full text-white pt-[0.75rem] pb-[0.5rem] px-20 text-14">U bent ingelogd als {{ currentUser.email }} (<a href="{{ url(logoutUrl) }}" class="underline">Uitloggen</a>)</div>
-          {% endif %}
-
-          {% if cart.shippingAddress and cart.shippingAddress.address2 is empty %}
-            <div class=" mb-10 bg-red-500 text-white p-4">Gelieve uw adres aan te vullen met een huisnummer.</div>
-          {% endif %}
-
-          <h2 class="text-16 text-rust font-sans font-bold mb-10 mt-10">Bezorgadres</h2>
-
-          {% if addresses %}
-          <div class="flex flex-row flex-wrap "> 
-            {# The user is logged in, and already has an saved address #}
-            {% for address in addresses %}
-              <div class="mb-20 mr-40">
-                {{ form.radio('<div class="mb-15">' ~ include('_commerce/checkout/partials/addressString')|raw ~ '</div><a href="'~url('afrekenen/adressen/editeer?addressId='~address.id)~'" class="font-bold underline">'~ 'adres aanpassen'|t ~'</a>', {
-                  name: "#{defaultAddress}AddressId",
-                  id: "#{defaultAddress}AddressId-#{address.id}",
-                  value: address.id,
-                  checked: (attribute(cart, "#{defaultAddress}Address").id|default() == address.id or addresses|length == 1) ? true : false,
-                }) }}
-              </div>
-            {% endfor %}
-          </div>
-          {% endif %}
-          
-          <div class="mb-40 mt-10">
-            {% if attribute(cart, "#{defaultAddress}AddressId") %}
-              {% set addressHasErrors = attribute(cart, "#{defaultAddress}Address").hasErrors() %}
-            {% else %}
-              {% set addressHasErrors = false %}
-            {% endif %}
-
-            {% if addresses|length %}
-            <div>
-              {{ form.radio('Voeg een nieuw adres toe'|t, {
-                name: "#{defaultAddress}AddressId",
-                id: "#{defaultAddress}AddressId",
-                value: '',
-                checked: (not addresses|length or addressHasErrors) ? true : false,
-                class: 'js-toggle',
-                'data-target': '#new-address'
-              }) }}
-            </div>
-            {% endif %}
-
-            {# The new address block and show it if user is logged out or has no addresses #}
-            <div class="{% if addresses|length %}hidden{% endif %}" id="new-address">
-              {% include '_commerce/checkout/partials/addressForm' with {
-                name: "#{defaultAddress}Address",
-                model: null,
-              } %}
-            </div>
-          </div>
-
-          <h2 class="text-16 text-rust font-sans font-bold mb-10">Factuuradres</h2>
-
-          {% if cart.shippingMethodHandle == 'delivery' %}
-            <div class="mb-6">
-              {{ form.checkbox('Factuuradres zelfde als bezorgadres'|t, { name: 'billingAddressSameAsShipping', id: 'shippingAddressSameAsBilling', checked: cart.billingAddress.id|default(null) == cart.shippingAddress.id|default(null) ? true : false, required: false, class: 'js-toggle', 'data-invert': '1', 'data-target': '#billingAddress' }) }}
-            </div>
-
-            <div id="billingAddress" class="pl-40 {{ cart.shippingAddress.id|default(null) == cart.billingAddress.id|default(null)  ? 'hidden' }}">
-              {% if addressesWithoutShipping %}
-                {# The user is logged in, and already has an saved address #}
-                {% for address in addressesWithoutShipping %}
-                  <div class="mb-6">
-                    {{ form.radio('<div class="flex flex-col gap-[1rem]">' ~ include('_commerce/checkout/partials/addressString')|raw ~ '<div class="ml-auto relative bottom-[3rem]"><a href="'~url('afrekenen/adressen/editeer?addressId='~address.id)~'" class="font-bold underline text-14">'~ 'adres aanpassen'|t ~'</a></div></div>', {
-                      name: 'billingAddressId',
-                      id: "billingAddressId-#{address.id}",
-                      value: address.id,
-                      checked: (cart.billingAddress.id|default() == address.id or addressesWithoutShipping|length == 1) ? true : false,
-                    }) }}
-                  </div>
-                {% endfor %}
-                <div class="mb-6">
-                  {% if attribute(cart, 'billingAddressId') %}
-                    {% set addressHasErrors = attribute(cart, 'billingAddress').hasErrors() %}
-                  {% else %}
-                    {% set addressHasErrors = false %}
-                  {% endif %}
-
-                  {% if addressesWithoutShipping|length %}
-                  <div class="mb-6">
-                    {{ form.radio('Nieuw adres'|t, {
-                      name: 'billingAddressId',
-                      id: 'billingAddressId',
-                      value: '',
-                      checked: (not addressesWithoutShipping|length or addressHasErrors) ? true : false,
-                      class: 'js-toggle',
-                      'data-target': '#new-billing-address'
-                    }) }}
-                  </div>
-                  {% endif %}
-
-                  {# The new address block and show it if user is logged out or has no addresses #}
-                  <div class="{% if  addressesWithoutShipping|length %}hidden{% endif %}" id="new-billing-address">
-                    {% include '_commerce/checkout/partials/addressForm' with {
-                      name: 'billingAddress',
-                      model: null,
-                    } %}
-                  </div>
-                </div>
-              {% endif %}
-            </div>
-              
-          {% endif %}
-
-          {% if not currentUser and not userExists %}
-          {{ hiddenInput('registerUserOnOrderComplete', 'false') }}
-          {{ form.checkbox('Maak een account aan (optioneel)', { name: 'registerUserOnOrderComplete', id: 'registerUserOnOrderComplete', required: false, value: 1, checked: (cart.registerUserOnOrderComplete is null) ? false : cart.registerUserOnOrderComplete == '0' ? false : true }) }}
-          <p class="text-14">(na het bestellen ontvangt u een email om een wachtwoord te kiezen)</p>
-          {% endif %}
-
-          <div class="mb-6 mt-40">
-            {{ form.textarea('', { class: 'rounded-[20px] text-black placeholder:text-black text-14 bg-white border-none font-semibold py-20 px-20', name: 'fields[orderNotes]', id: 'orderNotes', required: false,
-            placeholder: 'Informatie over je bestelling, e.g. Informatie over de levering of een berichtje voor de geadresseerde.' }) }}
-          </div>
-
-          <div class="flex justify-end">
-            <button type="submit" class="button hover:bg-rust">{{ 'verder naar bestellen'|t }}</button>
-          </div>
-        </form>
-
-                {# <form method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="js-validate">
-                    <input type="hidden" name="action" value="commerce/cart/update-cart">
-                    {{ redirectInput('afrekenen/betaling') }}
-                    {{ csrfInput() }}
-
-                    {% if currentUser %}
-                        <div class="w-full mb-40 p-10 bg-grey bg-opacity-50 text-black text-14">You are logged in as {{ currentUser.email }} (<a href="{{ url(logoutUrl) }}" class="underline">Logout</a>)</div>
-                    {% endif %}
-
-                    <h2 class="uppercase font-serif text-16">Shipping address</h2>
-                    <div class="flex justify-between">
-                        {{ form.input('', { placeholder: 'Firstname'|t, id: 'firstName', name: 'fields[firstName]', type: 'firstName', class: '' }) }}
-                        {{ form.input('', { placeholder: 'Lastname'|t, id: 'lastName', name: 'fields[lastName]', type: 'lastName', class: '' }) }}
-                    </div>
-                        {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'fields[email]', type: 'email', class: '' }) }}
-                        {{ form.textarea('', { placeholder: 'Message'|t, id: 'message', name: 'fields[message]', type: 'message', class: 'mb-30'  }) }}
-
-
-                    {% if cart.shippingMethodHandle == 'delivery' %}
-                    {% else %}
-                    <h2 class="uppercase font-serif text-16">Billing address</h2>
-                    {% endif %}
-
-                    {% if cart.shippingAddress and cart.shippingAddress.address2 is empty %}
-                        <div class=" mb-10 bg-red-500 text-white p-4">Please complete your address with a house number.</div>
-                    {% endif %}
-
-                    {% if cart.shippingMethodHandle == 'delivery' %}
-                        <div class="mb-6">
-                        {{ form.checkbox('Billing address same as delivery address'|t, { name: 'billingAddressSameAsShipping', id: 'shippingAddressSameAsBilling', checked: cart.billingAddress.id|default(null) == cart.shippingAddress.id|default(null) ? true : false, required: false, class: 'js-toggle', 'data-invert': '1', 'data-target': '#billingAddress' }) }}
-                        </div>
-
-                        <div id="billingAddress" class="pl-40 {{ cart.shippingAddress.id|default(null) == cart.billingAddress.id|default(null)  ? 'hidden' }}">
-                        {% if addressesWithoutShipping %}
-                            <div class="mb-6">
-                            {% if attribute(cart, 'billingAddressId') %}
-                                {% set addressHasErrors = attribute(cart, 'billingAddress').hasErrors() %}
-                            {% else %}
-                                {% set addressHasErrors = false %}
-                            {% endif %}
-
-                            {% if addressesWithoutShipping|length %}
-                            <div class="mb-6">
-                                {{ form.radio('Nieuw adres'|t, {
-                                name: 'billingAddressId',
-                                id: 'billingAddressId',
-                                value: '',
-                                checked: (not addressesWithoutShipping|length or addressHasErrors) ? true : false,
-                                class: 'js-toggle',
-                                'data-target': '#new-billing-address'
-                                }) }}
-                            </div>
-                            {% endif %}
-
-                            <div class="{% if  addressesWithoutShipping|length %}hidden{% endif %}" id="new-billing-address">
-                                {% include '_commerce/checkout/partials/addressForm' with {
-                                name: 'billingAddress',
-                                model: null,
-                                } %}
-                            </div>
+                        {% if currentUser %}
+                            <div class="w-full p-10 bg-grey bg-opacity-50 text-black text-14">You are logged in as {{ currentUser.email }} (<a href="{{ url(logoutUrl) }}" class="underline">Logout</a>)</div>
+                        {% else %}
+                            <div class="mt-20">
+                                {{ form.input('', { placeholder: 'e-mailadres', id: 'email', name: 'email', class: 'bg-grey bg-opacity-50', type: 'email', value: cart.email }) }}
                             </div>
                         {% endif %}
+
+                        <h2 class="uppercase font-serif text-16 my-20">Shipping address</h2>
+                            {{ form.input('', { placeholder: 'Full Name*'|t, id: 'fullName', name: 'fields[fullName]', type: 'fullName', class: '' }) }}
+                            {{ form.input('', { placeholder: 'Address*'|t, id: 'address', name: 'fields[address]', type: 'address', class: '' }) }}
+                        <div class="flex justify-between">
+                            {{ form.input('', { placeholder: 'City*'|t, id: 'city', name: 'fields[city]', type: 'city', class: '' }) }}
+                            {{ form.input('', { placeholder: 'Postal Code*'|t, id: 'Postal Code', name: 'fields[Postal Code]', type: 'Postal Code', class: '' }) }}
                         </div>
-                        
-                    {% endif %}
+                            {{ form.input('', { placeholder: 'Organisation'|t, id: 'organisation', name: 'fields[organisation]', type: 'organisation', class: '', required: false }) }}
+                            {{ form.input('', { placeholder: 'Organisation Tax ID'|t, id: 'OrganisationTaxID', name: 'fields[OrganisationTaxID]', type: 'OrganisationTaxID', class: '', required: false }) }}
 
-                    {% if not currentUser and not userExists %}
-                    {{ hiddenInput('registerUserOnOrderComplete', 'false') }}
-                    {{ form.checkbox('Maak een account aan (optioneel)', { name: 'registerUserOnOrderComplete', id: 'registerUserOnOrderComplete', required: false, value: 1, checked: (cart.registerUserOnOrderComplete is null) ? false : cart.registerUserOnOrderComplete == '0' ? false : true }) }}
-                    <p class="text-14">(na het bestellen ontvangt u een email om een wachtwoord te kiezen)</p>
-                    {% endif %}
 
-                    <div class="mb-6 mt-40">
-                        {{ form.textarea('', { class: 'rounded-[20px] text-black placeholder:text-black text-14 bg-white border-none font-semibold py-20 px-20', name: 'fields[orderNotes]', id: 'orderNotes', required: false,
-                        placeholder: 'Informatie over je bestelling, e.g. Informatie over de levering of een berichtje voor de geadresseerde.' }) }}
-                    </div>
+                        <h2 class="uppercase font-serif text-16 my-20">Billing address</h2>
+                            {{ form.input('', { placeholder: 'Full Name*'|t, id: 'fullName', name: 'fields[fullName]', type: 'fullName', class: '' }) }}
+                            {{ form.input('', { placeholder: 'Address*'|t, id: 'address', name: 'fields[address]', type: 'address', class: '' }) }}
+                        <div class="flex justify-between">
+                            {{ form.input('', { placeholder: 'City*'|t, id: 'city', name: 'fields[city]', type: 'city', class: '' }) }}
+                            {{ form.input('', { placeholder: 'Postal Code*'|t, id: 'Postal Code', name: 'fields[Postal Code]', type: 'Postal Code', class: '' }) }}
+                        </div>
+                            {{ form.input('', { placeholder: 'Organisation'|t, id: 'organisation', name: 'fields[organisation]', type: 'organisation', class: '', required: false }) }}
+                            {{ form.input('', { placeholder: 'Organisation Tax ID'|t, id: 'OrganisationTaxID', name: 'fields[OrganisationTaxID]', type: 'OrganisationTaxID', class: '', required: false }) }}
 
-                    <div class="flex justify-end">
-                        <button type="submit" class="button relative pointer border-1 border-black bg-transparent text-black mt-20 ml-auto py-10 px-20 block w-max transition duration-300">{{ 'continue'|t }}</button>
-                    </div>
-                </form> #}
+                        {% if cart.shippingMethodHandle == 'delivery' %}
+                            <div class="mb-6">
+                            {{ form.checkbox('Billing address same as delivery address'|t, { name: 'billingAddressSameAsShipping', id: 'shippingAddressSameAsBilling', checked: cart.billingAddress.id|default(null) == cart.shippingAddress.id|default(null) ? true : false, required: false, class: 'js-toggle', 'data-invert': '1', 'data-target': '#billingAddress' }) }}
+                            </div>
+
+                            <div id="billingAddress" class="pl-40 {{ cart.shippingAddress.id|default(null) == cart.billingAddress.id|default(null)  ? 'hidden' }}">
+                            {% if addressesWithoutShipping %}
+                                <div class="mb-6">
+                                {% if attribute(cart, 'billingAddressId') %}
+                                    {% set addressHasErrors = attribute(cart, 'billingAddress').hasErrors() %}
+                                {% else %}
+                                    {% set addressHasErrors = false %}
+                                {% endif %}
+
+                                {% if addressesWithoutShipping|length %}
+                                <div class="mb-6">
+                                    {{ form.radio('Nieuw adres'|t, {
+                                    name: 'billingAddressId',
+                                    id: 'billingAddressId',
+                                    value: '',
+                                    checked: (not addressesWithoutShipping|length or addressHasErrors) ? true : false,
+                                    class: 'js-toggle',
+                                    'data-target': '#new-billing-address'
+                                    }) }}
+                                </div>
+                                {% endif %}
+
+                                <div class="{% if  addressesWithoutShipping|length %}hidden{% endif %}" id="new-billing-address">
+                                    {% include '_commerce/checkout/partials/addressForm' with {
+                                    name: 'billingAddress',
+                                    model: null,
+                                    } %}
+                                </div>
+                                </div>
+                            {% endif %}
+                            </div>
+                            
+                        {% endif %}
+
+
+
+                        <div class="mb-6 mt-40">
+                            {{ form.textarea('', { class: '', name: 'fields[orderNotes]', id: 'orderNotes', required: false,
+                            placeholder: 'Information about your order, e.g. Information about delivery or a message for the addressee.' }) }}
+                        </div>
+
+                        <div class="flex justify-end">
+                            <button type="submit" class="button relative pointer border-1 border-black bg-transparent text-black mt-20 ml-auto py-10 px-20 block w-max transition duration-300">{{ 'continue'|t }}</button>
+                        </div>
+                </form>
             </div>
 
-            <div class=" w-4/12 bg-white relative p-40">
+            <div class="w-12/12 mt-5 lg:w-4/12 bg-white relative p-40">
                 <h2 class="text-20 font-serif uppercase mb-20">Cart</h2>
                 <div class="border-b border-black pb-10 my-20">
                     {% for item in cart.lineItems %}
