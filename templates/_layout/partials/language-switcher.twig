@@ -22,7 +22,7 @@
 {% endfor %}
 
 {% if switcherLinks|length > 1 %}
-    <ul class="text-white language-switcher flex flex-row justify-center uppercase ml-30">
+    <ul class="text-white language-switcher flex flex-row justify-center uppercase lg:ml-30">
     {% for switcherLink in switcherLinks %}
         <li class="block ">
             <a class="flex items-center" href="{{switcherLink.url}}" hreflang="{{switcherLink.language}}" lang="{{switcherLink.language}}">

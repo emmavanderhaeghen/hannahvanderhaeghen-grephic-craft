@@ -1,0 +1,28 @@
+{% set cart = craft.commerce.carts.cart %}
+{% set list = craft.wishlist.lists().default(true).one() %}
+
+<a href="{{ url('wishlist') }}" class="hidden w-20 nav-icon">
+    {% if list.items|length > 0 %}
+    <div class="relative">
+        <img class="transition-transform transform hover:scale-125" src="../assets/www/svg/heart.svg" alt="heart">        
+        <div class="text-[10px] font-bold bg-pink-500 rounded-full w-[18px] h-[18px] flex justify-center items-center absolute bottom-[.5rem] -right-[.5rem]">
+            {{ list.items|length }}
+        </div>
+    </div>
+    {% else %}
+        <img class="transition-transform transform hover:scale-125" src="../assets/www/svg/heart.svg" alt="heart">
+    {% endif %}
+</a>
+
+<a href="{{ url('cart') }}" class="hidden w-20 mr-50 nav-icon">
+    {% if cart.lineItems|length > 0 %}
+    <div class="relative">
+        <img class="transition-transform transform hover:scale-125" src="../assets/www/svg/bag.svg" alt="bag">        
+        <div class="text-[10px] font-bold bg-pink-500 rounded-full w-[18px] h-[18px] flex justify-center items-center absolute bottom-[.5rem] -right-[.15rem]">
+            {{ cart.lineItems|length }}
+        </div>
+    </div>
+    {% else %}
+        <img class="transition-transform transform hover:scale-125" src="../assets/www/svg/bag.svg" alt="bag">
+    {% endif %}
+</a>
