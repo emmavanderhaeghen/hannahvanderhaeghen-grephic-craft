@@ -86,36 +86,39 @@
 
                     {# description #}
                     {% if product.descriptionOne %}
-                        <p class="my-30 text-9 lg:text-10">{{ product.descriptionOne|nl2br }}</p>
+                        <p class="mt-30 text-9 lg:text-10">{{ product.descriptionOne|nl2br }}</p>
                     {% endif %}
 
                     {% if product.variants|length > 1 %}
-                        <p class="mt-15 mb-5">Frame type</p>
-                        <select class="border-none bg-pink h-auto w-full p-10 leading-normal" name="purchasableId" onchange="updatePrice(this)">
+                        <p class="mt-15 mb-5"></p>
+                        <select class="border-none bg-pink h-auto w-full p-10 leading-normal mb-20" name="purchasableId" onchange="updatePrice(this)">
                             {% for variant in product.variants %}
                                 <option class="p-10" value="{{ variant.price }}">{{ variant.sku }}</option>
                             {% endfor %}
                         </select>
 
-                        
                         <script>
                             function updatePrice(select) {
                                 const price = select.value;
                                 document.getElementById('selectedPrice').textContent = '€ ' + price;
                             }
                         </script>
-                    {% endif %}
 
-                    {# if the product is not in stock #}
-                    {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == ''%}
-                        <div class="flex flex-row flex-wrap items-center justify-between gap-20 mt-40">
-                            <span class="flex items-center"><img class="mr-10" src="../assets/www/svg/heart-grey.svg" alt="heart"> add to my wishlist</span> 
-                            <button type="submit" class="border border-black text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300 js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
-                            
-                        </div>
-                    {% else %}
-                        <div class="bg-red-100 p-6 mt-20 border border-red-200 text-red-500">Momenteel niet beschikbaar</div>
                     {% endif %}
+                    <div class="mt-30">
+                        <button type="submit" class="border border-black text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300 js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
+                        {# if the product is not in stock #}
+                        {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == '' %}
+                            <div class="relative mt-10">
+                                {# Passes a variable called `entryId` into the component #}
+                                {{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id}) }}
+                                {{ sprig.script }}
+                            </div>
+
+                        {% else %}
+                            <div class="bg-red-100 p-6 mt-20 border border-red-200 text-red-500">Momenteel niet beschikbaar</div>
+                        {% endif %}
+                    </div>
             </form>
 
             {# usp on mobile #}

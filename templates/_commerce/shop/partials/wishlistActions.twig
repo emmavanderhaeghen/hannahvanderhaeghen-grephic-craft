@@ -6,13 +6,12 @@
 {% set item = craft.wishlist.item(productId) %}
 
 {% if item.inList %}
-    {# Remove from wishlist #}
+    {# remove from wishlist #}
     <button sprig s-method="post" s-action="wishlist/items/remove">
         <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-[1.25rem]" src="../assets/www/svg/heart-pink.svg">
     </button>
-    {% else %}
-
-    {# Add to wishlist #}
+{% else %}
+    {# add to wishlist #}
     <button sprig s-method="post" s-action="wishlist/items/add">
         <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-[1.25rem]" src="../assets/www/svg/heart-grey.svg">
     </button>
