@@ -8,7 +8,7 @@
 <section class="container mt-20">
     <h2 class="text-50 font-serif uppercase">{{entry.title}}</h2>
 
-    <div class="flex flex-wrap">
+    <div class="">
     {% if list.items is defined and list.items.all()|length > 0 %}
         <ul class="flex flex-wrap items-center mt-20">
             {% for item in list.items.all() %}
