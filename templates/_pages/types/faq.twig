@@ -4,15 +4,15 @@
 {% block content %}
 <section class="bg-beige pt-40 mb-80">
     <article class="container mx-auto px-40">
-        <div class="mx-auto w-12/12 lg:w-8/12 mb-40">
+        <div class="mx-auto w-12/12 lg:w-6/12 mb-40">
             <h2 class="text-50 font-serif mb-60 uppercase">{{entry.title}}</h2>
             
         </div>
 
-        <ul class="w-8/12 mx-auto">
+        <ul class="w-12/12 lg:w-6/12 mx-auto">
             {% for item in entry.faq %}
-                <li class="{{not loop.last ? 'mb-40'}}  lg:mb-80 xl:mb-120">
-                    <h4 class="text-18 font-serif mb-20 md:mb-40">{{ item.question }}</h4>
+                <li class="{{not loop.last ? 'mb-40'}}">
+                    <h4 class="text-18 font-serif mb-20">{{ item.question }}</h4>
                     <p>{{ item.answer }}</p>
                 </li>
             {% endfor %}
