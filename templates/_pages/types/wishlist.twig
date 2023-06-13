@@ -5,29 +5,33 @@
 {% set list = craft.wishlist.lists().default(true).one() %}
 
 {% block content %}
-<section class="container mt-20">
-    <h2 class="text-50 font-serif uppercase">{{entry.title}}</h2>
-
-    <div class="">
     {% if list.items is defined and list.items.all()|length > 0 %}
-        <ul class="flex flex-wrap items-center mt-20">
-            {% for item in list.items.all() %}
-                {% set products = craft.products().id(item.elementId) %}
-                {% if products|length %}
-                    {% for product in products %}
-                    <li class="w-12/12 sm:w-6/12 lg:w-4/12 mb-30 px-10 relative">
-                        {% include '_commerce/shop/partials/thumbnail' %}
-                    </li>                
+        <section class="container mt-20">
+            <h2 class="text-50 font-serif uppercase">{{entry.title}}</h2>
+            <div class="">
+                <ul class="flex flex-wrap items-center mt-20">
+                    {% for item in list.items.all() %}
+                        {% set products = craft.products().id(item.elementId) %}
+                        {% if products|length %}
+                            {% for product in products %}
+                            <li class="w-12/12 sm:w-6/12 lg:w-4/12 mb-30 px-10 relative">
+                                {% include '_commerce/shop/partials/thumbnail' %}
+                            </li>                
+                            {% endfor %}
+                        {% endif %}
                     {% endfor %}
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
+                </ul>
+            </div>
+        </section>
     {% else %}
-        <div class="flex flex-col mt-40 mx-30">
-            <h2 class="font-sans text-10 mb-40">{{ 'Geen producten gevonden' }}</h2>
-            <a class="button bg-green !text-white" href="{{ url('prints') }}">Voeg producten toe</a>
-        </div>
+        <section class="bg-pink py-20 lg:py-40 xl:py-70">
+            <div class="container w-10/12 bg-white relative p-40 lg:p-80">
+                <h2 class="text-50 font-serif uppercase">{{entry.title}}</h2>
+                <div class="body">
+                    <p class="my-30">{{'Your whislist is still empty.'|t}}</p>
+                    <a class="button relative pointer border-1 border-black bg-transparent text-black py-10 px-20 block w-max transition duration-300" href="/prints">go to shop</a>            
+                </div>    
+            </div>
+        </section>
     {% endif %}
-</section>
 {% endblock %}
