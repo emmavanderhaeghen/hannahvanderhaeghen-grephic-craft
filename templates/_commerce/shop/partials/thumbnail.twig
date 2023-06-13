@@ -7,6 +7,9 @@
 
     <div class="relative mt-20 mb-20 ml-25">
         <h3 class="uppercase">{{product.title}}</h3>
+        {% if product.titleOne %}
+            <h2>Artist - <span class="opacity-50">{{product.titleOne}}</span></h2>
+        {% endif %}
         {% include "_commerce/shop/partials/price" %}
     </div>
 </a>
