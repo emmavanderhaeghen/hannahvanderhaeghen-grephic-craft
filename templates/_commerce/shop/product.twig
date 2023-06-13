@@ -63,21 +63,24 @@
             </div>
 
             {# right column #}
-            <form class="lg:w-1/2 lg:px-60 mt-30 mb-60 lg:mb-0" method="post"class="js-validate mb-40" action="{{ url(craft.app.request.pathInfo) }}"accept-charset="UTF-8" enctype="multipart/form-data">
+            <form class="lg:w-1/2 lg:px-60 mt-30 mb-0 lg:mb-60 lg:mb-0" method="post"class=" mb-40" action="{{ url(craft.app.request.pathInfo) }}"accept-charset="UTF-8" enctype="multipart/form-data">
                 {{ csrfInput() }}
                 {{ redirectInput('cart') }}
                 {{ actionInput('commerce/cart/update-cart') }}
-                {% for variant in product.variants %}
+                {# {% for variant in product.variants %}
                     <input type="hidden" name="purchasables[{{ variant.id }}][id]" value="{{ variant.id }}">
                     <input type="hidden" name="purchasables[{{ variant.id }}][qty]" value="1">
-                {% endfor %}
-                {{ successMessageInput('{product} added to cart.'|t({
-                    product: product.title
-                })) }}
+                {% endfor %} #}
+                <input type="hidden" name="purchasables[{{ currentVariant.id }}][id]" value="{{ currentVariant.id }}">
+                <input type="hidden" name="purchasables[{{ currentVariant.id }}][qty]" value="1">
+
                 {{ not cart.shippingMethodHandle ? hiddenInput('shippingMethodHandle','delivery') }}
 
                     <h1 class="text-16 lg:text-20 font-sans uppercase">{{ product.title }}</h1>
-                    <h2>Collection - <a href="{{product.linkOne.getURL()}}" class="opacity-50 italic">{{product.linkOne.getText()}}</a></h2>
+                    {% if product.titleOne %}
+                    <h2>Artist - <span class="opacity-50">{{product.titleOne}}</span></h2>
+                    {% endif %}
+                    <h2>Collection - <a href="{{product.linkOne.getURL()}}" target="{{product.linkOne.target}}" class="opacity-50 italic">{{product.linkOne.getText()}}</a></h2>
 
                     {# price #}
                     <div class="mt-10 text-12">
@@ -110,7 +113,6 @@
                         {# if the product is not in stock #}
                         {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == '' %}
                             <div class="relative mt-10">
-                                {# Passes a variable called `entryId` into the component #}
                                 {{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id}) }}
                                 {{ sprig.script }}
                             </div>
@@ -122,7 +124,7 @@
             </form>
 
             {# usp on mobile #}
-            <div class="lg:hidden bg-pink w-fit py-40 pr-70 pl-60 mb-60">
+            <div class="lg:hidden bg-pink w-fit px-20 py-20 mt-30 mb-40">
                 <ul class="z-[1]">
                     {% for item in commonlyUsed.usp %}
                     <li class="flex {{ not loop.last ? 'mb-10' }}">
