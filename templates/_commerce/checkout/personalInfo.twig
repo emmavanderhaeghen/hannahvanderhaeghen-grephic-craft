@@ -33,7 +33,7 @@
             <div class="w-12/12 lg:w-[58%] bg-white relative p-40">
                 {% include '_commerce/checkout/partials/checkoutNav' with { step: 2 } %}
 
-                <form method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="js-validate">
+                <form method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="">
                         <input type="hidden" name="action" value="commerce/cart/update-cart">
                         {{ redirectInput('checkout/betaling') }}
                         {{ csrfInput() }}

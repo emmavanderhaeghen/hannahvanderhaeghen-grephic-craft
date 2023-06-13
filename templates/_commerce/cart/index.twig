@@ -69,7 +69,7 @@
                     {% endif %}
                     <div x-data="{ active: false }">
                     <button class="bg-grey bg-opacity-25 py-10 px-20" @click="active = !active" x-show="!active">coupon code ?</button>
-                    <form method="POST" class="js-validate" x-show="active">
+                    <form method="POST" class="" x-show="active">
                         <input type="hidden" name="action" value="commerce/cart/update-cart">
                         {{ redirectInput(craft.app.request.pathInfo) }}
                         {% if getenv('ENVIRONMENT') == 'production' or getenv('ENVIRONMENT') == 'staging' %}

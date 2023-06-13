@@ -13,7 +13,7 @@
         <h1 class="text-30 font-serif uppercase mb-20">Register</h1>
         <div class="flex">
             {% include '_commerce/account/partials/accountNav' %}
-            <form method="post" accept-charset="UTF-8" class="w-5/10 | js-validate">
+            <form method="post" accept-charset="UTF-8" class="w-5/10">
                 {{ csrfInput() }}
                 {{ redirectInput('account') }}
                 <input type="hidden" name="action" value="users/login">
