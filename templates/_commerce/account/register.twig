@@ -8,6 +8,16 @@
 {% endif %}
 
 {% block content %}
+
+{% macro errorList(errors) %}
+    {% if errors %}
+        {{ ul(errors, {class: 'errors'}) }}
+    {% endif %}
+{% endmacro %}
+
+{# `user` is defined if the form returns validation errors. #}
+{% set user = user ?? null %}
+
 <section class="bg-pink py-20 lg:py-40 xl:py-70">
     <div class="container w-10/12 bg-white relative p-40 lg:p-80">
         <h1 class="text-30 font-serif uppercase mb-20">Register</h1>
@@ -15,11 +25,12 @@
             {% include '_commerce/account/partials/accountNav' %}
             <form method="post" accept-charset="UTF-8" class="w-5/10">
                 {{ csrfInput() }}
-                {{ redirectInput('account') }}
-                <input type="hidden" name="action" value="users/login">
+                {{ actionInput('users/save-user') }}
+                {{ redirectInput('account/adresboek') }}  
+                            
                 <div class="flex justify-between gap-10">
-                    {{ form.input('', { placeholder: 'firstname'|t, id: 'loginName', name: 'loginName', type: 'loginName', class: 'mr-10' }) }}
-                    {{ form.input('', { placeholder: 'lastname'|t, id: 'lastName', name: 'lastName', type: 'lastName' }) }}
+                    {{ form.input('', { placeholder: 'username'|t, id: 'userName', name: 'userName', type: 'userName', class: 'mr-10' }) }}
+                    {{ form.input('', { placeholder: 'fullname'|t, id: 'fullName', name: 'fullName', type: 'fullName' }) }}
                 </div>
                     {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'email', type: 'email', value: craft.app.user.rememberedUsername }) }}
                     {{ form.input('', { placeholder: 'Password'|t, id: 'password', name: 'password', type: 'password'  }) }}
@@ -30,4 +41,35 @@
         </div>
     </div>
 </section>
+
+{# <form method="post" accept-charset="UTF-8">
+    <label for="username">Username</label>
+    {{ input('text', 'username', user.username ?? null, {
+        id: 'username',
+        autocomplete: 'username',
+    }) }}
+    {{ user ? _self.errorList(user.getErrors('username')) }}
+
+    <label for="full-name">Full Name</label>
+    {{ input('text', 'fullName', user.fullName ?? null, {
+        id: 'full-name',
+        autocomplete: 'name',
+    }) }}
+    {{ user ? _self.errorList(user.getErrors('fullName')) }}
+
+    <label for="email">Email</label>
+    {{ input('email', 'email', user.email ?? null, {
+        id: 'email',
+        autocomplete: 'email',
+    }) }}
+    {{ user ? _self.errorList(user.getErrors('email')) }}
+
+    <label for="password">Password</label>
+    {{ input('password', 'password', null, {
+        id: 'password',
+    }) }}
+    {{ user ? _self.errorList(user.getErrors('password')) }}
+    <button>Register</button>
+</form> #}
+
 {% endblock %}

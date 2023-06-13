@@ -15,25 +15,18 @@
             {% include '_commerce/account/partials/accountNav' %}
             <form method="post" accept-charset="UTF-8" class="w-6/12">
                 {{ csrfInput() }}
-                {{ redirectInput('account') }}
-                {{ actionInput('users/save-user') }}
-                {{ hiddenInput('userRegisteredNotice', 'Je account werd aangemaakt. Je kan inloggen van zodra je jouw e-mailadres hebt geverifieerd in de mail die we je zonet hebben gestuurd.') }}
+                {{ actionInput('users/login') }}                
+                {{ redirectInput('account/adresboek') }}
 
-                {% if errors is defined %}
-                <ul class="text-red-500 mb-6">
-                    {% for error in errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-
-                {# <input type="hidden" name="action" value="users/login"> #}
-                    {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'email', type: 'email', value: craft.app.user.rememberedUsername }) }}
-                    {{ form.input('', { placeholder: 'Password'|t, id: 'password', name: 'password', type: 'password'  }) }}
-                    {# {{ form.checkbox('Remember me?', { name: 'rememberMe', id: 'rememberMe', value: '1', checked: false, required: false  }) }} #}
+                {{ form.input('', { placeholder: 'username'|t, id: 'loginName', name: 'loginName', type: 'loginName', value: craft.app.user.rememberedUsername }) }}
+                {{ form.input('', { placeholder: 'Password'|t, id: 'password', name: 'password', type: 'password'  }) }}
+                <label>
+                    {{ input('checkbox', 'rememberMe', '1') }}
+                    Remember me
+                </label>
                 <div class="w-full flex items-center justify-between mt-30">
                     <a href="{{ url('/account/wachtwoord-vergeten') }}" class="underline text-gray-400">{{ 'Wachtwoord vergeten?'|t }}</a>
-                    <button type="submit" class="button relative pointer border-1 border-black bg-transparent text-black mt-20 ml-auto py-10 px-20 block w-max transition duration-300">{{ 'Log in'|t }}</button>
+                    <button class="button relative pointer border-1 border-black bg-transparent text-black mt-20 ml-auto py-10 px-20 block w-max transition duration-300">{{ 'Login'|t }}</button>
                 </div>
             </form>
         </div>

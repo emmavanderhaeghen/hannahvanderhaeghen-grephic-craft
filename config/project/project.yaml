@@ -1,4 +1,4 @@
-dateModified: 1686558031
+dateModified: 1686663352
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: 'Hannah Van der Haeghen'
@@ -308,8 +308,10 @@ system:
   schemaVersion: 4.4.0.4
   timeZone: America/Los_Angeles
 users:
-  allowPublicRegistration: false
-  defaultGroup: null
+  allowPublicRegistration: true
+  deactivateByDefault: false
+  defaultGroup: ''
   photoSubpath: null
   photoVolumeUid: 19dc3b2d-a870-4e81-91ff-ebdc5f452c29 # Images
   requireEmailVerification: true
+  validateOnPublicRegistration: false
