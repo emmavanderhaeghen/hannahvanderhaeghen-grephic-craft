@@ -31,11 +31,12 @@
         {# quote - collection page #}
         <article class="my-100 lg:mt-200 lg:mb-250 relative">
             <a href="/the-road-paved-with-a-single-stone">
+                <h3 class="lg:absolute -top-50 left-0 text-16 font-serif uppercase text-pink-500 mb-20">New Collection</h3>
                 <div class="w-12/12 lg:w-10/12 relative z-[100] mx-auto py-10 md:py-40 lg:py-80 px-10 md:px-50 lg:px-100 bg-pink bg-opacity-[80%] fade-in">
                     <h2 class="text-16 md:text-20 lg:text-50 font-serif uppercase text-center">{{entry.quote|nl2br}}</h2>
                 </div>
                 {% for image in entry.imageQuote %}
-                    <img class="w-800 z-10 absolute -top-20 md:-top-80 lg:-right-40" src="{{image.url()}}" alt="hero">
+                    <img class="w-800 z-10 lg:absolute -top-20 md:-top-80 lg:-right-40" src="{{image.url()}}" alt="hero">
                 {% endfor %}
             </a>
         </article>
@@ -75,12 +76,12 @@
     {# contact section - contact page #}
     <article class="relative lg:mt-200">
         <div class="z-20 w-12/12 lg:w-6/12 absolute right-0 bg-black bg-opacity-75 px-20 lg:pr-[24rem] pt-50 lg:pl-80 pb-70 fade-in">
-            <h2 class="text-25 md:text-50 lg:text-80 font-serif uppercase lg:absolute lg:left-80 lg:-top-[2.25rem] text-pink-500 scroll-title-right">{{entry.titleFour}}</h2>
-            <p class="py-30 lg:py-80 text-9 text-white">{{entry.descriptionThree}}</p>
-            <a class="relative pointer bg-pink text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300" href="{{ entry.linkFour.getUrl() }}" target="{{ entry.linkFour.getTarget() }}">{{ entry.linkFour.getText() }}</a>
+                <h2 class="text-25 md:text-50 lg:text-80 font-serif uppercase lg:absolute lg:left-80 lg:-top-[2.25rem] text-pink-500 scroll-title-right">{{ commonlyUsed.titleOne }}</h2>
+            <p class="py-30 lg:py-80 text-9 text-white">{{ commonlyUsed.descriptionOne }}</p>
+            <a class="relative pointer bg-pink text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300" href="{{ commonlyUsed.linkOne.getUrl() }}" target="{{ commonlyUsed.linkOne.getTarget() }}">{{ commonlyUsed.linkOne.getText() }}</a>
         </div>
         <div class="relative bottom-0 left-0">
-        {% for image in entry.imageFour %}
+        {% for image in commonlyUsed.imageOne %}
             <img class="h-500 w-full object-cover relative top-0 left-0" src="{{image.url()}}" alt="hero">
         {% endfor %}
         </div>

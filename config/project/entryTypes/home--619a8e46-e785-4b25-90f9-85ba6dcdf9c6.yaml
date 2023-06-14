@@ -229,59 +229,13 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dismissible: false
             elementCondition: null
-            heading: 'Contact sectie'
-            type: craft\fieldlayoutelements\Heading
-            uid: 0f09c55d-cfa5-4d05-99aa-4000632b910d
+            style: tip
+            tip: 'Wil je de contact sectie aanpassen? Dit kan ik "Globals"!'
+            type: craft\fieldlayoutelements\Tip
+            uid: d3bba9e1-63fa-4898-8c12-8f7530eff6bb
             userCondition: null
-          -
-            elementCondition: null
-            fieldUid: 5a5973ce-1c6a-4bd0-abb7-f17fb8cdd368 # Titel 4
-            instructions: null
-            label: Titel
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d76de134-0680-489c-9b5b-44e215d5395e
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 862eb467-ce26-4fc3-8289-42571aaff556 # Beschrijving 3
-            instructions: null
-            label: Beschrijving
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: a7cf7083-e38b-49e1-9b69-cb5eeaf86929
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: bba3f6c6-4034-448c-b3b5-62ef276276cd # Afbeelding 4
-            instructions: null
-            label: Afbeelding
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 9bab77f5-c70c-49c9-912b-34f3cf72c6f1
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: e71ca281-b0a5-4e2c-8c68-53c0bf3fe520 # Link 4
-            instructions: null
-            label: Link
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 796c5a4a-1911-4fb4-9768-4e3ef178dde8
-            userCondition: null
-            warning: null
-            width: 50
         name: Inhoud
         uid: 995c4c91-d868-48bd-be12-16a7b2892d89
         userCondition: null

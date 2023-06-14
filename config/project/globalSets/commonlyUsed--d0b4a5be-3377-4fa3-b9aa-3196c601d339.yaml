@@ -6,6 +6,60 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            fieldUid: 31bb0e04-2a70-4557-8090-a52c1a2254f2 # Titel 1
+            instructions: null
+            label: Titel
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc0273a4-71a0-4f85-b911-2190143f74a7
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 00c5f631-3ba6-4457-8520-81aaf01dbc68 # Beschrijving 1
+            instructions: null
+            label: Beschrijving
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8d6fa116-6d00-4327-84b4-ffdcb2a1f517
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8fa4ab2b-d31b-4bd6-b6d8-ee2df12c14e5 # Afbeelding 1
+            instructions: null
+            label: Afbeelding
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e0ff49de-6bc1-4089-80eb-5efe9106730d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d # Link 1
+            instructions: null
+            label: Link
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4f2653d7-316f-49f4-80be-a59ea45e8c07
+            userCondition: null
+            warning: null
+            width: 50
+        name: Contactblok
+        uid: 6aae053d-18f7-4742-9b71-d82f210beee6
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
             fieldUid: ed335616-6cd9-410b-9d9f-5992c89f02c7 # USP
             instructions: null
             label: null
