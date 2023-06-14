@@ -56,7 +56,6 @@
                             {{ form.input('', { placeholder: 'Organisation'|t, id: 'organisation', name: 'fields[organisation]', type: 'organisation', class: '', required: false }) }}
                             {{ form.input('', { placeholder: 'Organisation Tax ID'|t, id: 'OrganisationTaxID', name: 'fields[OrganisationTaxID]', type: 'OrganisationTaxID', class: '', required: false }) }}
 
-
                         <h2 class="uppercase font-serif text-16 my-20">Billing address</h2>
                             {{ form.input('', { placeholder: 'Full Name*'|t, id: 'fullName', name: 'fields[fullName]', type: 'fullName', class: '' }) }}
                             {{ form.input('', { placeholder: 'Address*'|t, id: 'address', name: 'fields[address]', type: 'address', class: '' }) }}
@@ -106,8 +105,6 @@
                             
                         {% endif %}
 
-
-
                         <div class="mb-6 mt-40">
                             {{ form.textarea('', { class: '', name: 'fields[orderNotes]', id: 'orderNotes', required: false,
                             placeholder: 'Information about your order, e.g. Information about delivery or a message for the addressee.' }) }}
@@ -120,18 +117,7 @@
             </div>
 
             <div class="w-12/12 mt-5 lg:w-4/12 bg-white relative p-40">
-                <h2 class="text-20 font-serif uppercase mb-20">Cart</h2>
-                <div class="border-b border-black pb-10 my-20">
-                    {% for item in cart.lineItems %}
-                        <div class="mb-10 flex items-center justify-between">
-                            <div class="flex-grow">
-                                <span class="font-medium">{{ item.qty > 1 ? "#{item.qty} ×" }}</span> {{ item.description }} <span class="italic text-pink-500 pl-10"> {{ item.purchasable.uniqueCombinationOfVariantAttributes.select('title').column()|join(', ') }}</span>  
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                {% include '_commerce/cart/partials/totals' with { isCartIndex: true } %}
-                <a class="block mt-20 underline" href="{{ url('/cart') }}">edit shopping cart</a>
+                {% include "_commerce/checkout/partials/totals" %}
             </div>
         </div>
     </section>

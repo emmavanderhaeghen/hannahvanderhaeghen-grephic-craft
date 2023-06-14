@@ -1,0 +1,15 @@
+<h2 class="text-20 font-serif uppercase mb-20">Cart</h2>
+
+<div class="border-b border-black pb-10 my-20">
+    {% for item in cart.lineItems %}
+        <div class="mb-10 flex items-center justify-between">
+            <div class="flex-grow">
+                <span class="font-medium">{{ item.qty > 1 ? "#{item.qty} ×" }}</span> {{ item.description }} <span class="italic text-pink-500 pl-10"> {{ item.purchasable.uniqueCombinationOfVariantAttributes.select('title').column()|join(', ') }}</span>  
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% include '_commerce/cart/partials/totals' with { isCartIndex: true } %}
+
+<a class="block mt-20 underline" href="{{ url('/cart') }}">edit shopping cart</a>
