@@ -3,6 +3,7 @@
     "codewithkyle/read-only": "1.0.5",
     "craftcms/cms": "^4.4.0",
     "craftcms/commerce": "4.2.6",
+    "craftcms/commerce-mollie": "4.1.0.1",
     "craftcms/guest-entries": "3.0.1",
     "craftcms/postmark": "3.0.0",
     "craftcms/redactor": "3.0.4",
@@ -29,7 +30,8 @@
   "config": {
     "allow-plugins": {
       "craftcms/plugin-installer": true,
-      "yiisoft/yii2-composer": true
+      "yiisoft/yii2-composer": true,
+      "php-http/discovery": true
     },
     "sort-packages": true,
     "optimize-autoloader": true,
