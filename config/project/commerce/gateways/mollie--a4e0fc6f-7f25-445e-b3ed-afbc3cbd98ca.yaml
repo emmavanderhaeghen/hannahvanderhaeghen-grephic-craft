@@ -1,0 +1,9 @@
+handle: mollie
+isFrontendEnabled: '1'
+name: Mollie
+paymentType: purchase
+settings:
+  apiKey: $MOLLIE_TEST_KEY
+  sendCartInfo: false
+sortOrder: 99
+type: craft\commerce\mollie\gateways\Gateway
