@@ -1,4 +1,4 @@
-dateModified: 1686736030
+dateModified: 1686747743
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: 'Hannah Van der Haeghen'
@@ -25,7 +25,6 @@ meta:
     0d682bd0-f685-492b-864b-4ce7497f65fb: Detail # Detail
     0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
     1f995a21-6491-4d2d-b126-6b03f6c43a58: 'Filter Groepen' # Filter Groepen
-    2a1b88a7-04a1-4876-878f-2253644f6e34: Dummy # Dummy
     2c1c4276-6b14-4857-8873-c475c0a68f0a: 'Pagina''s' # Pagina's
     2d03ce61-2ba5-467f-ab56-c487d039e6ec: 'Titel 2' # Titel 2
     02f25b1a-2d32-4626-8ab1-ed9e9f3dae3d: 'Link 1' # Link 1
@@ -77,6 +76,7 @@ meta:
     01680712-796d-48bb-80fc-3e79cb98d2d3: Prints # Prints
     16573316-2b9f-4846-b6f2-ffe2e1a79da7: quote # quote
     a3b7618e-f5d1-4b5f-bd32-db20dd35c26b: SEO # SEO
+    a4e0fc6f-7f25-445e-b3ed-afbc3cbd98ca: Mollie # Mollie
     a48ddbb3-33df-449b-a3c0-53e95f5b4f88: Wishlist # Wishlist
     a576e86a-698c-4e39-8bb2-f03c1164f56b: 'Variant Attribute Label' # Variant Attribute Label
     a615ff3c-496d-4c4b-92d5-5eb1087c942f: Books # Books
@@ -222,6 +222,10 @@ plugins:
       validateBusinessTaxIdAsVatId: false
       validateCartCustomFieldsOnSubmission: false
       weightUnits: g
+  commerce-mollie:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   guest-entries:
     edition: standard
     enabled: true

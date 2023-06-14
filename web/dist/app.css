@@ -528,9 +528,6 @@ video {
 .top-\[50\%\] {
   top: 50%;
 }
-.right-20 {
-  right: 2rem;
-}
 .z-10 {
   z-index: 10;
 }
@@ -721,6 +718,12 @@ video {
 .mt-\[\.4rem\] {
   margin-top: .4rem;
 }
+.ml-2 {
+  margin-left: 0.2rem;
+}
+.mr-4 {
+  margin-right: 0.4rem;
+}
 .block {
   display: block;
 }
@@ -729,6 +732,9 @@ video {
 }
 .flex {
   display: flex;
+}
+.inline-flex {
+  display: inline-flex;
 }
 .grid {
   display: grid;
@@ -1217,9 +1223,9 @@ video {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.text-8 {
-  font-size: .8rem;
-  line-height: 2.2rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .font-bold {
   font-weight: 700;

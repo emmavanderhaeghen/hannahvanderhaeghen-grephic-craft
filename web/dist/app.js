@@ -27,6 +27,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 var App = /*#__PURE__*/function () {
   function App() {
     _classCallCheck(this, App);
+    this.body = document.querySelector('.body');
     this.navBtn = document.querySelector('.js-nav-button');
     this.lines = document.querySelectorAll('.js-lines');
     this.nav = document.querySelector('.js-nav');
@@ -59,6 +60,7 @@ var App = /*#__PURE__*/function () {
       this.navBtn.addEventListener('click', function () {
         _this.navBtn.classList.toggle('open');
         _this.nav.classList.toggle('hidden');
+        _this.body.classList.toggle('overflow-hidden');
         _this.navIcons.forEach(function (icon) {
           return icon.classList.toggle('hidden');
         });
@@ -92,18 +94,6 @@ var App = /*#__PURE__*/function () {
         }
       });
     }
-
-    // Modal
-    // initModal() {
-    //   this.modalBtn.addEventListener('click', () => {
-    //     this.modal.classList.remove('hidden');
-    //     this.closeBtn.classList.remove('hidden');
-    //   });
-    //   this.closeBtn.addEventListener('click', () => {
-    //     this.modal.classList.add('hidden');
-    //     this.closeBtn.classList.add('hidden');
-    //   });
-    // }
 
     // Image Swiper
   }, {
@@ -170,26 +160,6 @@ var App = /*#__PURE__*/function () {
           ease: 'power4.out'
         });
       });
-    }
-
-    // Stagger in when scrolling
-  }, {
-    key: "initStaggerIn",
-    value: function initStaggerIn() {
-      gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger);
-
-      // this.staggerItems.forEach((item) => {
-      //   gsap.from(item, {
-      //     scrollTrigger: {
-      //       trigger: item,
-      //       start: 'top 80%',
-      //     },
-      //     y: 50,
-      //     autoAlpha: 0,
-      //     duration: 1.5,
-      //     ease: 'power4.out',
-      //   });
-      // });
     }
 
     // Scroll titles right

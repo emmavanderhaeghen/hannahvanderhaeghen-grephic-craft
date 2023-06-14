@@ -6,6 +6,7 @@ import 'swiper/css/bundle'; // styles bundle
 
 class App {
   constructor() {
+    this.body = document.querySelector('.body');
     this.navBtn = document.querySelector('.js-nav-button');
     this.lines = document.querySelectorAll('.js-lines');
     this.nav = document.querySelector('.js-nav');
@@ -37,6 +38,7 @@ class App {
     this.navBtn.addEventListener('click', () => {
       this.navBtn.classList.toggle('open');
       this.nav.classList.toggle('hidden');
+      this.body.classList.toggle('overflow-hidden');
       this.navIcons.forEach(icon => icon.classList.toggle('hidden'));
       if (this.navBtn.classList.contains('open')) {
         gsap.to(this.lines[0], { duration: 0.2, rotate: '45deg', top: '8px', backgroundColor: 'white' });
@@ -49,17 +51,6 @@ class App {
     });
   } 
 
-  // Modal
-  // initModal() {
-  //   this.modalBtn.addEventListener('click', () => {
-  //     this.modal.classList.remove('hidden');
-  //     this.closeBtn.classList.remove('hidden');
-  //   });
-  //   this.closeBtn.addEventListener('click', () => {
-  //     this.modal.classList.add('hidden');
-  //     this.closeBtn.classList.add('hidden');
-  //   });
-  // }
 
   // Image Swiper
   initSwiper() {
@@ -128,24 +119,6 @@ class App {
         ease: 'power4.out',
       });
     });
-  }
-
-  // Stagger in when scrolling
-  initStaggerIn() {
-    gsap.registerPlugin(ScrollTrigger);
-  
-    // this.staggerItems.forEach((item) => {
-    //   gsap.from(item, {
-    //     scrollTrigger: {
-    //       trigger: item,
-    //       start: 'top 80%',
-    //     },
-    //     y: 50,
-    //     autoAlpha: 0,
-    //     duration: 1.5,
-    //     ease: 'power4.out',
-    //   });
-    // });
   }
   
   // Scroll titles right
