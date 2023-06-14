@@ -29,7 +29,9 @@
                 {{ redirectInput('account/adresboek') }}  
                             
                 <div class="flex justify-between gap-10">
-                    {{ form.input('', { placeholder: 'username'|t, id: 'userName', name: 'userName', type: 'userName', class: 'mr-10' }) }}
+                    {{ form.input('', { placeholder: 'username'|t, id: 'userName', name: 'userName', type: 'userName', class: 'mr-10',  }) }}
+                        {{ user ? _self.errorList(user.getErrors('username')) }}
+
                     {{ form.input('', { placeholder: 'fullname'|t, id: 'fullName', name: 'fullName', type: 'fullName' }) }}
                 </div>
                     {{ form.input('', { placeholder: 'E-mail address'|t, id: 'email', name: 'email', type: 'email', value: craft.app.user.rememberedUsername }) }}
