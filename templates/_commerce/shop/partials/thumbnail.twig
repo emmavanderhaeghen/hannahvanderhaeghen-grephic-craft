@@ -15,5 +15,5 @@
 </a>
 
 {# Passes a variable called `entryId` into the component #}
-{{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id}) }}
+            {{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id, showHearts: true}) }}
 {{ sprig.script }}

@@ -16,8 +16,8 @@
                     {% include "_commerce/shop/partials/price" %}
                 </div>
             </a>
-            {{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id}) }}
-{{ sprig.script }}
+            {{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id, showHearts: true}) }}
+            {{ sprig.script }}
         </li>
         {% endfor %}
     </ul>

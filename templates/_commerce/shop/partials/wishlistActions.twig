@@ -5,14 +5,38 @@
 
 {% set item = craft.wishlist.item(productId) %}
 
-{% if item.inList %}
+{% if showHearts %}
+    {% if item.inList %}
+        {# remove from wishlist #}
+        <button sprig s-method="post" s-action="wishlist/items/remove">
+            <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-[1.25rem]" src="../assets/www/svg/heart-pink.svg">
+        </button>
+    {% else %}
+        {# add to wishlist #}
+        <button sprig s-method="post" s-action="wishlist/items/add">
+            <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-[1.25rem]" src="../assets/www/svg/heart-grey.svg">
+        </button>
+    {% endif %}
+{% else %}
+    {% if item.inList %}
     {# remove from wishlist #}
     <button sprig s-method="post" s-action="wishlist/items/remove">
-        <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-[1.25rem]" src="../assets/www/svg/heart-pink.svg">
+        <div class="flex align-center">
+            <img class="transition-transform transform hover:scale-125 w-[1.25rem] mr-20" src="../assets/www/svg/heart-pink.svg">
+            <p class="text-9">remove from wishlist</p>
+        </div>
     </button>
-{% else %}
-    {# add to wishlist #}
-    <button sprig s-method="post" s-action="wishlist/items/add">
-        <img class="absolute right-40 bottom-40 transition-transform transform hover:scale-125 w-[1.25rem]" src="../assets/www/svg/heart-grey.svg">
-    </button>
+    {% else %}
+        {# add to wishlist #}
+        <button sprig s-method="post" s-action="wishlist/items/add">
+            <div class="flex align-center">
+                <img class="transition-transform transform hover:scale-125 w-[1.25rem] mr-20" src="../assets/www/svg/heart-grey.svg">
+                <p class="text-9">add to wishlist</p>
+            </div>
+        </button>
+    {% endif %}
 {% endif %}
+
+
+
+

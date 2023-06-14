@@ -80,7 +80,9 @@
                     {% if product.titleOne %}
                     <h2>Artist - <span class="opacity-50">{{product.titleOne}}</span></h2>
                     {% endif %}
+                    {% if product.linkOne is not null %}
                     <h2>Collection - <a href="{{product.linkOne.getURL()}}" target="{{product.linkOne.target}}" class="opacity-50 italic">{{product.linkOne.getText()}}</a></h2>
+                    {% endif %}
 
                     {# price #}
                     <div class="mt-10 text-12">
@@ -106,18 +108,18 @@
                                 document.getElementById('selectedPrice').textContent = '€ ' + price;
                             }
                         </script>
-
                     {% endif %}
-                    <div class="mt-30">
-                        <button type="submit" class="border border-black text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300 js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
-                        {# if the product is not in stock #}
-                        {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == '' %}
-                            <div class="relative mt-10">
-                                {{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id}) }}
-                                {{ sprig.script }}
-                            </div>
 
+                    <div class="mt-30">
+                        {# if the product is in stock #}
+                        {% if product.defaultVariant.stock >= 1 or product.defaultVariant.stock == '' %}
+                            <div class="flex flex-wrap justify-between items-center">
+                                {{ sprig('_commerce/shop/partials/wishlistActions', {'productId': product.id, showHearts: false}) }}
+                                {{ sprig.script }}
+                                <button type="submit" class="border border-black text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300 js-buy" data-style="zoom-out" data-spinner-color="#000">{{'add to my bag'|t}}</button>
+                            </div>
                         {% else %}
+                            {# if the product is NOT in stock #}
                             <div class="bg-red-100 p-6 mt-20 border border-red-200 text-red-500">Momenteel niet beschikbaar</div>
                         {% endif %}
                     </div>
