@@ -14,9 +14,16 @@
             <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/Contact" data-src="../assets/www/images/contact.png">Connect</a></li>
         </ul>
         <div class="mt-20 ml-30 lg:ml-0 lg:mt-150 font-sans text-12 flex flex-wrap gap-20 lg:gap-40">
-            {# <a target="_blank" href="{{generalData.facebookLink}}">Facebook</a> #}
-            <a target="_blank" href="{{generalData.instagramLink}}">Instagram</a>
-            <a target="_blank" href="{{generalData.linkedinLink}}">LinkedIn</a>
+            {% if generalData.facebookLink is not null and generalData.facebookLink is defined %}
+                <a target="_blank" href="{{generalData.facebookLink}}">Facebook</a>
+            {% endif %}        
+            {% if generalData.instagramLink is not null and generalData.instagramLink is defined %}
+                <a target="_blank" href="{{generalData.instagramLink}}">Instagram</a>
+            {% endif %}   
+            {% if generalData.linkedinLink is not null and generalData.linkedinLink is defined %}
+                <a target="_blank" href="{{generalData.linkedinLink}}">LinkedIn</a>
+            {% endif %}       
+            
             {% include "_layout/partials/language-switcher.twig" %}
         </div>
     </div>
@@ -26,20 +33,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
 <script>
-$('.list li a').hover(function() {
-  var value = $(this).attr('data-src');
-  gsap.to('.image-holder img', {
-    duration: 0.4,
-    opacity: 0,
-    onComplete: function() {
-      $('.image-holder img').attr('src', value);
-      gsap.to('.image-holder img', {
-        duration: 0.4,
-        opacity: 1,
-        ease: Power1.easeOut
-      });
-    },
-    ease: Power1.easeInOut
-  });
-});
+    $('.list li a').hover(function() {
+        var value = $(this).attr('data-src');
+        gsap.to('.image-holder img', {
+            duration: 0.4,
+            opacity: 0,
+            onComplete: function() {
+            $('.image-holder img').attr('src', value);
+            gsap.to('.image-holder img', {
+                duration: 0.2,
+                opacity: 1,
+                ease: Power1.easeOut
+            });
+            },
+            ease: Power1.easeInOut
+        });
+    });
 </script>

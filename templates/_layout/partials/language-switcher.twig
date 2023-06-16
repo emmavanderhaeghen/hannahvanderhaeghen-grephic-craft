@@ -1,3 +1,4 @@
+{# set language sites #}
 {% set currentElement = craft.app.urlManager.matchedElement %}
 {% set sites = craft.app.getSites().getGroupById(currentSite.groupId).getSites() %}
 {% set switcherLinks = [] %}

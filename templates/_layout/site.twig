@@ -1,23 +1,26 @@
 {% extends "_layout/base" %}
 
+{# globals #}
 {% set generalData = craft.app.globals().getSetByHandle('generalData') %}
 
 {# 1 Query to rule them all #}
 {% set pages = craft.entries.section('pages').search('showInNav:1 OR showInFooter:1').all() %}
-{# Split up in main & legal nav #}
-{% set mainNav = pages|filter(item => item.showInNav) %}
-{% set legalNav = pages|filter(item => item.showInFooter) %}
 
-{# 1 Query to rule them all #}
-{% set pages = craft.entries.section('pages').search('showInNav:1 OR showInFooter:1').all() %}
-{# Split up in main, sub & legal nav #}
+{# split up in main & legal nav #}
 {% set mainNav = pages|filter(item => item.showInNav) %}
 {% set legalNav = pages|filter(item => item.showInFooter) %}
 
 {% block app %}
-  {% include '_layout/partials/header' %}
-  <main class="overflow-x-hidden">
-    {% block content %}{% endblock %}
-  </main>
-  {% include '_layout/partials/footer' %}
+
+    {# header component #}
+    {% include '_layout/partials/header' %}
+
+    {# main content #}
+    <main class="overflow-x-hidden">
+        {% block content %}{% endblock %}
+    </main>
+
+    {# footer component #}
+    {% include '_layout/partials/footer' %}
+
 {% endblock %}

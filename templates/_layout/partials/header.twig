@@ -3,6 +3,8 @@
         <a class="" href="/"><img class="" src="../assets/www/svg/logo.svg" alt="Logo"></a>
         <div class="w-12/12 lg:w-4/12 z-50 flex items-center gap-30 justify-end">
             <a class="hidden w-20 nav-icon" href="/account"><img class="transition-transform transform hover:scale-125" src="../assets/www/svg/account.svg" alt="account"></a>
+
+            {# include items count on wishlist + bag #}
             {% include ('_layout/partials/itemsCount') %}
 
             <button class="inline-block p-1 | js-nav-button">
@@ -12,5 +14,6 @@
         </div>
     </div>
 
+    {# include nav #}
     {% include "_layout/partials/nav.twig" %}
 </header>
