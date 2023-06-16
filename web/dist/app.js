@@ -48,7 +48,7 @@ var App = /*#__PURE__*/function () {
       // this.initModal();
       this.initSwiper();
       this.initFadeIn();
-      this.initStaggerIn();
+      // this.initStaggerIn();
       this.initScrollTitlesRight();
     }
 
