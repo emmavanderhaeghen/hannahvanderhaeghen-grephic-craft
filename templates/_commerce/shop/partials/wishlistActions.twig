@@ -23,7 +23,7 @@
     <button sprig s-method="post" s-action="wishlist/items/remove">
         <div class="flex align-center">
             <img class="transition-transform transform hover:scale-125 w-[1.25rem] mr-20" src="../assets/www/svg/heart-pink.svg">
-            <p class="text-9">remove from wishlist</p>
+            <p class="text-9">{{'remove from wishlist'|t}}</p>
         </div>
     </button>
     {% else %}
@@ -31,7 +31,7 @@
         <button sprig s-method="post" s-action="wishlist/items/add">
             <div class="flex align-center">
                 <img class="transition-transform transform hover:scale-125 w-[1.25rem] mr-20" src="../assets/www/svg/heart-grey.svg">
-                <p class="text-9">add to wishlist</p>
+                <p class="text-9">{{'add to wishlist|t'}}</p>
             </div>
         </button>
     {% endif %}
