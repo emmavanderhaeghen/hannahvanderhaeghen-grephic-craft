@@ -1,0 +1,82 @@
+{% extends '_commerce/emails/layout' %}
+{#
+    # I'm using postmark templates
+    # For more info on how to use them, see https://github.com/wildbit/postmark-templates/tree/master/templates
+    # Or live examples: https://postmarkapp.com/transactional-email-templates 
+#}
+
+{# {% set submission = craft.entries.section('contactSubmissions').one() %}  #}
+
+{% block content %}
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+        <td align="center">
+        <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            {% include '_commerce/emails/partials/header' %}
+            <!-- Email Body -->
+            <tr>
+            <td class="email-body" width="570" cellpadding="0" cellspacing="0">
+                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+                <!-- Body content -->
+                <tr>
+                    <td class="content-cell">
+                    <div class="f-fallback">
+                        <p>{{ include(template_from_string(body|default(''))|raw)|nl2br }}</p>
+                        
+                        {# Bbutton #}
+                        <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td align="center">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                    <tr>
+                                    <td align="center">
+                                        <a href="{{ submission.cpEditUrl|default('{{ submission.cpEditUrl }}') }}" class="f-fallback button" target="_blank">Bekijk dit bericht online</a>
+                                    </td>
+                                    </tr>
+                                </table>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        {# Show some data #}
+                        <table class="attributes" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="attributes_content">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="attributes_item"><strong>Naam:</strong> {{ submission.firstName|default('{{ submission.firstName }}') }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="attributes_item"><strong>Voornaam:</strong> {{ submission.lastName|default('{{ submission.lastName }}') }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="attributes_item"><strong>Email:</strong> {{ submission.email|default('{{ submission.email }}') }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="attributes_item"><strong>Bericht:</strong> {{ submission.message|default('{{ submission.message }}') }}</td>
+                                </tr>
+                            </table>
+                            </td>
+                        </tr>
+                        </table>
+                        
+                        {# Button issues #}
+                        <table class="body-sub">
+                            <tr>
+                                <td>
+                                    <p class="sub">{{ submission.cpEditUrl|default('{{ submission.cpEditUrl }}') }}</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    </td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+            {% include '_commerce/emails/partials/footer' %}
+        </table>
+        </td>
+    </tr>
+    </table>
+{% endblock %}
