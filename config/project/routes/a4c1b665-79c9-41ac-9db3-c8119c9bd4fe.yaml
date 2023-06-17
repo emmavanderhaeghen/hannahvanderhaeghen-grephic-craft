@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 15
+template: _pages/types/succes
+uriParts:
+  - succes
+uriPattern: succes
