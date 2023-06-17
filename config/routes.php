@@ -10,5 +10,7 @@
  */
 
 return [
+	'email-test-admin' => ['template' => '_commerce/emails/notifications/admin'],
+	// 'email-test-client' => ['template' => '_commerce/emails/notifications/client'],
 
 ];
