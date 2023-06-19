@@ -45,10 +45,8 @@ var App = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       this.initOpenNav();
-      // this.initModal();
       this.initSwiper();
       this.initFadeIn();
-      // this.initStaggerIn();
       this.initScrollTitlesRight();
     }
 
