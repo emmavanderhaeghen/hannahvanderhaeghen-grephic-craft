@@ -1,0 +1,37 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        options:
+          - staging.hannahvanderhaeghen.com
+        description: Which host do you wish to deploy
+        required: true
+
+
+# It is important to specify "concurrency" for the workflow,
+# to prevent concurrency between different deploys.
+concurrency: ${{ github.event.inputs.environment }}
+
+jobs:
+
+  deploy:
+    name: "Deploy ${{ github.head_ref }} to ${{ github.event.inputs.environment }}"
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Deploy
+        uses: deployphp/action@v1
+        with:
+          private-key: ${{ secrets.SERVER_DEPLOYMENT_KEY }}
+          skip-ssh-setup: true
+          dep: deploy --hosts ${{ github.event.inputs.environment }} --branch=${{ github.head_ref }}
