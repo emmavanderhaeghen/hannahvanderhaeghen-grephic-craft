@@ -2,17 +2,15 @@
   "name": "hannahvanderhaeghen",
   "version": "1.0.0",
   "description": "",
-  "main": "vite.config.js",
   "scripts": {
     "dev": "mix watch",
-    "build": "vite build"
+    "build": "mix build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emmavanderhaeghen/hannahvanderhaeghen-grephic-craft.git"
   },
   "keywords": [
-    "Vite",
     "Craft",
     "Commerce",
     "DDEV",
