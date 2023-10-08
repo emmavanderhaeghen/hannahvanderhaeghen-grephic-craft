@@ -1,4 +1,4 @@
-dateModified: 1686990849
+dateModified: 1696774473
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: 'Hannah Van der Haeghen'
@@ -49,16 +49,13 @@ meta:
     19dc3b2d-a870-4e81-91ff-ebdc5f452c29: Images # Images
     31bb0e04-2a70-4557-8090-a52c1a2254f2: 'Titel 1' # Titel 1
     38e6a148-3a70-43f5-8128-54ff53c63eb2: 'Titel 3' # Titel 3
-    44f74a84-4708-412a-a0d4-a4fa2d3f68f5: 'Variant Attribute Option Values' # Variant Attribute Option Values
     47a122e4-5ba5-4021-a156-b23767eb0248: 'Third Party' # Third Party
     48abcf61-f6f1-411b-903a-81f034608b53: Bericht # Bericht
     55a3c65b-7ffe-4e16-b5c0-7e67177ffcf0: Links # Links
     56c3e973-0f59-429a-91ed-318814922bbb: FAQ # FAQ
-    76b672a2-e508-4067-b109-46ef42c9fb3f: Accessoires # Accessoires
     87a05afd-1262-47cb-acd2-f6aaed1b9640: Websites # Websites
     94c51b0c-961c-4fd5-904f-5b7871f98cf7: Text # Text
     239bf23c-88b2-4832-a53e-a335cfc5d124: 'Elements (entries, categories, products)' # Elements (entries, categories, products)
-    356e5ebc-90ce-415b-9b0b-e258c13752c6: 'Variant Attribute Option Labels' # Variant Attribute Option Labels
     619a8e46-e785-4b25-90f9-85ba6dcdf9c6: Home # Home
     643cb138-4a82-4f14-a789-948b643043bc: 'Gallery filters' # Gallery filters
     0657cf24-ecbd-4107-adb2-3a4f69e4ad8b: Policy # Policy
@@ -70,35 +67,28 @@ meta:
     15471e0e-b73a-4c98-94a3-0bb5185f90f2: Shop # Shop
     67748b21-4a3e-47c2-83be-b7ecd539d71c: 'Shop Categorie' # Shop Categorie
     072366a1-39d9-4c91-8e57-6eab946ae6fe: Voornaam # Voornaam
-    154426f1-715f-4777-9c7f-f599d7641e68: New # New
     361382ab-c268-4ec2-a944-660822aea169: English # English
     986126ba-250e-463e-8f3c-3f9257acc84c: 'image right' # image right
-    01680712-796d-48bb-80fc-3e79cb98d2d3: Prints # Prints
     16573316-2b9f-4846-b6f2-ffe2e1a79da7: quote # quote
     a3b7618e-f5d1-4b5f-bd32-db20dd35c26b: SEO # SEO
-    a4e0fc6f-7f25-445e-b3ed-afbc3cbd98ca: Mollie # Mollie
     a48ddbb3-33df-449b-a3c0-53e95f5b4f88: Wishlist # Wishlist
     a576e86a-698c-4e39-8bb2-f03c1164f56b: 'Variant Attribute Label' # Variant Attribute Label
-    a615ff3c-496d-4c4b-92d5-5eb1087c942f: Books # Books
     a3934515-f94c-4ab0-891d-f8519a8b1561: Assets # Assets
     ab1e9ae1-eba0-4b77-9d5c-752874dc9fbd: 'Filter: shop' # Filter: shop
     ae7f6c08-c9a7-4447-9c37-00e0f870e776: 'General Data' # General Data
     b94dc6c9-aae8-45c7-b754-5f6a3c81039a: 'Facebook link' # Facebook link
+    b720bf5f-ae38-4c51-ba44-e85a860129cc: 'Public Schema' # Public Schema
     bba3f6c6-4034-448c-b3b5-62ef276276cd: 'Afbeelding 4' # Afbeelding 4
-    be98b21a-7959-4658-93c8-ac8484da53b1: 'Variant Attribute Option Values' # Variant Attribute Option Values
     c785f0e6-e64a-4275-979b-4b8f8b74ca7a: Achternaam # Achternaam
     c871bcad-3990-4bf3-954f-b29d2e335773: 'Filter: gallery' # Filter: gallery
     cddc48cb-cf17-49ea-96d9-773668a2239f: 'Beschrijving 2' # Beschrijving 2
     d0b4a5be-3377-4fa3-b9aa-3196c601d339: 'Veel gebruikte elementen' # Veel gebruikte elementen
     d1f9737c-c74a-4ffd-8fde-fed08a33c48c: 'Afbeelding 2' # Afbeelding 2
-    d7438f40-c518-4fab-9fa9-67b6168780ee: 'Variant Attribute Option Labels' # Variant Attribute Option Labels
     dbd11bc6-ad86-4953-959b-f3fb418b6153: 'Toon in footer' # Toon in footer
-    dc074707-454e-4929-98f8-c32bb100b48d: Collaborations # Collaborations
     e6d64dd2-c9e9-410c-81b6-82ffa3358eeb: 'Link 2' # Link 2
     e55f4e6c-f5c8-4f9f-85af-3daf6684a8da: 'Display Type' # Display Type
     e68f4e12-33a8-4163-adbb-26bfa484de3a: Redactor # Redactor
     e71ca281-b0a5-4e2c-8c68-53c0bf3fe520: 'Link 4' # Link 4
-    eb00a5af-e653-4ed5-92c2-19de0e9e7ff5: Cards # Cards
     ed335616-6cd9-410b-9d9f-5992c89f02c7: USP # USP
     f016f34d-e9d9-41bf-86cf-5fc0c29b036c: 'Algemene gegevens' # Algemene gegevens
     f2fda0de-15eb-4ada-a4c1-c88f8dc38392: 'Afbeelding 3' # Afbeelding 3
@@ -181,47 +171,6 @@ plugins:
       ssiEnabled: false
       trackElementQueries: true
       trackElements: true
-  commerce:
-    edition: pro
-    enabled: true
-    licenseKey: HCD9OPKMESAZGLLF1DWD0943
-    schemaVersion: 4.2.3
-    settings:
-      activeCartDuration: 3600
-      allowCheckoutWithoutPayment: false
-      allowEmptyCartOnCheckout: false
-      allowPartialPaymentOnCheckout: false
-      autoSetCartShippingMethodOption: false
-      autoSetNewCartAddresses: true
-      autoSetPaymentSource: false
-      cartVariable: cart
-      defaultView: commerce/orders
-      dimensionUnits: mm
-      emailSenderAddress: $SYSTEM_EMAIL
-      emailSenderAddressPlaceholder: null
-      emailSenderName: $SYSTEM_NAME
-      emailSenderNamePlaceholder: null
-      freeOrderPaymentStrategy: complete
-      gatewayPostRedirectTemplate: ''
-      loadCartRedirectUrl: null
-      minimumTotalPriceStrategy: default
-      orderReferenceFormat: '{{number[:7]}}'
-      paymentCurrency: null
-      pdfAllowRemoteImages: false
-      pdfPaperOrientation: portrait
-      pdfPaperSize: letter
-      purgeInactiveCarts: true
-      purgeInactiveCartsDuration: 7776000
-      requireBillingAddressAtCheckout: false
-      requireShippingAddressAtCheckout: false
-      requireShippingMethodSelectionAtCheckout: false
-      showEditUserCommerceTab: true
-      updateBillingDetailsUrl: ''
-      updateCartSearchIndexes: true
-      useBillingAddressForTax: false
-      validateBusinessTaxIdAsVatId: false
-      validateCartCustomFieldsOnSubmission: false
-      weightUnits: g
   commerce-mollie:
     edition: standard
     enabled: true
@@ -281,7 +230,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 7G0IC4AHSWVI4WSDX11PGUSO
-    schemaVersion: 3.0.11
+    schemaVersion: 3.0.12
   snaptcha:
     edition: standard
     enabled: true
@@ -301,15 +250,15 @@ plugins:
     schemaVersion: 1.0.0
   wishlist:
     edition: standard
-    enabled: true
+    enabled: false
     licenseKey: KT80JF8CC81ESVD2MG5V6LZA
-    schemaVersion: 1.0.4
+    schemaVersion: 1.0.5
 system:
   edition: pro
   live: true
   name: $SYSTEM_NAME
   retryDuration: null
-  schemaVersion: 4.4.0.4
+  schemaVersion: 4.5.3.0
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: true

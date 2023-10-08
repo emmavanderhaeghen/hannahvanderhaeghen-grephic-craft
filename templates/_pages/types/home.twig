@@ -1,9 +1,9 @@
 {# Layouts and macros #}
 {% extends "_layout/site" %}
 
-{% if cart is not defined %}
+{# {% if cart is not defined %}
     {% set cart = craft.commerce.carts.cart %}
-{% endif %}
+{% endif %} #}
 
 {% block content %}
     {# header #}
@@ -56,7 +56,7 @@
         </article>
 
         {# shop preview - shop page #}
-        <article class="mb-100 lg:items-center">
+        {# <article class="mb-100 lg:items-center">
             <div class="flex flex-col lg:flex-row">
                 <h2 class="font-serif uppercase w-12/12 text-25 mb-20 lg:w-4/12 md:text-50 fade-in">{{entry.titleOne|nl2br}}</h2>
                 <div class="w-12/12 lg:w-8/12 flex">
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <a class="button relative pointer border-1 border-black bg-transparent text-black mt-20 lg:mt-80 ml-auto py-10 px-20 block w-max transition duration-300" href="{{url('prints')}}" target="{{ entry.linkThree.getTarget() }}">{{ entry.linkThree.getText() }}</a>
-        </article>
+        </article> #}
     </section>
 
     {# contact section - contact page #}
