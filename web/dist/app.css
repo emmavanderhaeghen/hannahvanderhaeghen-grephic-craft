@@ -522,9 +522,6 @@ video {
 .top-30 {
   top: 3rem;
 }
-.top-\[15rem\] {
-  top: 15rem;
-}
 .top-\[50\%\] {
   top: 50%;
 }
@@ -856,6 +853,9 @@ video {
 }
 .w-screen {
   width: 100vw;
+}
+.w-3\/12 {
+  width: 25%;
 }
 .flex-1 {
   flex: 1 1 0%;

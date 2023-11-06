@@ -7,7 +7,7 @@
     </div>
 
     <main class="container js-grid">
-        <h1 class="font-serif uppercase text-pink-500 text-25 md:text-50 w-6/12">{{entry.title}}</h1>
+        <h1 class="font-serif uppercase text-pink-500 text-25 mt-40 md:text-50 w-6/12">{{entry.title}}</h1>
         <ul class="flex flex-wrap items-center mt-20">
         {% if entry.descriptionOne is not null %}
             <div class="w-12/12 lg:w-8/12 my-40">
@@ -16,7 +16,7 @@
         {% endif %}
 
             {% for image in entry.imageTwo.all() %}
-            <li class="w-12/12 sm:w-6/12 lg:w-3/12 mb-30 px-10 cursor-pointer">
+            <li class="w-12/12 sm:w-6/12 lg:w-4/12 mb-30 px-10 cursor-pointer">
                 <img class="js-thumbnail" src="{{image.url()}}" alt="hero" data-fullscreen-url="{{image.url()}}">
             </li>
             {% endfor %}                          
@@ -47,10 +47,6 @@
                 <img class="w-10 transition-transform transform hover:scale-110" src="../assets/www/svg/arrow.svg" alt="hero">
             </div>
         </section>
-
-        {# <div class="absolute z-10 bottom-40 right-40">
-            <img class="" src="../assets/www/svg/grid.svg" alt="grid">
-        </div> #}
     </section>
 
 <script>

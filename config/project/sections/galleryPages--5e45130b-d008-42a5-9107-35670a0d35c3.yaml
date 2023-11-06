@@ -4,11 +4,6 @@ handle: galleryPages
 name: 'Gallery pagina''s'
 propagationMethod: all
 siteSettings:
-  0c227af7-cc71-4e70-a370-a1a6b63ddf75: # Français
-    enabledByDefault: true
-    hasUrls: true
-    template: _pages/entry.twig
-    uriFormat: '{parent.uri}/{slug}'
   9b464eb3-586e-4db0-bf51-3d00017432b0: # Nederlands
     enabledByDefault: true
     hasUrls: true

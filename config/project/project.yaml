@@ -1,4 +1,4 @@
-dateModified: 1696774473
+dateModified: 1699296919
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: 'Hannah Van der Haeghen'
@@ -20,7 +20,6 @@ meta:
   __names__:
     0a57c908-5d24-4b0d-a9d4-80615b2cd97f: FAQ # FAQ
     00c5f631-3ba6-4457-8520-81aaf01dbc68: 'Beschrijving 1' # Beschrijving 1
-    0c227af7-cc71-4e70-a370-a1a6b63ddf75: Français # Français
     0d651d0e-b1d7-45ec-a026-bb77e4ababe3: Navigation # Navigation
     0d682bd0-f685-492b-864b-4ce7497f65fb: Detail # Detail
     0f24636c-4f10-4522-894b-45739e075b70: 'Email adres' # Email adres
@@ -55,6 +54,7 @@ meta:
     56c3e973-0f59-429a-91ed-318814922bbb: FAQ # FAQ
     87a05afd-1262-47cb-acd2-f6aaed1b9640: Websites # Websites
     94c51b0c-961c-4fd5-904f-5b7871f98cf7: Text # Text
+    217fcfdc-f604-49b4-a1d5-be94a3a24296: 'Navigatie Afbeelding' # Navigatie Afbeelding
     239bf23c-88b2-4832-a53e-a335cfc5d124: 'Elements (entries, categories, products)' # Elements (entries, categories, products)
     619a8e46-e785-4b25-90f9-85ba6dcdf9c6: Home # Home
     643cb138-4a82-4f14-a789-948b643043bc: 'Gallery filters' # Gallery filters

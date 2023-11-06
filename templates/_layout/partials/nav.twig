@@ -1,17 +1,24 @@
 {# Template: {{ _self }}.twig #}
 
-{% set navItems = craft.entries().section('pages').level(1).offset(1).limit(4) %}
+{# {% set navItems = craft.entries().section('pages').level(1).offset(1).limit(4) %} #}
 
 <nav class="hidden z-100 fixed overflow-hidden w-screen h-screen bg-black top-0 left-0 flex items-center | js-nav">
     <div class="hidden md:block image-holder w-6/12 h-fit">
-    <img class="image" src="../assets/www/images/work.png">
+        {% for image in entry.navImage %}
+            <img class="h-screen w-full object-cover object-top relative top-0 left-0" src="{{image.url()}}" alt="hero">
+            {% else %}
+            <img class="image" src="../assets/www/images/work.png">
+        {% endfor %}
     </div>
     <div class="w-12/12 md:w-4/12 mx-auto text-white uppercase">
         <ul class="list mt-60 ml-30 lg:mt-100 lg:ml-0 font-serif text-20 lg:text-25">
-            <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/Work" data-src="../assets/www/images/work.png">Collections</a></li>
-            <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/About" data-src="../assets/www/images/about.png">About</a></li>
-            {# <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/prints" data-src="../assets/www/images/prints.png">Prints</a></li> #}
-            <li class="block my-25 italic hover:not-italic"><a class="py-5" href="/Contact" data-src="../assets/www/images/contact.png">Connect</a></li>
+            {% for item in mainNav %}                
+                <li class="block my-25 italic hover:not-italic">
+                        <a href="{{ item.url }}" class="py-5">
+                            {{ item.title }}
+                        </a>
+                </li>
+            {% endfor %}
         </ul>
         <div class="mt-20 ml-30 lg:ml-0 lg:mt-150 font-sans text-12 flex flex-wrap gap-20 lg:gap-40">
             {% if generalData.facebookLink is not null and generalData.facebookLink is defined %}

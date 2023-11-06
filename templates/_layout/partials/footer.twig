@@ -2,11 +2,18 @@
     <div class="container flex flex-col lg:flex-row items-center justify-between">
         <div class="w-12/12 lg:w-8/12 flex flex-col lg:flex-row items-center gap-20 stagger-in">
             <a class="p-5" href="/home"><img class="" src="../assets/www/svg/icon.svg" alt="Logo-icon"></a>
-            <ul class="flex items-center gap-30">
-                <li><a href="{{url('privacy-policy')}}">privacy policy</a></li>
-                <li><a href="{{url('cookie-policy')}}">cookie policy</a></li>
-                <li><a href="{{url('copyright')}}">copyright</a></li>
-                {# <li><a href="{{url('faq')}}">faq</a></li> #}
+            <ul class="flex flex-col w-3/12">
+            {% for item in legalNav %}                
+                <li class="mb-10">
+                    <a href="{{ item.url }}" class=" ml-40">
+                        {{ item.title }}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+            <ul class="flex flex-col w-3/12 ml-40 mb-20">
+                <li class="mb-10"><a href="tel:{{generalData}}">{{ generalData.phone }}</a></li>
+                <li class="mb-10"><a href="mailto:{{generalData}}">{{ generalData.email }}</a></li>
             </ul>
         </div>
         <a href="https://pgm-emmavanderhaeghen.github.io/grephic/index.html" target="_blank" class="mt-20 md:mt-0">by <span class="underline">Grephic</span></a>

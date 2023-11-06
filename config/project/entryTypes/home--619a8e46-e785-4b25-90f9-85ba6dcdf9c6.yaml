@@ -253,7 +253,19 @@ fieldLayouts:
             uid: 10210e34-0796-4ca6-92ad-bc7d65a34411
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 217fcfdc-f604-49b4-a1d5-be94a3a24296 # Navigatie Afbeelding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 89ce9533-0b4b-439b-ad79-01a7dd189cfc
+            userCondition: null
+            warning: null
+            width: 50
           -
             elementCondition: null
             fieldUid: dbd11bc6-ad86-4953-959b-f3fb418b6153 # Toon in footer
@@ -265,7 +277,7 @@ fieldLayouts:
             uid: 5ee75781-1976-4f4b-a53e-1b26eba56eda
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Navigatie
         uid: cc2ca63e-7c17-4fc8-9ea6-fad1f31d19a2
         userCondition: null
@@ -291,6 +303,9 @@ handle: home
 hasTitleField: true
 name: Home
 section: 2c1c4276-6b14-4857-8873-c475c0a68f0a # Pagina's
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

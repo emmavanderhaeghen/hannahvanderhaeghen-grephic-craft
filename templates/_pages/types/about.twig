@@ -9,6 +9,7 @@
             </div>
             <div class="w-12/12 lg:w-4/12 mb-60 lg:mb-0 mx-auto text-10 fade-in">
                 {{entry.redactor|nl2br}}
+                {# {{ include ("_layout/partials/button", {button: entry.linkOne}) }} #}
             </div>
         </article>
 
@@ -25,7 +26,7 @@
     {# contact section - contact page #}
     <article class="relative lg:mt-200">
         <div class="z-20 w-12/12 lg:w-6/12 absolute right-0 bg-black bg-opacity-75 px-20 lg:pr-[24rem] pt-50 lg:pl-80 pb-70 fade-in">
-                <h2 class="text-25 md:text-50 lg:text-80 font-serif uppercase lg:absolute lg:left-80 lg:-top-[2.25rem] text-pink-500 scroll-title-right">{{ commonlyUsed.titleOne }}</h2>
+            <h2 class="text-25 md:text-50 lg:text-80 font-serif uppercase lg:absolute lg:left-80 lg:-top-[2.25rem] text-pink-500 scroll-title-right">{{ commonlyUsed.titleOne }}</h2>
             <p class="py-30 lg:py-80 text-9 text-white">{{ commonlyUsed.descriptionOne }}</p>
             <a class="relative pointer bg-pink text-black py-10 px-20 block w-max hover:bg-black hover:text-white transition duration-300" href="{{ commonlyUsed.linkOne.getUrl() }}" target="{{ commonlyUsed.linkOne.getTarget() }}">{{ commonlyUsed.linkOne.getText() }}</a>
         </div>

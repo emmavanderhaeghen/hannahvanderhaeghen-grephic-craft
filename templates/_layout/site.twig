@@ -4,10 +4,11 @@
 {% set generalData = craft.app.globals().getSetByHandle('generalData') %}
 
 {# 1 Query to rule them all #}
-{% set pages = craft.entries.section('pages').search('showInNav:1 OR showInFooter:1').all() %}
+{% set pages = craft.entries.section('pages').all() %}
 
 {# split up in main & legal nav #}
 {% set mainNav = pages|filter(item => item.showInNav) %}
+{% set imageNav = pages|filter(item => item.navImage) %}
 {% set legalNav = pages|filter(item => item.showInFooter) %}
 
 {% block app %}

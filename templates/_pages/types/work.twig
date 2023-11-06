@@ -5,16 +5,14 @@
 
 {% block content %}
 
-<section class="hidden lg:block">
-    <button class="button absolute left-100 top-[15rem] pointer border-1 border-black bg-transparent text-black py-10 px-20 transition duration-300 js-modal-button">all collections</button>
-    <div class="js-modal hidden absolute top-150 left-100">
-        <button class="js-close-button"><img class="w-[.75rem]" src="../assets/www/svg/cross.svg" alt="account"></button>
+<section class="block">
+    <section class="js-modal absolute top-150 left-100">
         <ul class="font-serif text-12 mt-40">
             {% for gallerypage in galleryPages %}
                 <li class="block my-10 italic hover:not-italic"><a class="py-5" href="{{gallerypage.url()}}">{{gallerypage.title}}</a></li>
             {% endfor %}
-        </ul>
-    </div>
+        </ul>        
+    </section>
 </section>
 
 
