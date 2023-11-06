@@ -4,11 +4,15 @@
 
 <nav class="hidden z-100 fixed overflow-hidden w-screen h-screen bg-black top-0 left-0 flex items-center | js-nav">
     <div class="hidden md:block image-holder w-6/12 h-fit">
+    {% if entry is defined %}
         {% for image in entry.navImage %}
             <img class="h-screen w-full object-cover object-top relative top-0 left-0" src="{{image.url()}}" alt="hero">
             {% else %}
             <img class="image" src="../assets/www/images/work.png">
         {% endfor %}
+        {% else %}
+        <img class="image" src="../assets/www/images/work.png">
+    {% endif %}
     </div>
     <div class="w-12/12 md:w-4/12 mx-auto text-white uppercase">
         <ul class="list mt-60 ml-30 lg:mt-100 lg:ml-0 font-serif text-20 lg:text-25">
